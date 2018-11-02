@@ -5,7 +5,8 @@ public class Dashboard extends JFrame {
     private JFrame window;
     private JPanel leftside;
     private JPanel rightside;
-    boolean initialized;
+    private boolean initialized = false;
+    private Actions actions = new Actions();
 
     public static void main (String args[]){
         new Dashboard().setVisible(true);
@@ -33,5 +34,20 @@ public class Dashboard extends JFrame {
 
     private void initializeEvents(){
         //TODO : add action listeners and events that can happen
+    }
+
+    public class Actions implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            String command = e.getActionCommand();
+            command = command == null ? "" : command;
+            // TODO: add if...if else... for action commands
+
+        }
+    }
+
+    public void dispose() {
+        // TODO: Save settings
+        //super.dispose();
+        System.exit(0);
     }
 }
