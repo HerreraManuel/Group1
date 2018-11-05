@@ -11,7 +11,7 @@ public class Dashboard extends JFrame {
 
     private JTextArea Display;
     private JScrollPane scroll;
-    private JPanel totals;
+    private JTextArea totals;
 
     private JLabel instructions;
     private JTextField urlinput;
@@ -21,7 +21,7 @@ public class Dashboard extends JFrame {
     private JCheckBox check3;
     private JCheckBox check4;
     private JCheckBox check5;
-    private JTextField additional;
+    private JTextArea additional;
     private JButton enter;
 
 
