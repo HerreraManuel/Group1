@@ -1,4 +1,7 @@
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Dashboard extends JFrame {
 
@@ -49,19 +52,24 @@ public class Dashboard extends JFrame {
         this.setSize(500, 400);
         //TODO: add in your layers and everything else in here
         check1 = new JCheckBox("Characters");
-        check1.addActionListener(this);
+        Actions listener1 = new Actions();
+        check1.addActionListener(listener1);
 
         check2 = new JCheckBox("Words");
-        check2.addActionListener(this);
+        Actions listener2 = new Actions();
+        check2.addActionListener(listener2);
 
         check3 = new JCheckBox("Lines");
-        check3.addActionListener(this);
+        Actions listener3 = new Actions();
+        check3.addActionListener(listener3);
         
         check4 = new JCheckBox("Source Lines");
-        check4.addActionListener(this);
+        Actions listener4 = new Actions();
+        check4.addActionListener(listener4);
 
         check5 = new JCheckBox("CommentLines");
-        check5.addActionListener(this);
+        Actions listener5 = new Actions();
+        check5.addActionListener(listener5);
 
         totbuttons.setLayout(new BoxLayout(totbuttons, BoxLayout.Y_AXIS));
         totbuttons.add(check1);
@@ -75,13 +83,15 @@ public class Dashboard extends JFrame {
         leftside.add(instructions);
 
         urlinput = new JTextField(60);
-        urlinput.addActionListener(this);
+        Actions urlListener = new Actions();
+        urlinput.addActionListener(urlListener);
         leftside.add(urlinput);
 
         leftside.add(totbuttons);
 
         enter = new JButton("Enter");
-        enter.addActionListener(this);
+        Actions enterListener = new Actions();
+        enter.addActionListener(enterListener);
         leftside.add(enter);
 
         this.add(leftside);
@@ -103,18 +113,18 @@ public class Dashboard extends JFrame {
         //TODO : add action listeners and events that can happen
     }
 
-    public class Actions implements ActionListener {
-        public void actionPerformed(ActionEvent e) {
-            String command = e.getActionCommand();
-            command = command == null ? "" : command;
-            // TODO: add if...if else... for action commands
-
-        }
-    }
 
     public void dispose() {
         // TODO: Save settings
         //super.dispose();
         System.exit(0);
     }
+
+   class Actions implements ActionListener{
+
+       @Override
+       public void actionPerformed(ActionEvent e) {
+
+       }
+   }
 }
