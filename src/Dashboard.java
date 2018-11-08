@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 public class Dashboard extends JFrame {
 
-//    private JFrame window;
+    private JFrame window;
     private JPanel leftside;
     private JPanel rightside;
 
@@ -23,6 +23,8 @@ public class Dashboard extends JFrame {
     private JCheckBox check5;
     private JTextArea additional;
     private JButton enter;
+  	private String complete url;
+  	private boolean chars, words, lines , Sloc ,Cloc;
 
 
     private boolean initialized = false;
@@ -48,28 +50,42 @@ public class Dashboard extends JFrame {
             return;
         }
         initialized  = true;
-        this.setLayout(new FlowLayout());
-        this.setSize(500, 400);
+        window = new JFrame("Metrics");
+        window.setLayout(new FlowLayout());
+        window.setSize(500, 400);
         //TODO: add in your layers and everything else in here
+      
         check1 = new JCheckBox("Characters");
-        Actions listener1 = new Actions();
-        check1.addActionListener(listener1);
+        check1.addActionListener(new ActionListener(){
+        public void actionPerformed(ActionEvent e){
+         	chars = true; 
+        });
 
         check2 = new JCheckBox("Words");
         Actions listener2 = new Actions();
-        check2.addActionListener(listener2);
+        check2.addActionListener(new ActionListener(){
+        public void actionPerformed(ActionEvent e){
+         	words = true; 
+        });
 
         check3 = new JCheckBox("Lines");
-        Actions listener3 = new Actions();
-        check3.addActionListener(listener3);
+        check3.addActionListener(new ActionListener(){
+        public void actionPerformed(ActionEvent e){
+         	lines = true; 
+        });
         
         check4 = new JCheckBox("Source Lines");
-        Actions listener4 = new Actions();
-        check4.addActionListener(listener4);
+        check4.addActionListener(new ActionListener(){
+        public void actionPerformed(ActionEvent e){
+         	Sloc = true; 
+        });
 
-        check5 = new JCheckBox("CommentLines");
-        Actions listener5 = new Actions();
-        check5.addActionListener(listener5);
+      check5 = new JCheckBox("CommentLines");
+      check5.addActionListener(new ActionListener(){
+        public void actionPerformed(ActionEvent e){
+         	Cloc = true; 
+        }
+      });
 
         totbuttons.setLayout(new BoxLayout(totbuttons, BoxLayout.Y_AXIS));
         totbuttons.add(check1);
@@ -91,10 +107,14 @@ public class Dashboard extends JFrame {
 
         enter = new JButton("Enter");
         Actions enterListener = new Actions();
-        enter.addActionListener(enterListener);
+      	enter.addActionListener(new ActionListener(){
+        	public void actionPerformed(ActionEvent e){
+        		displayData();		
+        	}
+      	});
         leftside.add(enter);
 
-        this.add(leftside);
+        window.add(leftside);
 
         Display = new JTextArea();
         Display.setEditable(false);
@@ -106,25 +126,16 @@ public class Dashboard extends JFrame {
         totals = new JTextArea();
         rightside.add(totals);
 
-        this.add(rightside);
+        window.add(rightside);
     }
-
-    private void initializeEvents(){
-        //TODO : add action listeners and events that can happen
-    }
-
-
+                                 
     public void dispose() {
         // TODO: Save settings
-        //super.dispose();
+        super.dispose();
         System.exit(0);
     }
-
-   class Actions implements ActionListener{
-
-       @Override
-       public void actionPerformed(ActionEvent e) {
-
-       }
-   }
+                                 
+  private void displayData(){
+  		//TODO : send all data into other classes to be used and then display it
+  }
 }
