@@ -6,23 +6,19 @@ import java.awt.event.ActionListener;
 public class Dashboard extends JFrame {
 
     private JFrame window;
-    private JPanel leftside;
+    private JPanel leftside, urlPanel, additionalPanel , totbuttons, enterPanel;
     private JPanel rightside;
 
     private JTextArea Display;
     private JScrollPane scroll;
     private JTextArea totals;
 
-    private JLabel instructions;
+    private JLabel githubUrlInput;
     private JTextField urlinput;
-    private JPanel totbuttons;
-    private JCheckBox check1;
-    private JCheckBox check2;
-    private JCheckBox check3;
-    private JCheckBox check4;
-    private JCheckBox check5;
+    private JLabel additiionalLabel;
+    private JTextField additionalText;
+    private JCheckBox check1, check2, check3, check4, check5, enter, clear;
     private JTextArea additional;
-    private JButton enter;
   	private String complete url;
   	private boolean chars, words, lines , Sloc ,Cloc;
 
@@ -53,6 +49,20 @@ public class Dashboard extends JFrame {
         window = new JFrame("Metrics");
         window.setLayout(new FlowLayout());
         window.setSize(500, 400);
+        
+        leftside = new JPanel();
+        leftside.setLayout(new BoxLayout(leftside , Y_AXIS));
+        
+        urlPanel = new JPanel();
+        urlPanel.setLayout(new BoxLayout(urlPanel , Y_AXIS));
+        
+        totbuttons = new JPanel();
+        GridLayout grid = new GridLayout(2,3);
+        totbuttons.setLayout(grid);
+        
+        enterPanel = new JPanel();
+        enterPanel.setLayout(new BoxLayout(enterPanel, X_AXIS);
+        
         //TODO: add in your layers and everything else in here
       
         check1 = new JCheckBox("Characters");
@@ -112,6 +122,12 @@ public class Dashboard extends JFrame {
         		displayData();		
         	}
       	});
+        clear = new JButton("Clear");
+        clear.addActionListener(new ActionListener(){
+           public void actionPerformed(ActionEvent e){
+               
+           }
+        });
         leftside.add(enter);
 
         window.add(leftside);
@@ -120,12 +136,12 @@ public class Dashboard extends JFrame {
         Display.setEditable(false);
         scroll = new JScrollPane(Display);
         scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
-
+        
+        rightside = new JPanel();
+        rightside.setLayout(new BoxLayout(rightside, X_AXIS);
         rightside.add(scroll);
-        rightside.add(Display);
-        totals = new JTextArea();
+        totals = new JtextArea();
         rightside.add(totals);
-
         window.add(rightside);
     }
                                  
