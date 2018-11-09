@@ -37,35 +37,36 @@ public class Dashboard extends JFrame {
     }
 
     private void initializeGui() {
+
         if (initialized) {
             return;
         }
+
         initialized = true;
         window = new JFrame("Metrics");
         window.setLayout(new FlowLayout());
         window.setSize(500, 400);
-
+         /*
+         establishes all the panel that will be put together and establish their layout.
+         see design document to see how they work together
+         */
         leftside = new JPanel();
         leftside.setLayout(new BoxLayout(leftside, BoxLayout.Y_AXIS));
-
         rightside = new JPanel();
         rightside.setLayout(new BoxLayout(rightside, BoxLayout.X_AXIS));
-
         urlPanel = new JPanel();
         urlPanel.setLayout(new BoxLayout(urlPanel, BoxLayout.Y_AXIS));
-
         additionalPanel = new JPanel();
         additionalPanel.setLayout(new BoxLayout(additionalPanel, BoxLayout.Y_AXIS));
-
         totbuttons = new JPanel();
         GridLayout grid = new GridLayout(2, 3);
         totbuttons.setLayout(grid);
-
         enterPanel = new JPanel();
         enterPanel.setLayout(new BoxLayout(enterPanel,BoxLayout.X_AXIS));
-
-        //TODO: add in your layers and everything else in here
-
+        /*
+        puts together all of the buttons and check boxes
+        establishes what each button should do and what the label is
+        */
         githubUrlInput = new JLabel("Enter Github URL");
         urlPanel.add(githubUrlInput);
         urlinput = new JTextField(60);
@@ -76,8 +77,6 @@ public class Dashboard extends JFrame {
         });
         urlPanel.add(urlinput);
         leftside.add(urlPanel);
-
-
         check1 = new JCheckBox("Characters");
         check1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -108,6 +107,9 @@ public class Dashboard extends JFrame {
                 Cloc = true;
             }
         });
+        /*
+        combining buttons and panels together to create GUI layers
+        */
         totbuttons.setLayout(new BoxLayout(totbuttons, BoxLayout.Y_AXIS));
         totbuttons.add(check1);
         totbuttons.add(check2);
@@ -115,7 +117,6 @@ public class Dashboard extends JFrame {
         totbuttons.add(check4);
         totbuttons.add(check5);
         leftside.add(totbuttons);
-
         enter = new JButton("Enter");
         enter.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -142,14 +143,11 @@ public class Dashboard extends JFrame {
         });
         enterPanel.add(clear);
         leftside.add(enterPanel);
-
         window.add(leftside);
-
         Display = new JTextArea();
         Display.setEditable(false);
         scroll = new JScrollPane(Display);
         scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
-
         rightside.add(scroll);
         totals = new JTextArea();
         rightside.add(totals);
