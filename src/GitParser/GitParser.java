@@ -15,7 +15,10 @@ External Contributions:
 package GitParser;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.errors.GitAPIException;
+import org.eclipse.jgit.lib.Ref;
 import org.eclipse.jgit.lib.Repository;
+import org.eclipse.jgit.storage.file.FileRepositoryBuilder;
+
 import java.io.File;
 import java.io.IOException;
 
@@ -30,7 +33,16 @@ public class GitParser
 
     public void run(String[] args) throws IOException, GitAPIException
     {
-        File repoDir = createSampleGitRepo();
+        File repo_directory = createSampleGitRepo();
+
+        FileRepositoryBuilder builder = new FileRepositoryBuilder();
+        try(Repository repository = builder.setGitDir(repo_directory).readEnvironment().findGitDir().build())
+        {
+            System.out.println("Having repository: " + repository.getDirectory());
+
+            Ref head = repository.exactRef("refs/head/master");
+            System.out.println("Ref of refs/heads/master: " + head);
+        }
     }
 
     private File createSampleGitRepo() throws IOException, GitAPIException
