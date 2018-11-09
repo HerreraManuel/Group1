@@ -15,4 +15,5 @@ repostitory.
 
 Dashboard.java is going to be able to intake a github url and
 have check boxes to set what information will be displayed on 
-the other side of the window.
+the other side of the window.In order to ensure the largest 
+possible output the window will be set to the size of the screen
