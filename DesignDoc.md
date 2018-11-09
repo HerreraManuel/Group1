@@ -1,5 +1,14 @@
 Design Document
 
+Introduction:
+This Windows Application will allow the programmer to be able
+check the character count, word count, line count, comment
+count, and source line of code count by simply providing the
+git URL along with what file type.
+
+The user is able to select which count they would like to view
+by clicking on the check boxes listed.
+
 Overview:
 
 enclosed files: Dashboard.java , GitParser.java , Helper.java
