@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 public class Dashboard extends JFrame {
 
     private JFrame window;
-    private JPanel leftside, urlPanel, additionalPanel , totbuttons, enterPanel;
+    private JPanel leftside, urlPanel, additionalPanel, totbuttons, enterPanel;
     private JPanel rightside;
 
     private JTextArea Display;
@@ -17,93 +17,95 @@ public class Dashboard extends JFrame {
     private JTextField urlinput, additionalText;
     private JCheckBox check1, check2, check3, check4, check5;
     private JButton enter, clear;
-  	private String completeUrl;
-  	private boolean chars, words, lines , Sloc ,Cloc;
+    private String completeUrl;
+    private boolean chars, words, lines, Sloc, Cloc;
     private boolean initialized = false;
 
-    public static void main (String args[]){
+    public static void main(String args[]) {
         new Dashboard().setVisible(true);
     }
 
-    public void setVisible(boolean visible ){
+    public void setVisible(boolean visible) {
         initialize();
         super.setVisible(visible);
     }
 
-    private void initialize(){
+    private void initialize() {
         initializeGui();
-        initializeEvents();
+        //initializeEvents();
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
-    private void initializeGui(){
-        if(initialized){
+    private void initializeGui() {
+        if (initialized) {
             return;
         }
-        initialized  = true;
+        initialized = true;
         window = new JFrame("Metrics");
         window.setLayout(new FlowLayout());
         window.setSize(500, 400);
-        
+
         leftside = new JPanel();
-        leftside.setLayout(new BoxLayout(leftside , Y_AXIS));
-        
+        leftside.setLayout(new BoxLayout(leftside, BoxLayout.Y_AXIS));
+
         rightside = new JPanel();
-        rightside.setLayout(new BoxLayout(rightside, X_AXIS);
-        
+        rightside.setLayout(new BoxLayout(rightside, BoxLayout.X_AXIS));
+
         urlPanel = new JPanel();
-        urlPanel.setLayout(new BoxLayout(urlPanel , Y_AXIS));
-             
+        urlPanel.setLayout(new BoxLayout(urlPanel, BoxLayout.Y_AXIS));
+
         additionalPanel = new JPanel();
-        additionalPanel.setLayout(new BoxLayout(additionalPanel, Y_AXIS
-        
+        additionalPanel.setLayout(new BoxLayout(additionalPanel, BoxLayout.Y_AXIS));
+
         totbuttons = new JPanel();
-        GridLayout grid = new GridLayout(2,3);
+        GridLayout grid = new GridLayout(2, 3);
         totbuttons.setLayout(grid);
-        
+
         enterPanel = new JPanel();
-        enterPanel.setLayout(new BoxLayout(enterPanel, X_AXIS);
-        
+        enterPanel.setLayout(new BoxLayout(enterPanel,BoxLayout.X_AXIS));
+
         //TODO: add in your layers and everything else in here
-    
+
         githubUrlInput = new JLabel("Enter Github URL");
         urlPanel.add(githubUrlInput);
         urlinput = new JTextField(60);
-        urlinput.addActionListener(new ActionListener(){
-            public void actionPErformed(ActionEvent e){
-                completeUrl = urlInput.getText();
+        urlinput.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                completeUrl = urlinput.getText();
             }
         });
         urlPanel.add(urlinput);
-        leftside.add(urlPanel);                                
-                             
-         
-                             
+        leftside.add(urlPanel);
+
+
         check1 = new JCheckBox("Characters");
-        check1.addActionListener(new ActionListener(){
-        public void actionPerformed(ActionEvent e){
-         	chars = true; 
+        check1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                chars = true;
+            }
         });
         check2 = new JCheckBox("Words");
-        Actions listener2 = new Actions();
-        check2.addActionListener(new ActionListener(){
-        public void actionPerformed(ActionEvent e){
-         	words = true; 
+        check2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                words = true;
+            }
         });
         check3 = new JCheckBox("Lines");
-        check3.addActionListener(new ActionListener(){
-        public void actionPerformed(ActionEvent e){
-         	lines = true; 
-        });        
+        check3.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                lines = true;
+            }
+        });
         check4 = new JCheckBox("Source Lines");
-        check4.addActionListener(new ActionListener(){
-        public void actionPerformed(ActionEvent e){
-         	Sloc = true; 
+        check4.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                Sloc = true;
+            }
         });
         check5 = new JCheckBox("CommentLines");
-        check5.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e){
-         	    Cloc = true; 
+        check5.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                Cloc = true;
             }
         });
         totbuttons.setLayout(new BoxLayout(totbuttons, BoxLayout.Y_AXIS));
@@ -113,30 +115,30 @@ public class Dashboard extends JFrame {
         totbuttons.add(check4);
         totbuttons.add(check5);
         leftside.add(totbuttons);
-        
+
         enter = new JButton("Enter");
-      	enter.addActionListener(new ActionListener(){
-        	public void actionPerformed(ActionEvent e){
-        		displayData();		
-        	}
-      	});
+        enter.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                displayData();
+            }
+        });
         enterPanel.add(enter);
         clear = new JButton("Clear");
-        clear.addActionListener(new ActionListener(){
-           public void actionPerformed(ActionEvent e){
-               Display.setText(null);
-               totals.setText(null);
-               check1.setSelected(false);
-               chars = false;
-               check2.setSelected(false);
-               words = false;
-               check3.setSelected(false);
-               lines = false;
-               check4.setSelected(false);
-               Sloc = false;
-               check5.setSelected(false);
-               Cloc = false;
-           }
+        clear.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                Display.setText(null);
+                totals.setText(null);
+                check1.setSelected(false);
+                chars = false;
+                check2.setSelected(false);
+                words = false;
+                check3.setSelected(false);
+                lines = false;
+                check4.setSelected(false);
+                Sloc = false;
+                check5.setSelected(false);
+                Cloc = false;
+            }
         });
         enterPanel.add(clear);
         leftside.add(enterPanel);
@@ -147,19 +149,19 @@ public class Dashboard extends JFrame {
         Display.setEditable(false);
         scroll = new JScrollPane(Display);
         scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
-        
+
         rightside.add(scroll);
-        totals = new JtextArea();
+        totals = new JTextArea();
         rightside.add(totals);
         window.add(rightside);
     }
-                                 
+
     public void dispose() {
         super.dispose();
         System.exit(0);
     }
-                                 
-  private void displayData(){
-  		//TODO : send all data into other classes to be used and then display it
-  }
+
+    private void displayData() {
+        //TODO : send all data into other classes to be used and then display it
+    }
 }
