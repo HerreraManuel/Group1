@@ -165,6 +165,7 @@ public class Dashboard extends JFrame {
                 check5.setSelected(false);
                 Cloc = false;
                 urlinput.setText(null);
+                additionalText.setText(null);
             }
         });
         enterPanel.add(clear);
