@@ -73,6 +73,7 @@ public class Dashboard extends JFrame {
         leftside.setLayout(new BoxLayout(leftside, BoxLayout.Y_AXIS));
         rightside = new JPanel();
         rightside.setLayout(new BoxLayout(rightside, BoxLayout.X_AXIS));
+        rightside.setSize((int)(screenSize.getWidth()/2),(int)(screenSize.getHeight()/2));
         urlPanel = new JPanel();
         urlPanel.setLayout(new BoxLayout(urlPanel, BoxLayout.Y_AXIS));
         additionalPanel = new JPanel();
@@ -88,7 +89,7 @@ public class Dashboard extends JFrame {
         */
         githubUrlInput = new JLabel("Enter Github URL");
         urlPanel.add(githubUrlInput);
-        urlinput = new JTextField(60);
+        urlinput = new JTextField(30);
         urlinput.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 completeUrl = urlinput.getText();
@@ -126,9 +127,11 @@ public class Dashboard extends JFrame {
                 Cloc = true;
             }
         });
-
+        /*
+        additional input panel is just meant to take in file types to be displayed delimited by a space
+        */
         additionalInput = new JLabel("Enter file type that you would like to view. Such as .java .c or .hpp separated by spaces.");
-        additionalText = new JTextField(60);
+        additionalText = new JTextField(30);
         additionalPanel.add(additionalInput);
         additionalPanel.add(additionalText);
         leftside.add(additionalPanel);
@@ -142,6 +145,7 @@ public class Dashboard extends JFrame {
         totbuttons.add(check4);
         totbuttons.add(check5);
         leftside.add(totbuttons);
+        //enter button runs the process to output the metrics
         enter = new JButton("Enter");
         enter.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -149,6 +153,7 @@ public class Dashboard extends JFrame {
             }
         });
         enterPanel.add(enter);
+        //clear button clears all areas of text and resets buttons
         clear = new JButton("Clear");
         clear.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
