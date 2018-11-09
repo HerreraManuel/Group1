@@ -13,9 +13,9 @@ External Contributions:
 */
 
 package GitParser;
+import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.lib.Repository;
-
 import java.io.File;
 import java.io.IOException;
 
@@ -37,7 +37,23 @@ public class GitParser
     {
         try(Repository repository = Helper.createNewRepository())
         {
+            System.out.println("Temporary repository at: " + repository.getDirectory());
 
+            //Create file
+            File file = new File(repository.getDirectory().getParent(), "test_file");
+            if(!file.createNewFile())
+            {
+                throw new IOException("File could not be created " + file);
+            }
+
+            //Run add-call
+            try (Git git = new Git(repository))
+            {
+                git.add().addFilepattern("test_file").call();
+                git.commit().setMessage("Added test_file").call();
+            }
+            System.out.println("Added file " + file + "to repository at " + repository.getDirectory());
+            return repository.getDirectory();
         }
     }
 }
