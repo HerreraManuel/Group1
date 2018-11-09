@@ -126,6 +126,12 @@ public class Dashboard extends JFrame {
                 Cloc = true;
             }
         });
+
+        additionalInput = new JLabel("Enter file type that you would like to view. Such as .java .c or .hpp separated by spaces.");
+        additionalText = new JTextField(60);
+        additionalPanel.add(additionalInput);
+        additionalPanel.add(additionalText);
+        leftside.add(additionalPanel);
         /*
         combining buttons and panels together to create GUI layers
         */
