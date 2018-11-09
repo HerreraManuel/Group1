@@ -33,7 +33,7 @@ public class Dashboard extends JFrame {
     */
     public void setVisible(boolean visible) {
         initialize();
-        super.setVisible(visible);
+       // super.setVisible(visible);
     }
 
     /*
@@ -158,6 +158,7 @@ public class Dashboard extends JFrame {
                 Sloc = false;
                 check5.setSelected(false);
                 Cloc = false;
+                urlinput.setText(null);
             }
         });
         enterPanel.add(clear);
@@ -171,6 +172,7 @@ public class Dashboard extends JFrame {
         totals = new JTextArea();
         rightside.add(totals);
         window.add(rightside);
+        window.setVisible(true);
     }
 
     /*
