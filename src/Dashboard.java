@@ -21,31 +21,50 @@ public class Dashboard extends JFrame {
     private boolean chars, words, lines, Sloc, Cloc;
     private boolean initialized = false;
 
+    /*
+    Creates the Gui and sets it to visible
+    */
     public static void main(String args[]) {
         new Dashboard().setVisible(true);
     }
 
+    /*
+    starts to build the GUI by setting it to visible
+    */
     public void setVisible(boolean visible) {
         initialize();
         super.setVisible(visible);
     }
 
+    /*
+    Initializes the GUI then sets how the program is meant to close
+    */
     private void initialize() {
         initializeGui();
         //initializeEvents();
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
+    /*
+    Creates the Gui.
+    This does just about everything about establishing the gui and setting which buttons does what.
+    it also adds the different panels and buttons together
+    */
     private void initializeGui() {
 
         if (initialized) {
             return;
         }
-
+        /*
+        sets the layout and initial size of the window that the GUI will be displayed in
+        For the purpose of having as much room as possible the initial size will be the entire screen size of the given
+        computer
+        */
         initialized = true;
         window = new JFrame("Metrics");
         window.setLayout(new FlowLayout());
-        window.setSize(500, 400);
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        window.setSize((int)screenSize.getWidth(), (int)screenSize.getHeight());
          /*
          establishes all the panel that will be put together and establish their layout.
          see design document to see how they work together
@@ -154,12 +173,21 @@ public class Dashboard extends JFrame {
         window.add(rightside);
     }
 
+    /*
+    This should be a way to close the program that can be called should we want to add a close button, but it might go
+    unused for the purpose of this project
+    */
     public void dispose() {
         super.dispose();
         System.exit(0);
     }
 
+    /*
+    this method will call the GitParser and pass in the github url as a parameter.
+    it will then get back the necessary metrics from GitParser and display it in the scrollable text area and the totals
+    text area.
+    */
     private void displayData() {
-        //TODO : send all data into other classes to be used and then display it
+        //TODO : send url into GitParser to be used and then display it
     }
 }
