@@ -6,14 +6,14 @@ import java.awt.event.ActionListener;
 public class Dashboard extends JFrame {
 
     private JFrame window;
-    private JPanel leftside, urlPanel, additionalPanel, totbuttons, enterPanel;
+    private JPanel leftside, urlPanel, additionalPanel, totbuttons, enterPanel, outputDisplay;
     private JPanel rightside;
 
     private JTextArea Display;
     private JScrollPane scroll;
     private JTextArea totals;
 
-    private JLabel githubUrlInput, additionalInput;
+    private JLabel githubUrlInput, additionalInput, characters, word, line, commentLine, sourceLine;
     private JTextField urlinput, additionalText;
     private JCheckBox check1, check2, check3, check4, check5;
     private JButton enter, clear;
@@ -33,7 +33,7 @@ public class Dashboard extends JFrame {
     */
     public void setVisible(boolean visible) {
         initialize();
-       // super.setVisible(visible);
+        // super.setVisible(visible);
     }
 
     /*
@@ -55,6 +55,7 @@ public class Dashboard extends JFrame {
         if (initialized) {
             return;
         }
+
         /*
         sets the layout and initial size of the window that the GUI will be displayed in
         For the purpose of having as much room as possible the initial size will be the entire screen size of the given
@@ -71,18 +72,29 @@ public class Dashboard extends JFrame {
          */
         leftside = new JPanel();
         leftside.setLayout(new BoxLayout(leftside, BoxLayout.Y_AXIS));
+
         rightside = new JPanel();
         rightside.setLayout(new BoxLayout(rightside, BoxLayout.X_AXIS));
         rightside.setSize((int)(screenSize.getWidth()/2),(int)(screenSize.getHeight()/2));
+
         urlPanel = new JPanel();
         urlPanel.setLayout(new BoxLayout(urlPanel, BoxLayout.Y_AXIS));
+
         additionalPanel = new JPanel();
         additionalPanel.setLayout(new BoxLayout(additionalPanel, BoxLayout.Y_AXIS));
+
         totbuttons = new JPanel();
         GridLayout grid = new GridLayout(2, 3);
         totbuttons.setLayout(grid);
+
         enterPanel = new JPanel();
         enterPanel.setLayout(new BoxLayout(enterPanel,BoxLayout.X_AXIS));
+
+        outputDisplay = new JPanel();
+        //outputDisplay.setLayout(new BoxLayout(outputDisplay, BoxLayout.X_AXIS));
+        GridLayout grid2 = new GridLayout(1, 2);
+        outputDisplay.setLayout(grid2);
+
         /*
         puts together all of the buttons and check boxes
         establishes what each button should do and what the label is
@@ -145,6 +157,7 @@ public class Dashboard extends JFrame {
         totbuttons.add(check4);
         totbuttons.add(check5);
         leftside.add(totbuttons);
+
         //enter button runs the process to output the metrics
         enter = new JButton("Enter");
         enter.addActionListener(new ActionListener() {
@@ -185,6 +198,18 @@ public class Dashboard extends JFrame {
         rightside.add(totals);
         window.add(rightside);
         window.setVisible(true);
+
+        characters = new JLabel("characters");
+        outputDisplay.add(characters);
+        word = new JLabel("words");
+        outputDisplay.add(word);
+        line = new JLabel("lines");
+        outputDisplay.add(line);
+        commentLine = new JLabel("comment line");
+        outputDisplay.add(commentLine);
+        sourceLine = new JLabel("source line");
+        outputDisplay.add(sourceLine);
+        leftside.add(outputDisplay);
     }
 
     /*
