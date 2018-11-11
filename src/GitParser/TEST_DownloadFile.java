@@ -1,11 +1,12 @@
 package GitParser;
 
-import java.io.BufferedInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URL;
-import java.io.File;
 import java.nio.Buffer;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class TEST_DownloadFile
 {
@@ -19,7 +20,7 @@ public class TEST_DownloadFile
   {
       try
       {
-          File file = downloadFile(args);
+          downloadFile(args);
       }
       catch (Exception e)
       {
@@ -28,22 +29,14 @@ public class TEST_DownloadFile
   }
 
   //TODO: Continue with Implementation
-  public File downloadFile(String[] args)
+  public void downloadFile(String[] args) throws MalformedURLException, IOException
   {
       String downloadURL = args[0];
+      String fileName = "testFile";
 
-      try(BufferedInputStream in = new BufferedInputStream(new URL(downloadURL).openStream());
-          FileOutputStream fileOutputStream = new FileOutputStream(downloadURL)) {
-          byte dataBuffer[] = new byte[1024];
-          int bytesRead;
-          while ((bytesRead = in.read(dataBuffer, 0, 1024)) != -1) {
-              fileOutputStream.write(dataBuffer, 0, bytesRead);
-          }
-      }
-      catch(IOException e)
+      try (InputStream in = URI.create(downloadURL).toURL().openStream())
       {
-          System.out.println("Error downloading file");
+          Files.copy(in, Paths.get(fileName));
       }
-    return null;
   }
 }
