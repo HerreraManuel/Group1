@@ -29,7 +29,6 @@ public class Dashboard extends JFrame {
     public static void main(String args[]) {
         new Dashboard().setVisible(true);
     }
-
     /*
     starts to build the GUI by setting it to visible
     */
