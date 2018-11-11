@@ -29,6 +29,7 @@ public class Dashboard extends JFrame {
     public static void main(String args[]) {
         new Dashboard().setVisible(true);
     }
+
     /*
     starts to build the GUI by setting it to visible
     */
@@ -172,27 +173,8 @@ public class Dashboard extends JFrame {
 
         //clear button clears all areas of text and resets buttons
         clear = new JButton("Clear");
-        clear.addActionListener(
-                new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        Display.setText(null);
-                        totals.setText(null);
-                        check1.setSelected(false);
-                        chars = false;
-                        check2.setSelected(false);
-                        words = false;
-                        check3.setSelected(false);
-                        lines = false;
-                        check4.setSelected(false);
-                        Sloc = false;
-                        check5.setSelected(false);
-                        Cloc = false;
-                        urlinput.setText(null);
-                        additionalText.setText(null);
-                        checker = true;
-                    }
-                });
         enterPanel.add(clear);
+
         leftside.add(enterPanel);
         window.add(leftside);
         Display = new JTextArea();
@@ -205,6 +187,8 @@ public class Dashboard extends JFrame {
         window.add(rightside);
         window.setVisible(true);
 
+        /*Displays Header
+         */
         characters = new JLabel("characters");
         outputDisplay.add(characters);
         characters.setVisible(false);
@@ -240,7 +224,31 @@ public class Dashboard extends JFrame {
                     }
                 });
 
+        clear.addActionListener(
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        Display.setText(null);
+                        totals.setText(null);
+                        check1.setSelected(false);
+                        chars = false;
+                        check2.setSelected(false);
+                        words = false;
+                        check3.setSelected(false);
+                        lines = false;
+                        check4.setSelected(false);
+                        Sloc = false;
+                        check5.setSelected(false);
+                        Cloc = false;
+                        urlinput.setText(null);
+                        additionalText.setText(null);
 
+                        characters.setVisible(false);
+                        word.setVisible(false);
+                        line.setVisible(false);
+                        commentLine.setVisible(false);
+                        sourceLine.setVisible(false);
+                    }
+                });
     }
 
     /*
