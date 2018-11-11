@@ -21,12 +21,11 @@ Design Document
     Source Lines: Counts the number of source lines in a given file.
     Comment Lines: Counts the number of comments in a given file.
 
-
 1.4 References
-
-// talk about jGit external library
-
-
+    An external library called JGit was used for its ability to clone a
+    repository from Git. This will allow us to pull all files from the given
+    Git url and save it to a destination.
+    
 Overview:
 
 enclosed files: Dashboard.java , GitParser.java , Helper.java
