@@ -21,6 +21,8 @@ public class Dashboard extends JFrame {
     private boolean chars, words, lines, Sloc, Cloc;
     private boolean initialized = false;
 
+    private boolean checker = false;
+
     /*
     Creates the Gui and sets it to visible
     */
@@ -56,20 +58,20 @@ public class Dashboard extends JFrame {
             return;
         }
 
-        /*
-        sets the layout and initial size of the window that the GUI will be displayed in
-        For the purpose of having as much room as possible the initial size will be the entire screen size of the given
-        computer
-        */
+      /*
+      sets the layout and initial size of the window that the GUI will be displayed in
+      For the purpose of having as much room as possible the initial size will be the entire screen size of the given
+      computer
+      */
         initialized = true;
         window = new JFrame("Metrics");
         window.setLayout(new FlowLayout());
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         window.setSize((int)screenSize.getWidth(), (int)screenSize.getHeight());
-         /*
-         establishes all the panel that will be put together and establish their layout.
-         see design document to see how they work together
-         */
+       /*
+       establishes all the panel that will be put together and establish their layout.
+       see design document to see how they work together
+       */
         leftside = new JPanel();
         leftside.setLayout(new BoxLayout(leftside, BoxLayout.Y_AXIS));
 
@@ -95,61 +97,67 @@ public class Dashboard extends JFrame {
         GridLayout grid2 = new GridLayout(1, 2);
         outputDisplay.setLayout(grid2);
 
-        /*
-        puts together all of the buttons and check boxes
-        establishes what each button should do and what the label is
-        */
+      /*
+      puts together all of the buttons and check boxes
+      establishes what each button should do and what the label is
+      */
         githubUrlInput = new JLabel("Enter Github URL");
         urlPanel.add(githubUrlInput);
         urlinput = new JTextField(30);
-        urlinput.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                completeUrl = urlinput.getText();
-            }
-        });
+        urlinput.addActionListener(
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        completeUrl = urlinput.getText();
+                    }
+                });
         urlPanel.add(urlinput);
         leftside.add(urlPanel);
         check1 = new JCheckBox("Characters");
-        check1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                chars = true;
-            }
-        });
+        check1.addActionListener(
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        chars = true;
+                    }
+                });
         check2 = new JCheckBox("Words");
-        check2.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                words = true;
-            }
-        });
+        check2.addActionListener(
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        words = true;
+                    }
+                });
         check3 = new JCheckBox("Lines");
-        check3.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                lines = true;
-            }
-        });
+        check3.addActionListener(
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        lines = true;
+                    }
+                });
         check4 = new JCheckBox("Source Lines");
-        check4.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                Sloc = true;
-            }
-        });
+        check4.addActionListener(
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        Sloc = true;
+                    }
+                });
         check5 = new JCheckBox("CommentLines");
-        check5.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                Cloc = true;
-            }
-        });
-        /*
-        additional input panel is just meant to take in file types to be displayed delimited by a space
-        */
+        check5.addActionListener(
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        Cloc = true;
+                    }
+                });
+      /*
+      additional input panel is just meant to take in file types to be displayed delimited by a space
+      */
         additionalInput = new JLabel("Enter file type that you would like to view. Such as .java .c or .hpp separated by spaces.");
         additionalText = new JTextField(30);
         additionalPanel.add(additionalInput);
         additionalPanel.add(additionalText);
         leftside.add(additionalPanel);
-        /*
-        combining buttons and panels together to create GUI layers
-        */
+      /*
+      combining buttons and panels together to create GUI layers
+      */
         totbuttons.setLayout(new BoxLayout(totbuttons, BoxLayout.Y_AXIS));
         totbuttons.add(check1);
         totbuttons.add(check2);
@@ -160,32 +168,36 @@ public class Dashboard extends JFrame {
 
         //enter button runs the process to output the metrics
         enter = new JButton("Enter");
-        enter.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                displayData();
-            }
-        });
+        enter.addActionListener(
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        checker = true;
+                        displayData();
+                    }
+                });
         enterPanel.add(enter);
+
         //clear button clears all areas of text and resets buttons
         clear = new JButton("Clear");
-        clear.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                Display.setText(null);
-                totals.setText(null);
-                check1.setSelected(false);
-                chars = false;
-                check2.setSelected(false);
-                words = false;
-                check3.setSelected(false);
-                lines = false;
-                check4.setSelected(false);
-                Sloc = false;
-                check5.setSelected(false);
-                Cloc = false;
-                urlinput.setText(null);
-                additionalText.setText(null);
-            }
-        });
+        clear.addActionListener(
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        Display.setText(null);
+                        totals.setText(null);
+                        check1.setSelected(false);
+                        chars = false;
+                        check2.setSelected(false);
+                        words = false;
+                        check3.setSelected(false);
+                        lines = false;
+                        check4.setSelected(false);
+                        Sloc = false;
+                        check5.setSelected(false);
+                        Cloc = false;
+                        urlinput.setText(null);
+                        additionalText.setText(null);
+                    }
+                });
         enterPanel.add(clear);
         leftside.add(enterPanel);
         window.add(leftside);
@@ -199,17 +211,19 @@ public class Dashboard extends JFrame {
         window.add(rightside);
         window.setVisible(true);
 
-        characters = new JLabel("characters");
-        outputDisplay.add(characters);
-        word = new JLabel("words");
-        outputDisplay.add(word);
-        line = new JLabel("lines");
-        outputDisplay.add(line);
-        commentLine = new JLabel("comment line");
-        outputDisplay.add(commentLine);
-        sourceLine = new JLabel("source line");
-        outputDisplay.add(sourceLine);
-        leftside.add(outputDisplay);
+        if(checker == true){
+            characters = new JLabel("characters");
+            outputDisplay.add(characters);
+            word = new JLabel("words");
+            outputDisplay.add(word);
+            line = new JLabel("lines");
+            outputDisplay.add(line);
+            commentLine = new JLabel("comment line");
+            outputDisplay.add(commentLine);
+            sourceLine = new JLabel("source line");
+            outputDisplay.add(sourceLine);
+            leftside.add(outputDisplay);
+        }
     }
 
     /*
