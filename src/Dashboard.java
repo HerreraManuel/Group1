@@ -147,6 +147,7 @@ public class Dashboard extends JFrame {
                         Cloc = true;
                     }
                 });
+
       /*
       additional input panel is just meant to take in file types to be displayed delimited by a space
       */
@@ -168,17 +169,61 @@ public class Dashboard extends JFrame {
 
         //enter button runs the process to output the metrics
         enter = new JButton("Enter");
-        enter.addActionListener(
-                new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        checker = true;
-                        displayData();
-                    }
-                });
         enterPanel.add(enter);
 
         //clear button clears all areas of text and resets buttons
         clear = new JButton("Clear");
+        enterPanel.add(clear);
+
+        leftside.add(enterPanel);
+        window.add(leftside);
+        Display = new JTextArea();
+        Display.setEditable(false);
+        scroll = new JScrollPane(Display);
+        scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        rightside.add(scroll);
+        totals = new JTextArea();
+        rightside.add(totals);
+        window.add(rightside);
+        window.setVisible(true);
+
+        /*Displays Header
+         */
+        characters = new JLabel("characters");
+        outputDisplay.add(characters);
+        characters.setVisible(false);
+
+        word = new JLabel("words");
+        outputDisplay.add(word);
+        word.setVisible(false);
+
+        line = new JLabel("lines");
+        outputDisplay.add(line);
+        line.setVisible(false);
+
+        commentLine = new JLabel("comment line");
+        outputDisplay.add(commentLine);
+        commentLine.setVisible(false);
+
+        sourceLine = new JLabel("source line");
+        outputDisplay.add(sourceLine);
+        sourceLine.setVisible(false);
+
+        leftside.add(outputDisplay);
+
+        enter.addActionListener(
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        characters.setVisible(true);
+                        word.setVisible(true);
+                        line.setVisible(true);
+                        commentLine.setVisible(true);
+                        sourceLine.setVisible(true);
+
+                        displayData();
+                    }
+                });
+
         clear.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
@@ -196,34 +241,14 @@ public class Dashboard extends JFrame {
                         Cloc = false;
                         urlinput.setText(null);
                         additionalText.setText(null);
+
+                        characters.setVisible(false);
+                        word.setVisible(false);
+                        line.setVisible(false);
+                        commentLine.setVisible(false);
+                        sourceLine.setVisible(false);
                     }
                 });
-        enterPanel.add(clear);
-        leftside.add(enterPanel);
-        window.add(leftside);
-        Display = new JTextArea();
-        Display.setEditable(false);
-        scroll = new JScrollPane(Display);
-        scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
-        rightside.add(scroll);
-        totals = new JTextArea();
-        rightside.add(totals);
-        window.add(rightside);
-        window.setVisible(true);
-
-        if(checker == true){
-            characters = new JLabel("characters");
-            outputDisplay.add(characters);
-            word = new JLabel("words");
-            outputDisplay.add(word);
-            line = new JLabel("lines");
-            outputDisplay.add(line);
-            commentLine = new JLabel("comment line");
-            outputDisplay.add(commentLine);
-            sourceLine = new JLabel("source line");
-            outputDisplay.add(sourceLine);
-            leftside.add(outputDisplay);
-        }
     }
 
     /*
