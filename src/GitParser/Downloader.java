@@ -28,7 +28,7 @@ public class Downloader implements Runnable
             HttpURLConnection http = (HttpURLConnection)url.openConnection();
             double fileSize = (double)http.getContentLengthLong();  //file size to see progress of download
             BufferedInputStream in = new BufferedInputStream(http.getInputStream()); //
-            FileOutputStream fos = new FileOutputStream(out);
+            FileOutputStream fos = new FileOutputStream(this.out);
             BufferedOutputStream bout = new BufferedOutputStream(fos, 1024); //1024 = 1KB
             byte[] buffer = new byte[1024];
             double downloaded = 0.00;
