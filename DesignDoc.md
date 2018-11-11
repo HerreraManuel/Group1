@@ -1,17 +1,19 @@
-#Software Requirements Specification
+# Software Requirements Specification
 
 --- 
 
-###Github Metrics Application
+### Github Metrics Application
 
 
-####Jenzel Arevalo
-####Parambir Gill
-####Manuel Herrera
-####Matthew Mendoza
-####Jared Nooner
+#### Jenzel Arevalo
+#### Parambir Gill
+#### Manuel Herrera
+#### Matthew Mendoza
+#### Jared Nooner
 
 
+
+***
 
 1.Introduction:
 
