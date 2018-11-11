@@ -1,4 +1,17 @@
-Design Document
+#Software Requirements Specification
+
+--- 
+
+###Github Metrics Application
+
+
+####Jenzel Arevalo
+####Parambir Gill
+####Manuel Herrera
+####Matthew Mendoza
+####Jared Nooner
+
+
 
 1.Introduction:
 
