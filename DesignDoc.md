@@ -2,14 +2,23 @@
 
 ### Github Metrics Application
 
+### Group 1
+  
+    
+##### Jenzel Arevalo
+##### Parambir Gill
+##### Manuel Herrera
+##### Matthew Mendoza
+##### Jared Nooner
+  
+  
+  
+  
+  
+### CSC 131 - Software Engineering
 
-#### Jenzel Arevalo
-#### Parambir Gill
-#### Manuel Herrera
-#### Matthew Mendoza
-#### Jared Nooner
 
-
+***
 
 # 1.Introduction:
 
