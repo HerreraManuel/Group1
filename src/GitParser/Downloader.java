@@ -6,15 +6,15 @@
  * Class Description:
  * Downloads a file from a given URL and outputs the downloaded file to a given
  * path for the file to be saved.
+ *
+ * External Contributions:
+ * + Overall algorithm for downloading a file via URL - Zoran Davidovic
+ *   https://www.youtube.com/watch?v=rd6m-6l2xQQ
  **********************************************************************************/
 
 package GitParser;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -61,5 +61,13 @@ public class Downloader implements Runnable
         {
             e.printStackTrace();
         }
+    }
+
+    public File getOutputFile() throws FileNotFoundException
+    {
+        if(out == null)
+            throw new FileNotFoundException("getOutputFile - File does not exist.");
+        else
+            return out;
     }
 }
