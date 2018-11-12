@@ -3,6 +3,7 @@
 
 
 ### Github Metrics Application
+### Version 0.5
 ### Group 1
 
 #### Jenzel Arevalo
