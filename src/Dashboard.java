@@ -225,11 +225,26 @@ public class Dashboard extends JFrame {
         enter.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        character.setVisible(true);
-                        word.setVisible(true);
-                        line.setVisible(true);
-                        commentLine.setVisible(true);
-                        sourceLine.setVisible(true);
+
+                        if(words == true){
+                            word.setVisible(true);
+                        }
+
+                        if(chars == true){
+                            character.setVisible(true);
+                        }
+
+                        if(lines == true){
+                            line.setVisible(true);
+                        }
+
+                        if(Cloc == true){
+                            commentLine.setVisible(true);
+                        }
+
+                        if(Sloc == true){
+                            sourceLine.setVisible(true);
+                        }
 
                         displayData();
                     }
@@ -254,34 +269,44 @@ public class Dashboard extends JFrame {
                         additionalText.setText(null);
 
                         //clearing characters
-                        Container parent1 = character.getParent();
-                        parent1.remove(character);
-                        parent1.validate();
-                        parent1.repaint();
+                        if(chars == true){
+                            Container parent1 = character.getParent();
+                            parent1.remove(character);
+                            parent1.validate();
+                            parent1.repaint();
+                        }
 
-                        //clearing words
-                        Container parent2 = word.getParent();
-                        parent2.remove(word);
-                        parent2.validate();
-                        parent2.repaint();
+                        if(words == true){
+                            //clearing words
+                            Container parent2 = word.getParent();
+                            parent2.remove(word);
+                            parent2.validate();
+                            parent2.repaint();
+                        }
 
-                        //clearing lines
-                        Container parent3 = line.getParent();
-                        parent3.remove(line);
-                        parent3.validate();
-                        parent3.repaint();
+                        if(lines == true){
+                            //clearing lines
+                            Container parent3 = line.getParent();
+                            parent3.remove(line);
+                            parent3.validate();
+                            parent3.repaint();
+                        }
 
-                        //clearing lines
-                        Container parent4 = sourceLine.getParent();
-                        parent4.remove(sourceLine);
-                        parent4.validate();
-                        parent4.repaint();
+                        if(Sloc == true){
+                            //clearing lines
+                            Container parent4 = sourceLine.getParent();
+                            parent4.remove(sourceLine);
+                            parent4.validate();
+                            parent4.repaint();
+                        }
 
-                        //clearing lines
-                        Container parent5 = commentLine.getParent();
-                        parent5.remove(commentLine);
-                        parent5.validate();
-                        parent5.repaint();
+                        if(Cloc == true){
+                            //clearing lines
+                            Container parent5 = commentLine.getParent();
+                            parent5.remove(commentLine);
+                            parent5.validate();
+                            parent5.repaint();
+                        }
 
                         character.setVisible(false);
                         word.setVisible(false);
