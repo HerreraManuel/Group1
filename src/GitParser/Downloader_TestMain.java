@@ -13,7 +13,7 @@ public class Downloader_TestMain
         *  For instance, Zoran David's file will be downloaded here:
         *  File out = new File("C:\\Users\\Zoran David\\Desktop\\Java The Complete.pdf");
         * */
-        File out = new File(" "); //TODO: type in path name here
+        File out = new File("C:\\Users\\matth\\Desktop\\Test.pdf"); //TODO: type in path name here
 
 
         new Thread(new Downloader(link, out)).start();
