@@ -13,7 +13,7 @@ public class Dashboard extends JFrame {
     private JScrollPane scroll;
     private JTextArea totals;
 
-    private JLabel githubUrlInput, additionalInput, characters, word, line, commentLine, sourceLine;
+    private JLabel githubUrlInput, additionalInput, character, word, line, commentLine, sourceLine;
     private JTextField urlinput, additionalText;
     private JCheckBox check1, check2, check3, check4, check5;
     private JButton enter, clear;
@@ -167,9 +167,9 @@ public class Dashboard extends JFrame {
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         chars = true;
-                        characters = new JLabel("characters");
-                        outputDisplay.add(characters);
-                        characters.setVisible(false);
+                        character = new JLabel("characters");
+                        outputDisplay.add(character);
+                        character.setVisible(false);
                         leftside.add(outputDisplay);
                     }
                 });
@@ -225,11 +225,26 @@ public class Dashboard extends JFrame {
         enter.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        characters.setVisible(true);
-                        word.setVisible(true);
-                        line.setVisible(true);
-                        commentLine.setVisible(true);
-                        sourceLine.setVisible(true);
+
+                        if(words == true){
+                            word.setVisible(true);
+                        }
+
+                        if(chars == true){
+                            character.setVisible(true);
+                        }
+
+                        if(lines == true){
+                            line.setVisible(true);
+                        }
+
+                        if(Cloc == true){
+                            commentLine.setVisible(true);
+                        }
+
+                        if(Sloc == true){
+                            sourceLine.setVisible(true);
+                        }
 
                         displayData();
                     }
@@ -253,7 +268,37 @@ public class Dashboard extends JFrame {
                         urlinput.setText(null);
                         additionalText.setText(null);
 
-                        characters.setVisible(false);
+                        //clearing characters
+                        Container parent1 = character.getParent();
+                        parent1.remove(character);
+                        parent1.validate();
+                        parent1.repaint();
+
+                        //clearing words
+                        Container parent2 = word.getParent();
+                        parent2.remove(word);
+                        parent2.validate();
+                        parent2.repaint();
+
+                        //clearing lines
+                        Container parent3 = line.getParent();
+                        parent3.remove(line);
+                        parent3.validate();
+                        parent3.repaint();
+
+                        //clearing lines
+                        Container parent4 = sourceLine.getParent();
+                        parent4.remove(sourceLine);
+                        parent4.validate();
+                        parent4.repaint();
+
+                        //clearing lines
+                        Container parent5 = commentLine.getParent();
+                        parent5.remove(commentLine);
+                        parent5.validate();
+                        parent5.repaint();
+
+                        character.setVisible(false);
                         word.setVisible(false);
                         line.setVisible(false);
                         commentLine.setVisible(false);
