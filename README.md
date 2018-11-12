@@ -1,47 +1,48 @@
-#Software Requirements Specification
-
---- 
-
-###Github Metrics Application
-
-
-####Jenzel Arevalo
-####Parambir Gill
-####Manuel Herrera
-####Matthew Mendoza
-####Jared Nooner
+# Software Requirements Specification
 
 
 
+### Github Metrics Application
+### Version 0.5
+### Group 1
 
-###1.Introduction:
+#### Jenzel Arevalo
+#### Parambir Gill
+#### Manuel Herrera
+#### Matthew Mendoza
+#### Jared Nooner
 
-#####1.1 Purpose
+
+### CSC 131 - Software Engineering
+
+### 1.Introduction:
+
+##### 1.1 Purpose
     This Windows Desktop Application will allow the programmer to\
     be able check the character count, word count, line count, comment\
     count, and source line of code count by simply providing the\
     git URL along with what file type. The user is able to select\
     which count they would like to view by clicking on the check boxes listed.\
 
-#####1.2 Scope
+##### 1.2 Scope
     The user must use a Windows Machine to run the program. 
     The user can only ask for the metrics listed above. They are
     limited to C/C++ and Java files. They may only enter one URL at a time.
     
 
-#####1.3 Definitions
+##### 1.3 Definitions
     Characters: Counts the number of characters in a given file.
     Words: Counts the words in a given file.
     Lines: Counts the number of lines in a given file.
     Source Lines: Counts the number of source lines in a given file.
     Comment Lines: Counts the number of comments in a given file.
 
-#####1.4 References
+##### 1.4 References
     An external library called JGit was used for its ability to clone a
     repository from Git. This will allow us to pull all files from the given
     Git url and save it to a destination. 
     
-#####1.5 Overview
+##### 1.5 Overview
 
     enclosed files: Dashboard.java , GitParser.java , Helper.java
 
@@ -64,7 +65,7 @@
 ##### 2.3 User Characteristics
 ##### 2.4 General Constraints
 
-### 3. Specific Requirements
+### 3. Detailed  Requirements
 ##### 3.1 External Interface Requirements
     3.1.1 User Interfaces
     3.1.2 Hardware Interfaces
