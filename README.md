@@ -61,7 +61,12 @@
     possible output the window will be set to the size of the screen
 
 ### 2. Overall Description
-##### 2.1 Product Perspective
+##### 2.1 Product
+**Relationship of the product to other products; defining if the product is 
+independent or is a part of a larger product, and what the principal interfaces 
+of the product are** \
+ The system consists of a single entity. A Java GUI application will be used to
+ present metrics from valid Github repositories.
 ##### 2.2 Product Functions
 ##### 2.3 User Characteristics
 ##### 2.4 General Constraints
