@@ -45,20 +45,24 @@
     
 ##### 1.5 Overview
 
-    enclosed files: Dashboard.java , GitParser.java , Helper.java
+    The following are enclosed files: Dashboard.java, GitParser.java, Helper.java
 
     Dashboard.java is the GUI that will be the used to access the
-    GitParser and display the output.
+    GitParser and display the output. It will take a Github url and
+    have check boxes to set what information will be displayed on
+    the other side of the window.In order to ensure the largest
+    possible output, the window will be set to the size of the screen.
+    
+    GitParser will.....
+    
+    Helper.java will.....
 
-    Design Goals:
+    Design Goals: <---- find a place to put this
     Expected customer is a computer programmer who likely uses git
     or an instructor looking to view the metrics on a student's
     repostitory.
 
-    Dashboard.java is going to be able to intake a github url and
-    have check boxes to set what information will be displayed on
-    the other side of the window.In order to ensure the largest
-    possible output the window will be set to the size of the screen
+    
 
 ### 2. Overall Description
 ##### 2.1 Product
