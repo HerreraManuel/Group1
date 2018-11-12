@@ -61,3 +61,17 @@
     have check boxes to set what information will be displayed on
     the other side of the window.In order to ensure the largest
     possible output the window will be set to the size of the screen
+
+### 2. Overall Description
+##### 2.1 Product Perspective
+##### 2.2 Product Functions
+##### 2.3 User Characteristics
+##### 2.4 General Constraints
+
+### 3. Specific Requirements
+##### 3.1 External Interface Requirements
+##### 3.2 Functional Requirements
+##### 3.3 Performance Requirements
+##### 3.4 Design Constraints
+##### 3.5 Attributes
+##### 3.6 Other Requirements
