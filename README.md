@@ -18,11 +18,12 @@
 ### 1.Introduction:
 
 ##### 1.1 Purpose
-    This Windows Desktop Application will allow the programmer to\
-    be able check the character count, word count, line count, comment\
-    count, and source line of code count by simply providing the\
-    git URL along with what file type. The user is able to select\
-    which count they would like to view by clicking on the check boxes listed.\
+    This Windows Desktop Application will allow the programmer to
+    check the character count, word count, line count, comment
+    count, and source line of code count by providing the
+    Git URL along with the file type. The user is able to select
+    which count they would like to view by clicking the appropriate 
+    check boxes listed.
 
 ##### 1.2 Scope
     The user must use a Windows Machine to run the program. 
