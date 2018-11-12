@@ -1,3 +1,13 @@
+/***********************************************************************************
+ * Programmer(s): Jenzel Arevalo
+ *
+ * Class: Downloader
+ *
+ * Class Description:
+ * Downloads a file from a given URL and outputs the downloaded file to a given
+ * path for the file to be saved.
+ **********************************************************************************/
+
 package GitParser;
 
 import java.io.BufferedInputStream;
