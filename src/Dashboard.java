@@ -269,44 +269,34 @@ public class Dashboard extends JFrame {
                         additionalText.setText(null);
 
                         //clearing characters
-                        if(chars == true){
-                            Container parent1 = character.getParent();
-                            parent1.remove(character);
-                            parent1.validate();
-                            parent1.repaint();
-                        }
+                        Container parent1 = character.getParent();
+                        parent1.remove(character);
+                        parent1.validate();
+                        parent1.repaint();
 
-                        if(words == true){
-                            //clearing words
-                            Container parent2 = word.getParent();
-                            parent2.remove(word);
-                            parent2.validate();
-                            parent2.repaint();
-                        }
+                        //clearing words
+                        Container parent2 = word.getParent();
+                        parent2.remove(word);
+                        parent2.validate();
+                        parent2.repaint();
 
-                        if(lines == true){
-                            //clearing lines
-                            Container parent3 = line.getParent();
-                            parent3.remove(line);
-                            parent3.validate();
-                            parent3.repaint();
-                        }
+                        //clearing lines
+                        Container parent3 = line.getParent();
+                        parent3.remove(line);
+                        parent3.validate();
+                        parent3.repaint();
 
-                        if(Sloc == true){
-                            //clearing lines
-                            Container parent4 = sourceLine.getParent();
-                            parent4.remove(sourceLine);
-                            parent4.validate();
-                            parent4.repaint();
-                        }
+                        //clearing lines
+                        Container parent4 = sourceLine.getParent();
+                        parent4.remove(sourceLine);
+                        parent4.validate();
+                        parent4.repaint();
 
-                        if(Cloc == true){
-                            //clearing lines
-                            Container parent5 = commentLine.getParent();
-                            parent5.remove(commentLine);
-                            parent5.validate();
-                            parent5.repaint();
-                        }
+                        //clearing lines
+                        Container parent5 = commentLine.getParent();
+                        parent5.remove(commentLine);
+                        parent5.validate();
+                        parent5.repaint();
 
                         character.setVisible(false);
                         word.setVisible(false);
