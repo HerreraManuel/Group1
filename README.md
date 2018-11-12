@@ -29,6 +29,7 @@
     The user must use a Windows Machine to run the program. 
     The user can only ask for the metrics listed above. They are
     limited to C/C++ and Java files. They may only enter one URL at a time.
+    Only git repositories will be assessed for the given choice of metrics.
     
 
 ##### 1.3 Definitions
