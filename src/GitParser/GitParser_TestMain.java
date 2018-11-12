@@ -51,7 +51,7 @@ public class GitParser_TestMain
 
         /********* GitParser Test Code *********/
         String validURL = "https://github.com/CSC131Fall2018/Group1.git";
-        GitParser test = new GitParser(validURL);
+        GitParser test = new GitParser(link);
 
         /**** GitParser Test Code Ends Here ****/
     }
