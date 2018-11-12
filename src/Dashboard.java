@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 public class Dashboard extends JFrame {
 
@@ -21,7 +23,9 @@ public class Dashboard extends JFrame {
     private boolean chars, words, lines, Sloc, Cloc;
     private boolean initialized = false;
 
-    private boolean checker = false;
+    private int counter;
+
+    private Container parent1, parent2, parent3, parent4, parent5;
 
     /*
     Creates the Gui and sets it to visible
@@ -171,6 +175,14 @@ public class Dashboard extends JFrame {
                         outputDisplay.add(character);
                         character.setVisible(false);
                         leftside.add(outputDisplay);
+                        counter++;
+                        if(counter % 2 == 0){
+                            chars = false;
+                            parent1 = character.getParent();
+                            parent1.remove(character);
+                            parent1.validate();
+                            parent1.repaint();
+                        }
                     }
                 });
 
@@ -269,31 +281,31 @@ public class Dashboard extends JFrame {
                         additionalText.setText(null);
 
                         //clearing characters
-                        Container parent1 = character.getParent();
+                        parent1 = character.getParent();
                         parent1.remove(character);
                         parent1.validate();
                         parent1.repaint();
 
                         //clearing words
-                        Container parent2 = word.getParent();
+                        parent2 = word.getParent();
                         parent2.remove(word);
                         parent2.validate();
                         parent2.repaint();
 
                         //clearing lines
-                        Container parent3 = line.getParent();
+                        parent3 = line.getParent();
                         parent3.remove(line);
                         parent3.validate();
                         parent3.repaint();
 
                         //clearing lines
-                        Container parent4 = sourceLine.getParent();
+                        parent4 = sourceLine.getParent();
                         parent4.remove(sourceLine);
                         parent4.validate();
                         parent4.repaint();
 
                         //clearing lines
-                        Container parent5 = commentLine.getParent();
+                        parent5 = commentLine.getParent();
                         parent5.remove(commentLine);
                         parent5.validate();
                         parent5.repaint();
