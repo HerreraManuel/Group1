@@ -22,24 +22,21 @@ import java.io.IOException;
 
 public class GitParser
 {
-    public GitParser(String link)
+    public GitParser(String link) throws IOException, GitAPIException
     {
-        try
-        {
-            isGitURL(link);
-        }
-        catch(IOException e)
-        {
-            System.out.println(e.getMessage());
-        }
+        boolean validURL = isGitURL(link);
+
+        if(validURL)
+            getGitRepo(link);
+        else
+            throw new IOException("GitParser - Invalid link!");
     }
 
     //TODO: might need to rework Downloader constructor to not include output file, we can "hardcode" a location to store the file as user does not need to specify where to save file
     public void getGitRepo(String link) throws IOException, GitAPIException
     {
-        File out = new File(""); //TODO: Find a location to temporarily save file
-        //Downloader d = new Downloader(link, out);
-        isGitURL(link);
+        File out = new File("/home/filipinoy95/Desktop/TestGitFile"); //TODO: Find a location to temporarily save file
+        new Thread(new Downloader(link, out)).start();
     }
 
     /* TODO: For tonight...
@@ -50,13 +47,16 @@ public class GitParser
      */
 
     //Verify that given link leads to a git file
-    public void isGitURL(String link) throws  IOException
+    public boolean isGitURL(String link)
     {
         String fileExtension = link.substring(link.lastIndexOf("."));
         if(fileExtension.equals(".git"))
-            System.out.println("Valid URL");
+        {
+            System.out.println("Valid Git URL");
+            return true;
+        }
         else
-            throw new IOException ("Invalid URL");
+            return false;
     }
 
 }

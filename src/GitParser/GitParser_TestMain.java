@@ -27,14 +27,17 @@
 
 package GitParser;
 
+import org.eclipse.jgit.api.errors.GitAPIException;
+
 import java.io.File;
+import java.io.IOException;
 
 public class GitParser_TestMain
 {
     public static void main(String[] args)
     {
         /********* Downloader Test Code *********/
-        String link = "https://pdfs.semanticscholar.org/efb2/58d7812128aa19709520b1a567da98227cc5.pdf"; //TEST: "A Concise Introduction to Software Engineering" PDF file
+        //String link = "https://pdfs.semanticscholar.org/efb2/58d7812128aa19709520b1a567da98227cc5.pdf"; //TEST: "A Concise Introduction to Software Engineering" PDF file
 
         /* Example for Windows based Systems */
         //File out = new File("C:\\Users\\Zoran David\\Desktop\\Java The Complete.pdf")
@@ -48,11 +51,22 @@ public class GitParser_TestMain
         /**** Downloader Test Code Ends Here ****/
 
 
-
         /********* GitParser Test Code *********/
         String validURL = "https://github.com/CSC131Fall2018/Group1.git";
-        GitParser test = new GitParser(link);
-
+        String invalidURL = "https://pdfs.semanticscholar.org/efb2/58d7812128aa19709520b1a567da98227cc5.pdf";
+        try
+        {
+            GitParser test = new GitParser(invalidURL); //Should throw IOException labeled 'GitParser - Invalid link!'
+            test = new GitParser(validURL); //Should be able to download gitFile, downloads a file, but does not seem to look like a git repository
+        }
+        catch (GitAPIException e)
+        {
+            e.printStackTrace();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
         /**** GitParser Test Code Ends Here ****/
     }
 }
