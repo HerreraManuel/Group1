@@ -22,7 +22,7 @@
     The output file path should look like:
       /home/username/path/for/output/file
 
-    Notice the double back-slash for the Windows file path.
+    *Notice the double back-slash for the Windows file path.
  **********************************************************************************/
 
 package GitParser;
@@ -33,6 +33,7 @@ public class GitParser_TestMain
 {
     public static void main(String[] args)
     {
+        /********* Downloader Test Code *********/
         String link = "https://pdfs.semanticscholar.org/efb2/58d7812128aa19709520b1a567da98227cc5.pdf"; //TEST: "A Concise Introduction to Software Engineering" PDF file
 
         /* Example for Windows based Systems */
@@ -43,6 +44,15 @@ public class GitParser_TestMain
 
         File out = new File (" "); //TODO: Enter a valid path and file name with extension
 
-        new Thread(new Downloader(link, out)).start();
+        //new Thread(new Downloader(link, out)).start(); //TODO: Uncomment this if you want to test Downloader class
+        /**** Downloader Test Code Ends Here ****/
+
+
+
+        /********* GitParser Test Code *********/
+        String validURL = "https://github.com/CSC131Fall2018/Group1.git";
+        GitParser test = new GitParser(validURL);
+
+        /**** GitParser Test Code Ends Here ****/
     }
 }
