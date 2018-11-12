@@ -1,7 +1,7 @@
 /***********************************************************************************
  * Programmer(s): Jenzel Arevalo
  *
- * Class: Downloader_TestMain
+ * Class: GitParser_TestMain
  *
  * Class Description:
  * Tests to see if Downloader class works.
@@ -19,7 +19,7 @@ package GitParser;
 
 import java.io.File;
 
-public class Downloader_TestMain
+public class GitParser_TestMain
 {
     public static void main(String[] args)
     {
