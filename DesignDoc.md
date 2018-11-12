@@ -1,37 +1,32 @@
-# Software Requirements Specification
+#Software Requirements Specification
 
-### Github Metrics Application
+--- 
 
-### Group 1
-  
-    
-##### Jenzel Arevalo
-##### Parambir Gill
-##### Manuel Herrera
-##### Matthew Mendoza
-##### Jared Nooner
-  
-  
-  
-  
-  
-### CSC 131 - Software Engineering
+###Github Metrics Application
 
 
-***
+####Jenzel Arevalo
+####Parambir Gill
+####Manuel Herrera
+####Matthew Mendoza
+####Jared Nooner
 
-# 1.Introduction:
 
-## 1.1 Purpose
+
+#1.Introduction:
+
+##1.1 Purpose
     This Windows Desktop Application will allow the programmer to\
     be able check the character count, word count, line count, comment\
     count, and source line of code count by simply providing the\
     git URL along with what file type. The user is able to select\
     which count they would like to view by clicking on the check boxes listed.\
 
-## 1.2 Scope
-    The user can only ask for the metrics from the list above. They are
+##1.2 Scope
+    The user must use a Windows Machine to run the program. 
+    The user can only ask for the metrics listed above. They are
     limited to C/C++ and Java files. They may only enter one URL at a time.
+    
 
 1.3 Definitions
     Characters: Counts the number of characters in a given file.
@@ -43,7 +38,7 @@
 1.4 References
     An external library called JGit was used for its ability to clone a
     repository from Git. This will allow us to pull all files from the given
-    Git url and save it to a destination.
+    Git url and save it to a destination. 
     
 1.5 Overview
 
