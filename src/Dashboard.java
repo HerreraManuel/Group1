@@ -112,41 +112,16 @@ public class Dashboard extends JFrame {
                 });
         urlPanel.add(urlinput);
         leftside.add(urlPanel);
+
         check1 = new JCheckBox("Characters");
-        check1.addActionListener(
-                new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        chars = true;
-                    }
-                });
+
         check2 = new JCheckBox("Words");
-        check2.addActionListener(
-                new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        words = true;
-                    }
-                });
+
         check3 = new JCheckBox("Lines");
-        check3.addActionListener(
-                new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        lines = true;
-                    }
-                });
+
         check4 = new JCheckBox("Source Lines");
-        check4.addActionListener(
-                new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        Sloc = true;
-                    }
-                });
+
         check5 = new JCheckBox("CommentLines");
-        check5.addActionListener(
-                new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        Cloc = true;
-                    }
-                });
 
       /*
       additional input panel is just meant to take in file types to be displayed delimited by a space
@@ -187,29 +162,65 @@ public class Dashboard extends JFrame {
         window.add(rightside);
         window.setVisible(true);
 
-        /*Displays Header
-         */
-        characters = new JLabel("characters");
-        outputDisplay.add(characters);
-        characters.setVisible(false);
+        //CHARACTERS CHECKBOX
+        check1.addActionListener(
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        chars = true;
+                        characters = new JLabel("characters");
+                        outputDisplay.add(characters);
+                        characters.setVisible(false);
+                        leftside.add(outputDisplay);
+                    }
+                });
 
-        word = new JLabel("words");
-        outputDisplay.add(word);
-        word.setVisible(false);
+        //WORDS CHECKBOX
+        check2.addActionListener(
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        words = true;
+                        word = new JLabel("words");
+                        outputDisplay.add(word);
+                        word.setVisible(false);
+                        leftside.add(outputDisplay);
+                    }
+                });
 
-        line = new JLabel("lines");
-        outputDisplay.add(line);
-        line.setVisible(false);
+        //LINES CHECKBOX
+        check3.addActionListener(
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        lines = true;
+                        line = new JLabel("lines");
+                        outputDisplay.add(line);
+                        line.setVisible(false);
+                        leftside.add(outputDisplay);
+                    }
+                });
 
-        commentLine = new JLabel("comment line");
-        outputDisplay.add(commentLine);
-        commentLine.setVisible(false);
+        //SLOC CHECKBOX
+        check4.addActionListener(
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        Sloc = true;
+                        sourceLine = new JLabel("source line");
+                        outputDisplay.add(sourceLine);
+                        sourceLine.setVisible(false);
+                        leftside.add(outputDisplay);
+                    }
+                });
 
-        sourceLine = new JLabel("source line");
-        outputDisplay.add(sourceLine);
-        sourceLine.setVisible(false);
-
-        leftside.add(outputDisplay);
+        //CLOC CHECKBOX
+        check5.addActionListener(
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        Cloc = true;
+                        commentLine = new JLabel("comment line");
+                        outputDisplay.add(commentLine);
+                        commentLine.setVisible(false);
+                        leftside.add(outputDisplay);
+                    }
+                });
 
         enter.addActionListener(
                 new ActionListener() {
