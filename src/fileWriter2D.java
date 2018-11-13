@@ -8,11 +8,13 @@ public class fileWriter2D {
 		try {
 			output = new File("output.txt");
 			StringBuilder builder = new StringBuilder();
+			int[] columnWidth = getColumnWidth(input);
 			for(int i = 0; i < 5; i++)//for each row
 			{
-				for(int j = 0; j < input.length; j++)//for each column
+				for(int j = 0; j < input[0].length; j++)//for each column
 				{
-					builder.append(input[i][j]+" ");//append to the output string
+					String output = String.format("%" + columnWidth[j] +"s",input[i][j]);
+					builder.append(output +" ");//append to the output string
 				}
 				builder.append("\n");//append new line at the end of the row
 			}	
@@ -22,6 +24,17 @@ public class fileWriter2D {
 		}
 		catch(Exception e ) {
 		
+		}
+	}
+	
+	private int[] getColumnWidth(String[][] input){
+		int[] columnWidth = new int [input[0].length];
+		for(int i = 0; i <input.length;i++){
+			for (int j = 0; j < input[0].length; j++){
+				if (input[i][j].length > columnWidth[j]){
+					columnWidth[j] = input[i][j].length;
+				}
+			}
 		}
 	}
 	
