@@ -321,4 +321,14 @@ public class Dashboard extends JFrame {
     private void displayData() {
         //TODO : send url into GitParser to be used and then display it
     }
+    
+    private boolean[] getDisplaySettings{
+        boolean [] displaySettings = new boolean [5];
+        displaySettings [0] = chars;
+        displaySettings [1] = words;
+        displaySettings [2] = lines;
+        displaySettings [3] = Sloc;
+        displaySettings [4] = Cloc;
+        return displaySettings;
+    }
 }
