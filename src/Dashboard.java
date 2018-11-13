@@ -96,9 +96,9 @@ public class Dashboard extends JFrame {
         enterPanel = new JPanel();
         enterPanel.setLayout(new BoxLayout(enterPanel,BoxLayout.X_AXIS));
 
-      /*outputDisplay = new JPanel();
-      GridLayout grid2 = new GridLayout(1, 2);
-      outputDisplay.setLayout(grid2);*/
+        outputDisplay = new JPanel();
+        GridLayout grid2 = new GridLayout(1, 2);
+        outputDisplay.setLayout(grid2);
 
       /*
       puts together all of the buttons and check boxes
@@ -205,13 +205,10 @@ public class Dashboard extends JFrame {
                     }
                 });
 
+
         enter.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-
-                        outputDisplay = new JPanel();
-                        GridLayout grid2 = new GridLayout(1, 2);
-                        outputDisplay.setLayout(grid2);
 
                         if(chars == true){
                             character = new JLabel("characters");
@@ -265,49 +262,35 @@ public class Dashboard extends JFrame {
                         urlinput.setText(null);
                         additionalText.setText(null);
 
-                        sourceLine = new JLabel("source line");
-                        outputDisplay.add(sourceLine);
-                        leftside.add(outputDisplay);
-
                         //clearing characters
-                        if(chars == true){
-                            parent1 = character.getParent();
-                            parent1.remove(character);
-                            parent1.validate();
-                            parent1.repaint();
-                        }
+                        parent1 = character.getParent();
+                        parent1.remove(character);
+                        parent1.validate();
+                        parent1.repaint();
 
                         //clearing words
-                        if(words == true){
-                            parent2 = word.getParent();
-                            parent2.remove(word);
-                            parent2.validate();
-                            parent2.repaint();
-                        }
+                        parent2 = word.getParent();
+                        parent2.remove(word);
+                        parent2.validate();
+                        parent2.repaint();
 
                         //clearing lines
-                        if(lines == true){
-                            parent3 = line.getParent();
-                            parent3.remove(line);
-                            parent3.validate();
-                            parent3.repaint();
-                        }
+                        parent3 = line.getParent();
+                        parent3.remove(line);
+                        parent3.validate();
+                        parent3.repaint();
 
                         //clearing lines
-                        if(Sloc == true){
-                            parent4 = sourceLine.getParent();
-                            parent4.remove(sourceLine);
-                            parent4.validate();
-                            parent4.repaint();
-                        }
+                        parent4 = sourceLine.getParent();
+                        parent4.remove(sourceLine);
+                        parent4.validate();
+                        parent4.repaint();
 
                         //clearing lines
-                        if(Cloc == true){
-                            parent5 = commentLine.getParent();
-                            parent5.remove(commentLine);
-                            parent5.validate();
-                            parent5.repaint();
-                        }
+                        parent5 = commentLine.getParent();
+                        parent5.remove(commentLine);
+                        parent5.validate();
+                        parent5.repaint();
 
                /*
                character.setVisible(false);
