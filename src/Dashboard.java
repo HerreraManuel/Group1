@@ -1,3 +1,5 @@
+//When pressing checkbox twice, it messes the indent.
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -22,8 +24,6 @@ public class Dashboard extends JFrame {
     private String completeUrl;
     private boolean chars, words, lines, Sloc, Cloc;
     private boolean initialized = false;
-
-    private int counter;
 
     private Container parent1, parent2, parent3, parent4, parent5;
 
@@ -171,18 +171,6 @@ public class Dashboard extends JFrame {
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         chars = true;
-                        character = new JLabel("characters");
-                        outputDisplay.add(character);
-                        character.setVisible(false);
-                        leftside.add(outputDisplay);
-                        counter++;
-                        if(counter % 2 == 0){
-                            chars = false;
-                            parent1 = character.getParent();
-                            parent1.remove(character);
-                            parent1.validate();
-                            parent1.repaint();
-                        }
                     }
                 });
 
@@ -191,10 +179,6 @@ public class Dashboard extends JFrame {
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         words = true;
-                        word = new JLabel("words");
-                        outputDisplay.add(word);
-                        word.setVisible(false);
-                        leftside.add(outputDisplay);
                     }
                 });
 
@@ -203,10 +187,6 @@ public class Dashboard extends JFrame {
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         lines = true;
-                        line = new JLabel("lines");
-                        outputDisplay.add(line);
-                        line.setVisible(false);
-                        leftside.add(outputDisplay);
                     }
                 });
 
@@ -215,10 +195,6 @@ public class Dashboard extends JFrame {
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         Sloc = true;
-                        sourceLine = new JLabel("source line");
-                        outputDisplay.add(sourceLine);
-                        sourceLine.setVisible(false);
-                        leftside.add(outputDisplay);
                     }
                 });
 
@@ -227,10 +203,6 @@ public class Dashboard extends JFrame {
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         Cloc = true;
-                        commentLine = new JLabel("comment line");
-                        outputDisplay.add(commentLine);
-                        commentLine.setVisible(false);
-                        leftside.add(outputDisplay);
                     }
                 });
 
@@ -238,24 +210,34 @@ public class Dashboard extends JFrame {
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
 
-                        if(words == true){
-                            word.setVisible(true);
+                        if(chars == true){
+                            character = new JLabel("characters");
+                            outputDisplay.add(character);
+                            leftside.add(outputDisplay);
                         }
 
-                        if(chars == true){
-                            character.setVisible(true);
+                        if(words == true){
+                            word = new JLabel("words");
+                            outputDisplay.add(word);
+                            leftside.add(outputDisplay);
                         }
 
                         if(lines == true){
-                            line.setVisible(true);
+                            line = new JLabel("lines");
+                            outputDisplay.add(line);
+                            leftside.add(outputDisplay);
                         }
 
                         if(Cloc == true){
-                            commentLine.setVisible(true);
+                            commentLine = new JLabel("comment line");
+                            outputDisplay.add(commentLine);
+                            leftside.add(outputDisplay);
                         }
 
                         if(Sloc == true){
-                            sourceLine.setVisible(true);
+                            sourceLine = new JLabel("source line");
+                            outputDisplay.add(sourceLine);
+                            leftside.add(outputDisplay);
                         }
 
                         displayData();
@@ -279,6 +261,10 @@ public class Dashboard extends JFrame {
                         Cloc = false;
                         urlinput.setText(null);
                         additionalText.setText(null);
+
+                        sourceLine = new JLabel("source line");
+                        outputDisplay.add(sourceLine);
+                        leftside.add(outputDisplay);
 
                         //clearing characters
                         parent1 = character.getParent();
@@ -310,11 +296,13 @@ public class Dashboard extends JFrame {
                         parent5.validate();
                         parent5.repaint();
 
-                        character.setVisible(false);
-                        word.setVisible(false);
-                        line.setVisible(false);
-                        commentLine.setVisible(false);
-                        sourceLine.setVisible(false);
+               /*
+               character.setVisible(false);
+               word.setVisible(false);
+               line.setVisible(false);
+               commentLine.setVisible(false);
+               sourceLine.setVisible(false);*/
+
                     }
                 });
     }
