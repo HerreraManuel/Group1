@@ -14,6 +14,8 @@ import javax.swing.text.*;
  *  line of the console
  *
  *  You can limit the number of lines to hold in the Document.
+ *
+ *  https://stackoverflow.com/questions/19834155/jtextarea-as-console
  */
 public class MessageConsole
 {
