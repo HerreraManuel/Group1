@@ -32,25 +32,25 @@ public class GitParser
             throw new IOException("GitParser - Invalid link!");
     }
 
-    //TODO: might need to rework Downloader constructor to not include output file, we can "hardcode" a location to store the file as user does not need to specify where to save file
+    //TODO: might need to rework Clone constructor to not include output file, we can "hardcode" a location to store the file as user does not need to specify where to save file
     public void getGitRepo(String link) throws IOException, GitAPIException
     {
         File out = new File("/home/filipinoy95/Desktop/TestGitFile"); //TODO: Find a location to temporarily save file
-        new Thread(new Downloader(link, out)).start();
+        GitCloner cloner = new GitCloner();
+        cloner.cloneRepository(link, out);
     }
 
-    /* TODO: For tonight...
-     * Downloader is working properly for Windows-based systems
-     * If it is a valid .git repository (we can check via URL), we need to download
-     * the repository and download the file. Once the file has been successfully downloaded,
-     * we need to go find the download file's path and use it to open the repository.
+    /* Notes:
+     * If it is a valid .git repository (we can check via URL), we need to CLONE
+     * the repository and save to a local file. Once the file has been successfully downloaded,
+     * we need to go find the repository's file path and use it to open the repository.
      */
 
     //Verify that given link leads to a git file
     public boolean isGitURL(String link)
     {
-        String fileExtension = link.substring(link.lastIndexOf("."));
-        if(fileExtension.equals(".git"))
+        String extension = link.substring(link.lastIndexOf("."));
+        if(extension.equals(".git"))
         {
             System.out.println("Valid Git URL");
             return true;

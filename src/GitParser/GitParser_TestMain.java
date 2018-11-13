@@ -56,8 +56,8 @@ public class GitParser_TestMain
         String invalidURL = "https://pdfs.semanticscholar.org/efb2/58d7812128aa19709520b1a567da98227cc5.pdf";
         try
         {
-            GitParser test = new GitParser(invalidURL); //Should throw IOException labeled 'GitParser - Invalid link!'
-            test = new GitParser(validURL); //Should be able to download gitFile, downloads a file, but does not seem to look like a git repository
+            //GitParser test = new GitParser(invalidURL); //Should throw IOException labeled 'GitParser - Invalid link!'
+            GitParser test = new GitParser(validURL); //Should be able to download gitFile, downloads a file, but does not seem to look like a git repository
         }
         catch (GitAPIException e)
         {
