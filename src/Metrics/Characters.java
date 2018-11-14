@@ -7,12 +7,12 @@ String filename;
 int chars;
 int charTotal;
 
-    public void charaCount() {
+    public void characterCount() {
         try {
             FileReader file = new FileReader(filename);
             BufferedReader buffer = new BufferedReader(file);
 
-            while (buffer.read() != -1) {
+            while (buffer.read() != -1) {  // -1 indicates end of stream
                 chars++;
             }
             charTotal+=chars;
