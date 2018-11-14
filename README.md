@@ -137,6 +137,14 @@
                  3.2.1.2e Will provide the Source Line Count of a file
        
 ##### 3.3 Performance Requirements
+         3.3.1 Prominent URL Search 
+            Title: Prominent URL Search
+            Desc:  Where to enter the URL should be easy to find for the user.
+          
+          3.3.2 Prominent File Type Search
+              Title: Prominent File Type Search
+              Desc:  
+         
 ##### 3.4 Design Constraints
 ##### 3.5 Attributes
 ##### 3.6 Other Requirements
