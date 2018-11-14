@@ -18,7 +18,7 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-//TODO: CLASS NO LONGER NECESSARY - LEAVING IN CODE FOR FUTURE USE
+//TODO: CLASS OBSOLETE - LEAVING IN CODE FOR FUTURE USE
 public class Downloader implements Runnable
 {
     private String link;        //link to file
