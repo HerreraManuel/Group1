@@ -94,7 +94,17 @@
     the user will need to insert a valid GitHub URL and check which metrics they want 
     returned from the repository's files. 
 ##### 2.4 General Constraints
-
+    The GUI application is constrained by the languages it can read. Therefore, if the
+    user requests specific language metrics, it will only return the ones the system
+    can read.
+    
+    Another constraint in an internet connection. The application pulls the requested
+    repository from GitHub's database and it's necessary the system is connected to 
+    the internet for application to function.
+    
+    The application will contstrained by GitHubs database and may be forced to queue 
+    incoming request. It will either timeout and if repository is large, it will increase
+    the time to retreive data.
 ### 3. Detailed  Requirements
 ##### 3.1 External Interface Requirements
     3.1.1 User Interfaces
