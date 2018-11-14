@@ -66,7 +66,7 @@ public class GitParser_TestMain
 
         //Valid URLs
         String validURL = "https://github.com/CSC131Fall2018/Group1.git";
-        String validURL2 = "https://github.com/lemire/javaewah";
+        String validURL2 = "https://github.com/lemire/javaewah.git";
 
         //Invalid URLs
         String invalidURL = "https://pdfs.semanticscholar.org/efb2/58d7812128aa19709520b1a567da98227cc5.pdf";
@@ -75,7 +75,7 @@ public class GitParser_TestMain
         {
             //GitParser test = new GitParser(invalidURL); //Should throw IOException labeled 'GitParser - Invalid link!'
             GitParser test = new GitParser(); //Should be able to download gitFile, downloads a file, but does not seem to look like a git repository
-            test.getGitRepo(); //TODO: <---- ENTER URL variable here
+            test.getGitRepo(validURL2); //TODO: <---- ENTER URL variable here
         }
         catch (GitAPIException e)
         {

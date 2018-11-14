@@ -22,8 +22,6 @@ import java.io.IOException;
 
 public class GitParser
 {
-    private File repository;
-
     public GitParser()
     { }
 
@@ -33,14 +31,13 @@ public class GitParser
         boolean validURL = isGitURL(link);
 
         if(validURL)
-            getGitRepo(link);
+        {
+            File out = new File("/home/filipinoy/Desktop/TestRepo"); //TODO: <--- Modify this constructor with a string that includes the filepath and folder name that you wish to clone the repository to.
+            GitCloner cloner = new GitCloner();
+            cloner.cloneRepository(link, out);
+        }
         else
             throw new IOException("GitParser - Invalid link!");
-
-        File out = new File(""); //TODO: <--- Modify this constructor with a string that includes the filepath and folder name that you wish to clone the repository to.
-        GitCloner cloner = new GitCloner();
-        cloner.cloneRepository(link, out);
-        repository = out;
     }
 
     /* Notes:
@@ -53,9 +50,9 @@ public class GitParser
     public boolean isGitURL(String link)
     {
         String extension = link.substring(link.lastIndexOf("."));
-        String gitHub_websiteAddress = "https://github.com/";
+        String websiteAddress = "https://github.com/";
 
-        if(link.contains(gitHub_websiteAddress) && extension.equals(".git"))
+        if(link.contains("https://github.com/") && extension.equals(".git")) //TODO: Perhaps a better validation can be used here...
         {
             System.out.println("Valid Git URL");
             return true;
@@ -63,11 +60,4 @@ public class GitParser
         else
             return false;
     }
-
-    //Get repository
-    public File getRepository()
-    {
-        return repository;
-    }
-
 }
