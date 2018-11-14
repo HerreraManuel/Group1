@@ -66,12 +66,18 @@
     
 
 ### 2. Overall Description
-##### 2.1 Product
-**Relationship of the product to other products; defining if the product is 
-independent or is a part of a larger product, and what the principal interfaces 
-of the product are** \
+##### 2.1 Product Perspective
  The system consists of a single entity. A Java GUI application will be used to
- present metrics from valid Github repositories.
+ present metrics from valid Github repositories. 
+ 
+ The GUI application will communicate with the GitHub and download the repository
+ from the GitHub database.
+ 
+ The download files from the database will be stored in a local folder of the 
+ user. The GUI application will not modify the files but will run metrics requested.
+ Communication between the GUI application and database will be over the internet.
+ The GUI application will only be allowed to store temporary files and will delete
+ the local repository once done. Resource allocation is to be determined.
 ##### 2.2 Product Functions
 ##### 2.3 User Characteristics
 ##### 2.4 General Constraints
