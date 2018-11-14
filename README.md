@@ -3,7 +3,7 @@
 
 
 ### Github Metrics Application
-### Version 0.5
+### Version 0.8
 ### Group 1
 
 #### Jenzel Arevalo
@@ -105,7 +105,12 @@
     The application will contstrained by GitHubs database and may be forced to queue 
     incoming request. It will either timeout and if repository is large, it will increase
     the time to retreive data.
-### 3. Detailed  Requirements
+##### 2.5 Assumptions and Dependencies
+    One assumption is the user will have enough hardware memory to store the temporary
+    files while the application runs its metrics. If the application does not have
+    enough memory, the user will be requested to make room before the application runs.
+    There may exist scenarios where the application does not run or work as it should.
+### 3. Detailed  Requirements         
 ##### 3.1 External Interface Requirements
     3.1.1 User Interfaces
     3.1.2 Hardware Interfaces
