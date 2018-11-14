@@ -71,7 +71,7 @@ public class Dashboard extends JFrame {
     */
         initialized = true;
         window = new JFrame("Metrics");
-        window.setLayout(new FlowLayout());
+        window.setLayout(new FlowLayout(FlowLayout.LEADING));
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         window.setSize((int)screenSize.getWidth(), (int)screenSize.getHeight());
      /*
