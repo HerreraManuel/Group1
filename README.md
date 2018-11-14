@@ -123,6 +123,16 @@
         
     3.1.4 Communication Interfaces
 ##### 3.2 Functional Requirements
+     3.2.1 Mode 1
+       3.2.1.1 Functional Requirement 1.1 
+       The system will take in a GitHub URL
+       
+       3.2.1.2 Funcrional Requirement 1.2
+       Provide the metric chosen by the user
+       3.2.1.2a Will provide the Character Count of a file
+       3.2.1.2b Will provide the Word Count of a file
+       3.2.1.2c Will provide the Line Count of a file
+       
 ##### 3.3 Performance Requirements
 ##### 3.4 Design Constraints
 ##### 3.5 Attributes
