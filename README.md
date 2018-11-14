@@ -112,9 +112,15 @@
     There may exist scenarios where the application does not run or work as it should.
 ### 3. Detailed  Requirements         
 ##### 3.1 External Interface Requirements
-    3.1.1 User Interfaces
+    3.1.1 User Interfaces -> TO BE WORKED ON
+            Every user will see where they can insert a valid GitHub repository
+            URL. Underneath the URL input box, the user can set which metrics to run on
+            the files.
     3.1.2 Hardware Interfaces
+            There is no direct hardware interface because the application has no
+            designated hardware. The database server is managed by GitHub.
     3.1.3 Software Interfaces
+        
     3.1.4 Communication Interfaces
 ##### 3.2 Functional Requirements
 ##### 3.3 Performance Requirements
