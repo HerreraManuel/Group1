@@ -18,7 +18,7 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-//TODO: Class may no longer be necessary, we are CLONING an existing repository from GitHub, not really downloading a file
+//TODO: CLASS NO LONGER NECESSARY - LEAVING IN CODE FOR FUTURE USE
 public class Downloader implements Runnable
 {
     private String link;        //link to file
