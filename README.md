@@ -88,6 +88,11 @@
     repository will be the columns. A static end-column will exists for quick view of the
     totals for each metrics.  
 ##### 2.3 User Characteristics
+    There is _____ users. A GUI application user.
+    
+    The GUI application user can only use the application to request metrics. Therefore,
+    the user will need to insert a valid GitHub URL and check which metrics they want 
+    returned from the repository's files. 
 ##### 2.4 General Constraints
 
 ### 3. Detailed  Requirements
