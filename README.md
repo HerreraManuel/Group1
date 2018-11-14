@@ -67,18 +67,26 @@
 
 ### 2. Overall Description
 ##### 2.1 Product Perspective
- The system consists of a single entity. A Java GUI application will be used to
- present metrics from valid Github repositories. 
+    The system consists of a single entity. A Java GUI application will be used to
+    present metrics from valid Github repositories. 
  
- The GUI application will communicate with the GitHub and download the repository
- from the GitHub database.
+    The GUI application will communicate with the GitHub and download the repository
+    from the GitHub database.
  
- The download files from the database will be stored in a local folder of the 
- user. The GUI application will not modify the files but will run metrics requested.
- Communication between the GUI application and database will be over the internet.
- The GUI application will only be allowed to store temporary files and will delete
- the local repository once done. Resource allocation is to be determined.
+    The download files from the database will be stored in a local folder of the 
+    user. The GUI application will not modify the files but will run metrics requested.
+    Communication between the GUI application and database will be over the internet.
+    The GUI application will only be allowed to store temporary files and will delete
+    the local repository once done. Resource allocation is to be determined.
 ##### 2.2 Product Functions
+    Within the GUI application, the user input a valid GitHub repository URL and will 
+    be able to request metrics from a GitHub.
+    
+    Returned results will display on right side of the application in a table list format.
+    If the amount of files exceeds normal display, the window will be scrollable to view
+    more files and their metrics. List of metrics will be the rows and the files from the
+    repository will be the columns. A static end-column will exists for quick view of the
+    totals for each metrics.  
 ##### 2.3 User Characteristics
 ##### 2.4 General Constraints
 
