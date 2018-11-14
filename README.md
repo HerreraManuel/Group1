@@ -123,27 +123,34 @@
         
     3.1.4 Communication Interfaces
 ##### 3.2 Functional Requirements
-        3.2.1 Mode 1  *** figure out how to incorporate Use Cases 
+        3.2.1 Mode 1  *** change these later to incorporate Use Cases 
         
         3.2.1.1 Functional Requirement 1.1 
              The system will take in a GitHub URL
+             
+        3.2.1.2 Functional Requirement 1.2
+              The system will take in the file type
        
-        3.2.1.2 Funcrional Requirement 1.2
+        3.2.1.3 Funcrional Requirement 1.2
              Calculate the chosen metric by the user
-                 3.2.1.2a Will provide the Character Count of a file
-                 3.2.1.2b Will provide the Word Count of a file
-                 3.2.1.2c Will provide the Line Count of a file
-                 3.2.1.2d Will provide the Comment Count of a file
-                 3.2.1.2e Will provide the Source Line Count of a file
+                 3.2.1.3a Will provide the Character Count of a file
+                 3.2.1.3b Will provide the Word Count of a file
+                 3.2.1.3c Will provide the Line Count of a file
+                 3.2.1.3d Will provide the Comment Count of a file
+                 3.2.1.3e Will provide the Source Line Count of a file
        
 ##### 3.3 Performance Requirements
          3.3.1 Prominent URL Search 
             Title: Prominent URL Search
-            Desc:  Where to enter the URL should be easy to find for the user.
+             Desc: Where to enter the URL should be easy to find for the user.
           
           3.3.2 Prominent File Type Search
               Title: Prominent File Type Search
-              Desc:  
+               Desc: Where to indicate the file type should be easy to find for the user
+               
+          3.3.3 Usage of Metrics Check Boxes
+              Title: Usage of Metrics Check Boxes
+               Desc: The check boxes should be clear in representing the chosen metric
          
 ##### 3.4 Design Constraints
 ##### 3.5 Attributes
