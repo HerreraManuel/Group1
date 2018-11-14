@@ -8,8 +8,8 @@
 
   Notes:
 
-    Given its current state, Windows, Linux, and MacOS users are able to download
-    files to their system.
+    Given its current state, Windows, Linux, and MacOS users are able to clone Git
+    repositories to their system.
 
     It should be noted that the path to the output file differs for Windows
     and -nix based systems.
@@ -51,13 +51,31 @@ public class GitParser_TestMain
         /**** Downloader Test Code Ends Here ****/
 
 
+
+
+
+
+
+
+
         /********* GitParser Test Code *********/
+
+        //TODO: Instructions to get GitParser Test Code Running
+        //1. Choose one of the valid or invalid URLs below
+        //2. In GitParser class, see line 40 and specify a file path and folder name that you would like to save the repo to, read the header comment of this file for an example of what to write
+
+        //Valid URLs
         String validURL = "https://github.com/CSC131Fall2018/Group1.git";
+        String validURL2 = "https://github.com/lemire/javaewah";
+
+        //Invalid URLs
         String invalidURL = "https://pdfs.semanticscholar.org/efb2/58d7812128aa19709520b1a567da98227cc5.pdf";
+
         try
         {
             //GitParser test = new GitParser(invalidURL); //Should throw IOException labeled 'GitParser - Invalid link!'
-            GitParser test = new GitParser(validURL); //Should be able to download gitFile, downloads a file, but does not seem to look like a git repository
+            GitParser test = new GitParser(); //Should be able to download gitFile, downloads a file, but does not seem to look like a git repository
+            test.getGitRepo(); //TODO: <---- ENTER URL variable here
         }
         catch (GitAPIException e)
         {
