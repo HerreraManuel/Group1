@@ -24,7 +24,7 @@ public class Dashboard extends JFrame {
     private JCheckBox check1, check2, check3, check4, check5;
     private JButton enter, clear;
     private String completeUrl;
-    private boolean chars, words, lines, Sloc, Cloc;
+
     private boolean initialized = false;
 
     private Container parent1, parent2, parent3, parent4, parent5;
@@ -175,7 +175,7 @@ public class Dashboard extends JFrame {
         check1.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        chars = true;
+
                     }
                 });
 
@@ -183,7 +183,7 @@ public class Dashboard extends JFrame {
         check2.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        words = true;
+
                     }
                 });
 
@@ -191,7 +191,7 @@ public class Dashboard extends JFrame {
         check3.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        lines = true;
+
                     }
                 });
 
@@ -199,7 +199,7 @@ public class Dashboard extends JFrame {
         check4.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        Sloc = true;
+
                     }
                 });
 
@@ -207,7 +207,7 @@ public class Dashboard extends JFrame {
         check5.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        Cloc = true;
+
                     }
                 });
 
