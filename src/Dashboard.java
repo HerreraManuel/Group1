@@ -160,12 +160,12 @@ public class Dashboard extends JFrame {
         leftside.add(enterPanel);
         window.add(leftside);
         Display = new JTextArea();
-        Display.setEditable(false);
-        scroll = new JScrollPane(Display);
-        scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
-        rightside.add(scroll);
-        totals = new JTextArea();
-        rightside.add(totals);
+        //Display.setEditable(false);
+        //scroll = new JScrollPane(Display);
+        //scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        //rightside.add(scroll);
+        //totals = new JTextArea();
+        //rightside.add(totals);
         window.add(rightside);
         window.setVisible(true);
 
