@@ -80,10 +80,11 @@ public class Dashboard extends JFrame {
      */
         leftside = new JPanel();
         leftside.setLayout(new BoxLayout(leftside, BoxLayout.Y_AXIS));
+        leftside.setSize((int)screenSize.getWidth()/2, (int)screenSize.getHeight());
 
         rightside = new JPanel();
         rightside.setLayout(new BoxLayout(rightside, BoxLayout.X_AXIS));
-
+        rightside.setSize((int)screenSize.getWidth()/2, (int)screenSize.getHeight());
 
         urlPanel = new JPanel();
         urlPanel.setLayout(new BoxLayout(urlPanel, BoxLayout.Y_AXIS));
