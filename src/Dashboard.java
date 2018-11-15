@@ -80,11 +80,10 @@ public class Dashboard extends JFrame {
      */
         leftside = new JPanel();
         leftside.setLayout(new BoxLayout(leftside, BoxLayout.Y_AXIS));
-        //leftside.setPreferredSize((int)(screenSize.getWidth()/2),(int)(screenSize.getHeight()/2));
 
         rightside = new JPanel();
         rightside.setLayout(new BoxLayout(rightside, BoxLayout.X_AXIS));
-        //rightside.setPreferredSize((int)(screenSize.getWidth()/2),(int)(screenSize.getHeight()/2));
+
 
         urlPanel = new JPanel();
         urlPanel.setLayout(new BoxLayout(urlPanel, BoxLayout.Y_AXIS));
@@ -132,7 +131,7 @@ public class Dashboard extends JFrame {
     /*
     additional input panel is just meant to take in file types to be displayed delimited by a space
     */
-        additionalInput = new JLabel("Enter file type that you would like to view. Such as .java .c or .hpp separated by spaces.");
+        additionalInput = new JLabel("Enter file suffix to search (EX: .java .txt .c)");
         additionalText = new JTextField(30);
         additionalPanel.add(additionalInput);
         additionalPanel.add(additionalText);
