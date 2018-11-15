@@ -328,22 +328,30 @@ public class Dashboard extends JFrame {
         fileWriter2D currentFile = new fileWriter2D(currentInformation);
         File outputFile = currentFile.getFile();
         int[] columnWidth = getColumnWidth(currentInformation);
+	boolean[] displaySetting = getDisplaySettings
         StringBuilder fileBuilder = new StringBuilder();
         StringBuilder totalBuilder = new StringBuilder("Totals\n");
         for (int i = 0; i < 5; i++){
             currentNum = 0;
             for (int j = 0; j < numFiles; j++){
-                String output = String.format("%" + columnWidth[j] + "s", input[i][j]);
-                fileBuilder.append(output + " ");//append to the output string
-                if (i>0){
+                if(i > 0 &&  displaySetting[i-1] == true){
+                    String output = String.format("%" + columnWidth[j] + "s", input[i][j]);
+                    fileBuilder.append(output + " ");//append to the output string
                     if (currentInformation [i+1][j].equals("N/A")){
                     } 
                     else{  
                         currentNum += (int) currentInformation [i+1][j];
                     }
                 }
+                else if(i ==0){
+                        String output = String.format("%" + columnWidth[j] + "s", input[i][j]);
+                    fileBuilder.append(output + " ");//append to the output string
+                }
+                
             }
-            totalBuilder.append(currentNum +"\n");
+            if(i > 0 &&  displaySetting[i-1] == true){
+              totalBuilder.append(currentNum +"\n");
+            }
         }
         Display = new JTextArea(fileBuilder);
         totals = new JTextArea(totalBuilder);
@@ -355,11 +363,11 @@ public class Dashboard extends JFrame {
 
     private boolean[] getDisplaySettings(){
         boolean [] displaySettings = new boolean [5];
-        displaySettings [0] = chars;
-        displaySettings [1] = words;
-        displaySettings [2] = lines;
-        displaySettings [3] = Sloc;
-        displaySettings [4] = Cloc;
+        displaySettings [0] = check1.isSelected();
+        displaySettings [1] = check2.isSelected();
+        displaySettings [2] = check3.isSelected();
+        displaySettings [3] = check4.isSelected();
+        displaySettings [4] = check5.isSelected();
         return displaySettings;
     }
     
