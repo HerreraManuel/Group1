@@ -36,28 +36,6 @@ public class GitParser_TestMain
 {
     public static void main(String[] args)
     {
-        /********* Downloader Test Code *********/
-        //String link = "https://pdfs.semanticscholar.org/efb2/58d7812128aa19709520b1a567da98227cc5.pdf"; //TEST: "A Concise Introduction to Software Engineering" PDF file
-
-        /* Example for Windows based Systems */
-        //File out = new File("C:\\Users\\Zoran David\\Desktop\\Java The Complete.pdf")
-
-        /* Example for -nix based Systems */
-        //File out = new File("/home/filipinoy95/Downloads/A Concise Introduction to Software Engineering.pdf");
-
-        File out = new File (" "); //TODO: Enter a valid path and file name with extension
-
-        //new Thread(new Downloader(link, out)).start(); //TODO: Uncomment this if you want to test Downloader class
-        /**** Downloader Test Code Ends Here ****/
-
-
-
-
-
-
-
-
-
         /********* GitParser Test Code *********/
 
         //TODO: Instructions to get GitParser Test Code Running
@@ -75,7 +53,11 @@ public class GitParser_TestMain
         {
             //GitParser test = new GitParser(invalidURL); //Should throw IOException labeled 'GitParser - Invalid link!'
             GitParser test = new GitParser(); //Should be able to download gitFile, downloads a file, but does not seem to look like a git repository
-            test.getGitRepo(validURL2); //TODO: <---- ENTER URL variable here
+
+            File f = test.getGitRepo(validURL2); //TODO: <---- ENTER URL variable here
+
+            Repository repo = new Repository();
+            repo.listRepositoryFiles(f);
         }
         catch (GitAPIException e)
         {
