@@ -2,6 +2,7 @@
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 import java.lang.*; //here
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -323,6 +324,10 @@ public class Dashboard extends JFrame {
     */
     private void displayData() {
         //TODO : send url into GitParser to be used and then display it
+        String [] [] currentInformation = new String[0][0];
+        fileWriter2D currentFile = new fileWriter2D(currentInformation);
+        File outputFile = currentFile.getFile();
+        
     }
 
     private boolean[] getDisplaySettings(){
