@@ -5,6 +5,7 @@ import org.eclipse.jgit.storage.file.FileRepositoryBuilder;
 
 import java.io.IOException;
 
+//TODO: CLASS OBSOLETE - LEAVING IN CODE FOR FUTURE USE
 public class Helper
 {
     public static Repository openJGitRepository() throws IOException

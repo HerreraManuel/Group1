@@ -5,8 +5,8 @@
  *
  *
  * External Contributions:
- * + OpenRepository Procedure (mobiblunt and maibin)
- *   https://github.com/eugenp/tutorials/blob/master/JGit/src/main/java/com/baeldung/jgit/OpenRepository.java
+ * + Code Affine - How to Clone a Git Repository w. JGit
+ *   https://www.codeaffine.com/2015/11/30/jgit-clone-repository/
  *
  */
 
@@ -22,22 +22,22 @@ import java.io.IOException;
 
 public class GitParser
 {
-    public GitParser(String link) throws IOException, GitAPIException
-    {
-        boolean validURL = isGitURL(link);
-
-        if(validURL)
-            getGitRepo(link);
-        else
-            throw new IOException("GitParser - Invalid link!");
-    }
+    public GitParser()
+    { }
 
     //TODO: might need to rework Clone constructor to not include output file, we can "hardcode" a location to store the file as user does not need to specify where to save file
     public void getGitRepo(String link) throws IOException, GitAPIException
     {
-        File out = new File("/home/filipinoy95/Desktop/TestGitFile"); //TODO: Find a location to temporarily save file
-        GitCloner cloner = new GitCloner();
-        cloner.cloneRepository(link, out);
+        boolean validURL = isGitURL(link);
+
+        if(validURL)
+        {
+            File out = new File("/home/filipinoy/Desktop/TestRepo"); //TODO: <--- Modify this constructor with a string that includes the filepath and folder name that you wish to clone the repository to.
+            GitCloner cloner = new GitCloner();
+            cloner.cloneRepository(link, out);
+        }
+        else
+            throw new IOException("GitParser - Invalid link!");
     }
 
     /* Notes:
@@ -50,7 +50,9 @@ public class GitParser
     public boolean isGitURL(String link)
     {
         String extension = link.substring(link.lastIndexOf("."));
-        if(extension.equals(".git"))
+        String websiteAddress = "https://github.com/";
+
+        if(link.contains("https://github.com/") && extension.equals(".git")) //TODO: Perhaps a better validation can be used here...
         {
             System.out.println("Valid Git URL");
             return true;
@@ -58,5 +60,4 @@ public class GitParser
         else
             return false;
     }
-
 }

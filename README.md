@@ -3,7 +3,7 @@
 
 
 ### Github Metrics Application
-### Version 0.5
+### Version 0.8
 ### Group 1
 
 #### Jenzel Arevalo
@@ -66,24 +66,92 @@
     
 
 ### 2. Overall Description
-##### 2.1 Product
-**Relationship of the product to other products; defining if the product is 
-independent or is a part of a larger product, and what the principal interfaces 
-of the product are** \
- The system consists of a single entity. A Java GUI application will be used to
- present metrics from valid Github repositories.
+##### 2.1 Product Perspective
+    The system consists of a single entity. A Java GUI application will be used to
+    present metrics from valid Github repositories. 
+ 
+    The GUI application will communicate with the GitHub and download the repository
+    from the GitHub database.
+ 
+    The download files from the database will be stored in a local folder of the 
+    user. The GUI application will not modify the files but will run metrics requested.
+    Communication between the GUI application and database will be over the internet.
+    The GUI application will only be allowed to store temporary files and will delete
+    the local repository once done. Resource allocation is to be determined.
 ##### 2.2 Product Functions
+    Within the GUI application, the user input a valid GitHub repository URL and will 
+    be able to request metrics from a GitHub.
+    
+    Returned results will display on right side of the application in a table list format.
+    If the amount of files exceeds normal display, the window will be scrollable to view
+    more files and their metrics. List of metrics will be the rows and the files from the
+    repository will be the columns. A static end-column will exists for quick view of the
+    totals for each metrics.  
 ##### 2.3 User Characteristics
+    There is _____ users. A GUI application user.
+    
+    The GUI application user can only use the application to request metrics. Therefore,
+    the user will need to insert a valid GitHub URL and check which metrics they want 
+    returned from the repository's files. 
 ##### 2.4 General Constraints
-
-### 3. Detailed  Requirements
+    The GUI application is constrained by the languages it can read. Therefore, if the
+    user requests specific language metrics, it will only return the ones the system
+    can read.
+    
+    Another constraint in an internet connection. The application pulls the requested
+    repository from GitHub's database and it's necessary the system is connected to 
+    the internet for application to function.
+    
+    The application will contstrained by GitHubs database and may be forced to queue 
+    incoming request. It will either timeout and if repository is large, it will increase
+    the time to retreive data.
+##### 2.5 Assumptions and Dependencies
+    One assumption is the user will have enough hardware memory to store the temporary
+    files while the application runs its metrics. If the application does not have
+    enough memory, the user will be requested to make room before the application runs.
+    There may exist scenarios where the application does not run or work as it should.
+### 3. Detailed  Requirements         
 ##### 3.1 External Interface Requirements
-    3.1.1 User Interfaces
+    3.1.1 User Interfaces -> TO BE WORKED ON
+            Every user will see where they can insert a valid GitHub repository
+            URL. Underneath the URL input box, the user can set which metrics to run on
+            the files.
     3.1.2 Hardware Interfaces
+            There is no direct hardware interface because the application has no
+            designated hardware. The database server is managed by GitHub.
     3.1.3 Software Interfaces
+        
     3.1.4 Communication Interfaces
 ##### 3.2 Functional Requirements
+        3.2.1 Mode 1  *** change these later to incorporate Use Cases 
+        
+        3.2.1.1 Functional Requirement 1.1 
+             The system will take in a GitHub URL
+             
+        3.2.1.2 Functional Requirement 1.2
+              The system will take in the file type
+       
+        3.2.1.3 Funcrional Requirement 1.2
+             Calculate the chosen metric by the user
+                 3.2.1.3a Will provide the Character Count of a file
+                 3.2.1.3b Will provide the Word Count of a file
+                 3.2.1.3c Will provide the Line Count of a file
+                 3.2.1.3d Will provide the Comment Count of a file
+                 3.2.1.3e Will provide the Source Line Count of a file
+       
 ##### 3.3 Performance Requirements
+         3.3.1 Prominent URL Search 
+            Title: Prominent URL Search
+             Desc: Where to enter the URL should be easy to find for the user.
+          
+          3.3.2 Prominent File Type Search
+              Title: Prominent File Type Search
+               Desc: Where to indicate the file type should be easy to find for the user
+               
+          3.3.3 Usage of Metrics Check Boxes
+              Title: Usage of Metrics Check Boxes
+               Desc: The check boxes should be clear in representing the chosen metric
+         
 ##### 3.4 Design Constraints
 ##### 3.5 Attributes
 ##### 3.6 Other Requirements
