@@ -84,7 +84,7 @@ public class Dashboard extends JFrame {
         leftside.setSize((int)screenSize.getWidth()/2, (int)screenSize.getHeight());
 
         rightside = new JPanel();
-        rightside.setLayout(new BoxLayout(rightside, BoxLayout.X_AXIS));
+        rightside.setLayout(new FlowLayout(FlowLayout.LEADING));
         rightside.setSize((int)screenSize.getWidth()/2, (int)screenSize.getHeight());
 
         urlPanel = new JPanel();
@@ -327,7 +327,30 @@ public class Dashboard extends JFrame {
         String [] [] currentInformation = new String[0][0];
         fileWriter2D currentFile = new fileWriter2D(currentInformation);
         File outputFile = currentFile.getFile();
-        
+        int[] columnWidth = getColumnWidth(currentInformation);
+        StringBuilder fileBuilder = new StringBuilder();
+        StringBuilder totalBuilder = new StringBuilder("Totals\n");
+        for (int i = 0; i < 5; i++){
+            currentNum = 0;
+            for (int j = 0; j < numFiles; j++){
+                String output = String.format("%" + columnWidth[j] + "s", input[i][j]);
+                fileBuilder.append(output + " ");//append to the output string
+                if (i>0){
+                    if (currentInformation [i+1][j].equals("N/A")){
+                    } 
+                    else{  
+                        currentNum += (int) currentInformation [i+1][j];
+                    }
+                }
+            }
+            totalBuilder.append(currentNum +"\n");
+        }
+        Display = new JTextArea(fileBuilder);
+        totals = new JTextArea(totalBuilder);
+        JScrollPane scroll = new JscrollPane(Display);
+        scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        rightside.add(scroll);
+        window.setVisible(true);
     }
 
     private boolean[] getDisplaySettings(){
@@ -339,4 +362,17 @@ public class Dashboard extends JFrame {
         displaySettings [4] = Cloc;
         return displaySettings;
     }
+    
+    private int[] getColumnWidth(String[][] input) {
+		int[] columnWidth = new int[input[0].length];
+		for (int i = 0; i < input.length; i++) {
+			for (int j = 0; j < input[0].length; j++) {
+				if (input[i][j].length() > columnWidth[j]) {
+				    columnWidth[j] = input[i][j].length();
+				}
+			}
+		}
+		// temp return
+		return columnWidth;
+	}
 }
