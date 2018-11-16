@@ -328,7 +328,7 @@ public class Dashboard extends JFrame {
         fileWriter2D currentFile = new fileWriter2D(currentInformation);
         File outputFile = currentFile.getFile();
         int[] columnWidth = getColumnWidth(currentInformation);
-	boolean[] displaySetting = getDisplaySettings
+	    boolean[] displaySetting = getDisplaySettings;
         StringBuilder fileBuilder = new StringBuilder();
         StringBuilder totalBuilder = new StringBuilder("Totals\n");
         for (int i = 0; i < 5; i++){
