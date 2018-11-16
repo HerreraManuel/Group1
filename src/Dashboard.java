@@ -13,9 +13,8 @@ public class Dashboard extends JFrame {
     private JPanel leftside, urlPanel, additionalPanel, totbuttons, enterPanel, outputDisplay;
     private JPanel rightside;
 
-    private JTextArea Display;
+    private JTextArea Display, totals;
     private JScrollPane scroll;
-    private JTextArea totals;
 
     private JLabel githubUrlInput, additionalInput, character, word, line, commentLine, sourceLine;
     private JTextField urlinput, additionalText;
