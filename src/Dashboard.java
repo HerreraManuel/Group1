@@ -1,4 +1,3 @@
-
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
@@ -168,7 +167,7 @@ public class Dashboard extends JFrame {
         window.add(rightside);
         window.setVisible(true);
 
-         
+
         enter.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
@@ -213,15 +212,10 @@ public class Dashboard extends JFrame {
                         Display.setText(null);
                         totals.setText(null);
                         check1.setSelected(false);
-                        chars = false;
                         check2.setSelected(false);
-                        words = false;
                         check3.setSelected(false);
-                        lines = false;
                         check4.setSelected(false);
-                        Sloc = false;
                         check5.setSelected(false);
-                        Cloc = false;
                         urlinput.setText(null);
                         additionalText.setText(null);
 
@@ -286,7 +280,7 @@ public class Dashboard extends JFrame {
         fileWriter2D currentFile = new fileWriter2D(currentInformation);
         File outputFile = currentFile.getFile();
         int[] columnWidth = getColumnWidth(currentInformation);
-	    boolean[] displaySetting = getDisplaySettings;
+        boolean[] displaySetting = getDisplaySettings;
         StringBuilder fileBuilder = new StringBuilder();
         StringBuilder totalBuilder = new StringBuilder("Totals\n");
         for (int i = 0; i < 5; i++){
@@ -296,19 +290,19 @@ public class Dashboard extends JFrame {
                     String output = String.format("%" + columnWidth[j] + "s", input[i][j]);
                     fileBuilder.append(output + " ");//append to the output string
                     if (currentInformation [i+1][j].equals("N/A")){
-                    } 
-                    else{  
+                    }
+                    else{
                         currentNum += (int) currentInformation [i+1][j];
                     }
                 }
                 else if(i ==0){
-                        String output = String.format("%" + columnWidth[j] + "s", input[i][j]);
+                    String output = String.format("%" + columnWidth[j] + "s", input[i][j]);
                     fileBuilder.append(output + " ");//append to the output string
                 }
-                
+
             }
             if(i > 0 &&  displaySetting[i-1] == true){
-              totalBuilder.append(currentNum +"\n");
+                totalBuilder.append(currentNum +"\n");
             }
         }
         Display = new JTextArea(fileBuilder);
@@ -318,7 +312,7 @@ public class Dashboard extends JFrame {
         rightside.add(scroll);
         window.setVisible(true);
     }
- 
+
     /*
     This returns the booleans of all dispaly items for the output.
     The isSelected is used to go around an action listener and use the functionality of the JCheckBox
@@ -333,20 +327,20 @@ public class Dashboard extends JFrame {
         displaySettings [4] = check5.isSelected();
         return displaySettings;
     }
-    
-   /*
-   returns the width of each file column so they are all aligned together for a better looking output
-   */
+
+    /*
+    returns the width of each file column so they are all aligned together for a better looking output
+    */
     private int[] getColumnWidth(String[][] input) {
-		int[] columnWidth = new int[input[0].length];
-		for (int i = 0; i < input.length; i++) {
-			for (int j = 0; j < input[0].length; j++) {
-				if (input[i][j].length() > columnWidth[j]) {
-				    columnWidth[j] = input[i][j].length();
-				}
-			}
-		}
-		// temp return
-		return columnWidth;
-	}
+        int[] columnWidth = new int[input[0].length];
+        for (int i = 0; i < input.length; i++) {
+            for (int j = 0; j < input[0].length; j++) {
+                if (input[i][j].length() > columnWidth[j]) {
+                    columnWidth[j] = input[i][j].length();
+                }
+            }
+        }
+        // temp return
+        return columnWidth;
+    }
 }
