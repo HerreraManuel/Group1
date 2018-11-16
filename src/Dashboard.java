@@ -284,7 +284,7 @@ public class Dashboard extends JFrame {
         StringBuilder fileBuilder = new StringBuilder();
         StringBuilder totalBuilder = new StringBuilder("Totals\n");
         for (int i = 0; i < 5; i++){
-            currentNum = 0;
+            int currentNum = 0;
             for (int j = 0; j < numFiles; j++){
                 if(i > 0 &&  displaySetting[i-1] == true){
                     String output = String.format("%" + columnWidth[j] + "s", input[i][j]);
@@ -307,7 +307,7 @@ public class Dashboard extends JFrame {
         }
         Display = new JTextArea(fileBuilder);
         totals = new JTextArea(totalBuilder);
-        JScrollPane scroll = new JscrollPane(Display);
+        JScrollPane scroll = new JScrollPane(Display);
         scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         rightside.add(scroll);
         window.setVisible(true);
@@ -316,7 +316,6 @@ public class Dashboard extends JFrame {
     /*
     This returns the booleans of all dispaly items for the output.
     The isSelected is used to go around an action listener and use the functionality of the JCheckBox
-    
     */
     private boolean[] getDisplaySettings(){
         boolean [] displaySettings = new boolean [5];
