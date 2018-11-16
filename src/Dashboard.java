@@ -172,45 +172,7 @@ public class Dashboard extends JFrame {
         //CHARACTERS CHECKBOX
 
         //EDITING DONE HERE
-        check1.addActionListener(
-                new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-
-                    }
-                });
-
-        //WORDS CHECKBOX
-        check2.addActionListener(
-                new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-
-                    }
-                });
-
-        //LINES CHECKBOX
-        check3.addActionListener(
-                new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-
-                    }
-                });
-
-        //SLOC CHECKBOX
-        check4.addActionListener(
-                new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-
-                    }
-                });
-
-        //CLOC CHECKBOX
-        check5.addActionListener(
-                new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-
-                    }
-                });
-
+   
         enter.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
