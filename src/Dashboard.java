@@ -1,4 +1,3 @@
-//When pressing checkbox twice, it messes the indent.
 
 import javax.swing.*;
 import java.awt.*;
@@ -169,10 +168,7 @@ public class Dashboard extends JFrame {
         window.add(rightside);
         window.setVisible(true);
 
-        //CHARACTERS CHECKBOX
-
-        //EDITING DONE HERE
-   
+         
         enter.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
@@ -322,7 +318,12 @@ public class Dashboard extends JFrame {
         rightside.add(scroll);
         window.setVisible(true);
     }
-
+ 
+    /*
+    This returns the booleans of all dispaly items for the output.
+    The isSelected is used to go around an action listener and use the functionality of the JCheckBox
+    
+    */
     private boolean[] getDisplaySettings(){
         boolean [] displaySettings = new boolean [5];
         displaySettings [0] = check1.isSelected();
@@ -333,6 +334,9 @@ public class Dashboard extends JFrame {
         return displaySettings;
     }
     
+   /*
+   returns the width of each file column so they are all aligned together for a better looking output
+   */
     private int[] getColumnWidth(String[][] input) {
 		int[] columnWidth = new int[input[0].length];
 		for (int i = 0; i < input.length; i++) {
