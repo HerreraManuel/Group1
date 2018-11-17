@@ -12,5 +12,6 @@
     <orderEntry type="library" name="jsch-0.1.54" level="project" />
     <orderEntry type="library" name="slf4j-api-1.7.25" level="project" />
     <orderEntry type="library" name="slf4j-simple-1.7.25" level="project" />
+    <orderEntry type="library" name="ExtLibs" level="application" />
   </component>
 </module>
