@@ -26,7 +26,14 @@ public class Repository
     this.repository = repository;
   }
 
-  public void listRepositoryFiles(final File repository)
+  /* Interface method to execute recursive listRepositoryFiles method */
+  public void ls()
+  {
+    listRepositoryFiles(repository);
+  }
+
+  /* Simple method to display all files in a repository */
+  private void listRepositoryFiles(final File repository)
   {
     if(repository == null)
     {
@@ -39,7 +46,7 @@ public class Repository
         if (fileEntry.isDirectory())
         {
           System.out.println("\n");
-          System.out.println(fileEntry.getParent());
+          System.out.println(fileEntry.getAbsolutePath());
           System.out.println("-------------------------------------------------------------");
           listRepositoryFiles(fileEntry);
         }
@@ -50,12 +57,12 @@ public class Repository
   }
 
   //TODO: May need to rework this...
-  public Stack<File> getRequestedFiles(String requested_ext) throws EmptyStackException
+  public void getRequestedFiles(String requested_ext) throws EmptyStackException
   {
-    final Stack<File> requestedFiles = new Stack<File>();
+    //final Stack<File> requestedFiles = new Stack<File>();
     Searcher instance = new Searcher();
     instance.recursiveSearch(repository, requested_ext);
-    return requestedFiles;
+    //return requestedFiles;
   }
 
   /*** Inner class for searching through a repository ***/

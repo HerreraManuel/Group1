@@ -57,7 +57,7 @@ public class GitParser_TestMain
             File f = test.getGitRepo(validURL2); //TODO: <---- ENTER URL variable here
 
             Repository repo = new Repository(f);
-            repo.listRepositoryFiles(f);
+            repo.ls();
         }
         catch (GitAPIException e)
         {
