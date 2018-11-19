@@ -58,6 +58,7 @@ public class GitParser_TestMain
 
             Repository repo = new Repository(f);
             repo.ls();
+            repo.getRequestedFiles(".txt"); //Should return all .txt files in the repository
         }
         catch (GitAPIException e)
         {
