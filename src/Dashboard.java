@@ -187,7 +187,7 @@ public class Dashboard extends JFrame {
         commentLine.setVisible(false);
         leftside.add(outputDisplay);
 
-        sourceLine = new JLabel("source line");
+        sourceLine = new JLabel("Source line");
         outputDisplay.add(sourceLine);
         sourceLine.setVisible(false);
         leftside.add(outputDisplay);
