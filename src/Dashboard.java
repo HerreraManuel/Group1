@@ -220,42 +220,11 @@ public class Dashboard extends JFrame {
                         urlinput.setText(null);
                         additionalText.setText(null);
 
-                        //clearing characters
-                        parent1 = character.getParent();
-                        parent1.remove(character);
-                        parent1.validate();
-                        parent1.repaint();
-
-                        //clearing words
-                        parent2 = word.getParent();
-                        parent2.remove(word);
-                        parent2.validate();
-                        parent2.repaint();
-
-                        //clearing lines
-                        parent3 = line.getParent();
-                        parent3.remove(line);
-                        parent3.validate();
-                        parent3.repaint();
-
-                        //clearing lines
-                        parent4 = sourceLine.getParent();
-                        parent4.remove(sourceLine);
-                        parent4.validate();
-                        parent4.repaint();
-
-                        //clearing lines
-                        parent5 = commentLine.getParent();
-                        parent5.remove(commentLine);
-                        parent5.validate();
-                        parent5.repaint();
-
-                      /*
-                      character.setVisible(false);
-                      word.setVisible(false);
-                      line.setVisible(false);
-                      commentLine.setVisible(false);
-                      sourceLine.setVisible(false);*/
+                        character.setVisible(false);
+                        word.setVisible(false);
+                        line.setVisible(false);
+                        commentLine.setVisible(false);
+                        sourceLine.setVisible(false);
 
                     }
                 });
