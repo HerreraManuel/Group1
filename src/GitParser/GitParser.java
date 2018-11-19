@@ -1,14 +1,13 @@
-/*
- * Programmer(s): Jenzel Arevalo
- *
- * Class Description:
- *
- *
- * External Contributions:
- * + Code Affine - How to Clone a Git Repository w. JGit
- *   https://www.codeaffine.com/2015/11/30/jgit-clone-repository/
- *
- */
+/*************************************************************************************
+ Programmer(s): Jenzel Arevalo
+
+ Class Description:
+
+
+ External Contributions:
+ + Code Affine - How to Clone a Git Repository w. JGit
+   https://www.codeaffine.com/2015/11/30/jgit-clone-repository/
+ ************************************************************************************/
 
 package GitParser;
 

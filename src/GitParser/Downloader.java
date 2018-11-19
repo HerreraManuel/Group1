@@ -1,15 +1,15 @@
 /***********************************************************************************
- * Programmer(s): Jenzel Arevalo
- *
- * Class: Downloader
- *
- * Class Description:
- * Downloads a file from a given URL and outputs the downloaded file to a given
- * path for the file to be saved.
- *
- * External Contributions:
- * + Overall algorithm for downloading a file via URL - Zoran Davidovic
- *   https://www.youtube.com/watch?v=rd6m-6l2xQQ
+ Programmer(s): Jenzel Arevalo
+
+ Class: Downloader
+
+ Class Description:
+ Downloads a file from a given URL and outputs the downloaded file to a given
+ path for the file to be saved.
+
+ External Contributions:
+  + Overall algorithm for downloading a file via URL - Zoran Davidovic
+    https://www.youtube.com/watch?v=rd6m-6l2xQQ
  **********************************************************************************/
 
 package GitParser;

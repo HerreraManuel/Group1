@@ -1,13 +1,28 @@
+/***********************************************************************************************
+ Programmer(s): Jenzel Arevalo
+
+ Class Description:
+
+
+ External Contributions:
+ + Stack Overflow user Gearon's Recursive approach to searching for specific files in a Folder
+ https://stackoverflow.com/questions/4852531/find-files-in-a-folder-using-java
+ **********************************************************************************************/
+
 package GitParser;
 
 import java.io.File;
+import java.io.FilenameFilter;
 import java.util.EmptyStackException;
 import java.util.Stack;
 
 public class Repository
 {
-  public Repository()
+  private final File root; //TODO: Not sure if this should be 'final'.
+
+  public Repository(File repository)
   {
+    root = repository;
   }
 
   public void listRepositoryFiles(final File repository)
@@ -27,11 +42,9 @@ public class Repository
   }
 
   //TODO: May need to rework this...
-  public Stack<File> getRequestedFiles(final File repository, String extension) throws EmptyStackException
+  public Stack<File> getRequestedFiles(String requested_ext) throws EmptyStackException
   {
-    Stack<File> requestedFiles = new Stack<File>();
-
-
+    final Stack<File> requestedFiles = new Stack<File>();
 
     return requestedFiles;
   }

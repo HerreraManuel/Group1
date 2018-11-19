@@ -1,28 +1,28 @@
 /***********************************************************************************
-  Programmer(s): Jenzel Arevalo
+ Programmer(s): Jenzel Arevalo
 
-  Class: GitParser_TestMain
+ Class: GitParser_TestMain
 
-  Class Description:
-  Tests to see if Downloader class works.
+ Class Description:
+ Tests to see if Downloader class works.
 
-  Notes:
+ Notes:
 
-    Given its current state, Windows, Linux, and MacOS users are able to clone Git
-    repositories to their system.
+ Given its current state, Windows, Linux, and MacOS users are able to clone Git
+ repositories to their system.
 
-    It should be noted that the path to the output file differs for Windows
-    and -nix based systems.
+ It should be noted that the path to the output file differs for Windows
+ and -nix based systems.
 
-    For Windows...
-    The output file path should look like:
-      C:\\some\\path\\for\\output\\file
+ For Windows...
+ The output file path should look like:
+ C:\\some\\path\\for\\output\\file
 
-    For Linux and MacOS...
-    The output file path should look like:
-      /home/username/path/for/output/file
+ For Linux and MacOS...
+ The output file path should look like:
+ /home/username/path/for/output/file
 
-    *Notice the double back-slash for the Windows file path.
+ *Notice the double back-slash for the Windows file path.
  **********************************************************************************/
 
 package GitParser;
@@ -56,7 +56,7 @@ public class GitParser_TestMain
 
             File f = test.getGitRepo(validURL2); //TODO: <---- ENTER URL variable here
 
-            Repository repo = new Repository();
+            Repository repo = new Repository(f);
             repo.listRepositoryFiles(f);
         }
         catch (GitAPIException e)
