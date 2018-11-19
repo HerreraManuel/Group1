@@ -167,43 +167,45 @@ public class Dashboard extends JFrame {
         window.setVisible(true);
 
 
+        character = new JLabel("Characters");
+        outputDisplay.add(character);
+        character.setVisible(false);
+        leftside.add(outputDisplay);
+
+        word = new JLabel("Words");
+        outputDisplay.add(word);
+        word.setVisible(false);
+        leftside.add(outputDisplay);
+
+        line = new JLabel("Lines");
+        outputDisplay.add(line);
+        line.setVisible(false);
+        leftside.add(outputDisplay);
+
+        commentLine = new JLabel("Comment line");
+        outputDisplay.add(commentLine);
+        commentLine.setVisible(false);
+        leftside.add(outputDisplay);
+
+        sourceLine = new JLabel("source line");
+        outputDisplay.add(sourceLine);
+        sourceLine.setVisible(false);
+        leftside.add(outputDisplay);
+
+
         enter.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-
-                        if(check1.isSelected() == true){
-                            character = new JLabel("characters");
-                            outputDisplay.add(character);
-                            leftside.add(outputDisplay);
-                        }
-
-                        if(check2.isSelected() == true){
-                            word = new JLabel("words");
-                            outputDisplay.add(word);
-                            leftside.add(outputDisplay);
-                        }
-
-                        if(check3.isSelected() == true){
-                            line = new JLabel("lines");
-                            outputDisplay.add(line);
-                            leftside.add(outputDisplay);
-                        }
-
-                        if(check4.isSelected() == true){
-                            commentLine = new JLabel("comment line");
-                            outputDisplay.add(commentLine);
-                            leftside.add(outputDisplay);
-                        }
-
-                        if(check5.isSelected() == true){
-                            sourceLine = new JLabel("source line");
-                            outputDisplay.add(sourceLine);
-                            leftside.add(outputDisplay);
-                        }
+                        character.setVisible(true);
+                        word.setVisible(true);
+                        line.setVisible(true);
+                        commentLine.setVisible(true);
+                        sourceLine.setVisible(true);
 
                         displayData();
                     }
                 });
+
 
         clear.addActionListener(
                 new ActionListener() {
