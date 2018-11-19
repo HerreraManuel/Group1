@@ -2,7 +2,8 @@
  Programmer(s): Jenzel Arevalo
 
  Class Description:
-
+ Repository class holds a sing repository. This class is able to perform certain functions with
+ the repository, such as finding specific files, listing all files in the repository, etc.
 
  External Contributions:
  + Stack Overflow user Gearon's Recursive approach to searching for specific files in a Folder
