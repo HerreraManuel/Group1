@@ -202,6 +202,16 @@ public class Dashboard extends JFrame {
         enter.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
+                        Display.setText(null);
+                        totals.setText(null);
+                        check1.setSelected(false);
+                        check2.setSelected(false);
+                        check3.setSelected(false);
+                        check4.setSelected(false);
+                        check5.setSelected(false);
+                        urlinput.setText(null);
+                        additionalText.setText(null);
+
                         character.setVisible(true);
                         word.setVisible(true);
                         line.setVisible(true);
