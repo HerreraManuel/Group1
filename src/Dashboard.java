@@ -10,13 +10,13 @@ import java.awt.event.ItemListener;
 public class Dashboard extends JFrame {
 
     private JFrame window;
-    private JPanel leftside, urlPanel, additionalPanel, totbuttons, enterPanel, outputDisplay;
+    private JPanel leftside, urlPanel, additionalPanel, totbuttons, enterPanel, outputDisplay, spacingPanel;
     private JPanel rightside;
 
     private JTextArea Display, totals;
     private JScrollPane scroll;
 
-    private JLabel githubUrlInput, additionalInput, character, word, line, commentLine, sourceLine;
+    private JLabel githubUrlInput, additionalInput, character, word, line, commentLine, sourceLine, space;
     private JTextField urlinput, additionalText;
     private JCheckBox check1, check2, check3, check4, check5;
     private JButton enter, clear;
@@ -97,6 +97,9 @@ public class Dashboard extends JFrame {
         enterPanel = new JPanel();
         enterPanel.setLayout(new BoxLayout(enterPanel,BoxLayout.X_AXIS));
 
+        spacingPanel = new JPanel();
+        spacingPanel.setLayout(new BoxLayout(spacingPanel, BoxLayout.Y_AXIS));
+
         outputDisplay = new JPanel();
         GridLayout grid2 = new GridLayout(1, 2);
         outputDisplay.setLayout(grid2);
@@ -166,6 +169,9 @@ public class Dashboard extends JFrame {
         window.add(rightside);
         window.setVisible(true);
 
+        space = new JLabel("   ");
+        spacingPanel.add(space);
+        leftside.add(space);
 
         character = new JLabel("Characters");
         outputDisplay.add(character);
@@ -182,12 +188,12 @@ public class Dashboard extends JFrame {
         line.setVisible(false);
         leftside.add(outputDisplay);
 
-        commentLine = new JLabel("Comment line");
+        commentLine = new JLabel("Comment lines");
         outputDisplay.add(commentLine);
         commentLine.setVisible(false);
         leftside.add(outputDisplay);
 
-        sourceLine = new JLabel("Source line");
+        sourceLine = new JLabel("Source lines");
         outputDisplay.add(sourceLine);
         sourceLine.setVisible(false);
         leftside.add(outputDisplay);
