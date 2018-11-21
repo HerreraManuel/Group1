@@ -199,45 +199,6 @@ public class Dashboard extends JFrame {
         sourceLine.setVisible(false);
         leftside.add(outputDisplay);
 
-        check1.addActionListener(
-                new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-
-                    }
-                });
-
-        //WORDS CHECKBOX
-        check2.addActionListener(
-                new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-
-                    }
-                });
-
-        //LINES CHECKBOX
-        check3.addActionListener(
-                new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-
-                    }
-                });
-
-        //SLOC CHECKBOX
-        check4.addActionListener(
-                new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-
-                    }
-                });
-
-        //CLOC CHECKBOX
-        check5.addActionListener(
-                new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-
-                    }
-                });
-
         enter.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
@@ -260,7 +221,7 @@ public class Dashboard extends JFrame {
                         if(check5.isSelected() == true){
                             sourceLine.setForeground(Color.gray);
                         }
-                        
+
                         Display.setText(null);
                         totals.setText(null);
                         check1.setSelected(false);
