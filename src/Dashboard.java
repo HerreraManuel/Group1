@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.awt.Color;
 
 public class Dashboard extends JFrame {
 
@@ -198,6 +199,44 @@ public class Dashboard extends JFrame {
         sourceLine.setVisible(false);
         leftside.add(outputDisplay);
 
+        check1.addActionListener(
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+
+                    }
+                });
+
+        //WORDS CHECKBOX
+        check2.addActionListener(
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+
+                    }
+                });
+
+        //LINES CHECKBOX
+        check3.addActionListener(
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+
+                    }
+                });
+
+        //SLOC CHECKBOX
+        check4.addActionListener(
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+
+                    }
+                });
+
+        //CLOC CHECKBOX
+        check5.addActionListener(
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+
+                    }
+                });
 
         enter.addActionListener(
                 new ActionListener() {
@@ -212,13 +251,32 @@ public class Dashboard extends JFrame {
                         urlinput.setText(null);
                         additionalText.setText(null);
 
-                        
+                        if(check1.isSelected() == true){
+                            character.setForeground(Color.gray);
+                        }
+
+                        if(check2.isSelected() == true){
+                            word.setForeground(Color.gray);
+                        }
+
+                        if(check3.isSelected() == true){
+                            line.setForeground(Color.gray);
+                        }
+
+                        if(check4.isSelected() == true){
+                            commentLine.setForeground(Color.gray);
+                        }
+
+                        if(check5.isSelected() == true){
+                            sourceLine.setForeground(Color.gray);
+                        }
+
                         character.setVisible(true);
                         word.setVisible(true);
                         line.setVisible(true);
                         commentLine.setVisible(true);
                         sourceLine.setVisible(true);
-
+                        
                         displayData();
                     }
                 });
