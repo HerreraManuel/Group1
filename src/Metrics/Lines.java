@@ -11,7 +11,6 @@ public class Lines {
             lineKeeper = fileContent.split(("\\r?\\n"));
             lines = lineKeeper.length;
         }
-
     }
 
 }
