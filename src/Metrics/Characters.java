@@ -7,5 +7,5 @@ public class Characters {
         int chars;
         chars = filecontent.length();
     }
-    
+
 }
