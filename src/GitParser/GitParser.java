@@ -43,7 +43,7 @@ public class GitParser
      */
 
     //Verify that given link leads to a git file
-    public boolean isGitURL(String link)
+    private boolean isGitURL(String link)
     {
         String extension = link.substring(link.lastIndexOf("."));
         String websiteAddress = "https://github.com/";
