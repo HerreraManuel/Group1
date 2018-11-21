@@ -3,9 +3,9 @@ import java.io.*;
 
 public class Characters {
 
-    public void characterCount(String filecontent) {
+    public void characterCount(String fileContent) {
         int chars;
-        chars = filecontent.length();
+        chars = fileContent.length();
     }
 
 }
