@@ -23,6 +23,10 @@
  /home/username/path/for/output/file
 
  *Notice the double back-slash for the Windows file path.
+
+ External Contributions:
+ + Deleting a File with Subdirectories
+   https://javarevisited.blogspot.com/2015/03/how-to-delete-directory-in-java-with-files.html
  **********************************************************************************/
 
 package GitParser;
@@ -31,11 +35,10 @@ import org.eclipse.jgit.api.errors.GitAPIException;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Scanner;
 
-public class GitParser_TestMain
-{
-    public static void main(String[] args)
-    {
+public class GitParser_TestMain {
+    public static void main(String[] args) {
         /********* GitParser Test Code *********/
 
         //TODO: Instructions to get GitParser Test Code Running
@@ -49,8 +52,7 @@ public class GitParser_TestMain
         //Invalid URLs
         String invalidURL = "https://pdfs.semanticscholar.org/efb2/58d7812128aa19709520b1a567da98227cc5.pdf";
 
-        try
-        {
+        try {
             //GitParser test = new GitParser(invalidURL); //Should throw IOException labeled 'GitParser - Invalid link!'
             GitParser test = new GitParser(); //Should be able to download gitFile, downloads a file, but does not seem to look like a git repository
 
@@ -58,16 +60,41 @@ public class GitParser_TestMain
 
             Repository repo = new Repository(f);
             repo.ls();
-            repo.getRequestedFiles(".txt"); //Should return all .txt files in the repository
-        }
-        catch (GitAPIException e)
-        {
+            System.out.println("\n\n");
+            repo.getRequestedFiles(".java"); //Should return all .txt files in the repository
+
+            System.out.println("\n\n\n");
+            System.out.println("Delete " + f.getName() + "?");
+            Scanner input = new Scanner(System.in);
+            String response = input.nextLine();
+            if (response.equalsIgnoreCase("Y") || response.equalsIgnoreCase("YES")) {
+                deleteDirectory(f);
+                System.out.println("File deleted.");
+            }
+        } catch (GitAPIException e) {
             e.printStackTrace();
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         /**** GitParser Test Code Ends Here ****/
+    }
+
+    /* Deletes a directory with subdirectories */
+    public static boolean deleteDirectory(File dir)
+    {
+        if (dir.isDirectory())
+        {
+            File[] children = dir.listFiles();
+            for (int i = 0; i < children.length; i++)
+            {
+                boolean success = deleteDirectory(children[i]);
+                if (!success)
+                {
+                    return false;
+                }
+            }
+        }
+        // either file or an empty directory
+        return dir.delete();
     }
 }

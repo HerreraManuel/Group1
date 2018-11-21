@@ -27,7 +27,7 @@ public class GitParser
 
         if(validURL)
         {
-            File out = new File("/home/filipinoy_DESKTOP/Desktop/TestRepo"); //TODO: <--- Modify this constructor with a string that includes the filepath and folder name that you wish to clone the repository to.
+            File out = new File("/home/filipinoy/Desktop/TestRepo"); //TODO: <--- Modify this constructor with a string that includes the filepath and folder name that you wish to clone the repository to.
             GitCloner cloner = new GitCloner();
             cloner.cloneRepository(link, out);
             return out;
@@ -43,7 +43,7 @@ public class GitParser
      */
 
     //Verify that given link leads to a git file
-    public boolean isGitURL(String link)
+    private boolean isGitURL(String link)
     {
         String extension = link.substring(link.lastIndexOf("."));
         String websiteAddress = "https://github.com/";
