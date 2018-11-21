@@ -256,6 +256,12 @@ public class Dashboard extends JFrame {
                         urlinput.setText(null);
                         additionalText.setText(null);
 
+                        character.setForeground(Color.gray);
+                        word.setForeground(Color.gray);
+                        line.setForeground(Color.gray);
+                        commentLine.setForeground(Color.gray);
+                        sourceLine.setForeground(Color.gray);
+
                         character.setVisible(false);
                         word.setVisible(false);
                         line.setVisible(false);
