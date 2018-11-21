@@ -45,13 +45,10 @@ public class Repository
       {
         if (fileEntry.isDirectory())
         {
-          System.out.println("\n");
-          System.out.println(fileEntry.getAbsolutePath());
-          System.out.println("-------------------------------------------------------------");
           listRepositoryFiles(fileEntry);
         }
         else
-          System.out.println("\t\t" + fileEntry.getName());
+          System.out.println(fileEntry.getPath() + "\n\t\t" + fileEntry.getName() + "\n");
       }
     }
   }
