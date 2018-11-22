@@ -2,7 +2,7 @@
  Programmer(s): Jenzel Arevalo
 
  Class Description:
- Repository class holds a sing repository. This class is able to perform certain functions with
+ Repository class holds a single repository. This class is able to perform certain functions with
  the repository, such as finding specific files, listing all files in the repository, etc.
 
  External Contributions:
@@ -40,8 +40,8 @@ public class Repository
             .forEach(System.out::println);
   }
 
-
-  //TODO: May need to rework this...
+  //TODO: Modify this method so that it also handles queries that are null (user did not choose any specific files)
+  /* Obtains all files of a particular type in the repository */
   public Queue<File> getRequestedFiles(String query) throws EmptyStackException
   {
     Queue<File> requested_files = new LinkedList<File>();
@@ -52,7 +52,7 @@ public class Repository
 
       for (Iterator iterator = files.iterator(); iterator.hasNext();) {
         File file = (File) iterator.next();
-        if (file.getName().contains(query))
+        if (file.getName().contains(query) || query == "")
         {
           //System.out.println("Inserting: " + file.getAbsolutePath());
           requested_files.add(file);
@@ -63,4 +63,6 @@ public class Repository
     }
     return requested_files;
   }
+
+
 }
