@@ -35,6 +35,7 @@ import org.eclipse.jgit.api.errors.GitAPIException;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class GitParser_TestMain {
@@ -59,13 +60,16 @@ public class GitParser_TestMain {
             File f = test.getGitRepo(validURL2); //TODO: <---- ENTER URL variable here
 
             Repository repo = new Repository(f);
+
             repo.ls();
+
             System.out.println("\n\n");
-            repo.getRequestedFiles(".java"); //Should return all .txt files in the repository
 
-
-
-
+            Queue<File> requestedFiles = repo.getRequestedFiles(".java"); //Should return all .txt files in the repository
+            while(!requestedFiles.isEmpty())
+            {
+                System.out.println(requestedFiles.remove());
+            }
 
 
             System.out.println("\n\n\n");

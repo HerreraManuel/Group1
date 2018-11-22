@@ -54,7 +54,7 @@ public class Repository
         File file = (File) iterator.next();
         if (file.getName().contains(query))
         {
-          System.out.println("Inserting: " + file.getAbsolutePath());
+          //System.out.println("Inserting: " + file.getAbsolutePath());
           requested_files.add(file);
         }
       }
