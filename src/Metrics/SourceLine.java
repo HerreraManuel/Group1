@@ -14,12 +14,12 @@ public class SourceLine {
     }
 
     // Tester for source lines output.
-    public void Main(String[] args){
+    public static void main(String[] args){
         File[] files = new File("C:/Users/Desktop/CSC131/").listFiles();
         showFiles(files);
     }
 
-    public void showFiles(File[] files){
+    public static void showFiles(File[] files){
         for (File file: files) {
             if (file.isDirectory()) {
                 System.out.println("Directory: " + file.getName());
