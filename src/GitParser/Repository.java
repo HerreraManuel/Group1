@@ -12,10 +12,16 @@
 
 package GitParser;
 
+import org.apache.commons.io.FileUtils;
 import java.io.File;
-import java.io.FilenameFilter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.EmptyStackException;
-import java.util.Stack;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Collection;
+import java.util.Iterator;
 
 public class Repository
 {
@@ -26,19 +32,35 @@ public class Repository
     this.repository = repository;
   }
 
-  /* Interface method to execute recursive listRepositoryFiles method */
-  public void ls()
+  /* Displays all the files in the repository */
+  public void ls() throws IOException
   {
-    Searcher instance = new Searcher();
-    instance.listRepositoryFiles(repository);
+    Files.walk(Paths.get(repository.getPath()))
+            .filter(Files::isRegularFile)
+            .forEach(System.out::println);
   }
 
+
   //TODO: May need to rework this...
-  public void getRequestedFiles(String requested_ext) throws EmptyStackException
+  public Queue<File> getRequestedFiles(String query) throws EmptyStackException
   {
-    //final Stack<File> requestedFiles = new Stack<File>();
-    Searcher instance = new Searcher();
-    instance.recursiveSearch(repository, requested_ext);
-    //return requestedFiles;
+    Queue<File> requested_files = new LinkedList<File>();
+    try {
+      boolean recursive = true;
+
+      Collection files = FileUtils.listFiles(repository, null, recursive);
+
+      for (Iterator iterator = files.iterator(); iterator.hasNext();) {
+        File file = (File) iterator.next();
+        if (file.getName().contains(query))
+        {
+          System.out.println("Inserting: " + file.getAbsolutePath());
+          requested_files.add(file);
+        }
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    return requested_files;
   }
 }
