@@ -203,23 +203,23 @@ public class Dashboard extends JFrame {
         enter.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        if(check1.isSelected() == true){
+                        if(check1.isSelected() == false){
                             character.setForeground(Color.gray);
                         }
 
-                        if(check2.isSelected() == true){
+                        if(check2.isSelected() == false){
                             word.setForeground(Color.gray);
                         }
 
-                        if(check3.isSelected() == true){
+                        if(check3.isSelected() == false){
                             line.setForeground(Color.gray);
                         }
 
-                        if(check4.isSelected() == true){
+                        if(check4.isSelected() == false){
                             commentLine.setForeground(Color.gray);
                         }
 
-                        if(check5.isSelected() == true){
+                        if(check5.isSelected() == false){
                             sourceLine.setForeground(Color.gray);
                         }
 
@@ -257,11 +257,11 @@ public class Dashboard extends JFrame {
                         urlinput.setText(null);
                         additionalText.setText(null);
 
-                        character.setForeground(Color.gray);
-                        word.setForeground(Color.gray);
-                        line.setForeground(Color.gray);
-                        commentLine.setForeground(Color.gray);
-                        sourceLine.setForeground(Color.gray);
+                        character.setForeground(Color.black);
+                        word.setForeground(Color.black);
+                        line.setForeground(Color.black);
+                        commentLine.setForeground(Color.black);
+                        sourceLine.setForeground(Color.black);
 
                         character.setVisible(false);
                         word.setVisible(false);
