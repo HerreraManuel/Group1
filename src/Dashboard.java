@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.Color;
+import java.lang.reflect.Array;
 
 public class Dashboard extends JFrame {
 
@@ -292,11 +293,14 @@ public class Dashboard extends JFrame {
         fileWriter2D currentFile = new fileWriter2D(currentInformation);
         File outputFile = currentFile.getFile();
         int[] columnWidth = getColumnWidth(currentInformation);
-        boolean[] displaySetting = getDisplaySettings;
+        boolean[] displaySetting = getDisplaySettings();
         StringBuilder fileBuilder = new StringBuilder();
         StringBuilder totalBuilder = new StringBuilder("Totals\n");
         for (int i = 0; i < 5; i++){
             int currentNum = 0;
+            // Temporary numFiles and input variable below
+            Array[][] input = new Array[10][10];
+            int numFiles = 0;
             for (int j = 0; j < numFiles; j++){
                 if(i > 0 &&  displaySetting[i-1] == true){
                     String output = String.format("%" + columnWidth[j] + "s", input[i][j]);
@@ -304,7 +308,8 @@ public class Dashboard extends JFrame {
                     if (currentInformation [i+1][j].equals("N/A")){
                     }
                     else{
-                        currentNum += (int) currentInformation [i+1][j];
+                        // currentNum += (int) currentInformation[i+1][j];
+                        currentNum += Integer.parseInt(currentInformation [i+1][j]);
                     }
                 }
                 else if(i ==0){
@@ -317,8 +322,10 @@ public class Dashboard extends JFrame {
                 totalBuilder.append(currentNum +"\n");
             }
         }
-        Display = new JTextArea(fileBuilder);
-        totals = new JTextArea(totalBuilder);
+        // Next two lines of code: called String.valueOf for fileBuilder
+        // Before, it was just fileBuilder
+        Display = new JTextArea(String.valueOf(fileBuilder));
+        totals = new JTextArea(String.valueOf(totalBuilder));
         JScrollPane scroll = new JScrollPane(Display);
         scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         rightside.add(scroll);
