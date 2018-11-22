@@ -1,8 +1,14 @@
+package Metrics;
+
 import java.io.*;
 import java.util.*;
 
-package Metrics;
+public class CommentLine{
 
+}
+
+
+/*
 public class CommentLine {
 
     public void commentline(String fileContent){
@@ -54,3 +60,4 @@ public class CommentLine {
         }
     }
 }
+*/
