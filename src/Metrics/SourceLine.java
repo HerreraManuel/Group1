@@ -1,6 +1,7 @@
 package Metrics;
 
 import java.io.File;
+import java.nio.file.Files;
 
 public class SourceLine {
 
@@ -13,8 +14,20 @@ public class SourceLine {
     }
 
     // Tester for source lines output.
-    public static void Main(String[] args){
+    public void Main(String[] args){
+        File[] files = new File("C:/Users/Desktop/CSC131/").listFiles();
+        showFiles(files);
+    }
 
+    public void showFiles(File[] files){
+        for (File file: files) {
+            if (file.isDirectory()) {
+                System.out.println("Directory: " + file.getName());
+                showFiles(file.listFiles());
+            } else {
+                System.out.println("File: " + file.getName());
+            }
+        }
     }
 
     public boolean isJava(File tempFile){
