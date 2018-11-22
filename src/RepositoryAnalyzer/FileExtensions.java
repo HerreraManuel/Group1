@@ -3,7 +3,7 @@
 
  Class Description:
  Simple class to hold lists of different types of extensions. FileExtensions class implemented
- with consideration of future additions and ease of implementing new extensions
+ with consideration of future additions and ease of implementing new extensions to program
 
  **********************************************************************************************/
 

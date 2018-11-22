@@ -2,9 +2,9 @@
  Programmer(s): Jenzel Arevalo
 
  Class Description:
- Analyzer class is what processes the metrics for a single file received from a Repository class
- the current design. Currently, the current design of the analyzer class is to process all
- metrics possible. That way, all possible metrics for the file are taken when requested.
+ Analyzer class is what processes the metrics for a single file received from a Repository class.
+ Currently, the current design of the analyzer class is to process all metrics possible.
+ That way, all possible metrics for the file are taken when requested.
 
  **********************************************************************************************/
 
