@@ -223,15 +223,15 @@ public class Dashboard extends JFrame {
                             sourceLine.setForeground(Color.gray);
                         }
 
-                        Display.setText(null);
-                        totals.setText(null);
-                        check1.setSelected(false);
-                        check2.setSelected(false);
-                        check3.setSelected(false);
-                        check4.setSelected(false);
-                        check5.setSelected(false);
-                        urlinput.setText(null);
-                        additionalText.setText(null);
+//                        Display.setText(null);
+//                        totals.setText(null);
+//                        check1.setSelected(false);
+//                        check2.setSelected(false);
+//                        check3.setSelected(false);
+//                        check4.setSelected(false);
+//                        check5.setSelected(false);
+//                        urlinput.setText(null);
+//                        additionalText.setText(null);
 
                         character.setVisible(true);
                         word.setVisible(true);
