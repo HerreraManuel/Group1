@@ -123,13 +123,9 @@ public class Dashboard extends JFrame {
         leftside.add(urlPanel);
 
         check1 = new JCheckBox("Characters");
-
         check2 = new JCheckBox("Words");
-
         check3 = new JCheckBox("Lines");
-
         check4 = new JCheckBox("Source Lines");
-
         check5 = new JCheckBox("CommentLines");
 
     /*
@@ -168,6 +164,7 @@ public class Dashboard extends JFrame {
         //rightside.add(scroll);
         //totals = new JTextArea();
         //rightside.add(totals);
+        rightside.add(Display);
         window.add(rightside);
         window.setVisible(true);
 
@@ -358,7 +355,6 @@ public class Dashboard extends JFrame {
                 }
             }
         }
-        // temp return
         return columnWidth;
     }
 }
