@@ -57,7 +57,8 @@ public class Analyzer
     {
         System.out.println(fileContent);
         System.out.println("\n");
-        lines.lineCount(fileContent);
+        System.out.println("Line Count: " + lines.lineCount(fileContent));
+        System.out.println("Word Count: " + words.wordCount(fileContent));
     }
 
 
