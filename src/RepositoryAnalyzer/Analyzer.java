@@ -35,27 +35,50 @@ public class Analyzer
         try
         {
             String fileContent = readFileContents(f.getPath());
-        }catch(IOException e)
-        {
-            System.out.println("Unable to read file");
-        }
+            performMetrics(fileContent);
 
+                    /*
         if(isSourceFile(f.getName()))
         {
             commentLine = new CommentLine(fileContent); //TODO: CommentLine class under implementation
             sourceLine = new SourceLine(fileContent); //TODO: SourceLine class under implementation
         }
-        lines = new Lines(fileContent); //TODO: Lines class under implementation
-        words = new Words(fileContent); //TODO: Words class under implementation
-        characters = new Characters(fileContent); //TODO: Characters class under implementation
+        */
+
+            //characters = new Characters(fileContent); //TODO: Characters class under implementation
+        }catch(IOException e)
+        {
+            System.out.println("Unable to read file contents");
+        }
     }
 
-    private String readFileContents(String file) throws IOException
+    //TODO: Refactor this after tests checkout, no print outs should be in this method; may need to refactor some methods in Metrics class
+    public void performMetrics(String fileContent)
     {
-        BufferedReader reader = new BufferedReader(new FileReader (file));
-        String         line = null;
-        StringBuilder  stringBuilder = new StringBuilder();
-        String         ls = System.getProperty("line.separator");
+        System.out.println(fileContent);
+        System.out.println("\n");
+        lines.lineCount(fileContent);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    private String readFileContents(String filePath) throws IOException
+    {
+        BufferedReader reader = new BufferedReader(new FileReader (filePath));
+        String line = null;
+        StringBuilder stringBuilder = new StringBuilder();
+        String ls = System.getProperty("line.separator");
         try
         {
             while((line = reader.readLine()) != null)

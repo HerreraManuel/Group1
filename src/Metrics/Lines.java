@@ -2,7 +2,7 @@ package Metrics;
 
 public class Lines {
 
-    public void lineCount(String fileContent) {
+    public int lineCount(String fileContent) {
 
         int lines = 0;
         String [] lineKeeper;
@@ -11,6 +11,7 @@ public class Lines {
             lineKeeper = fileContent.split(("\\r?\\n"));
             lines = lineKeeper.length;
         }
+        return lines;
     }
 
 }
