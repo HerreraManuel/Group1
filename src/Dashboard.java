@@ -15,7 +15,7 @@ public class Dashboard extends JFrame {
     private JPanel leftside, urlPanel, additionalPanel, totbuttons, enterPanel, outputDisplay, spacingPanel;
     private JPanel rightside;
 
-    private JTextArea Display, totals;
+    private JTextArea labels, Display, totals;
     private JScrollPane scroll;
 
     private JLabel githubUrlInput, additionalInput, character, word, line, commentLine, sourceLine, space;
@@ -166,14 +166,14 @@ public class Dashboard extends JFrame {
 
         leftside.add(enterPanel);
         window.add(leftside);
-        Display = new JTextArea();
+//        Display = new JTextArea();
         //Display.setEditable(false);
         //scroll = new JScrollPane(Display);
         //scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         //rightside.add(scroll);
         //totals = new JTextArea();
         //rightside.add(totals);
-        rightside.add(Display);
+//        rightside.add(Display);
         window.add(rightside);
         window.setVisible(true);
 
@@ -337,12 +337,36 @@ public class Dashboard extends JFrame {
         }
         // Next two lines of code: called String.valueOf for fileBuilder
         // Before, it was just fileBuilder
+        labels = new JTextArea(getRowLabels());
         Display = new JTextArea(String.valueOf(fileBuilder));
         totals = new JTextArea(String.valueOf(totalBuilder));
         JScrollPane scroll = new JScrollPane(Display);
         scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        rightside.add(labels);
         rightside.add(scroll);
+        rightside.add(totals);
         window.setVisible(true);
+    }
+
+    public String  getRowLabels(){
+        StringBuilder rowLabels = new StringBuilder("Filenames\n");
+        boolean [] dispalySettings = getDisplaySettings();
+        if(dispalySettings[0] == true){
+            rowLabels.append("Characters\n");
+        }
+        if(dispalySettings[1]==true){
+            rowLabels.append("Words\n");
+        }
+        if(dispalySettings[2] == true){
+            rowLabels.append("Lines\n");
+        }
+        if(dispalySettings[3] == true){
+            rowLabels.append("Source Lines\n");
+        }
+        if(dispalySettings[4] == true){
+            rowLabels.append("Comment Lines");
+        }
+        return String.valueOf(rowLabels);
     }
 
     /*
