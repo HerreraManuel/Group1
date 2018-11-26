@@ -6,7 +6,7 @@ public class Characters {
     public int characterCount(String fileContent) {
         int chars;
         chars = fileContent.length();
-        return chars;
+        return chars + 1;
     }
 
 }
