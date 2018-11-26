@@ -308,7 +308,7 @@ public class Dashboard extends JFrame {
         int[] columnWidth = getColumnWidth(currentInformation);
         boolean[] displaySetting = getDisplaySettings();
         StringBuilder fileBuilder = new StringBuilder();
-        StringBuilder totalBuilder = new StringBuilder("Totals\n");
+        StringBuilder totalBuilder = new StringBuilder("Totals\n\n");
         for (int i = 0; i < 6; i++){
             int currentNum = 0;
             // Temporary numFiles and input variable below
@@ -337,8 +337,9 @@ public class Dashboard extends JFrame {
         }
         // Next two lines of code: called String.valueOf for fileBuilder
         // Before, it was just fileBuilder
-        String tempTester = "THIS IS FOR TESTINg PURPOSES ONLY\n I AM TRYING TO SEE HOW FAR THIS CAN GO \n I ALSO WANT TO SEE IF ALL OF\n THIS WILL LINE UP ON THE O\nUTPUT TO HAVE A \nPSASDJHGILKJGEILUKRJHNGFILKDJFGSILEJGNLDIUKJFNGSLDIKJRGNLEIRKJNGWELKURJHGWEIRLKHNGWERIKGHWEILUKRJHGWELIUKRJGHWIELGH";
+        String tempTester = "THIS IS FOR TESTINg PURPOSES ONLY\n I AM TRYING TO \n\n\n\n\nSEE HOW FAR THIS CAN GO \n I ALSO WANT TO SEE IF ALL OF\n THIS WILL LINE UP ON THE O\nUTPUT TO HAVE A \nPSASDJHGILKJGEILUKRJHNGFILKDJFGSILEJGNLDIUKJFNGSLDIKJRGNLEIRKJNGWELKURJHGWEIRLKHNGWERIKGHWEILUKRJHGWELIUKRJGHWIELGH";
         labels = new JTextArea(getRowLabels());
+        labels.setSize(50,200);
         labels.setEditable(false);
 //        labels.add(Box.createVerticalGlue());
 //        Display = new JTextArea(String.valueOf(fileBuilder));
@@ -347,10 +348,11 @@ public class Dashboard extends JFrame {
 //        Display.add(Box.createVerticalGlue());
         totals = new JTextArea(String.valueOf(totalBuilder));
         totals.setEditable(false);
+        totals.setSize(50,200);
 //        totals.add(Box.createVerticalGlue());
         JScrollPane scroll = new JScrollPane(Display);
         scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
-        scroll.setPreferredSize(new Dimension(600,120));
+        scroll.setPreferredSize(new Dimension(600,200));
         rightside.add(labels);
         rightside.add(scroll);
         rightside.add(totals);
@@ -358,22 +360,22 @@ public class Dashboard extends JFrame {
     }
 
     public String  getRowLabels(){
-        StringBuilder rowLabels = new StringBuilder("Filenames\n");
+        StringBuilder rowLabels = new StringBuilder("Filenames\n\n");
         boolean [] dispalySettings = getDisplaySettings();
         if(dispalySettings[0] == true){
-            rowLabels.append("Characters\n");
+            rowLabels.append("Characters\n\n");
         }
         if(dispalySettings[1]==true){
-            rowLabels.append("Words\n");
+            rowLabels.append("Words\n\n");
         }
         if(dispalySettings[2] == true){
-            rowLabels.append("Lines\n");
+            rowLabels.append("Lines\n\n");
         }
         if(dispalySettings[3] == true){
-            rowLabels.append("Source Lines\n");
+            rowLabels.append("Source Lines\n\n");
         }
         if(dispalySettings[4] == true){
-            rowLabels.append("Comment Lines");
+            rowLabels.append("Comment Lines\n");
         }
         return String.valueOf(rowLabels);
     }
@@ -393,7 +395,7 @@ public class Dashboard extends JFrame {
         return displaySettings;
     }
 
-    /*
+    /*r
     returns the width of each file column so they are all aligned together for a better looking output
     */
     private int[] getColumnWidth(String[][] input) {
