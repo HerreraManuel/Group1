@@ -34,6 +34,11 @@ public class CommentLine{
     }
 
     public boolean commentEnded(String line){
+        int index = line.indexOf("*/");
+        if (index < 0) return false;
+        else {
+            String subString = line.substring(index + 2).trim();
+        }
         return false;
     }
 
