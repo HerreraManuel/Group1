@@ -166,14 +166,21 @@ public class Dashboard extends JFrame {
 
         leftside.add(enterPanel);
         window.add(leftside);
-//        Display = new JTextArea();
-        //Display.setEditable(false);
-        //scroll = new JScrollPane(Display);
-        //scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
-        //rightside.add(scroll);
-        //totals = new JTextArea();
-        //rightside.add(totals);
-//        rightside.add(Display);
+
+        labels = new JTextArea("");
+        labels.setSize(50,200);
+        labels.setEditable(false);
+        Display = new JTextArea("");
+        Display.setEditable(false);
+        totals = new JTextArea("");
+        totals.setEditable(false);
+        totals.setSize(50,200);
+        JScrollPane scroll = new JScrollPane(Display);
+        scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        scroll.setPreferredSize(new Dimension(600,195));
+        rightside.add(labels);
+        rightside.add(scroll);
+        rightside.add(totals);
         window.add(rightside);
         window.setVisible(true);
 
@@ -252,8 +259,9 @@ public class Dashboard extends JFrame {
         clear.addActionListener(
                 new ActionListener(){
                     public void actionPerformed(ActionEvent e) {
-                        //Display.setText(null);
-                        //totals.setText(null);
+                        Display.setText(null);
+                        totals.setText(null);
+                        labels.setText(null);
                         check1.setSelected(false);
                         check2.setSelected(false);
                         check3.setSelected(false);
@@ -329,32 +337,24 @@ public class Dashboard extends JFrame {
                 }
 
             }
-            if(i > 0 &&  (displaySetting[i-1] == true || getDisplayAll())){
+            if(i > 0 && i <5 &&  (displaySetting[i-1] == true || getDisplayAll())){
+                totalBuilder.append(currentNum +"\n\n");
+            }
+            else if( i ==5 &&  (displaySetting[i-1] == true || getDisplayAll())){
                 totalBuilder.append(currentNum +"\n");
             }
         }
         // Next two lines of code: called String.valueOf for fileBuilder
         // Before, it was just fileBuilder
-        String tempTester = "THIS IS FOR TESTINg PURPOSES ONLY\n I AM TRYING TO \n\n\n\n\nSEE HOW FAR THIS CAN GO \n I ALSO WANT TO SEE IF ALL OF\n THIS WILL LINE UP ON THE O\nUTPUT TO HAVE A \nPSASDJHGILKJGEILUKRJHNGFILKDJFGSILEJGNLDIUKJFNGSLDIKJRGNLEIRKJNGWELKURJHGWEIRLKHNGWERIKGHWEILUKRJHGWELIUKRJGHWIELGH";
-        labels = new JTextArea(getRowLabels());
-        labels.setSize(50,200);
-        labels.setEditable(false);
-//        labels.add(Box.createVerticalGlue());
-//        Display = new JTextArea(String.valueOf(fileBuilder));
-        Display = new JTextArea(tempTester);
-        Display.setEditable(false);
-//        Display.add(Box.createVerticalGlue());
-        totals = new JTextArea(String.valueOf(totalBuilder));
-        totals.setEditable(false);
-        totals.setSize(50,200);
-//        totals.add(Box.createVerticalGlue());
-        JScrollPane scroll = new JScrollPane(Display);
-        scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
-        scroll.setPreferredSize(new Dimension(600,200));
-        rightside.add(labels);
-        rightside.add(scroll);
-        rightside.add(totals);
-        window.setVisible(true);
+        String tempTester = "File1     File2    file3\n\n" +
+                            "123       456      789\n\n" +
+                            "987       654      321\n\n" +
+                            "564       911      321\n\n" +
+                            "N/A       123      Im dying here\n\n" +
+                            "N/A       123      58745";
+        labels.setText(getRowLabels());
+        Display.setText(tempTester);
+        totals.setText(String.valueOf(totalBuilder));
     }
 
     public String  getRowLabels(){
