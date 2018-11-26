@@ -34,6 +34,8 @@ public class SourceLine {
                 if(cmtLn.commentBegan(line)){
                     if(cmtLn.commentEnded(line)){
                         commentCount++;
+                        line = line.substring(line.indexOf("*/") + 2).trim();
+                        cmtBegan = false;
                     }
                 }
             }
