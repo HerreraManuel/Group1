@@ -303,8 +303,8 @@ public class Dashboard extends JFrame {
     */
     private void displayData() {
         String [] [] currentInformation = new String[0][0];
-        fileWriter2D currentFile = new fileWriter2D(currentInformation);
-        File outputFile = currentFile.getFile();
+//        fileWriter2D currentFile = new fileWriter2D(currentInformation);
+//        File outputFile = currentFile.getFile();
         int[] columnWidth = getColumnWidth(currentInformation);
         boolean[] displaySetting = getDisplaySettings();
         StringBuilder fileBuilder = new StringBuilder();
