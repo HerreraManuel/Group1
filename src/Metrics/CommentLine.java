@@ -30,6 +30,10 @@ public class CommentLine{
             }
             return commentBegan(line);
         }
+        return !commentEnded(line.substring(index + 2));
+    }
+
+    public boolean commentEnded(String line){
         return false;
     }
 
