@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.Color;
+import java.lang.reflect.Array;
 
 public class Dashboard extends JFrame {
 
@@ -122,13 +123,9 @@ public class Dashboard extends JFrame {
         leftside.add(urlPanel);
 
         check1 = new JCheckBox("Characters");
-
         check2 = new JCheckBox("Words");
-
         check3 = new JCheckBox("Lines");
-
         check4 = new JCheckBox("Source Lines");
-
         check5 = new JCheckBox("CommentLines");
 
     /*
@@ -167,37 +164,41 @@ public class Dashboard extends JFrame {
         //rightside.add(scroll);
         //totals = new JTextArea();
         //rightside.add(totals);
+        rightside.add(Display);
         window.add(rightside);
         window.setVisible(true);
 
         space = new JLabel("   ");
         spacingPanel.add(space);
         leftside.add(space);
+        /*
+        The below code will be moved to another method in order to use them properly
 
-        character = new JLabel("Characters");
-        outputDisplay.add(character);
-        character.setVisible(false);
-        leftside.add(outputDisplay);
-
-        word = new JLabel("Words");
-        outputDisplay.add(word);
-        word.setVisible(false);
-        leftside.add(outputDisplay);
-
-        line = new JLabel("Lines");
-        outputDisplay.add(line);
-        line.setVisible(false);
-        leftside.add(outputDisplay);
-
-        commentLine = new JLabel("Comment lines");
-        outputDisplay.add(commentLine);
-        commentLine.setVisible(false);
-        leftside.add(outputDisplay);
-
-        sourceLine = new JLabel("Source lines");
-        outputDisplay.add(sourceLine);
-        sourceLine.setVisible(false);
-        leftside.add(outputDisplay);
+         */
+//        character = new JLabel("Characters");
+//        outputDisplay.add(character);
+//        character.setVisible(false);
+//        leftside.add(outputDisplay);
+//
+//        word = new JLabel("Words");
+//        outputDisplay.add(word);
+//        word.setVisible(false);
+//        leftside.add(outputDisplay);
+//
+//        line = new JLabel("Lines");
+//        outputDisplay.add(line);
+//        line.setVisible(false);
+//        leftside.add(outputDisplay);
+//
+//        commentLine = new JLabel("Comment lines");
+//        outputDisplay.add(commentLine);
+//        commentLine.setVisible(false);
+//        leftside.add(outputDisplay);
+//
+//        sourceLine = new JLabel("Source lines");
+//        outputDisplay.add(sourceLine);
+//        sourceLine.setVisible(false);
+//        leftside.add(outputDisplay);
 
         enter.addActionListener(
                 new ActionListener() {
@@ -222,15 +223,15 @@ public class Dashboard extends JFrame {
                             sourceLine.setForeground(Color.gray);
                         }
 
-                        Display.setText(null);
-                        totals.setText(null);
-                        check1.setSelected(false);
-                        check2.setSelected(false);
-                        check3.setSelected(false);
-                        check4.setSelected(false);
-                        check5.setSelected(false);
-                        urlinput.setText(null);
-                        additionalText.setText(null);
+//                        Display.setText(null);
+//                        totals.setText(null);
+//                        check1.setSelected(false);
+//                        check2.setSelected(false);
+//                        check3.setSelected(false);
+//                        check4.setSelected(false);
+//                        check5.setSelected(false);
+//                        urlinput.setText(null);
+//                        additionalText.setText(null);
 
                         character.setVisible(true);
                         word.setVisible(true);
@@ -292,11 +293,14 @@ public class Dashboard extends JFrame {
         fileWriter2D currentFile = new fileWriter2D(currentInformation);
         File outputFile = currentFile.getFile();
         int[] columnWidth = getColumnWidth(currentInformation);
-        boolean[] displaySetting = getDisplaySettings;
+        boolean[] displaySetting = getDisplaySettings();
         StringBuilder fileBuilder = new StringBuilder();
         StringBuilder totalBuilder = new StringBuilder("Totals\n");
         for (int i = 0; i < 5; i++){
             int currentNum = 0;
+            // Temporary numFiles and input variable below
+            Array[][] input = new Array[10][10];
+            int numFiles = 0;
             for (int j = 0; j < numFiles; j++){
                 if(i > 0 &&  displaySetting[i-1] == true){
                     String output = String.format("%" + columnWidth[j] + "s", input[i][j]);
@@ -304,7 +308,8 @@ public class Dashboard extends JFrame {
                     if (currentInformation [i+1][j].equals("N/A")){
                     }
                     else{
-                        currentNum += (int) currentInformation [i+1][j];
+                        // currentNum += (int) currentInformation[i+1][j];
+                        currentNum += Integer.parseInt(currentInformation [i+1][j]);
                     }
                 }
                 else if(i ==0){
@@ -317,8 +322,10 @@ public class Dashboard extends JFrame {
                 totalBuilder.append(currentNum +"\n");
             }
         }
-        Display = new JTextArea(fileBuilder);
-        totals = new JTextArea(totalBuilder);
+        // Next two lines of code: called String.valueOf for fileBuilder
+        // Before, it was just fileBuilder
+        Display = new JTextArea(String.valueOf(fileBuilder));
+        totals = new JTextArea(String.valueOf(totalBuilder));
         JScrollPane scroll = new JScrollPane(Display);
         scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         rightside.add(scroll);
@@ -351,7 +358,6 @@ public class Dashboard extends JFrame {
                 }
             }
         }
-        // temp return
         return columnWidth;
     }
 }
