@@ -17,7 +17,7 @@ public class CommentLine{
         return commentLine;
     }
 
-    public boolean commmentBegan(String line){
+    public boolean commentBegan(String line){
         int index = line.indexOf("/*");
         if (index < 0) return false;
         int quoteStartIndex = line.indexOf("\"");
@@ -28,6 +28,7 @@ public class CommentLine{
                 line = line.substring(quoteEndIndex + 1);
                 quoteStartIndex = line.indexOf("\"");
             }
+            return commentBegan(line);
         }
         return false;
     }
