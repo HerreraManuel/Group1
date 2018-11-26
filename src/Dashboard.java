@@ -302,7 +302,7 @@ public class Dashboard extends JFrame {
     text area.
     */
     private void displayData() {
-        String [] [] currentInformation = new String[0][0];
+        String [] [] currentInformation = new String[5][5];
 //        fileWriter2D currentFile = new fileWriter2D(currentInformation);
 //        File outputFile = currentFile.getFile();
         int[] columnWidth = getColumnWidth(currentInformation);
@@ -338,8 +338,11 @@ public class Dashboard extends JFrame {
         // Next two lines of code: called String.valueOf for fileBuilder
         // Before, it was just fileBuilder
         labels = new JTextArea(getRowLabels());
+        labels.setEditable(false);
         Display = new JTextArea(String.valueOf(fileBuilder));
+        Display.setEditable(false);
         totals = new JTextArea(String.valueOf(totalBuilder));
+        totals.setEditable(false);
         JScrollPane scroll = new JScrollPane(Display);
         scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         rightside.add(labels);
@@ -388,13 +391,13 @@ public class Dashboard extends JFrame {
     */
     private int[] getColumnWidth(String[][] input) {
         int[] columnWidth = new int[input[0].length];
-        for (int i = 0; i < input.length; i++) {
-            for (int j = 0; j < input[0].length; j++) {
-                if (input[i][j].length() > columnWidth[j]) {
-                    columnWidth[j] = input[i][j].length();
-                }
-            }
-        }
+//        for (int i = 0; i < input.length; i++) {
+//            for (int j = 0; j < input[0].length; j++) {
+//                if (input[i][j].length() > columnWidth[j]) {
+//                    columnWidth[j] = input[i][j].length();
+//                }
+//            }
+//        }
         return columnWidth;
     }
 }
