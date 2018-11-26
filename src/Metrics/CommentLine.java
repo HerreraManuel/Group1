@@ -7,7 +7,11 @@ public class CommentLine{
 
     public int commentLine(String fileContent) {
         int commentLine = 0;
-
+        String[] lineHolder;
+        lineHolder = fileContent.split(("\\r?\\n"));
+        for (String single : lineHolder) {
+            single.contains("//");
+        }
         return commentLine;
     }
 
