@@ -252,10 +252,10 @@ public class Dashboard extends JFrame {
 
 
         clear.addActionListener(
-                new ActionListener() {
+                new ActionListener(){
                     public void actionPerformed(ActionEvent e) {
-                        Display.setText(null);
-                        totals.setText(null);
+                        //Display.setText(null);
+                        //totals.setText(null);
                         check1.setSelected(false);
                         check2.setSelected(false);
                         check3.setSelected(false);
@@ -264,17 +264,17 @@ public class Dashboard extends JFrame {
                         urlinput.setText(null);
                         additionalText.setText(null);
 
-                        character.setForeground(Color.black);
-                        word.setForeground(Color.black);
-                        line.setForeground(Color.black);
-                        commentLine.setForeground(Color.black);
-                        sourceLine.setForeground(Color.black);
+                        //character.setForeground(Color.black);
+                        //word.setForeground(Color.black);
+                        //line.setForeground(Color.black);
+                        //commentLine.setForeground(Color.black);
+                        //sourceLine.setForeground(Color.black);
 
-                        character.setVisible(false);
-                        word.setVisible(false);
-                        line.setVisible(false);
-                        commentLine.setVisible(false);
-                        sourceLine.setVisible(false);
+                        //character.setVisible(false);
+                        //word.setVisible(false);
+                        //line.setVisible(false);
+                        //commentLine.setVisible(false);
+                        //sourceLine.setVisible(false);
 
                     }
                 });
@@ -283,7 +283,6 @@ public class Dashboard extends JFrame {
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                       dispose();
-
                     }
                 });
     }
