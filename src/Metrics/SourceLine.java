@@ -27,9 +27,12 @@ public class SourceLine {
                 commentCount++;
                 continue;
             }
-            if (cmtBegan){
-                if (cmtLn.commentEnded(line)){
+            if (cmtBegan) {
+                if (cmtLn.commentEnded(line)) {
                     commentCount++;
+                }
+                if(cmtLn.commentBegan(line)){
+
                 }
             }
         }
