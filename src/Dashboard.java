@@ -21,7 +21,7 @@ public class Dashboard extends JFrame {
     private JLabel githubUrlInput, additionalInput, character, word, line, commentLine, sourceLine, space;
     private JTextField urlinput, additionalText;
     private JCheckBox check1, check2, check3, check4, check5;
-    private JButton enter, clear;
+    private JButton enter, clear, exit;
     private String completeUrl;
 
     private boolean initialized = false;
@@ -155,6 +155,9 @@ public class Dashboard extends JFrame {
         clear = new JButton("Clear");
         enterPanel.add(clear);
 
+        exit = new JButton("Exit");
+        enterPanel.add(exit);
+
         leftside.add(enterPanel);
         window.add(leftside);
         Display = new JTextArea();
@@ -268,6 +271,14 @@ public class Dashboard extends JFrame {
                         line.setVisible(false);
                         commentLine.setVisible(false);
                         sourceLine.setVisible(false);
+
+                    }
+                });
+
+        exit.addActionListener(
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                      dispose();
 
                     }
                 });
