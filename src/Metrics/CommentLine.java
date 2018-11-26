@@ -5,6 +5,11 @@ import java.util.*;
 
 public class CommentLine{
 
+    public int commentLine(String fileContent) {
+        int commentLine = 0;
+        return commentLine;
+    }
+
 }
 
 
