@@ -12,6 +12,8 @@ public class SourceLine {
         String[] lineHolder;
         return sourceCount;
     }
+
+    // gets source line count and comment line count
 }
 
 // Matthews Code Below
