@@ -210,25 +210,25 @@ public class Dashboard extends JFrame {
         enter.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        if(check1.isSelected() == false){
-                            character.setForeground(Color.gray);
-                        }
-
-                        if(check2.isSelected() == false){
-                            word.setForeground(Color.gray);
-                        }
-
-                        if(check3.isSelected() == false){
-                            line.setForeground(Color.gray);
-                        }
-
-                        if(check4.isSelected() == false){
-                            commentLine.setForeground(Color.gray);
-                        }
-
-                        if(check5.isSelected() == false){
-                            sourceLine.setForeground(Color.gray);
-                        }
+//                        if(check1.isSelected() == false){
+//                            character.setForeground(Color.gray);
+//                        }
+//
+//                        if(check2.isSelected() == false){
+//                            word.setForeground(Color.gray);
+//                        }
+//
+//                        if(check3.isSelected() == false){
+//                            line.setForeground(Color.gray);
+//                        }
+//
+//                        if(check4.isSelected() == false){
+//                            commentLine.setForeground(Color.gray);
+//                        }
+//
+//                        if(check5.isSelected() == false){
+//                            sourceLine.setForeground(Color.gray);
+//                        }
 
 //                        Display.setText(null);
 //                        totals.setText(null);
@@ -302,7 +302,6 @@ public class Dashboard extends JFrame {
     text area.
     */
     private void displayData() {
-        //TODO : send url into GitParser to be used and then display it
         String [] [] currentInformation = new String[0][0];
         fileWriter2D currentFile = new fileWriter2D(currentInformation);
         File outputFile = currentFile.getFile();
