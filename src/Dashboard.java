@@ -73,7 +73,7 @@ public class Dashboard extends JFrame {
         window = new JFrame("Metrics");
         window.setLayout(new FlowLayout(FlowLayout.LEADING));
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        window.setSize((int)screenSize.getWidth(), (int)screenSize.getHeight());
+        window.setSize((int)screenSize.getWidth(),300);
      /*
      establishes all the panel that will be put together and establish their layout.
      see design document to see how they work together
@@ -309,7 +309,7 @@ public class Dashboard extends JFrame {
         boolean[] displaySetting = getDisplaySettings();
         StringBuilder fileBuilder = new StringBuilder();
         StringBuilder totalBuilder = new StringBuilder("Totals\n");
-        for (int i = 0; i < 5; i++){
+        for (int i = 0; i < 6; i++){
             int currentNum = 0;
             // Temporary numFiles and input variable below
             Array[][] input = new Array[10][10];
@@ -331,7 +331,7 @@ public class Dashboard extends JFrame {
                 }
 
             }
-            if(i > 0 &&  displaySetting[i-1] == true){
+            if(i > 0 &&  (displaySetting[i-1] == true || getDisplayAll())){
                 totalBuilder.append(currentNum +"\n");
             }
         }
