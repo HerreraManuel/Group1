@@ -1,6 +1,8 @@
 package Metrics;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
 
 public class SourceLine {
@@ -14,6 +16,17 @@ public class SourceLine {
     }
 
     // gets source line count and comment line count
+    public void sourceCount(BufferedReader buff) throws IOException {
+        int sourceCount = 0;
+        boolean cmtBegan = false;
+        String line = null;
+        while ((line = buff.readLine()) != null){
+            line = line.trim();
+            if ("".equals(line) || line.startsWith("//")){
+
+            }
+        }
+    }
 }
 
 // Matthews Code Below
