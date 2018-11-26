@@ -13,10 +13,12 @@ public class Metrics_TestMain
         String fileContent = "#include <stdio.h>\nint main()\n{\n  printf(\"Hello World!\\n\");\n  return 0;\n})";
         Lines lines = new Lines();
         Words words = new Words();
+        Characters chars = new Characters();
 
         System.out.println(fileContent);
         System.out.println("\n\n");
         System.out.println("Line Count: " + lines.lineCount(fileContent));
         System.out.println("Word Count: " + words.wordCount(fileContent));
+        System.out.println("Char Count: " + chars.characterCount(fileContent));
     }
 }
