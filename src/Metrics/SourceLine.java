@@ -35,14 +35,17 @@ public class SourceLine {
                     if(cmtLn.commentEnded(line)){
                     }
                 }
+                /*
                 if (isSourceCodeLine(line)) {
                     sourceCount++;
                 }
+                */
             }
         }
-        public boolean isSourceCodeLine(String line){
-            boolean isSourceCodeLine = false;
         }
+    public boolean isSourceCodeLine(String line){
+        boolean isSourceCodeLine = false;
+        return false;
     }
 }
 
