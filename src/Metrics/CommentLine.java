@@ -38,8 +38,11 @@ public class CommentLine{
         if (index < 0) return false;
         else {
             String subString = line.substring(index + 2).trim();
+            if ("".equals(subString) || subString.startsWith("//"))
+                return true;
+            if (commentBegan(subString)) return false;
+            else return true;
         }
-        return false;
     }
 
 }
