@@ -32,7 +32,9 @@ public class SourceLine {
                     commentCount++;
                 }
                 if(cmtLn.commentBegan(line)){
-
+                    if(cmtLn.commentEnded(line)){
+                        commentCount++;
+                    }
                 }
             }
         }
