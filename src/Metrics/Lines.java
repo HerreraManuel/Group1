@@ -4,13 +4,10 @@ public class Lines {
 
     public int lineCount(String fileContent) {
 
-        int lines = 0;
+        int lines;
         String [] lineKeeper;
-
-        while(fileContent != null) {
-            lineKeeper = fileContent.split(("\\r?\\n"));
-            lines = lineKeeper.length;
-        }
+        lineKeeper = fileContent.split(("\\r?\\n"));
+        lines = lineKeeper.length;
         return lines;
     }
 
