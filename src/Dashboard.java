@@ -240,11 +240,11 @@ public class Dashboard extends JFrame {
 //                        urlinput.setText(null);
 //                        additionalText.setText(null);
 
-                        character.setVisible(true);
-                        word.setVisible(true);
-                        line.setVisible(true);
-                        commentLine.setVisible(true);
-                        sourceLine.setVisible(true);
+//                        character.setVisible(true);
+//                        word.setVisible(true);
+//                        line.setVisible(true);
+//                        commentLine.setVisible(true);
+//                        sourceLine.setVisible(true);
 
                         displayData();
                     }
