@@ -337,14 +337,20 @@ public class Dashboard extends JFrame {
         }
         // Next two lines of code: called String.valueOf for fileBuilder
         // Before, it was just fileBuilder
+        String tempTester = "THIS IS FOR TESTINg PURPOSES ONLY\n I AM TRYING TO SEE HOW FAR THIS CAN GO \n I ALSO WANT TO SEE IF ALL OF\n THIS WILL LINE UP ON THE O\nUTPUT TO HAVE A \nPSASDJHGILKJGEILUKRJHNGFILKDJFGSILEJGNLDIUKJFNGSLDIKJRGNLEIRKJNGWELKURJHGWEIRLKHNGWERIKGHWEILUKRJHGWELIUKRJGHWIELGH";
         labels = new JTextArea(getRowLabels());
         labels.setEditable(false);
-        Display = new JTextArea(String.valueOf(fileBuilder));
+//        labels.add(Box.createVerticalGlue());
+//        Display = new JTextArea(String.valueOf(fileBuilder));
+        Display = new JTextArea(tempTester);
         Display.setEditable(false);
+//        Display.add(Box.createVerticalGlue());
         totals = new JTextArea(String.valueOf(totalBuilder));
         totals.setEditable(false);
+//        totals.add(Box.createVerticalGlue());
         JScrollPane scroll = new JScrollPane(Display);
         scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        scroll.setPreferredSize(new Dimension(600,120));
         rightside.add(labels);
         rightside.add(scroll);
         rightside.add(totals);
