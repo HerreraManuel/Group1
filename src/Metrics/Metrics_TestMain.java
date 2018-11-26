@@ -14,11 +14,13 @@ public class Metrics_TestMain
         Lines lines = new Lines();
         Words words = new Words();
         Characters chars = new Characters();
+        CommentLine commentLine = new CommentLine();
 
         System.out.println(fileContent);
         System.out.println("\n\n");
         System.out.println("Line Count: " + lines.lineCount(fileContent));
         System.out.println("Word Count: " + words.wordCount(fileContent));
         System.out.println("Char Count: " + chars.characterCount(fileContent));
+        System.out.println("Cmmt Count: " + commentLine.commentLine(fileContent));
     }
 }

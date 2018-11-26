@@ -121,7 +121,6 @@
     3.1.3 Software Interfaces
     3.1.4 Communication Interfaces
             
-        
 ##### 3.2 Functional Requirements
         3.2.1 Mode 1  *** change these later to incorporate Use Cases 
         
