@@ -34,7 +34,7 @@ public class GitParser
             return out;
         }
         else
-            throw new IOException("GitParser - Invalid link!");
+            throw new IOException("GitParser - Invalid Git Repository link!");
     }
 
     /* Notes:

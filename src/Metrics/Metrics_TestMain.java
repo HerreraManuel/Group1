@@ -10,7 +10,7 @@ public class Metrics_TestMain
 
     public void run(String[] args)
     {
-        String fileContent = "#include <stdio.h>\nint main()\n{\n  printf(\"Hello World!\\n\");\n  return 0;\n})";
+        String fileContent = "#include <stdio.h>\nint main()\n{\n  printf(\"Hello World!\\n\");\n  return 0;\n}";
         Lines lines = new Lines();
         Words words = new Words();
 
