@@ -151,9 +151,15 @@ public class Dashboard extends JFrame {
         enter = new JButton("Enter");
         enterPanel.add(enter);
 
+        space = new JLabel("   ");
+        enterPanel.add(space);
+
         //clear button clears all areas of text and resets buttons
         clear = new JButton("Clear");
         enterPanel.add(clear);
+
+        space = new JLabel("   ");
+        enterPanel.add(space);
 
         exit = new JButton("Exit");
         enterPanel.add(exit);
@@ -171,9 +177,7 @@ public class Dashboard extends JFrame {
         window.add(rightside);
         window.setVisible(true);
 
-        space = new JLabel("   ");
-        spacingPanel.add(space);
-        leftside.add(space);
+
         /*
         The below code will be moved to another method in order to use them properly
 
