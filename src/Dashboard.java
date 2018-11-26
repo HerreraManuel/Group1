@@ -378,11 +378,12 @@ public class Dashboard extends JFrame {
     */
     private boolean[] getDisplaySettings(){
         boolean [] displaySettings = new boolean [5];
-        displaySettings [0] = check1.isSelected();
-        displaySettings [1] = check2.isSelected();
-        displaySettings [2] = check3.isSelected();
-        displaySettings [3] = check4.isSelected();
-        displaySettings [4] = check5.isSelected();
+        boolean displayAll = getDisplayAll();
+        displaySettings [0] = (check1.isSelected() || displayAll);
+        displaySettings [1] = (check2.isSelected() || displayAll);
+        displaySettings [2] = (check3.isSelected() || displayAll);
+        displaySettings [3] = (check4.isSelected() || displayAll);
+        displaySettings [4] = (check5.isSelected() || displayAll);
         return displaySettings;
     }
 
@@ -400,4 +401,14 @@ public class Dashboard extends JFrame {
 //        }
         return columnWidth;
     }
+
+    private boolean getDisplayAll(){
+        boolean displayAll = false;
+        if(!check1.isSelected() && !check2.isSelected() && !check3.isSelected() && !check4.isSelected() && !check5.isSelected()){
+            displayAll = true;
+        }
+
+        return displayAll;
+    }
+
 }
