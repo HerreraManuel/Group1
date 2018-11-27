@@ -110,7 +110,7 @@ public class Dashboard extends JFrame {
     puts together all of the buttons and check boxes
     establishes what each button should do and what the label is
     */
-        githubUrlInput = new JLabel("Enter Github URL");
+        githubUrlInput = new JLabel("Enter Github URLs separated by commas");
         urlPanel.add(githubUrlInput);
         urlinput = new JTextField(30);
         urlinput.addActionListener(
@@ -308,73 +308,107 @@ public class Dashboard extends JFrame {
     text area.
     */
     private void displayData() {
-        String [] [] currentInformation = new String[5][5];
+        if (urlinput.getText().isEmpty()) {
+            Display.setText("Please enter a valid URL");
+        } else {
+            String[][] currentInformation = new String[5][5];
 //        fileWriter2D currentFile = new fileWriter2D(currentInformation);
 //        File outputFile = currentFile.getFile();
-        int[] columnWidth = getColumnWidth(currentInformation);
-        boolean[] displaySetting = getDisplaySettings();
-        StringBuilder fileBuilder = new StringBuilder();
-        StringBuilder totalBuilder = new StringBuilder("Totals\n\n");
-        for (int i = 0; i < 6; i++){
-            int currentNum = 0;
-            // Temporary numFiles and input variable below
-            Array[][] input = new Array[10][10];
-            int numFiles = 0;
-            for (int j = 0; j < numFiles; j++){
-                if(i > 0 &&  displaySetting[i-1] == true){
-                    String output = String.format("%" + columnWidth[j] + "s", input[i][j]);
-                    fileBuilder.append(output + " ");//append to the output string
-                    if (currentInformation [i+1][j].equals("N/A")){
+            int[] columnWidth = getColumnWidth(currentInformation);
+            boolean[] displaySetting = getDisplaySettings();
+            StringBuilder fileBuilder = new StringBuilder();
+            StringBuilder totalBuilder = new StringBuilder("Totals\n\n");
+            boolean complete = false;
+            int count = 0;
+            for (int i = 0; i < 6; i++) {
+                int currentNum = 0;
+                // Temporary numFiles and input variable below
+                Array[][] input = new Array[10][10];
+                int numFiles = 0;
+                for (int j = 0; j < numFiles; j++) {
+                    if (i > 0 && displaySetting[i - 1] == true) {
+                        String output = String.format("%" + columnWidth[j] + "s", input[i][j]);
+                        fileBuilder.append(output + " ");//append to the output string
+                        if (currentInformation[i + 1][j].equals("N/A")) {
+                        } else {
+                            // currentNum += (int) currentInformation[i+1][j];
+                            currentNum += Integer.parseInt(currentInformation[i + 1][j]);
+                        }
+                    } else if (i == 0) {
+                        String output = String.format("%" + columnWidth[j] + "s", input[i][j]);
+                        fileBuilder.append(output + " ");//append to the output string
                     }
-                    else{
-                        // currentNum += (int) currentInformation[i+1][j];
-                        currentNum += Integer.parseInt(currentInformation [i+1][j]);
-                    }
-                }
-                else if(i ==0){
-                    String output = String.format("%" + columnWidth[j] + "s", input[i][j]);
-                    fileBuilder.append(output + " ");//append to the output string
-                }
 
+                }
+                if (i > 0 && i < 5 && (displaySetting[i - 1] == true || getDisplayAll())) {
+                    totalBuilder.append(currentNum + "\n\n");
+                    count++;
+                } else if (i == 5 && (displaySetting[i - 1] == true || getDisplayAll())) {
+                    totalBuilder.append(currentNum + "\n");
+                    if (count < 5) {
+                        totalBuilder.append("\n");
+                    }
+                    count++;
+                }
             }
-            if(i > 0 && i <5 &&  (displaySetting[i-1] == true || getDisplayAll())){
-                totalBuilder.append(currentNum +"\n\n");
+            for (; count < 4; count++) {
+                totalBuilder.append("\n\n");
             }
-            else if( i ==5 &&  (displaySetting[i-1] == true || getDisplayAll())){
-                totalBuilder.append(currentNum +"\n");
+            if (count < 5) {
+                totalBuilder.append("\n");
             }
+            // Next two lines of code: called String.valueOf for fileBuilder
+            // Before, it was just fileBuilder
+            String tempTester = "File1     File2    file3 klasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss\n\n" +
+                    "123       456      789\n\n" +
+                    "987       654      321\n\n" +
+                    "564       911      321\n\n" +
+                    "N/A       123      Im dying here\n\n" +
+                    "N/A       123      58745";
+            labels.setText(getRowLabels());
+            Display.setText(tempTester);
+            totals.setText(String.valueOf(totalBuilder));
         }
-        // Next two lines of code: called String.valueOf for fileBuilder
-        // Before, it was just fileBuilder
-        String tempTester = "File1     File2    file3\n\n" +
-                            "123       456      789\n\n" +
-                            "987       654      321\n\n" +
-                            "564       911      321\n\n" +
-                            "N/A       123      Im dying here\n\n" +
-                            "N/A       123      58745";
-        labels.setText(getRowLabels());
-        Display.setText(tempTester);
-        totals.setText(String.valueOf(totalBuilder));
     }
 
     public String  getRowLabels(){
         StringBuilder rowLabels = new StringBuilder("Filenames\n\n");
         boolean [] dispalySettings = getDisplaySettings();
+        int count = 0;
+        boolean complete =false;
         if(dispalySettings[0] == true){
             rowLabels.append("Characters\n\n");
+            count++;
         }
         if(dispalySettings[1]==true){
             rowLabels.append("Words\n\n");
+            count++;
         }
         if(dispalySettings[2] == true){
             rowLabels.append("Lines\n\n");
+            count++;
         }
         if(dispalySettings[3] == true){
             rowLabels.append("Source Lines\n\n");
+            count++;
         }
         if(dispalySettings[4] == true){
             rowLabels.append("Comment Lines\n");
+            if(count < 5 ){
+                rowLabels.append("\n");
+            }
+            count++;
         }
+        if(count < 5){
+            complete =true;
+        }
+        for(;count <4; count++){
+            rowLabels.append("\n\n");
+        }
+        if(complete){
+            rowLabels.append("\n");
+        }
+
         return String.valueOf(rowLabels);
     }
 
