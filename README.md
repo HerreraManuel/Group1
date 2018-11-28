@@ -1,17 +1,6 @@
-![Software Requirements Specification](https://i.imgur.com/qZSmkmB.png)
-
-### Github Metrics Application
-### Version 1.0
-### Group 1
-
-#### Jenzel Arevalo
-#### Parambir Gill
-#### Manuel Herrera
-#### Matthew Mendoza
-#### Jared Nooner
+![Software Requirements Specification](https://i.imgur.com/1qtyPtP.png)
 
 
-### CSC 131 - Software Engineering
 
 ### 1.Introduction:
 
