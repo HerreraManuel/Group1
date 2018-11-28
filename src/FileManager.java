@@ -1,16 +1,20 @@
+import java.lang.reflect.Array;
 
 public class FileManager {
 
     String [][] currentString = new String[0][0];
     boolean [] displaySettings = new boolean[0];
+    boolean displayAll = false;
     String rowLabel = new String();
     String fileDisplay = new String();
     String totals = new String();
 
-    public FileManager(String [][] input, boolean [] displaySetting){
+    public FileManager(String [][] input, boolean [] displaySetting, boolean displayAll){
         currentString = input;
         displaySettings = displaySetting;
+        this.displayAll = displayAll;
         setRowLabels();
+        setFileDisplay();
 
     }
 
@@ -51,6 +55,52 @@ public class FileManager {
             rowLabels.append("\n");
         }
         rowLabel = String.valueOf(rowLabels);
+    }
+
+    private void setFileDisplay(){
+        String[][] currentInformation = new String[5][5];
+        int[] columnWidth = getColumnWidth(currentInformation);
+        StringBuilder fileBuilder = new StringBuilder();
+        StringBuilder totalBuilder = new StringBuilder("Totals\n\n");
+        boolean complete = false;
+        int count = 0;
+        for (int i = 0; i < 6; i++) {
+            int currentNum = 0;
+            Array[][] input = new Array[10][10];
+            int numFiles = 0;
+            for (int j = 0; j < displaySettings.length; j++) {
+                if (i > 0 && displaySettings[i - 1] == true) {
+                    String output = String.format("%" + columnWidth[j] + "s", input[i][j]);
+                    fileBuilder.append(output + " ");//append to the output string
+                    if (currentInformation[i + 1][j].equals("N/A")) {
+                    } else {
+                        currentNum += Integer.parseInt(currentInformation[i + 1][j]);
+                    }
+                } else if (i == 0) {
+                    String output = String.format("%" + columnWidth[j] + "s", input[i][j]);
+                    fileBuilder.append(output + " ");//append to the output string
+                }
+
+            }
+            if (i > 0 && i < 5 && (displaySettings[i - 1] == true || displayAll)) {
+                totalBuilder.append(currentNum + "\n\n");
+                count++;
+            } else if (i == 5 && (displaySettings[i - 1] == true || displayAll)) {
+                totalBuilder.append(currentNum + "\n");
+                if (count < 5) {
+                    totalBuilder.append("\n");
+                }
+                count++;
+            }
+        }
+        for (; count < 4; count++) {
+            totalBuilder.append("\n\n");
+        }
+        if (count < 5) {
+            totalBuilder.append("\n");
+        }
+        fileDisplay = String.valueOf(fileBuilder);
+        totals = String.valueOf(totalBuilder);
     }
 
     private int[] getColumnWidth(String [][] input){
