@@ -1,39 +1,19 @@
 package Metrics;
 
-import java.io.*;
-import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class CommentLine{
 
     public int commentLine(String fileContent) {
         int commentLine = 0;
-        String[] lineHolder;
-        lineHolder = fileContent.split(("\\r?\\n"));
-        for (String single : lineHolder) {
-            single.contains("//");
-        }
         return commentLine;
     }
 
     public boolean commentBegan(String line){
-        int index = line.indexOf("/*");
-        if (index < 0) return false;
-        int quoteStartIndex = line.indexOf("\"");
-        if (quoteStartIndex != 01 && quoteStartIndex < index){
-            while(quoteStartIndex > -1){
-                line = line.substring(quoteStartIndex + 1);
-                int quoteEndIndex = line.indexOf("\"");
-                line = line.substring(quoteEndIndex + 1);
-                quoteStartIndex = line.indexOf("\"");
-            }
-            return commentBegan(line);
-        }
-        return !commentEnded(line.substring(index + 2));
+        return false;
     }
 
     public boolean commentEnded(String line){
+        return false;
     }
 
 
