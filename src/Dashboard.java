@@ -312,8 +312,6 @@ public class Dashboard extends JFrame {
             Display.setText("Please enter a valid URL");
         } else {
             String[][] currentInformation = new String[5][5];
-//        fileWriter2D currentFile = new fileWriter2D(currentInformation);
-//        File outputFile = currentFile.getFile();
             int[] columnWidth = getColumnWidth(currentInformation);
             boolean[] displaySetting = getDisplaySettings();
             StringBuilder fileBuilder = new StringBuilder();
@@ -322,7 +320,6 @@ public class Dashboard extends JFrame {
             int count = 0;
             for (int i = 0; i < 6; i++) {
                 int currentNum = 0;
-                // Temporary numFiles and input variable below
                 Array[][] input = new Array[10][10];
                 int numFiles = 0;
                 for (int j = 0; j < numFiles; j++) {
@@ -331,7 +328,6 @@ public class Dashboard extends JFrame {
                         fileBuilder.append(output + " ");//append to the output string
                         if (currentInformation[i + 1][j].equals("N/A")) {
                         } else {
-                            // currentNum += (int) currentInformation[i+1][j];
                             currentNum += Integer.parseInt(currentInformation[i + 1][j]);
                         }
                     } else if (i == 0) {
@@ -430,8 +426,8 @@ public class Dashboard extends JFrame {
     /*r
     returns the width of each file column so they are all aligned together for a better looking output
     */
-    private int[] getColumnWidth(String[][] input) {
-        int[] columnWidth = new int[input[0].length];
+//    private int[] getColumnWidth(String[][] input) {
+//        int[] columnWidth = new int[input[0].length];
 //        for (int i = 0; i < input.length; i++) {
 //            for (int j = 0; j < input[0].length; j++) {
 //                if (input[i][j].length() > columnWidth[j]) {
@@ -439,8 +435,8 @@ public class Dashboard extends JFrame {
 //                }
 //            }
 //        }
-        return columnWidth;
-    }
+//        return columnWidth;
+//    }
 
     private boolean getDisplayAll(){
         boolean displayAll = false;
