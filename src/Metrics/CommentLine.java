@@ -21,19 +21,11 @@ public class CommentLine{
         int index = line.indexOf("/*");
         if (index < 0) return false;
         int quoteStartIndex = line.indexOf("\"");
-        if (quoteStartIndex != 01 && quoteStartIndex < index){
-            while(quoteStartIndex > -1){
-                line = line.substring(quoteStartIndex + 1);
-                int quoteEndIndex = line.indexOf("\"");
-                line = line.substring(quoteEndIndex + 1);
-                quoteStartIndex = line.indexOf("\"");
-            }
-            return commentBegan(line);
-        }
         return !commentEnded(line.substring(index + 2));
     }
 
     public boolean commentEnded(String line){
+        return false;
     }
 
 
