@@ -10,6 +10,9 @@ public class FileManager {
     String fileDisplay = new String();
     String totals = new String();
 
+    /*
+    Constructor for the dashboard
+     */
     public FileManager(String [][] input, boolean [] displaySetting, boolean displayAll) throws IOException{
         if (input.toString().equals(null)){
             throw new IOException();
@@ -22,6 +25,9 @@ public class FileManager {
 
     }
 
+    /*
+    method that actually sets the rowLabel variable
+     */
     private void  setRowLabels(){
         StringBuilder rowLabels = new StringBuilder("Filenames\n\n");
         int count = 0;
@@ -61,6 +67,9 @@ public class FileManager {
         rowLabel = String.valueOf(rowLabels);
     }
 
+    /*
+    method that sets the fileDisplay and totals variable
+     */
     private void setFileDisplay(){
         String[][] currentInformation = new String[5][5];
         int[] columnWidth = getColumnWidth(currentInformation);
@@ -74,14 +83,14 @@ public class FileManager {
             int numFiles = 0;
             for (int j = 0; j < displaySettings.length; j++) {
                 if (i > 0 && displaySettings[i - 1] == true) {
-                    String output = String.format("%" + columnWidth[j] + "s", input[i][j]);
+                    String output = String.format("%" + columnWidth[j] + "s   ", input[i][j]);
                     fileBuilder.append(output + " ");//append to the output string
                     if (currentInformation[i + 1][j].equals("N/A")) {
                     } else {
                         currentNum += Integer.parseInt(currentInformation[i + 1][j]);
                     }
                 } else if (i == 0) {
-                    String output = String.format("%" + columnWidth[j] + "s", input[i][j]);
+                    String output = String.format("%" + columnWidth[j] + "s   ", input[i][j]);
                     fileBuilder.append(output + " ");//append to the output string
                 }
 
@@ -107,6 +116,9 @@ public class FileManager {
         totals = String.valueOf(totalBuilder);
     }
 
+    /*
+    method that gives the width of each column for spacing puposes
+     */
     private int[] getColumnWidth(String [][] input){
             int[] columnWidth = new int[input[0].length];
             for (int i = 0; i < input.length; i++) {
@@ -119,14 +131,17 @@ public class FileManager {
             return columnWidth;
     }
 
+    //returns string for labels
     public String getRowLabels(){
         return rowLabel;
     }
 
+    //returns string for all of the files
     public String getFileDisplay(){
         return fileDisplay;
     }
 
+    //returns string for the totals
     public String getTotals(){
         return totals;
     }
