@@ -10,9 +10,6 @@ public class SourceLine {
     String fileExt;
 
     public int sourceline(String fileContent){
-        int sourceCount = 0;
-        String[] lineHolder;
-        return sourceCount;
     }
 
     // gets source line count and comment line count
