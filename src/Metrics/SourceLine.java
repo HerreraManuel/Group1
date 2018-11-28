@@ -8,7 +8,7 @@ public class SourceLine {
 
     String fileExt;
 
-    public int sourceline(String fileContent){
+    public int sourceLine(String fileContent){
         return 0;
     }
 

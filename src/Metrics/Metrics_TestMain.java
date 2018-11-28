@@ -23,5 +23,6 @@ public class Metrics_TestMain
         System.out.println("Word Count: " + words.wordCount(fileContent));
         System.out.println("Char Count: " + chars.characterCount(fileContent));
         System.out.println("Cmmt Count: " + commentLine.commentLine(fileContent));
+        System.out.println("Src  Count: " + sourceLine.sourceLine(fileContent));
     }
 }
