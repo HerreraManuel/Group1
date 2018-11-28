@@ -1,4 +1,4 @@
-![Software Requirements Specification](https://i.imgur.com/dRT6kNt.png)
+![Software Requirements Specification](https://i.imgur.com/qZSmkmB.png)
 
 ### Github Metrics Application
 ### Version 1.0
