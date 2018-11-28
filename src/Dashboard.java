@@ -25,10 +25,6 @@ public class Dashboard extends JFrame {
     private String completeUrl;
 
     private boolean initialized = false;
-
-    private Container parent1, parent2, parent3, parent4, parent5;
-
-    final int counter = 0;
     /*
     Creates the Gui and sets it to visible
     */
@@ -335,6 +331,9 @@ public class Dashboard extends JFrame {
         return displaySettings;
     }
 
+    /*
+    checks to see if all of the checkboxes are unselected to diplay the proper information
+     */
     private boolean getDisplayAll(){
         boolean displayAll = false;
         if(!check1.isSelected() && !check2.isSelected() && !check3.isSelected() && !check4.isSelected() && !check5.isSelected()){
