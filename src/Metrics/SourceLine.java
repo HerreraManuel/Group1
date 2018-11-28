@@ -21,27 +21,6 @@ public class SourceLine {
         boolean cmtBegan = false;
         String line = null;
         CommentLine cmtLn = new CommentLine();
-        while ((line = buff.readLine()) != null){
-            line = line.trim();
-            if ("".equals(line) || line.startsWith("//")){
-                commentCount++;
-                continue;
-            }
-            if (cmtBegan) {
-                if (cmtLn.commentEnded(line)) {
-                    commentCount++;
-                }
-                if(cmtLn.commentBegan(line)){
-                    if(cmtLn.commentEnded(line)){
-                    }
-                }
-                /*
-                if (isSourceCodeLine(line)) {
-                    sourceCount++;
-                }
-                */
-            }
-        }
         }
 }
 
