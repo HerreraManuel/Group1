@@ -16,7 +16,6 @@ import Metrics.Lines;
 import Metrics.SourceLine;
 import Metrics.CommentLine;
 
-import javax.security.auth.Subject;
 import java.io.File;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -24,6 +23,7 @@ import java.io.FileReader;
 
 public class Analyzer
 {
+    private String fileName;
     private Lines lines;
     private Characters characters;
     private Words words;
@@ -35,6 +35,7 @@ public class Analyzer
         try
         {
             String fileContent = readFileContents(f.getPath());
+            fileName = f.getName();
             performMetrics(fileContent);
 
                     /*
@@ -55,6 +56,10 @@ public class Analyzer
     //TODO: Refactor this after tests checkout, no print outs should be in this method; may need to refactor some methods in Metrics class
     public void performMetrics(String fileContent)
     {
+        lines = new Lines();
+        words = new Words();
+        System.out.println(fileName);
+        System.out.println("-----------------------------------------------");
         System.out.println(fileContent);
         System.out.println("\n");
         System.out.println("Line Count: " + lines.lineCount(fileContent));

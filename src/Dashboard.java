@@ -15,13 +15,13 @@ public class Dashboard extends JFrame {
     private JPanel leftside, urlPanel, additionalPanel, totbuttons, enterPanel, outputDisplay, spacingPanel;
     private JPanel rightside;
 
-    private JTextArea Display, totals;
+    private JTextArea labels, Display, totals;
     private JScrollPane scroll;
 
     private JLabel githubUrlInput, additionalInput, character, word, line, commentLine, sourceLine, space;
     private JTextField urlinput, additionalText;
     private JCheckBox check1, check2, check3, check4, check5;
-    private JButton enter, clear;
+    private JButton enter, clear, exit;
     private String completeUrl;
 
     private boolean initialized = false;
@@ -73,7 +73,7 @@ public class Dashboard extends JFrame {
         window = new JFrame("Metrics");
         window.setLayout(new FlowLayout(FlowLayout.LEADING));
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        window.setSize((int)screenSize.getWidth(), (int)screenSize.getHeight());
+        window.setSize((int)screenSize.getWidth(),300);
      /*
      establishes all the panel that will be put together and establish their layout.
      see design document to see how they work together
@@ -110,7 +110,7 @@ public class Dashboard extends JFrame {
     puts together all of the buttons and check boxes
     establishes what each button should do and what the label is
     */
-        githubUrlInput = new JLabel("Enter Github URL");
+        githubUrlInput = new JLabel("Enter Github URLs separated by commas");
         urlPanel.add(githubUrlInput);
         urlinput = new JTextField(30);
         urlinput.addActionListener(
@@ -151,26 +151,40 @@ public class Dashboard extends JFrame {
         enter = new JButton("Enter");
         enterPanel.add(enter);
 
+        space = new JLabel("   ");
+        enterPanel.add(space);
+
         //clear button clears all areas of text and resets buttons
         clear = new JButton("Clear");
         enterPanel.add(clear);
 
+        space = new JLabel("   ");
+        enterPanel.add(space);
+
+        exit = new JButton("Exit");
+        enterPanel.add(exit);
+
         leftside.add(enterPanel);
         window.add(leftside);
-        Display = new JTextArea();
-        //Display.setEditable(false);
-        //scroll = new JScrollPane(Display);
-        //scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
-        //rightside.add(scroll);
-        //totals = new JTextArea();
-        //rightside.add(totals);
-        rightside.add(Display);
+
+        labels = new JTextArea("");
+        labels.setSize(50,200);
+        labels.setEditable(false);
+        Display = new JTextArea("");
+        Display.setEditable(false);
+        totals = new JTextArea("");
+        totals.setEditable(false);
+        totals.setSize(50,200);
+        JScrollPane scroll = new JScrollPane(Display);
+        scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        scroll.setPreferredSize(new Dimension(600,195));
+        rightside.add(labels);
+        rightside.add(scroll);
+        rightside.add(totals);
         window.add(rightside);
         window.setVisible(true);
 
-        space = new JLabel("   ");
-        spacingPanel.add(space);
-        leftside.add(space);
+
         /*
         The below code will be moved to another method in order to use them properly
 
@@ -203,52 +217,51 @@ public class Dashboard extends JFrame {
         enter.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        if(check1.isSelected() == false){
-                            character.setForeground(Color.gray);
-                        }
+//                        if(check1.isSelected() == false){
+//                            character.setForeground(Color.gray);
+//                        }
+//
+//                        if(check2.isSelected() == false){
+//                            word.setForeground(Color.gray);
+//                        }
+//
+//                        if(check3.isSelected() == false){
+//                            line.setForeground(Color.gray);
+//                        }
+//
+//                        if(check4.isSelected() == false){
+//                            commentLine.setForeground(Color.gray);
+//                        }
+//
+//                        if(check5.isSelected() == false){
+//                            sourceLine.setForeground(Color.gray);
+//                        }
 
-                        if(check2.isSelected() == false){
-                            word.setForeground(Color.gray);
-                        }
-
-                        if(check3.isSelected() == false){
-                            line.setForeground(Color.gray);
-                        }
-
-                        if(check4.isSelected() == false){
-                            commentLine.setForeground(Color.gray);
-                        }
-
-                        if(check5.isSelected() == false){
-                            sourceLine.setForeground(Color.gray);
-                        }
-
-//                        Display.setText(null);
-//                        totals.setText(null);
-//                        check1.setSelected(false);
-//                        check2.setSelected(false);
-//                        check3.setSelected(false);
-//                        check4.setSelected(false);
-//                        check5.setSelected(false);
-//                        urlinput.setText(null);
-//                        additionalText.setText(null);
-
-                        character.setVisible(true);
-                        word.setVisible(true);
-                        line.setVisible(true);
-                        commentLine.setVisible(true);
-                        sourceLine.setVisible(true);
+//                        character.setVisible(true);
+//                        word.setVisible(true);
+//                        line.setVisible(true);
+//                        commentLine.setVisible(true);
+//                        sourceLine.setVisible(true);
 
                         displayData();
+
+                        check1.setSelected(false);
+                        check2.setSelected(false);
+                        check3.setSelected(false);
+                        check4.setSelected(false);
+                        check5.setSelected(false);
+                        urlinput.setText(null);
+                        additionalText.setText(null);
                     }
                 });
 
 
         clear.addActionListener(
-                new ActionListener() {
+                new ActionListener(){
                     public void actionPerformed(ActionEvent e) {
                         Display.setText(null);
                         totals.setText(null);
+                        labels.setText(null);
                         check1.setSelected(false);
                         check2.setSelected(false);
                         check3.setSelected(false);
@@ -257,18 +270,25 @@ public class Dashboard extends JFrame {
                         urlinput.setText(null);
                         additionalText.setText(null);
 
-                        character.setForeground(Color.black);
-                        word.setForeground(Color.black);
-                        line.setForeground(Color.black);
-                        commentLine.setForeground(Color.black);
-                        sourceLine.setForeground(Color.black);
+                        //character.setForeground(Color.black);
+                        //word.setForeground(Color.black);
+                        //line.setForeground(Color.black);
+                        //commentLine.setForeground(Color.black);
+                        //sourceLine.setForeground(Color.black);
 
-                        character.setVisible(false);
-                        word.setVisible(false);
-                        line.setVisible(false);
-                        commentLine.setVisible(false);
-                        sourceLine.setVisible(false);
+                        //character.setVisible(false);
+                        //word.setVisible(false);
+                        //line.setVisible(false);
+                        //commentLine.setVisible(false);
+                        //sourceLine.setVisible(false);
 
+                    }
+                });
+
+        exit.addActionListener(
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                      dispose();
                     }
                 });
     }
@@ -288,48 +308,104 @@ public class Dashboard extends JFrame {
     text area.
     */
     private void displayData() {
-        //TODO : send url into GitParser to be used and then display it
-        String [] [] currentInformation = new String[0][0];
-        fileWriter2D currentFile = new fileWriter2D(currentInformation);
-        File outputFile = currentFile.getFile();
-        int[] columnWidth = getColumnWidth(currentInformation);
-        boolean[] displaySetting = getDisplaySettings();
-        StringBuilder fileBuilder = new StringBuilder();
-        StringBuilder totalBuilder = new StringBuilder("Totals\n");
-        for (int i = 0; i < 5; i++){
-            int currentNum = 0;
-            // Temporary numFiles and input variable below
-            Array[][] input = new Array[10][10];
-            int numFiles = 0;
-            for (int j = 0; j < numFiles; j++){
-                if(i > 0 &&  displaySetting[i-1] == true){
-                    String output = String.format("%" + columnWidth[j] + "s", input[i][j]);
-                    fileBuilder.append(output + " ");//append to the output string
-                    if (currentInformation [i+1][j].equals("N/A")){
+        if (urlinput.getText().isEmpty()) {
+            Display.setText("Please enter a valid URL");
+        } else {
+            String[][] currentInformation = new String[5][5];
+            int[] columnWidth = getColumnWidth(currentInformation);
+            boolean[] displaySetting = getDisplaySettings();
+            StringBuilder fileBuilder = new StringBuilder();
+            StringBuilder totalBuilder = new StringBuilder("Totals\n\n");
+            boolean complete = false;
+            int count = 0;
+            for (int i = 0; i < 6; i++) {
+                int currentNum = 0;
+                Array[][] input = new Array[10][10];
+                int numFiles = 0;
+                for (int j = 0; j < numFiles; j++) {
+                    if (i > 0 && displaySetting[i - 1] == true) {
+                        String output = String.format("%" + columnWidth[j] + "s", input[i][j]);
+                        fileBuilder.append(output + " ");//append to the output string
+                        if (currentInformation[i + 1][j].equals("N/A")) {
+                        } else {
+                            currentNum += Integer.parseInt(currentInformation[i + 1][j]);
+                        }
+                    } else if (i == 0) {
+                        String output = String.format("%" + columnWidth[j] + "s", input[i][j]);
+                        fileBuilder.append(output + " ");//append to the output string
                     }
-                    else{
-                        // currentNum += (int) currentInformation[i+1][j];
-                        currentNum += Integer.parseInt(currentInformation [i+1][j]);
-                    }
-                }
-                else if(i ==0){
-                    String output = String.format("%" + columnWidth[j] + "s", input[i][j]);
-                    fileBuilder.append(output + " ");//append to the output string
-                }
 
+                }
+                if (i > 0 && i < 5 && (displaySetting[i - 1] == true || getDisplayAll())) {
+                    totalBuilder.append(currentNum + "\n\n");
+                    count++;
+                } else if (i == 5 && (displaySetting[i - 1] == true || getDisplayAll())) {
+                    totalBuilder.append(currentNum + "\n");
+                    if (count < 5) {
+                        totalBuilder.append("\n");
+                    }
+                    count++;
+                }
             }
-            if(i > 0 &&  displaySetting[i-1] == true){
-                totalBuilder.append(currentNum +"\n");
+            for (; count < 4; count++) {
+                totalBuilder.append("\n\n");
             }
+            if (count < 5) {
+                totalBuilder.append("\n");
+            }
+            // Next two lines of code: called String.valueOf for fileBuilder
+            // Before, it was just fileBuilder
+            String tempTester = "File1     File2    file3 klasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss\n\n" +
+                    "123       456      789\n\n" +
+                    "987       654      321\n\n" +
+                    "564       911      321\n\n" +
+                    "N/A       123      Im dying here\n\n" +
+                    "N/A       123      58745";
+            labels.setText(getRowLabels());
+            Display.setText(tempTester);
+            totals.setText(String.valueOf(totalBuilder));
         }
-        // Next two lines of code: called String.valueOf for fileBuilder
-        // Before, it was just fileBuilder
-        Display = new JTextArea(String.valueOf(fileBuilder));
-        totals = new JTextArea(String.valueOf(totalBuilder));
-        JScrollPane scroll = new JScrollPane(Display);
-        scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
-        rightside.add(scroll);
-        window.setVisible(true);
+    }
+
+    public String  getRowLabels(){
+        StringBuilder rowLabels = new StringBuilder("Filenames\n\n");
+        boolean [] dispalySettings = getDisplaySettings();
+        int count = 0;
+        boolean complete =false;
+        if(dispalySettings[0] == true){
+            rowLabels.append("Characters\n\n");
+            count++;
+        }
+        if(dispalySettings[1]==true){
+            rowLabels.append("Words\n\n");
+            count++;
+        }
+        if(dispalySettings[2] == true){
+            rowLabels.append("Lines\n\n");
+            count++;
+        }
+        if(dispalySettings[3] == true){
+            rowLabels.append("Source Lines\n\n");
+            count++;
+        }
+        if(dispalySettings[4] == true){
+            rowLabels.append("Comment Lines\n");
+            if(count < 5 ){
+                rowLabels.append("\n");
+            }
+            count++;
+        }
+        if(count < 5){
+            complete =true;
+        }
+        for(;count <4; count++){
+            rowLabels.append("\n\n");
+        }
+        if(complete){
+            rowLabels.append("\n");
+        }
+
+        return String.valueOf(rowLabels);
     }
 
     /*
@@ -338,26 +414,37 @@ public class Dashboard extends JFrame {
     */
     private boolean[] getDisplaySettings(){
         boolean [] displaySettings = new boolean [5];
-        displaySettings [0] = check1.isSelected();
-        displaySettings [1] = check2.isSelected();
-        displaySettings [2] = check3.isSelected();
-        displaySettings [3] = check4.isSelected();
-        displaySettings [4] = check5.isSelected();
+        boolean displayAll = getDisplayAll();
+        displaySettings [0] = (check1.isSelected() || displayAll);
+        displaySettings [1] = (check2.isSelected() || displayAll);
+        displaySettings [2] = (check3.isSelected() || displayAll);
+        displaySettings [3] = (check4.isSelected() || displayAll);
+        displaySettings [4] = (check5.isSelected() || displayAll);
         return displaySettings;
     }
 
-    /*
+    /*r
     returns the width of each file column so they are all aligned together for a better looking output
     */
-    private int[] getColumnWidth(String[][] input) {
-        int[] columnWidth = new int[input[0].length];
-        for (int i = 0; i < input.length; i++) {
-            for (int j = 0; j < input[0].length; j++) {
-                if (input[i][j].length() > columnWidth[j]) {
-                    columnWidth[j] = input[i][j].length();
-                }
-            }
+//    private int[] getColumnWidth(String[][] input) {
+//        int[] columnWidth = new int[input[0].length];
+//        for (int i = 0; i < input.length; i++) {
+//            for (int j = 0; j < input[0].length; j++) {
+//                if (input[i][j].length() > columnWidth[j]) {
+//                    columnWidth[j] = input[i][j].length();
+//                }
+//            }
+//        }
+//        return columnWidth;
+//    }
+
+    private boolean getDisplayAll(){
+        boolean displayAll = false;
+        if(!check1.isSelected() && !check2.isSelected() && !check3.isSelected() && !check4.isSelected() && !check5.isSelected()){
+            displayAll = true;
         }
-        return columnWidth;
+
+        return displayAll;
     }
+
 }

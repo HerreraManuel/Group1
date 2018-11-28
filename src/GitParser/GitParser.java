@@ -28,12 +28,13 @@ public class GitParser
         if(validURL)
         {
             File out = new File("/home/filipinoy/Desktop/TestRepo"); //TODO: <--- Modify this constructor with a string that includes the filepath and folder name that you wish to clone the repository to.
+            //File out = new File("X:\\Java\\TestRepo"); // Manny's Test Folder
             GitCloner cloner = new GitCloner();
             cloner.cloneRepository(link, out);
             return out;
         }
         else
-            throw new IOException("GitParser - Invalid link!");
+            throw new IOException("GitParser - Invalid Git Repository link!");
     }
 
     /* Notes:

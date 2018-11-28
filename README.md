@@ -1,19 +1,6 @@
-# Software Requirements Specification
+![Software Requirements Specification](https://i.imgur.com/1qtyPtP.png)
 
 
-
-### Github Metrics Application
-### Version 0.8
-### Group 1
-
-#### Jenzel Arevalo
-#### Parambir Gill
-#### Manuel Herrera
-#### Matthew Mendoza
-#### Jared Nooner
-
-
-### CSC 131 - Software Engineering
 
 ### 1.Introduction:
 
@@ -120,6 +107,7 @@
             designated hardware. The database server is managed by GitHub.
     3.1.3 Software Interfaces
     3.1.4 Communication Interfaces
+            
 ##### 3.2 Functional Requirements
         3.2.1 Mode 1  *** change these later to incorporate Use Cases 
         

@@ -20,7 +20,7 @@ public class RepositoryAnalyzer_TestMain
   public void run(String[] args)
   {
       //Valid URL
-      String validURL = "";
+      String validURL = "https://github.com/jenzelarevalo/Personal.git";
 
       //Invalid URL
       String invalidURL = "https://pdfs.semanticscholar.org/efb2/58d7812128aa19709520b1a567da98227cc5.pdf";
@@ -28,9 +28,9 @@ public class RepositoryAnalyzer_TestMain
       try
       {
           GitParser parser = new GitParser();
-          File repository = parser.getGitRepo(validURL);
+          File repository = parser.getGitRepo(invalidURL);
           Repository r = new Repository(repository);
-          Queue<File> queue = r.getRequestedFiles(".txt");
+          Queue<File> queue = r.getRequestedFiles(".c");
 
           while(!queue.isEmpty())
           {
