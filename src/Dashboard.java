@@ -315,7 +315,7 @@ public class Dashboard extends JFrame {
             Display.setText(manager.getFileDisplay());
             totals.setText(String.valueOf(manager.getTotals()));
         }catch(Exception e){
-
+            Display.setText(" An error has occurred. \n Make sure that you entered a valid github URL and/or search criteria ");
         }
     }
 

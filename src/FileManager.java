@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.lang.reflect.Array;
 
 public class FileManager {
@@ -9,7 +10,10 @@ public class FileManager {
     String fileDisplay = new String();
     String totals = new String();
 
-    public FileManager(String [][] input, boolean [] displaySetting, boolean displayAll){
+    public FileManager(String [][] input, boolean [] displaySetting, boolean displayAll) throws IOException{
+        if (input.toString().equals(null)){
+            throw new IOException();
+        }
         currentString = input;
         displaySettings = displaySetting;
         this.displayAll = displayAll;
