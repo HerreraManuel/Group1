@@ -14,10 +14,6 @@ public class SourceLine {
 
     // gets source line count and comment line count
     public void sourceCount(BufferedReader buff) throws IOException {
-        int sourceCount = 0, commentCount = 0;
-        boolean cmtBegan = false;
-        String line = null;
-        CommentLine cmtLn = new CommentLine();
         }
 }
 
