@@ -43,10 +43,6 @@ public class SourceLine {
             }
         }
         }
-    public boolean isSourceCodeLine(String line){
-        boolean isSourceCodeLine = false;
-        return false;
-    }
 }
 
 // Matthews Code Below
