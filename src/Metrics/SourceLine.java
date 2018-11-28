@@ -12,8 +12,6 @@ public class SourceLine {
         return 0;
     }
 
-    // gets source line count and comment line count
     public void sourceCount(BufferedReader buff) throws IOException {
         }
 }
-

@@ -15,6 +15,7 @@ public class Metrics_TestMain
         Words words = new Words();
         Characters chars = new Characters();
         CommentLine commentLine = new CommentLine();
+        SourceLine sourceLine = new SourceLine();
 
         System.out.println(fileContent);
         System.out.println("\n\n");
