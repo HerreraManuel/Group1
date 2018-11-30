@@ -34,7 +34,7 @@ public class RepositoryAnalyzer_TestMain
 
           while(!queue.isEmpty())
           {
-              Analyzer analyzer = new Analyzer(queue.element());
+              Analyzer analyzer = new Analyzer(queue.element()); //TODO: will have to be invoked by Result class
               queue.remove();
           }
       }

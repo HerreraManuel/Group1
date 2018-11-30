@@ -8,6 +8,8 @@
 
 package RepositoryAnalyzer;
 
+import java.io.File;
+
 public class Result
 {
   private String fileName;

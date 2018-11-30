@@ -36,34 +36,24 @@ public class Analyzer
         {
             String fileContent = readFileContents(f.getPath());
             fileName = f.getName();
-            performMetrics(fileContent);
-
-                    /*
-        if(isSourceFile(f.getName()))
-        {
-            commentLine = new CommentLine(fileContent); //TODO: CommentLine class under implementation
-            sourceLine = new SourceLine(fileContent); //TODO: SourceLine class under implementation
-        }
-        */
-
-            //characters = new Characters(fileContent); //TODO: Characters class under implementation
+            boolean enableSourceMetric = isSourceFile(fileName);
+            performMetrics(fileContent, enableSourceMetric);
         }catch(IOException e)
         {
             System.out.println("Unable to read file contents");
         }
     }
 
-    //TODO: Refactor this after tests checkout, no print outs should be in this method; may need to refactor some methods in Metrics class
-    public void performMetrics(String fileContent)
+    public void performMetrics(String fileContent, boolean sourceMetricFlag)
     {
         lines = new Lines();
         words = new Words();
-        System.out.println(fileName);
-        System.out.println("-----------------------------------------------");
-        System.out.println(fileContent);
-        System.out.println("\n");
-        System.out.println("Line Count: " + lines.lineCount(fileContent));
-        System.out.println("Word Count: " + words.wordCount(fileContent));
+        characters = new Characters();
+        if(sourceMetricFlag == true)
+        {
+          //sourceLine = new SourceLine();
+          // commentLine = new CommentLine();
+        }
     }
 
 
