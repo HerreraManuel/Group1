@@ -1,4 +1,11 @@
+import GitParser.*;
+
+public class Grabber implements Retrievable {
+
+}
+
 public interface Retrievable {
+
 
     boolean isURL(String path);
     boolean isSuffix();
