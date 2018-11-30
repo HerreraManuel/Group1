@@ -22,6 +22,7 @@ public class GitCloner
   public GitCloner()
   {}
 
+  /* Clones a Git repository from a given URL and output file */
   public void cloneRepository(String url, File outputFile) throws GitAPIException
   {
     Git git = Git.cloneRepository()

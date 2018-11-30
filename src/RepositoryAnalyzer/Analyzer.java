@@ -52,6 +52,7 @@ public class Analyzer
         }
     }
 
+    /* Performs the metrics for the given file content and a flag to determine if a source and comment metric are needed for it */
     public void performMetrics(String fileContent, boolean sourceMetricFlag)
     {
         Integer lineCount = lines.lineCount(fileContent);
@@ -75,6 +76,7 @@ public class Analyzer
         result = new Result(fileName, characterCount, wordCount, lineCount, sourceCount, commentCount);
     }
 
+    /* Extracts the contents of a file with a given file path and returns a single string containing the file content */
     private String readFileContents(String filePath) throws IOException
     {
         BufferedReader reader = new BufferedReader(new FileReader (filePath));
@@ -96,6 +98,7 @@ public class Analyzer
         }
     }
 
+    /* Determines if the given fileName indicates a source file */
     private Boolean isSourceFile(String fileName)
     {
         String fileExtension = fileName.substring(fileName.lastIndexOf("."), fileName.length());
@@ -109,6 +112,7 @@ public class Analyzer
         return false;
     }
 
+    /* Getter for the metrics result for a file */
     public Result getResult()
     {
         return result;
