@@ -8,7 +8,11 @@
 
 package GitParser;
 
-public class GitParserException
+//TODO: Is this really it for custom exception handling?
+public class GitParserException extends Exception
 {
-  //TODO: IMPLEMENT
+  public GitParserException(String s)
+  {
+      super(s);
+  }
 }

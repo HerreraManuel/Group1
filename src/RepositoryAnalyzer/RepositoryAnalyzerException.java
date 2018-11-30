@@ -8,7 +8,12 @@
 
 package RepositoryAnalyzer;
 
-public class RepositoryAnalyzerException
+
+//TODO: Is this really it for a custom exception class?
+public class RepositoryAnalyzerException extends Exception
 {
-    //TODO: IMPLEMENT
+    public RepositoryAnalyzerException(String s)
+    {
+        super(s);
+    }
 }
