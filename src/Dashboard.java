@@ -24,6 +24,8 @@ public class Dashboard extends JFrame {
     private JButton enter, clear, exit;
     private String completeUrl;
 
+    private int characteTotal;
+
     private boolean initialized = false;
     /*
     Creates the Gui and sets it to visible
