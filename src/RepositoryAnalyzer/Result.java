@@ -19,7 +19,7 @@ public class Result
   private Integer sourceCount;
   private Integer commentCount;
 
-  public void Result(String fileName, Integer characterCount, Integer wordCount, Integer lineCount, Integer sourceCount, Integer commentCount)
+  public Result(String fileName, Integer characterCount, Integer wordCount, Integer lineCount, Integer sourceCount, Integer commentCount)
   {
       setFileName(fileName);
       setCharacterCount(characterCount);

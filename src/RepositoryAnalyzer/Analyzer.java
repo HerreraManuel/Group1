@@ -23,6 +23,7 @@ import java.io.FileReader;
 
 public class Analyzer
 {
+    private Result result; //TODO: Should a Result object exist in Analyzer class? Who invokes who?
     private String fileName;
     private Lines lines;
     private Characters characters;
@@ -32,6 +33,13 @@ public class Analyzer
 
     public Analyzer(File f)
     {
+        //TODO: Instantiation of these objects here look ugly... Problem?
+        lines = new Lines();
+        words = new Words();
+        characters = new Characters();
+        sourceLine = new SourceLine();
+        commentLine = new CommentLine();
+
         try
         {
             String fileContent = readFileContents(f.getPath());
@@ -42,32 +50,31 @@ public class Analyzer
         {
             System.out.println("Unable to read file contents");
         }
+
     }
 
     public void performMetrics(String fileContent, boolean sourceMetricFlag)
     {
-        lines = new Lines();
-        words = new Words();
-        characters = new Characters();
-        if(sourceMetricFlag == true)
+        Integer lineCount = lines.lineCount(fileContent);
+        Integer wordCount = words.wordCount(fileContent);
+        Integer characterCount = characters.characterCount(fileContent);
+
+        Integer sourceCount;
+        Integer commentCount;
+
+        if(sourceMetricFlag == false)
         {
-          //sourceLine = new SourceLine();
-          // commentLine = new CommentLine();
+          sourceCount = null;
+          commentCount = null;
         }
+        else
+        {
+          sourceCount = sourceLine.sourceLine(fileContent);
+          commentCount = commentLine.commentLine(fileContent);
+        }
+
+        result = new Result(fileName, characterCount, wordCount, lineCount, sourceCount, commentCount);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     private String readFileContents(String filePath) throws IOException
     {
