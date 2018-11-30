@@ -50,7 +50,6 @@ public class Analyzer
         {
             System.out.println("Unable to read file contents");
         }
-
     }
 
     public void performMetrics(String fileContent, boolean sourceMetricFlag)
@@ -108,5 +107,10 @@ public class Analyzer
                 return true;
         }
         return false;
+    }
+
+    public Result getResult()
+    {
+        return result;
     }
 }
