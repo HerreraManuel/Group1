@@ -8,8 +8,6 @@
 
 package RepositoryAnalyzer;
 
-import java.io.File;
-
 public class Result
 {
   private String fileName;
@@ -19,6 +17,7 @@ public class Result
   private Integer sourceCount;
   private Integer commentCount;
 
+  //TODO: Is it really a good idea to pass in all the parameters to this constructor?
   public Result(String fileName, Integer characterCount, Integer wordCount, Integer lineCount, Integer sourceCount, Integer commentCount)
   {
       setFileName(fileName);
