@@ -1,8 +1,19 @@
-![Software Requirements Specification](https://i.imgur.com/1qtyPtP.png)
+<!--->![Software Requirements Specification](https://i.imgur.com/1qtyPtP.png) <--->
+   #Software Requirements Specification
 
+###Github Metrics application
+ 
+#### Group 1
+#### Jenzel Arevalo
+#### Parambir Gill
+#### Manuel Herrera
+#### Matthew Mendoza
+#### Jarod Nooner
 
+####CSC 131 - Software Engineering
 
 ### 1.Introduction:
+
 
 ##### 1.1 Purpose
     This Windows Desktop Application will allow the programmer to
