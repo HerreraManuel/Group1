@@ -1,7 +1,6 @@
-<!--->![Software Requirements Specification](https://i.imgur.com/1qtyPtP.png) <--->
-   #Software Requirements Specification
+# Software Requirements Specification
 
-###Github Metrics application
+### Github Metrics application
  
 #### Group 1
 #### Jenzel Arevalo
