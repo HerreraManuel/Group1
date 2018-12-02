@@ -7,11 +7,18 @@ class Grabber implements Retrievable {
         } else {
             return false;
         }
-}
+    }
+
     @Override
     public boolean isURL(String path) {
         return false;
     }
+
+    @Override
+    public int getCharacterCount() {
+        return 0;
+    }
+
 }
 
 public interface Retrievable {
