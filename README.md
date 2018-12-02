@@ -98,7 +98,7 @@
     repository from GitHub's database and it's necessary the system is connected to 
     the internet for application to function.
     
-    The application will contstrained by GitHubs database and may be forced to queue 
+    The application will be contstrained by GitHubs database and may be forced to queue 
     incoming request. It will either timeout and if repository is large, it will increase
     the time to retreive data.
 ##### 2.5 Assumptions and Dependencies
