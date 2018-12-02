@@ -28,7 +28,8 @@
     2.3 [User Characteristics](#usercharacteristics)\
     2.4 [General Constraints](#generalconstraints)\
     2.5 [Assumptions and Dependencies](#assumptionsanddependencies)
-3. [Detailed Requirements](#detailedrequirements)
+3. [Detailed Requirements](#detailedrequirements)\
+    3.1 [External Interface Requirements](#extinterfacereq)
 
 <a name="introduction"></a>
 ### 1.Introduction:
