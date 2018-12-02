@@ -109,6 +109,7 @@
     more files and their metrics. List of metrics will be the rows and the files from the
     repository will be the columns. A static end-column will exists for quick view of the
     totals for each metrics.  
+<a name="userchar"></a>
 ##### 2.3 User Characteristics
     There is _____ users. A GUI application user.
     
