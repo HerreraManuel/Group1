@@ -14,13 +14,11 @@ public class CommentLine{
         Pattern pattern2 = Pattern.compile("(//.*?$) | (/\\*.*?\\*/)",
                 Pattern.MULTILINE | Pattern.DOTALL);
         for(String singleLine : lineKeeper){
-            while(singleLine != null){
                 Matcher m1 = pattern1.matcher(singleLine);
                 Matcher m2 = pattern2.matcher(singleLine);
                 if (singleLine.contains("/*") && singleLine.contains("*/")){
-
+                    commentLine++;
                 }
-            }
         }
         return commentLine;
     }
