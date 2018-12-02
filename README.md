@@ -16,10 +16,10 @@
 
 ### Table of Contents
 
-1. [Introduction](#intro)
+1. [Introduction](#introduction)
 2. [Overall Description](#overalldescription)
 
-<a name="intro"></a>
+<a name="introduction"></a>
 ### 1.Introduction:
 
 ##### 1.1 Purpose
