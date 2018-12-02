@@ -33,6 +33,7 @@ public class CommentLine{
                 }
             } else {
                 // finding single lines
+                if (singleLine.contains("//")) commentLine++;
                 while (m1.find()) commentLine++;
                 while (m2.find()) commentLine++;
             }
