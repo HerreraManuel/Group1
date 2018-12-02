@@ -15,7 +15,7 @@ public class SourceLine {
             if (singleLine.equals("") || singleLine.equals("{") || singleLine.equals("}")) bloc++;
             if (singleLine.startsWith("//")) cloc++;
             if (singleLine.contains("/*") && !singleLine.contains("*\\")) {
-
+                cloc++;
             }
         }
         return 0;
