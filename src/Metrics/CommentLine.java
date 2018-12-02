@@ -29,6 +29,10 @@ public class CommentLine{
                         if (singleLine.contains("*/")) commentLine++;
                     }
                 }
+                else {
+                    // finding single lines
+                    while(m1.find()) commentLine++;
+                }
         }
         return commentLine;
     }
