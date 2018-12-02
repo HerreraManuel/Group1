@@ -23,6 +23,7 @@ public class SourceLine {
                     singleLine = lines.get(i);
                 }
             }
+            else if (singleLine.contains("/*"))
         }
         return 0;
     }
