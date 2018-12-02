@@ -17,6 +17,7 @@ public class Metrics_TestMain
                 "printf() // System.out.println()\n /* Block comment\n" +
                 "// invalid single comment\n" +
                 "*/ // end block comment\n" +
+                "// Testing line\n" +
                 "return 0;\n}";
         Lines lines = new Lines();
         Words words = new Words();
