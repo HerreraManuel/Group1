@@ -15,7 +15,7 @@ public class CommentLine{
                 Pattern.MULTILINE | Pattern.DOTALL);
         for(String singleLine : lineKeeper){
             while(singleLine != null){
-                Matcher m;
+                Matcher m1 = pattern1.matcher(singleLine);
                 Matcher m2;
             }
         }
