@@ -6,8 +6,10 @@ import java.util.regex.Pattern;
 
 public class CommentLine{
 
+    public int commentLine;
+
     public int commentLine(String fileContent) {
-        int commentLine = 0;
+        commentLine = 0;
         String[] lineKeeper;
         lineKeeper = fileContent.split(("\\r?\\n"));
         Pattern pattern1 = Pattern.compile("(?s)/\\*.*?\\*/");
@@ -16,7 +18,7 @@ public class CommentLine{
         for(String singleLine : lineKeeper){
                 Matcher m1 = pattern1.matcher(singleLine);
                 Matcher m2 = pattern2.matcher(singleLine);
-                if (singleLine.contains("/*") && singleLine.contains("*/")){
+                if (singleLine.contains("/*") && singleLine.contains("*/")) {
                     commentLine++;
                 }
         }
