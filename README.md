@@ -63,7 +63,7 @@
     An external library called JGit was used for its ability to clone a
     repository from Git. This will allow us to pull all files from the given
     Git url and save it to a destination. 
-    
+<a name="overview"></a>    
 ##### 1.5 Overview
 
     The following are enclosed files: Dashboard.java, GitParser.java, Helper.java
