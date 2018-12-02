@@ -25,7 +25,7 @@
 2. [Overall Description](#overalldesc)\
     2.1 [Product Description](#procdesc)\
     2.2 [Product Functions](#procfunc)\
-    2.3 [User Characteristics](#usercharacteristics)\
+    2.3 [User Characteristics](#userchar)\
     2.4 [General Constraints](#generalconstraints)\
     2.5 [Assumptions and Dependencies](#assumptionsanddependencies)
 3. [Detailed Requirements](#detailedrequirements)\
