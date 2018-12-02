@@ -23,7 +23,7 @@
     1.4 [References](#ref)\
     1.5 [Overview](#overview)
 2. [Overall Description](#overalldesc)\
-    2.1 [Product Description](#procdesc)\
+    2.1 [Product Perspective](#procdesc)\
     2.2 [Product Functions](#procfunc)\
     2.3 [User Characteristics](#userchar)\
     2.4 [General Constraints](#gencons)\
@@ -86,6 +86,7 @@
     
 <a name="overalldesc"></a>
 ### 2. Overall Description
+<a name="procp
 ##### 2.1 Product Perspective
     The system consists of a single entity. A Java GUI application will be used to
     present metrics from valid Github repositories. 
