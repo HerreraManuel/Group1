@@ -25,6 +25,7 @@ public class SourceLine {
             sloc++;
         }
         sloc = sloc - (cloc + bloc);
+        // check with larger files.
         return sloc;
     }
 }
