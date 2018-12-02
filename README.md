@@ -28,7 +28,7 @@
     2.3 [User Characteristics](#userchar)\
     2.4 [General Constraints](#gencons)\
     2.5 [Assumptions and Dependencies](#assumdepend)
-3. [Detailed Requirements](#detailedrequirements)\
+3. [Detailed Requirements](#detailreq)\
     3.1 [External Interface Requirements](#extinterfacereq)\
     3.2 [Functional Requirements](#funcreq)\
     3.3 [Performance Requirements](#perfreq)\
