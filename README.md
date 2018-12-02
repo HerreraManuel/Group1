@@ -152,7 +152,9 @@
     3.4.1 Software Language
             The language used will be in Java
     3.4.2 Standard Development Tools
-    3.4.3 External Libraries       
+    3.4.3 External Libraries
+            System was built using external libraries that conforms
+            to the developers standards.      
                  
 ##### 3.5 Attributes
 ##### 3.6 Other Requirements
