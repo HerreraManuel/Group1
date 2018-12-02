@@ -22,10 +22,10 @@ public class SourceLine {
                     i++;
                     singleLine = lines.get(i);
                 }
-            }
-            else if (singleLine.contains("/*") && singleLine.contains("*\\")) cloc++;
+            } else if (singleLine.contains("/*") && singleLine.contains("*\\")) cloc++;
             sloc++;
         }
+
         return 0;
     }
 }
