@@ -34,6 +34,12 @@ class Grabber implements Retrievable {
         return 0;
     }
 
+    @Override
+    public int getCommentCount() {
+        return 0;
+    }
+
+
 }
 
 public interface Retrievable {
