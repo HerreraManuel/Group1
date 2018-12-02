@@ -16,28 +16,29 @@ public class CommentLine{
         Pattern pattern2 = Pattern.compile("(//.*?$) | (/\\*.*?\\*/)",
                 Pattern.MULTILINE | Pattern.DOTALL);
         String singleLine;
-        for(int i = 0; i < lineKeeper.length; i++){
-                singleLine = lineKeeper[i];
-                Matcher m1 = pattern1.matcher(singleLine);
-                Matcher m2 = pattern2.matcher(singleLine);
-                if (singleLine.contains("/*") && singleLine.contains("*/")) {
+        for (int i = 0; i < lineKeeper.length; i++) {
+            singleLine = lineKeeper[i];
+            Matcher m1 = pattern1.matcher(singleLine);
+            Matcher m2 = pattern2.matcher(singleLine);
+            if (singleLine.contains("/*") && singleLine.contains("*/")) {
+                commentLine++;
+            }
+            // reading multi-line comments
+            else if (singleLine.contains("/*")) {
+                commentLine++;
+                while (!singleLine.contains("*/")) {
                     commentLine++;
+                    if (singleLine.contains("*/")) commentLine++;
+                    singleLine = lineKeeper[i++];
                 }
-                // reading multi-line comments
-                else if (singleLine.contains("/*")) {
-                    commentLine++;
-                    while (!singleLine.contains("*/")){
-                        commentLine++;
-                        if (singleLine.contains("*/")) commentLine++;
-
-                }
-                else {
+                else{
                     // finding single lines
-                    while(m1.find()) commentLine++;
-                    while(m2.find()) commentLine++;
+                    while (m1.find()) commentLine++;
+                    while (m2.find()) commentLine++;
                 }
+            }
+            return commentLine;
         }
-        return commentLine;
     }
 
     public boolean commentBegan(String line){
