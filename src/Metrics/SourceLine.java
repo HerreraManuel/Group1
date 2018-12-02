@@ -8,8 +8,6 @@ public class SourceLine {
     public int sourceLine(String fileContent){
         ArrayList<String> lines;
         lines = new ArrayList<String>(Arrays.asList(fileContent.split("\n")));
-        String[] lineKeeper;
-        lineKeeper = fileContent.split(("\\r?\\n"));
         return 0;
     }
 
