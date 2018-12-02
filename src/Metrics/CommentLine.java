@@ -1,15 +1,19 @@
 package Metrics;
 
 
+import java.util.regex.Pattern;
+
 public class CommentLine{
 
     public int commentLine(String fileContent) {
         int commentLine = 0;
         String[] lineKeeper;
         lineKeeper = fileContent.split(("\\r?\\n"));
+        Pattern pattern1;
+        Pattern pattern2;
         for(String singleLine : lineKeeper){
             while(singleLine != null){
-                commentLine++;
+
             }
         }
         return commentLine;
