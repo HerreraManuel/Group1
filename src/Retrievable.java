@@ -49,6 +49,11 @@ class Grabber implements Retrievable {
         return 0;
     }
 
+    @Override
+    public int getTotalLine() {
+        return 0;
+    }
+
 
 }
 
