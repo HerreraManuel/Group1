@@ -23,6 +23,12 @@ class Grabber implements Retrievable {
     public int getWordCount() {
         return 0;
     }
+
+    @Override
+    public int getLineCount() {
+        return 0;
+    }
+
 }
 
 public interface Retrievable {
