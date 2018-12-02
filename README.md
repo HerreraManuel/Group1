@@ -29,7 +29,8 @@
     2.4 [General Constraints](#generalconstraints)\
     2.5 [Assumptions and Dependencies](#assumptionsanddependencies)
 3. [Detailed Requirements](#detailedrequirements)\
-    3.1 [External Interface Requirements](#extinterfacereq)
+    3.1 [External Interface Requirements](#extinterfacereq)\
+    3.2 [Functional Requirements](#funcreq)
 
 <a name="introduction"></a>
 ### 1.Introduction:
