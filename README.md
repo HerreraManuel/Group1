@@ -16,7 +16,7 @@
 
 ### Table of Contents
 
-1. [Introduction](#introduction)\
+1. [Introduction](#intro)\
     1.1 [Purpose](#purpose)\
     1.2 [Scope](#scope)\
     1.3 [Definitions](#definitions)\
@@ -36,7 +36,7 @@
     3.5 [Attributes](#attri)\
     3.6 [Other Requirements](#otherreq)
     
-<a name="introduction"></a>
+<a name="intro"></a>
 ### 1.Introduction:
 
 ##### 1.1 Purpose
