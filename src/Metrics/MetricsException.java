@@ -14,6 +14,6 @@ public class MetricsException extends Exception{
     }
 
     public MetricsException(String exceptionMsg, Throwable cause){
-
+        super(exceptionMsg, cause);
     }
 }
