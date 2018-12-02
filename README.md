@@ -30,7 +30,8 @@
     2.5 [Assumptions and Dependencies](#assumptionsanddependencies)
 3. [Detailed Requirements](#detailedrequirements)\
     3.1 [External Interface Requirements](#extinterfacereq)\
-    3.2 [Functional Requirements](#funcreq)
+    3.2 [Functional Requirements](#funcreq)\
+    3.3 [Performance Requirements](#perfreq)
 
 <a name="introduction"></a>
 ### 1.Introduction:
