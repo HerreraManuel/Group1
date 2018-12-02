@@ -25,7 +25,7 @@ public class SourceLine {
             } else if (singleLine.contains("/*") && singleLine.contains("*\\")) cloc++;
             sloc++;
         }
-
+        sloc = sloc - (cloc + bloc);
         return 0;
     }
 }
