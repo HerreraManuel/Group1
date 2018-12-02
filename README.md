@@ -20,7 +20,7 @@
     1.1 [Purpose](#purpose)\
     1.2 [Scope](#scope)\
     1.3 [Definitions](#def)\
-    1.4 [References](#references)\
+    1.4 [References](#ref)\
     1.5 [Overview](#overview)
 2. [Overall Description](#overalldescription)\
     2.1 [Product Description](#productdescription)\
