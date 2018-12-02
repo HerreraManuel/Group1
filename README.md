@@ -138,6 +138,7 @@
 
 <a name="detailreq"></a>
 ### 3. Detailed  Requirements         
+<a name="extinterfacereq"></a>
 ##### 3.1 External Interface Requirements
     3.1.1 User Interfaces -> TO BE WORKED ON
             Every user will see where they can insert a valid GitHub repository
