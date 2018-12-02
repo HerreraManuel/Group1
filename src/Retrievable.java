@@ -29,6 +29,11 @@ class Grabber implements Retrievable {
         return 0;
     }
 
+    @Override
+    public int getSourceCount() {
+        return 0;
+    }
+
 }
 
 public interface Retrievable {
