@@ -17,7 +17,8 @@
 ### Table of Contents
 
 1. [Introduction](#introduction)\
-    1.1 [Purpose](#purpose) 
+    1.1 [Purpose](#purpose)\
+    1.2 [Scope](#scope) 
 2. [Overall Description](#overalldescription)
 3. [Detailed Requirements](#detailedrequirements)
 
