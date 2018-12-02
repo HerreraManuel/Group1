@@ -1,6 +1,7 @@
 package Metrics;
 
 
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CommentLine{
@@ -14,7 +15,8 @@ public class CommentLine{
                 Pattern.MULTILINE | Pattern.DOTALL);
         for(String singleLine : lineKeeper){
             while(singleLine != null){
-
+                Matcher m;
+                Matcher m2;
             }
         }
         return commentLine;
