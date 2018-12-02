@@ -14,7 +14,6 @@ public class CommentLine{
     }
 
     public boolean commentBegan(String line){
-
         return false;
     }
 
