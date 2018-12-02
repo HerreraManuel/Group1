@@ -21,6 +21,10 @@ public class CommentLine{
                 if (singleLine.contains("/*") && singleLine.contains("*/")) {
                     commentLine++;
                 }
+                // reading multi-line comments
+                else if (singleLine.contains("/*")) {
+                    commentLine++;
+                }
         }
         return commentLine;
     }
