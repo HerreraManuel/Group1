@@ -3,16 +3,16 @@
 ### Github Metrics application
  
 #### Group 1
-#### Jenzel Arevalo
-#### Parambir Gill
-#### Manuel Herrera
-#### Matthew Mendoza
-#### Jarod Nooner
+##### Jenzel Arevalo
+##### Parambir Gill
+##### Manuel Herrera
+##### Matthew Mendoza
+##### Jarod Nooner
 
 ### CSC 131 - Software Engineering
 
 
-# 
+*** 
 
 ### Table of Contents
 
@@ -35,6 +35,7 @@
     3.4 [Design Constraints](#descon)\
     3.5 [Attributes](#attri)\
     3.6 [Other Requirements](#otherreq)
+#
     
 <a name="intro"></a>
 ### 1.Introduction:
