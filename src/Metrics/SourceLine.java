@@ -6,6 +6,9 @@ public class SourceLine {
         String[] lineKeeper;
         lineKeeper = fileContent.split(("\\r?\\n"));
         int sloc = 0;
+        for (int i = 0; i < lineKeeper.length; i++) {
+
+        }
         return 0;
     }
 
