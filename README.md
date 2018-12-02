@@ -38,7 +38,7 @@
     
 <a name="intro"></a>
 ### 1.Introduction:
-
+<a name="purpose"></a>
 ##### 1.1 Purpose
     This Windows Desktop Application will allow the programmer to
     check the character count, word count, line count, comment
