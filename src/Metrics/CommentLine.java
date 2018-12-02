@@ -15,7 +15,8 @@ public class CommentLine{
         Pattern pattern1 = Pattern.compile("(?s)/\\*.*?\\*/");
         Pattern pattern2 = Pattern.compile("(//.*?$) | (/\\*.*?\\*/)",
                 Pattern.MULTILINE | Pattern.DOTALL);
-        for(String singleLine : lineKeeper){
+        String singleLine;
+        for(int i = 0; i < lineKeeper.length; i++){
                 Matcher m1 = pattern1.matcher(singleLine);
                 Matcher m2 = pattern2.matcher(singleLine);
                 if (singleLine.contains("/*") && singleLine.contains("*/")) {
@@ -27,6 +28,7 @@ public class CommentLine{
                     while (!singleLine.contains("*/")){
                         commentLine++;
                         if (singleLine.contains("*/")) commentLine++;
+                        continue;
                     }
                 }
                 else {
