@@ -8,7 +8,9 @@ public class CommentLine{
         String[] lineKeeper;
         lineKeeper = fileContent.split(("\\r?\\n"));
         for(String singleLine : lineKeeper){
-
+            while(singleLine != null){
+                commentLine++;
+            }
         }
         return commentLine;
     }
