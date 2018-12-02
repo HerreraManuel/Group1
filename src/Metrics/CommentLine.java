@@ -10,7 +10,8 @@ public class CommentLine{
         String[] lineKeeper;
         lineKeeper = fileContent.split(("\\r?\\n"));
         Pattern pattern1 = Pattern.compile("(?s)/\\*.*?\\*/");
-        Pattern pattern2;
+        Pattern pattern2 = Pattern.compile("(//.*?$) | (/\\*.*?\\*/)",
+                Pattern.MULTILINE | Pattern.DOTALL);
         for(String singleLine : lineKeeper){
             while(singleLine != null){
 
