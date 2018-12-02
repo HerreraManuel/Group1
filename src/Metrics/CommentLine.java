@@ -17,6 +17,7 @@ public class CommentLine{
                 Pattern.MULTILINE | Pattern.DOTALL);
         String singleLine;
         for(int i = 0; i < lineKeeper.length; i++){
+                singleLine = lineKeeper[i];
                 Matcher m1 = pattern1.matcher(singleLine);
                 Matcher m2 = pattern2.matcher(singleLine);
                 if (singleLine.contains("/*") && singleLine.contains("*/")) {
@@ -28,8 +29,7 @@ public class CommentLine{
                     while (!singleLine.contains("*/")){
                         commentLine++;
                         if (singleLine.contains("*/")) commentLine++;
-                        continue;
-                    }
+
                 }
                 else {
                     // finding single lines
