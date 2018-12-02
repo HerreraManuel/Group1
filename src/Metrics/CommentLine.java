@@ -9,7 +9,7 @@ public class CommentLine{
         int commentLine = 0;
         String[] lineKeeper;
         lineKeeper = fileContent.split(("\\r?\\n"));
-        Pattern pattern1;
+        Pattern pattern1 = Pattern.compile("(?s)/\\*.*?\\*/");
         Pattern pattern2;
         for(String singleLine : lineKeeper){
             while(singleLine != null){
