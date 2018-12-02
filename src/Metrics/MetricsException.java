@@ -8,4 +8,8 @@ public class MetricsException extends Exception{
     public MetricsException(String exceptionMsg){
         super(exceptionMsg);
     }
+
+    public MetricsException(Throwable cause) {
+        super(cause);
+    }
 }
