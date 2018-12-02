@@ -39,10 +39,4 @@ public class CommentLine{
         }
         return commentLine;
     }
-
-    public boolean commentEnded(String line){
-        return false;
-    }
-
-
 }
