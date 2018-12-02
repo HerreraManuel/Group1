@@ -46,7 +46,7 @@
     Git URL along with the file type. The user is able to select
     which count they would like to view by clicking the appropriate 
     check boxes listed.
-
+<a name="scope"></a>
 ##### 1.2 Scope
     The user can only ask for the metrics listed above. They are
     limited to C/C++ and Java files. They may only enter one URL at a time.
