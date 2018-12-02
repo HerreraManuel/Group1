@@ -13,7 +13,7 @@ public class SourceLine {
         for (int i = 0; i < lines.size(); i++){
             singleLine = lines.get(i);
             if (singleLine.equals("") || singleLine.equals("{")
-            ){ }
+                || singleLine.equals("}")){ }
         }
         return 0;
     }
