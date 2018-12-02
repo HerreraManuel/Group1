@@ -99,6 +99,7 @@
     Communication between the GUI application and database will be over the internet.
     The GUI application will only be allowed to store temporary files and will delete
     the local repository once done. Resource allocation is to be determined.
+<a name="procfunc"></a>
 ##### 2.2 Product Functions
     Within the GUI application, the user input a valid GitHub repository URL and will 
     be able to request metrics from a GitHub.
