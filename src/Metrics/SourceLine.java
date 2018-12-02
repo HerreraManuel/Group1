@@ -9,8 +9,8 @@ public class SourceLine {
         ArrayList<String> lines;
         lines = new ArrayList<String>(Arrays.asList(fileContent.split("\n")));
         int sloc = 0, cloc = 0, bloc = 0;
+        String singleLine = "";
         for (int i = 0; i < lines.size(); i++){
-
         }
         return 0;
     }
