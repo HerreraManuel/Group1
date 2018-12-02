@@ -115,6 +115,8 @@
     files while the application runs its metrics. If the application does not have
     enough memory, the user will be requested to make room before the application runs.
     There may exist scenarios where the application does not run or work as it should.
+
+<a name="detailedrequirements"></a>
 ### 3. Detailed  Requirements         
 ##### 3.1 External Interface Requirements
     3.1.1 User Interfaces -> TO BE WORKED ON
