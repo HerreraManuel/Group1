@@ -29,6 +29,7 @@ public class Metrics_TestMain
 
         System.out.println(fileContent);
         System.out.println("\n\n");
+        // MetricsException handling implementation
         try {
             if(fileContent.isEmpty()) throw new MetricsException();
             System.out.println("Line Count: " + lines.lineCount(fileContent));
