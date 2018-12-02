@@ -6,6 +6,7 @@ public class CommentLine{
     public int commentLine(String fileContent) {
         int commentLine = 0;
         String[] lineKeeper;
+        lineKeeper = fileContent.split(("\\r?\\n"));
         return commentLine;
     }
 
