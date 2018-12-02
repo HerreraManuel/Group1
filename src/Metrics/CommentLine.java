@@ -7,10 +7,14 @@ public class CommentLine{
         int commentLine = 0;
         String[] lineKeeper;
         lineKeeper = fileContent.split(("\\r?\\n"));
+        for(String singleLine : lineKeeper){
+
+        }
         return commentLine;
     }
 
     public boolean commentBegan(String line){
+
         return false;
     }
 
