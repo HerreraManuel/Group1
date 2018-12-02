@@ -33,7 +33,8 @@
     3.2 [Functional Requirements](#funcreq)\
     3.3 [Performance Requirements](#perfreq)\
     3.4 [Design Constraints](#descon)\
-    3.5 [Attributes](#attri)
+    3.5 [Attributes](#attri)\
+    3.6 [Other Requirements](#otherreq)
     
 <a name="introduction"></a>
 ### 1.Introduction:
