@@ -11,6 +11,7 @@ public class SourceLine {
         int sloc = 0, cloc = 0, bloc = 0;
         String singleLine = "";
         for (int i = 0; i < lines.size(); i++){
+            singleLine = lines.get(i);
         }
         return 0;
     }
