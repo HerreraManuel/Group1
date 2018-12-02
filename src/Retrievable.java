@@ -4,16 +4,13 @@ class Grabber implements Retrievable {
     public boolean isSuffix(String suffix) {
         if (suffix.contains(".java") || suffix.contains(".c") || suffix.contains(".h") || suffix.contains(".cpp") || suffix.contains(".hpp")) {
             return true;
-        } else { return false; }
-    }
-
+        } else {
+            return false;
+        }
         return false;
+}
     @Override
     public boolean isURL(String path) {
-    }
-
-    @Override
-    public boolean isSuffix() {
         return false;
     }
 }
@@ -22,7 +19,7 @@ public interface Retrievable {
 
 
     boolean isURL(String path);
-    boolean isSuffix();
+    boolean isSuffix(String suffix);
 
     int getCharacterCount();
     int getWordCount();
