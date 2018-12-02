@@ -9,7 +9,7 @@
 #### Matthew Mendoza
 #### Jarod Nooner
 
-####CSC 131 - Software Engineering
+#### CSC 131 - Software Engineering
 
 ### 1.Introduction:
 
