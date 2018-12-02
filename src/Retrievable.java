@@ -54,6 +54,11 @@ class Grabber implements Retrievable {
         return 0;
     }
 
+    @Override
+    public int getTotalSource() {
+        return 0;
+    }
+
 
 }
 
