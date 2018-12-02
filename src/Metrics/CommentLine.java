@@ -17,6 +17,9 @@ public class CommentLine{
             while(singleLine != null){
                 Matcher m1 = pattern1.matcher(singleLine);
                 Matcher m2 = pattern2.matcher(singleLine);
+                if (singleLine.contains("/*") && singleLine.contains("*/")){
+
+                }
             }
         }
         return commentLine;
