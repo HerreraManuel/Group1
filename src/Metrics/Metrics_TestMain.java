@@ -1,14 +1,16 @@
 package Metrics;
 
+import com.sun.javafx.font.Metrics;
+
 public class Metrics_TestMain
 {
-    public static void main(String[] args) throws MetricsException
+    public static void main(String[] args)
     {
         Metrics_TestMain instance = new Metrics_TestMain();
         instance.run(args);
     }
 
-    public void run(String[] args) throws MetricsException {
+    public void run(String[] args){
         String fileContent = "#include <stdio.h>\n" +
                 "// T1\n//T2\n" +
                 "/* random stuff in here */\n" +
