@@ -44,6 +44,12 @@ class Grabber implements Retrievable {
         return 0;
     }
 
+    @Override
+    public int getTotalWord() {
+        return 0;
+    }
+
+
 }
 
 public interface Retrievable {
