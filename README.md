@@ -11,8 +11,12 @@
 
 #### CSC 131 - Software Engineering
 
-### 1.Introduction:
 
+# 
+
+##Table of Contents
+
+### 1.Introduction:
 
 ##### 1.1 Purpose
     This Windows Desktop Application will allow the programmer to
