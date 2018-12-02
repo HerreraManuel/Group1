@@ -5,6 +5,7 @@ public class CommentLine{
 
     public int commentLine(String fileContent) {
         int commentLine = 0;
+        String[] lineKeeper;
         return commentLine;
     }
 
