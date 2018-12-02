@@ -11,7 +11,16 @@ public class Metrics_TestMain
     }
 
     public void run(String[] args){
-        String fileContent = "";
+        String fileContent = "#include <stdio.h>\n" +
+                "// T1\n//T2\n" +
+                "/* random stuff in here */\n" +
+                "//Line Comment\n// Line Comment 2\n" +
+                "int main()\n{\n  printf(\"Hello World!\\n\");\n  " +
+                "printf() // System.out.println()\n /* Block comment\n" +
+                "// invalid single comment\n" +
+                "*/\n" +
+                "// Testing line\n" +
+                "return 0;\n}";
         Lines lines = new Lines();
         Words words = new Words();
         Characters chars = new Characters();
