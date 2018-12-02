@@ -51,8 +51,7 @@
     The user can only ask for the metrics listed above. They are
     limited to C/C++ and Java files. They may only enter one URL at a time.
     Only git repositories will be assessed for the given choice of metrics.
-    
-
+<a name="def"></a>    
 ##### 1.3 Definitions
     Characters: Counts the number of characters in a given file.
     Words: Counts the words in a given file.
