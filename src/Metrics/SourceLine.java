@@ -7,6 +7,7 @@ public class SourceLine {
     }
 
     public String[] listOfReservedWords() {
-
+        String[] listOfWords = new String[2000];
+        return listOfWords;
     }
 }
