@@ -6,6 +6,11 @@ class Grabber implements Retrievable {
             return true;
         } else { return false; }
     }
+
+    @Override
+    public boolean isURL(String path) {
+        return false;
+    }
 }
 
 public interface Retrievable {
