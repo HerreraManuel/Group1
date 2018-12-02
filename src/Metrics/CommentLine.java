@@ -19,7 +19,7 @@ public class CommentLine{
         for (int i = 0; i < lineKeeper.length; i++) {
             singleLine = lineKeeper[i];
             Matcher m1 = pattern1.matcher(singleLine);
-            Matcher m2 = pattern2.matcher(singleLine);
+            // Matcher m2 = pattern2.matcher(singleLine);
             if (singleLine.contains("/*") && singleLine.contains("*/")) {
                 commentLine++;
             }
