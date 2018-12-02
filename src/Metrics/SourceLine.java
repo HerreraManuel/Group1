@@ -12,6 +12,4 @@ public class SourceLine {
         return 0;
     }
 
-    public void sourceCount(BufferedReader buff) throws IOException {
-        }
 }
