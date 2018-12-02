@@ -84,7 +84,7 @@
     repostitory.
 
     
-<a name="overalldescription"></a>
+<a name="overalldesc"></a>
 ### 2. Overall Description
 ##### 2.1 Product Perspective
     The system consists of a single entity. A Java GUI application will be used to
