@@ -4,6 +4,6 @@ package Metrics;
 public class MetricsException extends Exception{
 
     public MetricsException(String exceptionMsg){
-
+        System.out.println("null or empty string");
     }
 }
