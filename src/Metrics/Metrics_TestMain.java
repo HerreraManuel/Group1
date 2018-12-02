@@ -2,14 +2,13 @@ package Metrics;
 
 public class Metrics_TestMain
 {
-    public static void main(String[] args)
+    public static void main(String[] args) throws MetricsException
     {
         Metrics_TestMain instance = new Metrics_TestMain();
         instance.run(args);
     }
 
-    public void run(String[] args)
-    {
+    public void run(String[] args) throws MetricsException {
         String fileContent = "#include <stdio.h>\n" +
                 "// T1\n//T2\n" +
                 "/* random stuff in here */\n" +
