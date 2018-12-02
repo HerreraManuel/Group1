@@ -59,6 +59,10 @@ class Grabber implements Retrievable {
         return 0;
     }
 
+    @Override
+    public int getTotalComment() {
+        return 0;
+    }
 
 }
 
