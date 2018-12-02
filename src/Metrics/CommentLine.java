@@ -31,14 +31,13 @@ public class CommentLine{
                     if (singleLine.contains("*/")) commentLine++;
                     singleLine = lineKeeper[i++];
                 }
-                else{
-                    // finding single lines
-                    while (m1.find()) commentLine++;
-                    while (m2.find()) commentLine++;
-                }
+            } else {
+                // finding single lines
+                while (m1.find()) commentLine++;
+                while (m2.find()) commentLine++;
             }
-            return commentLine;
         }
+        return commentLine;
     }
 
     public boolean commentBegan(String line){
