@@ -1,12 +1,10 @@
 import GitParser.*;
 
-public class Grabber implements Retrievable {
-
-    public boolean isSuffix(String suffix)
-        if(suffix.contains(".java") || suffix.contains(".c") || suffix.contains(".h") || suffix.contains(".cpp") || suffix.contains(".hpp")){
-        return true;
-    } else {
-        return false;
+class Grabber implements Retrievable {
+    public boolean isSuffix(String suffix) {
+        if (suffix.contains(".java") || suffix.contains(".c") || suffix.contains(".h") || suffix.contains(".cpp") || suffix.contains(".hpp")) {
+            return true;
+        } else { return false; }
     }
 }
 
