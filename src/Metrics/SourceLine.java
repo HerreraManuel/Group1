@@ -7,7 +7,7 @@ public class SourceLine {
 
     public int sourceLine(String fileContent){
         ArrayList<String> lines;
-        lines = new ArrayList<String>();
+        lines = new ArrayList<String>(Array.asList(fileContent));
         String[] lineKeeper;
         lineKeeper = fileContent.split(("\\r?\\n"));
         return 0;
