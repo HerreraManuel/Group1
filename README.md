@@ -58,7 +58,7 @@
     Lines: Counts the number of lines in a given file.
     Source Lines: Counts the number of source lines in a given file.
     Comment Lines: Counts the number of comments in a given file.
-
+<a name="ref"></a>
 ##### 1.4 References
     An external library called JGit was used for its ability to clone a
     repository from Git. This will allow us to pull all files from the given
