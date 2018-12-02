@@ -5,7 +5,7 @@ import java.io.*;
 
 public class Characters {
 
-    public int characterCount(String fileContent) throws MetricsException {
+    public int characterCount(String fileContent) {
         int chars = 0;
         try {
             if (fileContent.isEmpty()) throw new MetricsException();
