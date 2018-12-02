@@ -16,6 +16,9 @@ public class SourceLine {
             if (singleLine.startsWith("//")) cloc++;
             if (singleLine.contains("/*") && !singleLine.contains("*\\")) {
                 cloc++;
+                while (!singleLine.contains("*/")) {
+
+                }
             }
         }
         return 0;
