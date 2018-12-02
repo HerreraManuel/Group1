@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class SourceLine {
-
     public int sourceLine(String fileContent) {
         ArrayList<String> lines;
         lines = new ArrayList<String>(Arrays.asList(fileContent.split("\n")));
@@ -26,6 +25,6 @@ public class SourceLine {
             sloc++;
         }
         sloc = sloc - (cloc + bloc);
-        return 0;
+        return sloc;
     }
 }
