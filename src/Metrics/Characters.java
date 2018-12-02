@@ -8,7 +8,7 @@ public class Characters {
     public int characterCount(String fileContent) throws MetricsException {
         try {
             int chars;
-            if (fileContent.isEmpty()) throws MetricsException();
+            if (fileContent.isEmpty()) throw new MetricsException();
             chars = fileContent.length();
             return chars + 1;
         } catch(MetricsException e) {
