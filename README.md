@@ -24,7 +24,8 @@
     1.5 [Overview](#overview)
 2. [Overall Description](#overalldescription)\
     2.1 [Product Description](#productdescription)\
-    2.2 [Product Functions](#productfunctions)
+    2.2 [Product Functions](#productfunctions)\
+    2.3 [User Characteristics](#usercharacteristics)
 3. [Detailed Requirements](#detailedrequirements)
 
 <a name="introduction"></a>
