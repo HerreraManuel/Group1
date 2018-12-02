@@ -18,7 +18,7 @@ public class SourceLine {
                 cloc++;
                 while (!singleLine.contains("*/")) {
                     cloc++; sloc++; i++;
-                }
+                    singleLine = lines.get(i);
             }
         }
         return 0;
