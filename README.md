@@ -86,7 +86,7 @@
     
 <a name="overalldesc"></a>
 ### 2. Overall Description
-<a name="procp
+<a name="procper"></a>
 ##### 2.1 Product Perspective
     The system consists of a single entity. A Java GUI application will be used to
     present metrics from valid Github repositories. 
