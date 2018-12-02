@@ -16,7 +16,7 @@ public class CommentLine{
         for(String singleLine : lineKeeper){
             while(singleLine != null){
                 Matcher m1 = pattern1.matcher(singleLine);
-                Matcher m2;
+                Matcher m2 = pattern2.matcher(singleLine);
             }
         }
         return commentLine;
