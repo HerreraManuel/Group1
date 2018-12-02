@@ -6,13 +6,9 @@ import java.io.*;
 public class Characters {
 
     public int characterCount(String fileContent) {
-        int chars = 0;
-        try {
-            if (fileContent.isEmpty()) throw new MetricsException("null or empty string");
+            int chars = 0;;
             chars = fileContent.length();
             return chars + 1;
-        } catch(MetricsException e) {}
-        return chars + 1;
     }
 
 }
