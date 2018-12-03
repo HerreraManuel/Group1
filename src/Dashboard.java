@@ -215,16 +215,7 @@ public class Dashboard extends JFrame {
         enter.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-
                         displayData();
-
-                        check1.setSelected(false);
-                        check2.setSelected(false);
-                        check3.setSelected(false);
-                        check4.setSelected(false);
-                        check5.setSelected(false);
-                        urlinput.setText(null);
-                        additionalText.setText(null);
                     }
                 });
 
