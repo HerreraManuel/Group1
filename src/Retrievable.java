@@ -20,7 +20,8 @@ class Grabber implements Retrievable {
 
     @Override
     public int getCharacterCount() {
-        return 0;
+        Characters charCount = new Characters();
+        return charCount;
     }
 
     @Override
