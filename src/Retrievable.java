@@ -53,30 +53,6 @@ class Grabber implements Retrievable {
         return null;
     }
 
-//    @Override
-//    public int getTotalCharacter() {
-//        return 0;
-//    }
-//
-//    @Override
-//    public int getTotalWord() {
-//        return 0;
-//    }
-//
-//    @Override
-//    public int getTotalLine() {
-//        return 0;
-//    }
-//
-//    @Override
-//    public int getTotalSource() {
-//        return 0;
-//    }
-//
-//    @Override
-//    public int getTotalComment() {
-//        return 0;
-//    }
 
     public String [] [] getCompleteFile(){
         String [][] completeFile = new String [6][numFiles];
