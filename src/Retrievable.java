@@ -59,6 +59,12 @@ class Grabber  implements Retrievable {
     public String [][] getCompleteFile(){
         String[][] completeFile = new String[5][numfiles];
 
+        for (int i = 0; i < 5; i++){
+            for (int j = 0; j < numfiles; j++){
+                
+            }
+        }
+
         return completeFile;
     }
 
