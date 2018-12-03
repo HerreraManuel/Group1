@@ -1,3 +1,4 @@
+import GitParser.*;
 import Metrics.*;
 import java.io.*;
 import java.util.*;
@@ -19,8 +20,7 @@ class Grabber implements Retrievable {
 
     @Override
     public int getCharacterCount() {
-        Characters chars = new Characters();
-        return chars;
+        return 0;
     }
 
     @Override
