@@ -69,4 +69,25 @@ public class Result
     else
       this.commentCount = commentCount;
   }
+
+  /* To-String method for debugging */
+  public String toString()
+  {
+    String s = "";
+    s += "File Name: " + fileName + "\n";
+    s += "Character Count: " + characterCount + "\n";
+    s += "Word Count: " + wordCount + "\n";
+    s += "Line Count: " + lineCount + "\n";
+    if(sourceCount == null && commentCount == null)
+    {
+      s += "Source Count: Not available for file";
+      s += "Comment Count: Not available for file";
+    }
+    else
+    {
+      s += "Source Count: " + sourceCount + "\n";
+      s += "Comment Count: " + commentCount + "\n";
+    }
+    return s;
+  }
 }

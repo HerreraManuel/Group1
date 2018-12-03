@@ -24,6 +24,7 @@ public class RepositoryAnalyzer_TestMain
 
       //Valid URL
       String validURL = "https://github.com/jenzelarevalo/Personal.git";
+      String validURL2 = "https://github.com/jenzelarevalo/SampleRepo.git";
 
       //Invalid URL
       String invalidURL = "https://pdfs.semanticscholar.org/efb2/58d7812128aa19709520b1a567da98227cc5.pdf";
@@ -40,6 +41,11 @@ public class RepositoryAnalyzer_TestMain
               Analyzer analyzer = new Analyzer(queue.element()); //TODO: will have to be invoked by Result class
               results.add(analyzer.getResult()); //TODO: stores result into results arraylist
               queue.remove();
+          }
+
+          for(int i = 0; i < results.size(); i++)
+          {
+              System.out.println(results.get(i));
           }
       }
       catch
