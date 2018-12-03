@@ -215,31 +215,6 @@ public class Dashboard extends JFrame {
         enter.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-//                        if(check1.isSelected() == false){
-//                            character.setForeground(Color.gray);
-//                        }
-//
-//                        if(check2.isSelected() == false){
-//                            word.setForeground(Color.gray);
-//                        }
-//
-//                        if(check3.isSelected() == false){
-//                            line.setForeground(Color.gray);
-//                        }
-//
-//                        if(check4.isSelected() == false){
-//                            commentLine.setForeground(Color.gray);
-//                        }
-//
-//                        if(check5.isSelected() == false){
-//                            sourceLine.setForeground(Color.gray);
-//                        }
-
-//                        character.setVisible(true);
-//                        word.setVisible(true);
-//                        line.setVisible(true);
-//                        commentLine.setVisible(true);
-//                        sourceLine.setVisible(true);
 
                         displayData();
 
