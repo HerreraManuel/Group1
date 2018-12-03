@@ -80,8 +80,8 @@ public class Result
     s += "Line Count: " + lineCount + "\n";
     if(sourceCount == null && commentCount == null)
     {
-      s += "Source Count: Not available for file";
-      s += "Comment Count: Not available for file";
+      s += "Source Count: Not available for file\n";
+      s += "Comment Count: Not available for file\n";
     }
     else
     {

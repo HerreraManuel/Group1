@@ -32,7 +32,7 @@ public class RepositoryAnalyzer_TestMain
       try
       {
           GitParser parser = new GitParser();
-          File repository = parser.getGitRepo(invalidURL);
+          File repository = parser.getGitRepo(validURL2);
           Repository r = new Repository(repository);
           Queue<File> queue = r.getRequestedFiles(".c");
 

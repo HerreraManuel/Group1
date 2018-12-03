@@ -25,6 +25,7 @@ public class FileExtensions
   /* Automatically adds extensions to sourceExtensions arraylist */
   private void addSourceExtensions()
   {
+      sourceExtensions = new ArrayList<String>();
       sourceExtensions.add(".java");
       sourceExtensions.add(".c");
       sourceExtensions.add(".cpp");
@@ -34,6 +35,7 @@ public class FileExtensions
   /* Automatically adds extensions to sourceExtensions arraylist */
   private void addTextExtensions()
   {
+      textExtensions = new ArrayList<String>();
       textExtensions.add(".txt");
       textExtensions.add(".md");
   }

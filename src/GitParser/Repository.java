@@ -52,7 +52,7 @@ public class Repository
 
       for (Iterator iterator = files.iterator(); iterator.hasNext();) {
         File file = (File) iterator.next();
-        if (file.getName().contains(query) || query == "")
+        if ((file.getName().contains(".") && file.getName().substring(file.getName().lastIndexOf(".")).equals(query)) || query == "") //TODO: Works, but this might need to be refactored later...
         {
           //System.out.println("Inserting: " + file.getAbsolutePath());
           requested_files.add(file);
