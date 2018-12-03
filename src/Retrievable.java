@@ -57,11 +57,36 @@ class Grabber implements Retrievable {
         return numFiles;
     }
 
+    @Override
+    public String[] getFileNames() {
+        return new String[0];
+    }
+
     public String [] [] getCompleteFile(){
         String [][] completeFile = new String [6][numFiles];
+        String [] fileNames = getFileNames();
+        int[] characters = getCharacterCount();
+        int[] words = getWordCount();
+        int[] lines = getLineCount();
+        int[] sourceLines = getSourceCount();
+        int[] commentLines = getCommentCount();
 
-
-
+        for (int i = 0; i < numFiles;i++){
+            completeFile[0][i] = fileNames[i];
+            completeFile[1][i] = characters.toString();
+            completeFile[2][i] = words.toString();
+            completeFile[3][i] = lines.toString();
+            if(sourceLines[i] >= 0 ) {
+                completeFile[4][i] = sourceLines.toString();
+            }else{
+                completeFile[4][i] = "N/A";
+            }
+            if(commentLines[i] >= 0) {
+                completeFile[5][i] = commentLines.toString();
+            }else{
+                completeFile[5][i] = "N/A";
+            }
+        }
         return completeFile;
     }
 
@@ -81,6 +106,7 @@ public interface Retrievable {
 
     String [][] getCompleteFile();
     int getNumFiles();
+    String [] getFileNames();
 
 
 }
