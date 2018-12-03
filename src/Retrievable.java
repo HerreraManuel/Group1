@@ -31,28 +31,28 @@ class Grabber  implements Retrievable {
     }
 
     @Override
-    public int getCharacterCount() {
-        return 0;
+    public int[] getCharacterCount( ){
+        return null;
     }
 
     @Override
-    public int getWordCount() {
-        return 0;
+    public int[] getWordCount() {
+        return null;
     }
 
     @Override
-    public int getLineCount() {
-        return 0;
+    public int[] getLineCount() {
+        return null;
     }
 
     @Override
-    public int getSourceCount() {
-        return 0;
+    public int[] getSourceCount( ){
+        return null;
     }
 
     @Override
-    public int getCommentCount() {
-        return 0;
+    public int[] getCommentCount() {
+        return null;
     }
 
 //    @Override
@@ -88,11 +88,11 @@ public interface Retrievable {
     boolean isURL(String path);
     boolean isSuffix(String suffix);
 
-    int getCharacterCount();
-    int getWordCount();
-    int getLineCount();
-    int getSourceCount();
-    int getCommentCount();
+    int[] getCharacterCount();
+    int[] getWordCount();
+    int[] getLineCount();
+    int[] getSourceCount();
+    int[] getCommentCount();
 
 //    int getTotalCharacter();
 //    int getTotalWord();
