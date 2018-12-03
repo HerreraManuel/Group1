@@ -7,7 +7,7 @@ class Grabber implements Retrievable {
 
     int numFiles = 0;
 
-    public Grabber (String inputURl){
+    public Grabber (String inputURl, String[] searchCriteria){
 
     }
 
