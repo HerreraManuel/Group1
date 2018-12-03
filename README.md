@@ -146,7 +146,10 @@
     One assumption is the user will have enough hardware memory to store the temporary
     files while the application runs its metrics. If the application does not have
     enough memory, the user will be requested to make room before the application runs.
+    Another assumption is that commentLine class considers a block comment when encountered
+     as multiple lines of comments and not a sinlge comment line.
     There may exist scenarios where the application does not run or work as it should.
+    
 
 &nbsp;
 ****
