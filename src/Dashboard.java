@@ -183,73 +183,12 @@ public class Dashboard extends JFrame {
         window.setVisible(true);
 
 
-        /*
-        The below code will be moved to another method in order to use them properly
-
-         */
-//        character = new JLabel("Characters");
-//        outputDisplay.add(character);
-//        character.setVisible(false);
-//        leftside.add(outputDisplay);
-//
-//        word = new JLabel("Words");
-//        outputDisplay.add(word);
-//        word.setVisible(false);
-//        leftside.add(outputDisplay);
-//
-//        line = new JLabel("Lines");
-//        outputDisplay.add(line);
-//        line.setVisible(false);
-//        leftside.add(outputDisplay);
-//
-//        commentLine = new JLabel("Comment lines");
-//        outputDisplay.add(commentLine);
-//        commentLine.setVisible(false);
-//        leftside.add(outputDisplay);
-//
-//        sourceLine = new JLabel("Source lines");
-//        outputDisplay.add(sourceLine);
-//        sourceLine.setVisible(false);
-//        leftside.add(outputDisplay);
+        
 
         enter.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-//                        if(check1.isSelected() == false){
-//                            character.setForeground(Color.gray);
-//                        }
-//
-//                        if(check2.isSelected() == false){
-//                            word.setForeground(Color.gray);
-//                        }
-//
-//                        if(check3.isSelected() == false){
-//                            line.setForeground(Color.gray);
-//                        }
-//
-//                        if(check4.isSelected() == false){
-//                            commentLine.setForeground(Color.gray);
-//                        }
-//
-//                        if(check5.isSelected() == false){
-//                            sourceLine.setForeground(Color.gray);
-//                        }
-
-//                        character.setVisible(true);
-//                        word.setVisible(true);
-//                        line.setVisible(true);
-//                        commentLine.setVisible(true);
-//                        sourceLine.setVisible(true);
-
                         displayData();
-
-                        check1.setSelected(false);
-                        check2.setSelected(false);
-                        check3.setSelected(false);
-                        check4.setSelected(false);
-                        check5.setSelected(false);
-                        urlinput.setText(null);
-                        additionalText.setText(null);
                     }
                 });
 
@@ -267,19 +206,6 @@ public class Dashboard extends JFrame {
                         check5.setSelected(false);
                         urlinput.setText(null);
                         additionalText.setText(null);
-
-                        //character.setForeground(Color.black);
-                        //word.setForeground(Color.black);
-                        //line.setForeground(Color.black);
-                        //commentLine.setForeground(Color.black);
-                        //sourceLine.setForeground(Color.black);
-
-                        //character.setVisible(false);
-                        //word.setVisible(false);
-                        //line.setVisible(false);
-                        //commentLine.setVisible(false);
-                        //sourceLine.setVisible(false);
-
                     }
                 });
 
