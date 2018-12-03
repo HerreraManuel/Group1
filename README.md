@@ -58,7 +58,7 @@
 <a name="scope"></a>
 ##### 1.2 Scope
     The user can only ask for the metrics listed above. They are
-    limited to C/C++ and Java files. They may only enter one URL at a time.
+    limited to C/C++, Java, and text files. They may only enter one URL at a time.
     Only git repositories will be assessed for the given choice of metrics.
     CommentLine class will only be able to identify C/C++ and Java indications
     of comments. 
@@ -79,7 +79,8 @@
 <a name="overview"></a>    
 ##### 1.5 Overview
 
-    The following are enclosed files: Dashboard.java, GitParser.java, Helper.java
+    The following are enclosed files: Dashboard.java, GitParser.java, Helper.java, 
+    Metrics.java, RespositoryAnalyzer.java
 
     Dashboard.java is the GUI that will be the used to access the
     GitParser and display the output. It will take a Github url and
@@ -93,7 +94,7 @@
     
     Repository Analyzer will....
     
-    Metrics.java is a package enclosed with a Characters class, CommentLine class, Lines class, 
+    Metrics is a package enclosed with a Characters class, CommentLine class, Lines class, 
     Words class, SourceLine class and a MetricsException class. 
 
 &nbsp;
@@ -181,13 +182,18 @@
         3.2.1.2 Functional Requirement 1.2
               The system will take in the file type
        
-        3.2.1.3 Funcrional Requirement 1.2
+        3.2.1.3 Funcrional Requirement 1.3
              Calculate the chosen metric by the user
                  3.2.1.3a Will provide the Character Count of a file
                  3.2.1.3b Will provide the Word Count of a file
                  3.2.1.3c Will provide the Line Count of a file
                  3.2.1.3d Will provide the Comment Count of a file
                  3.2.1.3e Will provide the Source Line Count of a file
+                 
+        3.2.1.4 Functional Requirement 1.4 
+              Display Filename and Chosen Metrics
+              
+        
 <a name="perfreq"></a>       
 ##### 3.3 Performance Requirements
          3.3.1 Prominent URL Search 
