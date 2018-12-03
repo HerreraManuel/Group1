@@ -23,6 +23,7 @@ public class Dashboard extends JFrame {
     private JCheckBox check1, check2, check3, check4, check5;
     private JButton enter, clear, exit;
     private String completeUrl;
+    private String[] searchCriteria;
 
     private boolean initialized = false;
     /*
@@ -186,6 +187,7 @@ public class Dashboard extends JFrame {
         enter.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
+                        searchCriteria = additionalText.getText().trim().split(" ");
                         displayData();
                     }
                 });
@@ -233,7 +235,7 @@ public class Dashboard extends JFrame {
         String[][] current = new String[0][0];
         try{
             completeUrl = completeUrl.trim();
-            Grabber githandler = new Grabber(completeUrl);
+            Grabber githandler = new Grabber(completeUrl,searchCriteria);
             current = githandler.getCompleteFile();
             FileManager manager = new FileManager(current,getDisplaySettings(),getDisplayAll());
             labels.setText(manager.getRowLabels());
