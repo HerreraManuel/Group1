@@ -20,7 +20,9 @@ class Grabber implements Retrievable {
     }
 
     @Override
-    public int getWordCount() { return 0; }
+    public int getWordCount() {
+        return 0;
+    }
 
     @Override
     public int getLineCount() {
