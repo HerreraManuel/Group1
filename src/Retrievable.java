@@ -38,7 +38,8 @@ class Grabber implements Retrievable {
 
     @Override
     public int getSourceCount() {
-        return 0;
+        SourceLine sourceCount = new SourceLine();
+        return sourceCount;
     }
 
     @Override
