@@ -60,6 +60,8 @@
     The user can only ask for the metrics listed above. They are
     limited to C/C++ and Java files. They may only enter one URL at a time.
     Only git repositories will be assessed for the given choice of metrics.
+    CommentLine class will only be able to identify C/C++ and Java indications
+    of comments. 
 <a name="def"></a>    
 ##### 1.3 Definitions
     Characters: Counts the number of characters in a given file.
@@ -89,6 +91,7 @@
     
     Helper.java will.....
     
+    Repository Analyzer will....
     
     Metrics.java is a package enclosed with a Characters class, CommentLine class, Lines class, 
     Words class, SourceLine class and a MetricsException class. 
@@ -146,8 +149,9 @@
     One assumption is the user will have enough hardware memory to store the temporary
     files while the application runs its metrics. If the application does not have
     enough memory, the user will be requested to make room before the application runs.
-    Another assumption is that commentLine class considers a block comment when encountered
-     as multiple lines of comments and not a sinlge comment line.
+    
+    When a block comment is encountered in a given file, the commentLine class considers
+    it as multiple lines of comments and not a sinlge comment line.
     There may exist scenarios where the application does not run or work as it should.
     
 
