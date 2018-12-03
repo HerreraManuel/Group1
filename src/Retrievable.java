@@ -26,7 +26,8 @@ class Grabber implements Retrievable {
 
     @Override
     public int getWordCount() {
-        return 0;
+        Words wordCount = new Words();
+        return wordCount;
     }
 
     @Override
