@@ -5,8 +5,6 @@ import java.util.*;
 
 class Grabber implements Retrievable {
 
-    int numFiles = 0;
-
     public Grabber (String inputURl, String[] searchCriteria){
 
     }
@@ -54,7 +52,7 @@ class Grabber implements Retrievable {
     }
 
     public int getNumFiles(){
-        return numFiles;
+        return 0;
     }
 
     @Override
@@ -63,7 +61,7 @@ class Grabber implements Retrievable {
     }
 
     public String [] [] getCompleteFile(){
-        String [][] completeFile = new String [6][numFiles];
+        String [][] completeFile = new String [6][getNumFiles()];
         String [] fileNames = getFileNames();
         int[] characters = getCharacterCount();
         int[] words = getWordCount();
@@ -71,7 +69,7 @@ class Grabber implements Retrievable {
         int[] sourceLines = getSourceCount();
         int[] commentLines = getCommentCount();
 
-        for (int i = 0; i < numFiles;i++){
+        for (int i = 0; i < getNumFiles();i++){
             completeFile[0][i] = fileNames[i];
             completeFile[1][i] = characters.toString();
             completeFile[2][i] = words.toString();
