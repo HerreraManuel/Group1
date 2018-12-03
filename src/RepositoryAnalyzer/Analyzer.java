@@ -103,7 +103,6 @@ public class Analyzer
     {
         String fileExtension = fileName.substring(fileName.lastIndexOf("."), fileName.length());
         FileExtensions list = new FileExtensions();
-
         for(int i = 0; i < list.getSourceExtensionsSize(); i++)
         {
             if(fileExtension.equals(list.getSourceExtensions(i)))

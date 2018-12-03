@@ -8,7 +8,9 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Scanner;
 
 public class RepositoryAnalyzer_TestMain
 {
@@ -34,7 +36,20 @@ public class RepositoryAnalyzer_TestMain
           GitParser parser = new GitParser();
           File repository = parser.getGitRepo(validURL2);
           Repository r = new Repository(repository);
-          Queue<File> queue = r.getRequestedFiles(".c");
+          Queue<File> queue = new LinkedList<>();
+          String query = "";
+
+          r.ls();
+
+          if(query.equals(""))
+          {
+              r.getAllFiles();
+          }
+          else
+          {
+            queue = r.getRequestedFiles(query);
+          }
+
 
           while(!queue.isEmpty())
           {
@@ -47,6 +62,16 @@ public class RepositoryAnalyzer_TestMain
           {
               System.out.println(results.get(i));
           }
+
+          System.out.println("\n\n\n");
+          System.out.println("Delete " + repository.getName() + "?");
+          Scanner input = new Scanner(System.in);
+          String response = input.nextLine();
+          if (response.equalsIgnoreCase("Y") || response.equalsIgnoreCase("YES"))
+          {
+              deleteDirectory(repository);
+              System.out.println("File deleted.");
+          }
       }
       catch
       (GitAPIException e)
@@ -58,4 +83,23 @@ public class RepositoryAnalyzer_TestMain
         e.printStackTrace();
       }
   }
+
+    /* Deletes a directory with subdirectories */
+    public static boolean deleteDirectory(File dir)
+    {
+        if (dir.isDirectory())
+        {
+            File[] children = dir.listFiles();
+            for (int i = 0; i < children.length; i++)
+            {
+                boolean success = deleteDirectory(children[i]);
+                if (!success)
+                {
+                    return false;
+                }
+            }
+        }
+        // either file or an empty directory
+        return dir.delete();
+    }
 }
