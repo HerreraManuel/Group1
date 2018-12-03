@@ -32,7 +32,8 @@ class Grabber implements Retrievable {
 
     @Override
     public int getLineCount() {
-        return 0;
+        Lines lineCount = new Lines();
+        return lineCount;
     }
 
     @Override
