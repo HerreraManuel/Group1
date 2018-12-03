@@ -183,34 +183,7 @@ public class Dashboard extends JFrame {
         window.setVisible(true);
 
 
-        /*
-        The below code will be moved to another method in order to use them properly
-
-         */
-//        character = new JLabel("Characters");
-//        outputDisplay.add(character);
-//        character.setVisible(false);
-//        leftside.add(outputDisplay);
-//
-//        word = new JLabel("Words");
-//        outputDisplay.add(word);
-//        word.setVisible(false);
-//        leftside.add(outputDisplay);
-//
-//        line = new JLabel("Lines");
-//        outputDisplay.add(line);
-//        line.setVisible(false);
-//        leftside.add(outputDisplay);
-//
-//        commentLine = new JLabel("Comment lines");
-//        outputDisplay.add(commentLine);
-//        commentLine.setVisible(false);
-//        leftside.add(outputDisplay);
-//
-//        sourceLine = new JLabel("Source lines");
-//        outputDisplay.add(sourceLine);
-//        sourceLine.setVisible(false);
-//        leftside.add(outputDisplay);
+        
 
         enter.addActionListener(
                 new ActionListener() {
