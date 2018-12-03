@@ -234,6 +234,8 @@ public class Dashboard extends JFrame {
     private void displayData() {
         String[][] current = new String[0][0];
         try{
+            Grabber githandler = new Grabber(completeUrl);
+            //get data from grabber
             FileManager manager = new FileManager(current,getDisplaySettings(),getDisplayAll());
             labels.setText(manager.getRowLabels());
             Display.setText(manager.getFileDisplay());
