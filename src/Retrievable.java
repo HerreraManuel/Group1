@@ -6,6 +6,7 @@ import java.util.*;
 
 class Grabber  implements Retrievable {
     String currentURL = new String();
+    int numfiles = 0;
 
     public Grabber (String URLinput) throws IOException {
         currentURL = URLinput;
@@ -53,6 +54,12 @@ class Grabber  implements Retrievable {
     @Override
     public int[] getCommentCount() {
         return null;
+    }
+
+    public String [][] getCompleteFile(){
+        String[][] completeFile = new String[5][numfiles];
+
+        return completeFile;
     }
 
 //    @Override
