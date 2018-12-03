@@ -18,13 +18,11 @@ public class Dashboard extends JFrame {
     private JTextArea labels, Display, totals;
     private JScrollPane scroll;
 
-    private JLabel githubUrlInput, additionalInput, character, word, line, commentLine, sourceLine, space;
+    private JLabel githubUrlInput, additionalInput, space;
     private JTextField urlinput, additionalText;
     private JCheckBox check1, check2, check3, check4, check5;
     private JButton enter, clear, exit;
     private String completeUrl;
-
-    private int characteTotal;
 
     private boolean initialized = false;
     /*
@@ -234,9 +232,9 @@ public class Dashboard extends JFrame {
     private void displayData() {
         String[][] current = new String[0][0];
         try{
-           Grabber githandler = new Grabber(completeUrl);
-           current = githandler.getCompleteFile();
-            //get data from grabber
+            completeUrl = completeUrl.trim();
+            Grabber githandler = new Grabber(completeUrl);
+            current = githandler.getCompleteFile();
             FileManager manager = new FileManager(current,getDisplaySettings(),getDisplayAll());
             labels.setText(manager.getRowLabels());
             Display.setText(manager.getFileDisplay());
