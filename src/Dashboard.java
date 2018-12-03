@@ -231,10 +231,14 @@ public class Dashboard extends JFrame {
             completeUrl = completeUrl.trim();
             Grabber githandler = new Grabber(completeUrl,searchCriteria);
             current = githandler.getCompleteFile();
-            FileManager manager = new FileManager(current,getDisplaySettings(),getDisplayAll());
-            labels.setText(manager.getRowLabels());
-            Display.setText(manager.getFileDisplay());
-            totals.setText(String.valueOf(manager.getTotals()));
+            if(current.equals(null)){
+                Display.setText("No files matching the search criteria were found");
+            }else {
+                FileManager manager = new FileManager(current, getDisplaySettings(), getDisplayAll());
+                labels.setText(manager.getRowLabels());
+                Display.setText(manager.getFileDisplay());
+                totals.setText(String.valueOf(manager.getTotals()));
+            }
         }catch(Exception e){
             Display.setText(" An error has occurred. \n Make sure that you entered a valid github URL and/or search criteria ");
         }
