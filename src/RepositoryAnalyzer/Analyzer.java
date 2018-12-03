@@ -23,6 +23,7 @@ import java.io.FileReader;
 
 public class Analyzer
 {
+    private Result result; //TODO: Should a Result object exist in Analyzer class? Who invokes who?
     private String fileName;
     private Lines lines;
     private Characters characters;
@@ -32,53 +33,50 @@ public class Analyzer
 
     public Analyzer(File f)
     {
+        //TODO: Instantiation of these objects here look ugly... Problem?
+        lines = new Lines();
+        words = new Words();
+        characters = new Characters();
+        sourceLine = new SourceLine();
+        commentLine = new CommentLine();
+
         try
         {
             String fileContent = readFileContents(f.getPath());
             fileName = f.getName();
-            performMetrics(fileContent);
-
-                    /*
-        if(isSourceFile(f.getName()))
-        {
-            commentLine = new CommentLine(fileContent); //TODO: CommentLine class under implementation
-            sourceLine = new SourceLine(fileContent); //TODO: SourceLine class under implementation
-        }
-        */
-
-            //characters = new Characters(fileContent); //TODO: Characters class under implementation
+            boolean enableSourceMetric = isSourceFile(fileName);
+            performMetrics(fileContent, enableSourceMetric);
         }catch(IOException e)
         {
             System.out.println("Unable to read file contents");
         }
     }
 
-    //TODO: Refactor this after tests checkout, no print outs should be in this method; may need to refactor some methods in Metrics class
-    public void performMetrics(String fileContent)
+    /* Performs the metrics for the given file content and a flag to determine if a source and comment metric are needed for it */
+    public void performMetrics(String fileContent, boolean sourceMetricFlag)
     {
-        lines = new Lines();
-        words = new Words();
-        System.out.println(fileName);
-        System.out.println("-----------------------------------------------");
-        System.out.println(fileContent);
-        System.out.println("\n");
-        System.out.println("Line Count: " + lines.lineCount(fileContent));
-        System.out.println("Word Count: " + words.wordCount(fileContent));
+        Integer lineCount = lines.lineCount(fileContent);
+        Integer wordCount = words.wordCount(fileContent);
+        Integer characterCount = characters.characterCount(fileContent);
+
+        Integer sourceCount;
+        Integer commentCount;
+
+        if(sourceMetricFlag == false)
+        {
+          sourceCount = null;
+          commentCount = null;
+        }
+        else
+        {
+          sourceCount = sourceLine.sourceLine(fileContent);
+          commentCount = commentLine.commentLine(fileContent);
+        }
+
+        result = new Result(fileName, characterCount, wordCount, lineCount, sourceCount, commentCount);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    /* Extracts the contents of a file with a given file path and returns a single string containing the file content */
     private String readFileContents(String filePath) throws IOException
     {
         BufferedReader reader = new BufferedReader(new FileReader (filePath));
@@ -100,6 +98,7 @@ public class Analyzer
         }
     }
 
+    /* Determines if the given fileName indicates a source file */
     private Boolean isSourceFile(String fileName)
     {
         String fileExtension = fileName.substring(fileName.lastIndexOf("."), fileName.length());
@@ -111,5 +110,11 @@ public class Analyzer
                 return true;
         }
         return false;
+    }
+
+    /* Getter for the metrics result for a file */
+    public Result getResult()
+    {
+        return result;
     }
 }
