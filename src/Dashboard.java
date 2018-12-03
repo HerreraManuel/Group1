@@ -183,7 +183,7 @@ public class Dashboard extends JFrame {
         window.setVisible(true);
 
 
-        
+
 
         enter.addActionListener(
                 new ActionListener() {
