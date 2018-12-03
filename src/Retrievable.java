@@ -6,6 +6,11 @@ import java.util.*;
 
 class Grabber  implements Retrievable {
     String currentURL = new String();
+    int[] characterCount = null;
+    int[] wordCount = null;
+    int[] linecount = null;
+    int[] sourceCount = null;
+    int[] commentCount = null;
     int numfiles = 0;
 
     public Grabber (String URLinput) throws IOException {
@@ -59,10 +64,10 @@ class Grabber  implements Retrievable {
     public String [][] getCompleteFile(){
         String[][] completeFile = new String[5][numfiles];
 
-        for (int i = 0; i < 5; i++){
-            for (int j = 0; j < numfiles; j++){
-                
-            }
+
+        for (int i =0 ; i < numfiles ; i++)
+        {
+
         }
 
         return completeFile;
