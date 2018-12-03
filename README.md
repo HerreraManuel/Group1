@@ -20,13 +20,12 @@
 &nbsp;
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Table of Contents
 &nbsp;
-### 1. [Introduction](#intro)
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1 [Purpose](#purpose)
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.2 [Scope](#scope)
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.3 [Definitions](#def)
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.4 [References](#ref)
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.5 [Overview](#overview)
-    
+1. [Introduction](#intro)\
+    1.1 [Purpose](#purpose)\
+    1.2 [Scope](#scope)\
+    1.3 [Definitions](#def)\
+    1.4 [References](#ref)\
+    1.5 [Overview](#overview)    
 2. [Overall Description](#overalldesc)\
     2.1 [Product Perspective](#procper)\
     2.2 [Product Functions](#procfunc)\
