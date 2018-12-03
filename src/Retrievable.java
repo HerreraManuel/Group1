@@ -25,27 +25,27 @@ class Grabber implements Retrievable {
     }
 
     @Override
-    public int getCharacterCount() {
+    public int[] getCharacterCount() {
         Characters charCount = new Characters();
-        return charCount;
+        return null;
     }
 
     @Override
     public int[] getWordCount() {
         Words wordCount = new Words();
-        return wordCount;
+        return null;
     }
 
     @Override
     public int[] getLineCount() {
         Lines lineCount = new Lines();
-        return lineCount;
+        return null;
     }
 
     @Override
     public int[] getSourceCount() {
         SourceLine sourceCount = new SourceLine();
-        return sourceCount;
+        return null;
     }
 
     @Override
