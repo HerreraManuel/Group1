@@ -76,10 +76,5 @@ public interface Retrievable {
     int[] getSourceCount();
     int[] getCommentCount();
 
-//    int getTotalCharacter();
-//    int getTotalWord();
-//    int getTotalLine();
-//    int getTotalSource();
-//    int getTotalComment();
 
 }
