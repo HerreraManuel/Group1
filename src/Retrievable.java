@@ -1,8 +1,21 @@
 import GitParser.*;
+import com.jcraft.jsch.IO;
+
 import java.io.*;
 import java.util.*;
 
-class Grabber implements Retrievable {
+class Grabber  implements Retrievable {
+    String currentURL = new String();
+
+    public Grabber (String URLinput) throws IOException {
+        currentURL = URLinput;
+        if(isURL(URLinput)){
+
+        }
+        else{
+            throw new IOException();
+        }
+    }
 
     public boolean isSuffix(String suffix) {
         if (suffix.contains(".java") || suffix.contains(".c") || suffix.contains(".h") || suffix.contains(".cpp") || suffix.contains(".hpp")) {
