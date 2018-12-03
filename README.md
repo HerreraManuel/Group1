@@ -89,7 +89,8 @@
     or an instructor looking to view the metrics on a student's
     repostitory.
 
-    
+&nbsp;
+***    
 <a name="overalldesc"></a>
 ### 2. Overall Description
 <a name="procper"></a>
