@@ -25,62 +25,65 @@ class Grabber implements Retrievable {
     }
 
     @Override
-    public int getCharacterCount() {
+    public int[] getCharacterCount() {
         Characters charCount = new Characters();
         return charCount;
     }
 
     @Override
-    public int getWordCount() {
+    public int[] getWordCount() {
         Words wordCount = new Words();
         return wordCount;
     }
 
     @Override
-    public int getLineCount() {
+    public int[] getLineCount() {
         Lines lineCount = new Lines();
         return lineCount;
     }
 
     @Override
-    public int getSourceCount() {
+    public int[] getSourceCount() {
         SourceLine sourceCount = new SourceLine();
         return sourceCount;
     }
 
     @Override
-    public int getCommentCount() {
-        return 0;
+    public int[] getCommentCount() {
+        return null;
     }
 
-    @Override
-    public int getTotalCharacter() {
-        return 0;
-    }
-
-    @Override
-    public int getTotalWord() {
-        return 0;
-    }
-
-    @Override
-    public int getTotalLine() {
-        return 0;
-    }
-
-    @Override
-    public int getTotalSource() {
-        return 0;
-    }
-
-    @Override
-    public int getTotalComment() {
-        return 0;
-    }
+//    @Override
+//    public int getTotalCharacter() {
+//        return 0;
+//    }
+//
+//    @Override
+//    public int getTotalWord() {
+//        return 0;
+//    }
+//
+//    @Override
+//    public int getTotalLine() {
+//        return 0;
+//    }
+//
+//    @Override
+//    public int getTotalSource() {
+//        return 0;
+//    }
+//
+//    @Override
+//    public int getTotalComment() {
+//        return 0;
+//    }
 
     public String [] [] getCompleteFile(){
         String [][] completeFile = new String [6][numFiles];
 
+
+
+        return completeFile;
     }
 
 }
@@ -91,16 +94,16 @@ public interface Retrievable {
     boolean isURL(String path);
     boolean isSuffix(String suffix);
 
-    int getCharacterCount();
-    int getWordCount();
-    int getLineCount();
-    int getSourceCount();
-    int getCommentCount();
+    int[] getCharacterCount();
+    int[] getWordCount();
+    int[] getLineCount();
+    int[] getSourceCount();
+    int[] getCommentCount();
 
-    int getTotalCharacter();
-    int getTotalWord();
-    int getTotalLine();
-    int getTotalSource();
-    int getTotalComment();
+//    int getTotalCharacter();
+//    int getTotalWord();
+//    int getTotalLine();
+//    int getTotalSource();
+//    int getTotalComment();
 
 }
