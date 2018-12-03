@@ -40,7 +40,10 @@
     3.4 [Design Constraints](#descon)\
     3.5 [Attributes](#attri)\
     3.6 [Other Requirements](#otherreq)
+&nbsp;\
+&nbsp;
 ***
+&nbsp;
     
 <a name="intro"></a>
 ### 1.Introduction:
@@ -91,6 +94,7 @@
 
 &nbsp;
 ***    
+&nbsp;
 <a name="overalldesc"></a>
 ### 2. Overall Description
 <a name="procper"></a>
@@ -143,6 +147,9 @@
     enough memory, the user will be requested to make room before the application runs.
     There may exist scenarios where the application does not run or work as it should.
 
+&nbsp;
+****
+&nbsp;
 <a name="detailreq"></a>
 ### 3. Detailed  Requirements         
 <a name="extinterfacereq"></a>
