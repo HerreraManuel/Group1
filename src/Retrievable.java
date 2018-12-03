@@ -6,6 +6,7 @@ import java.util.*;
 
 class Grabber  implements Retrievable {
     String currentURL = new String();
+    String [] fileNames = null;
     int[] characterCount = null;
     int[] wordCount = null;
     int[] linecount = null;
@@ -32,42 +33,52 @@ class Grabber  implements Retrievable {
     }
 
     @Override
+    public String[] getFileNames() {
+        return new String[0];
+    }
+
+    @Override
     public boolean isURL(String path) {
         return false;
     }
 
     @Override
-    public int[] getCharacterCount( ){
-        return null;
+    public void getCharacterCount( ){
+
     }
 
     @Override
-    public int[] getWordCount() {
-        return null;
+    public void getWordCount() {
+
     }
 
     @Override
-    public int[] getLineCount() {
-        return null;
+    public void getLineCount() {
+
     }
 
     @Override
-    public int[] getSourceCount( ){
-        return null;
+    public void getSourceCount( ){
+
     }
 
     @Override
-    public int[] getCommentCount() {
-        return null;
+    public void getCommentCount() {
+
     }
 
     public String [][] getCompleteFile(){
-        String[][] completeFile = new String[5][numfiles];
+        String[][] completeFile = new String[6][numfiles];
 
 
         for (int i =0 ; i < numfiles ; i++)
         {
-
+            completeFile[0][i] = fileNames[i];
+            completeFile[1][i] = Integer.toString(characterCount[i]);
+            completeFile[2][i] = Integer.toString(wordCount[i]);
+            completeFile[3][i] = Integer.toString(linecount[i]);
+            completeFile[4][i] = Integer.toString(sourceCount[i]);
+            completeFile[5][i] = Integer.toString(commentCount[i]);
         }
 
         return completeFile;
@@ -106,11 +117,12 @@ public interface Retrievable {
     boolean isURL(String path);
     boolean isSuffix(String suffix);
 
-    int[] getCharacterCount();
-    int[] getWordCount();
-    int[] getLineCount();
-    int[] getSourceCount();
-    int[] getCommentCount();
+    String [] getFileNames();
+    void getCharacterCount();
+    void getWordCount();
+    void getLineCount();
+    void getSourceCount();
+    void getCommentCount();
 
 //    int getTotalCharacter();
 //    int getTotalWord();
