@@ -61,7 +61,7 @@ public class Repository {
     return requested_files;
   }
 
-  //TODO: Needs to be fixed
+  //TODO: Working as expected, but now wondering if this and getRequestedFiles can be refactored back to one method...
   /* Obtains all files regardless of type */
   public Queue<File> getAllFiles() throws EmptyStackException
   {
@@ -73,7 +73,7 @@ public class Repository {
       for (Iterator iterator = files.iterator(); iterator.hasNext(); )
       {
         File file = (File) iterator.next();
-        System.out.println("Inserting: " + file.getAbsolutePath());
+        //System.out.println("Inserting: " + file.getAbsolutePath());
         allFiles.add(file);
       }
     }

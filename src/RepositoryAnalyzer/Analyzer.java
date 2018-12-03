@@ -101,12 +101,16 @@ public class Analyzer
     /* Determines if the given fileName indicates a source file */
     private Boolean isSourceFile(String fileName)
     {
-        String fileExtension = fileName.substring(fileName.lastIndexOf("."), fileName.length());
-        FileExtensions list = new FileExtensions();
-        for(int i = 0; i < list.getSourceExtensionsSize(); i++)
+        //System.out.println(fileName);
+        if(fileName.contains("."))
         {
-            if(fileExtension.equals(list.getSourceExtensions(i)))
-                return true;
+            String fileExtension = fileName.substring(fileName.lastIndexOf("."), fileName.length());
+            FileExtensions list = new FileExtensions();
+            for (int i = 0; i < list.getSourceExtensionsSize(); i++) {
+                if (fileExtension.equals(list.getSourceExtensions(i)))
+                    return true;
+            }
+            return false;
         }
         return false;
     }
