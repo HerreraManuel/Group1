@@ -267,19 +267,6 @@ public class Dashboard extends JFrame {
                         check5.setSelected(false);
                         urlinput.setText(null);
                         additionalText.setText(null);
-
-                        //character.setForeground(Color.black);
-                        //word.setForeground(Color.black);
-                        //line.setForeground(Color.black);
-                        //commentLine.setForeground(Color.black);
-                        //sourceLine.setForeground(Color.black);
-
-                        //character.setVisible(false);
-                        //word.setVisible(false);
-                        //line.setVisible(false);
-                        //commentLine.setVisible(false);
-                        //sourceLine.setVisible(false);
-
                     }
                 });
 
