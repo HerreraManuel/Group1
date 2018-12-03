@@ -1,14 +1,17 @@
 # Software Requirements Specification
-
+[]()\
+[]()
 ### Github Metrics application
- 
-#### Group 1
+[]()\
+[]()
+### Group 1
 ##### Jenzel Arevalo
 ##### Parambir Gill
 ##### Manuel Herrera
 ##### Matthew Mendoza
 ##### Jarod Nooner
-
+[]()\
+[]()
 ### CSC 131 - Software Engineering
 
 
