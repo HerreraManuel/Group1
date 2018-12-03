@@ -53,6 +53,9 @@ class Grabber implements Retrievable {
         return null;
     }
 
+    public int getNumFiles(){
+        return numFiles;
+    }
 
     public String [] [] getCompleteFile(){
         String [][] completeFile = new String [6][numFiles];
@@ -75,6 +78,9 @@ public interface Retrievable {
     int[] getLineCount();
     int[] getSourceCount();
     int[] getCommentCount();
+
+    String [][] getCompleteFile();
+    int getNumFiles();
 
 
 }
