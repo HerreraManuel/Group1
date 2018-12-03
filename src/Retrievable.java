@@ -5,6 +5,12 @@ import java.util.*;
 
 class Grabber implements Retrievable {
 
+    int numFiles = 0;
+
+    public Grabber (String inputURl){
+
+    }
+
     public boolean isSuffix(String suffix) {
         if (suffix.contains(".java") || suffix.contains(".c") || suffix.contains(".h") || suffix.contains(".cpp") || suffix.contains(".hpp") || suffix.contains(".txt")) {
             return true;
@@ -70,6 +76,11 @@ class Grabber implements Retrievable {
     @Override
     public int getTotalComment() {
         return 0;
+    }
+
+    public String [] [] getCompleteFile(){
+        String [][] completeFile = new String [6][numFiles];
+
     }
 
 }
