@@ -55,17 +55,17 @@ public class Analyzer
     /* Performs the metrics for the given file content and a flag to determine if a source and comment metric are needed for it */
     public void performMetrics(String fileContent, boolean sourceMetricFlag)
     {
-        Integer lineCount = lines.lineCount(fileContent);
-        Integer wordCount = words.wordCount(fileContent);
-        Integer characterCount = characters.characterCount(fileContent);
+        int lineCount = lines.lineCount(fileContent);
+        int wordCount = words.wordCount(fileContent);
+        int characterCount = characters.characterCount(fileContent);
 
-        Integer sourceCount;
-        Integer commentCount;
+        int sourceCount;
+        int commentCount;
 
         if(sourceMetricFlag == false)
         {
-          sourceCount = null;
-          commentCount = null;
+          sourceCount = 0;
+          commentCount = 0;
         }
         else
         {

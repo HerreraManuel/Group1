@@ -11,14 +11,14 @@ package RepositoryAnalyzer;
 public class Result
 {
   private String fileName;
-  private Integer characterCount;
-  private Integer wordCount;
-  private Integer lineCount;
-  private Integer sourceCount;
-  private Integer commentCount;
+  private int characterCount;
+  private int wordCount;
+  private int lineCount;
+  private int sourceCount;
+  private int commentCount;
 
   //TODO: Is it really a good idea to pass in all the parameters to this constructor?
-  public Result(String fileName, Integer characterCount, Integer wordCount, Integer lineCount, Integer sourceCount, Integer commentCount)
+  public Result(String fileName, int characterCount, int wordCount, int lineCount, int sourceCount, int commentCount)
   {
       setFileName(fileName);
       setCharacterCount(characterCount);
@@ -35,38 +35,32 @@ public class Result
   }
 
   /* Sets the character count */
-  public void setCharacterCount(Integer characterCount)
+  public void setCharacterCount(int characterCount)
   {
       this.characterCount = characterCount;
   }
 
   /* Sets the word count */
-  public void setWordCount(Integer wordCount)
+  public void setWordCount(int wordCount)
   {
     this.wordCount = wordCount;
   }
 
   /* Sets the line count */
-  public void setLineCount(Integer lineCount)
+  public void setLineCount(int lineCount)
   {
     this.lineCount = lineCount;
   }
 
   /* Sets the source count if possible for file type */
-  public void setSourceCount(Integer sourceCount)
+  public void setSourceCount(int sourceCount)
   {
-    if(sourceCount == null)
-      this.sourceCount = null;
-    else
       this.sourceCount = sourceCount;
   }
 
   /* Sets the comment count, if possible for file type */
-  public void setCommentCount(Integer commentCount)
+  public void setCommentCount(int commentCount)
   {
-    if(commentCount == null)
-      this.commentCount = null;
-    else
       this.commentCount = commentCount;
   }
 
@@ -77,31 +71,31 @@ public class Result
   }
 
   /* Gets the character count */
-  public Integer getCharacterCount()
+  public int getCharacterCount()
   {
     return characterCount;
   }
 
   /* Gets the word count */
-  public Integer getWordCount()
+  public int getWordCount()
   {
     return wordCount;
   }
 
   /* Gets the line count */
-  public Integer getLineCount()
+  public int getLineCount()
   {
     return lineCount;
   }
 
   /* Gets the source count */
-  public Integer getSourceCount()
+  public int getSourceCount()
   {
     return sourceCount;
   }
 
   /* Gets the comment count */
-  public Integer getCommentCount()
+  public int getCommentCount()
   {
     return commentCount;
   }
@@ -114,16 +108,8 @@ public class Result
     s += "Character Count: " + characterCount + "\n";
     s += "Word Count: " + wordCount + "\n";
     s += "Line Count: " + lineCount + "\n";
-    if(sourceCount == null && commentCount == null)
-    {
-      s += "Source Count: Not available for file\n";
-      s += "Comment Count: Not available for file\n";
-    }
-    else
-    {
-      s += "Source Count: " + sourceCount + "\n";
-      s += "Comment Count: " + commentCount + "\n";
-    }
+    s += "Source Count: " + sourceCount + "\n";
+    s += "Comment Count: " + commentCount + "\n";
     return s;
   }
 }

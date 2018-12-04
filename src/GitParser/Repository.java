@@ -34,7 +34,7 @@ public class Repository {
   }
 
   /* Obtains all files of a particular type in the repository */
-  public Queue<File> getRequestedFiles(String query) throws EmptyStackException
+  public Queue<File> getRequestedFiles(String query) throws EmptyStackException  //TODO: MARKED FOR DELETION
   {
     Queue<File> requested_files = new LinkedList<File>();
     ArrayList<String> queries = processQueries(query);
@@ -85,7 +85,7 @@ public class Repository {
   }
 
   /* Processes a string of queries and returns them in an arraylist */
-  private ArrayList<String> processQueries(String queries)
+  private ArrayList<String> processQueries(String queries) //TODO: MARKED FOR DELETION
   {
     if(queries == "")
     {

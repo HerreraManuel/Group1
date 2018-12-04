@@ -11,6 +11,8 @@ class Grabber implements Retrievable
 {
     private ArrayList<Result> results;
 
+    enum metric_mode{ WORDS, CHARACTERS, LINES, SOURCES, COMMENTS }
+
     public Grabber (String inputURl, String[] searchCriteria)
     {
         try
@@ -19,17 +21,7 @@ class Grabber implements Retrievable
             File repository = parser.getGitRepo(inputURl);
             Repository r = new Repository(repository);
             Queue<File> queue = new LinkedList<>();
-
-            /*
-            if(query.equals(""))
-            {
-                queue = r.getAllFiles();
-            }
-            else
-            {
-                queue = r.getRequestedFiles(query);
-            }
-            */
+            queue = r.getAllFiles();
 
             while(!queue.isEmpty())
             {
@@ -63,40 +55,68 @@ class Grabber implements Retrievable
 
     @Override
     public int[] getCharacterCount() {
-        Characters charCount = new Characters();
-        return null;
+        int[] characterCounts = getFromResults(metric_mode.CHARACTERS);
+        return characterCounts;
     }
 
     @Override
     public int[] getWordCount() {
-        Words wordCount = new Words();
-        return null;
+        int[] wordCounts = getFromResults(metric_mode.WORDS);
+        return wordCounts;
     }
 
     @Override
     public int[] getLineCount() {
-        Lines lineCount = new Lines();
+        int[] lineCounts = getFromResults(metric_mode.LINES);
         return null;
     }
 
     @Override
     public int[] getSourceCount() {
-        SourceLine sourceCount = new SourceLine();
-        return null;
+        int[] wordCounts = getFromResults(metric_mode.SOURCES);
+        return wordCounts;
     }
 
     @Override
     public int[] getCommentCount() {
-        return null;
+        int[] commentCounts = getFromResults(metric_mode.COMMENTS);
+        return commentCounts;
     }
 
     public int getNumFiles(){
-        return 0;
+        return results.size();
     }
 
     @Override
     public String[] getFileNames() {
+        String[] fileNames = new String[results.size()];
+        for(int i = 0; i < fileNames.length; i++)
+        {
+            fileNames[i] = results.get(i).getFileName();
+        }
         return new String[0];
+    }
+
+    public int[] getFromResults(metric_mode requestedMetric)
+    {
+        int[] metrics = new int[results.size()];
+
+        for(int i = 0; i < metrics.length; i++)
+        {
+            if(requestedMetric == metric_mode.WORDS)
+                metrics[i] = results.get(i).getWordCount();
+            else if(requestedMetric == metric_mode.CHARACTERS)
+                metrics[i] = results.get(i).getCharacterCount();
+            else if(requestedMetric == metric_mode.LINES)
+                metrics[i] = results.get(i).getLineCount();
+            else if(requestedMetric == metric_mode.SOURCES)
+                metrics[i] = results.get(i).getSourceCount();
+            else if(requestedMetric == metric_mode.COMMENTS)
+                metrics[i] = results.get(i).getCommentCount();
+            else
+                metrics[i] = -1;
+        }
+        return metrics;
     }
 
     public String [] [] getCompleteFile(){
@@ -126,5 +146,4 @@ class Grabber implements Retrievable
         }
         return completeFile;
     }
-
 }

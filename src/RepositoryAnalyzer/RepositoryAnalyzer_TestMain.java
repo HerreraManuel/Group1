@@ -37,7 +37,7 @@ public class RepositoryAnalyzer_TestMain
           File repository = parser.getGitRepo(validURL2);
           Repository r = new Repository(repository);
           Queue<File> queue = new LinkedList<>();
-          String query = ".java, .c,.cpp";
+          String query = "";
 
           //r.ls();
 
