@@ -5,6 +5,12 @@ import java.util.*;
 
 class Grabber implements Retrievable {
 
+    private String path;
+
+    public Grabber(String path){
+        this.path = path;
+    }
+
     public boolean isSuffix(String suffix) {
         if (suffix.contains(".java") || suffix.contains(".c") || suffix.contains(".h") || suffix.contains(".cpp") || suffix.contains(".hpp") || suffix.contains(".txt")) {
             return true;
@@ -21,7 +27,7 @@ class Grabber implements Retrievable {
     @Override
     public int getCharacterCount() {
         Characters charCount = new Characters();
-        return charCount;
+        return charCount();
     }
 
     @Override
