@@ -44,7 +44,8 @@ class Grabber implements Retrievable {
 
     @Override
     public int getCommentCount() {
-        return 0;
+        CommentLine commentCount = new CommentLine();
+        return commentCount;
     }
 
     @Override
