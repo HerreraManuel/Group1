@@ -1,13 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
-import java.lang.*; //here
+import java.lang.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import java.awt.Color;
-import java.lang.reflect.Array;
 
 public class Dashboard extends JFrame {
 
@@ -16,15 +11,13 @@ public class Dashboard extends JFrame {
     private JPanel rightside;
 
     private JTextArea labels, Display, totals;
-    private JScrollPane scroll;
 
-    private JLabel githubUrlInput, additionalInput, character, word, line, commentLine, sourceLine, space;
+    private JLabel githubUrlInput, additionalInput, space;
     private JTextField urlinput, additionalText;
     private JCheckBox check1, check2, check3, check4, check5;
     private JButton enter, clear, exit;
     private String completeUrl;
-
-    private int characteTotal;
+    private String[] searchCriteria;
 
     private boolean initialized = false;
     /*
@@ -183,11 +176,12 @@ public class Dashboard extends JFrame {
         window.setVisible(true);
 
 
-        
+
 
         enter.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
+                        searchCriteria = additionalText.getText().trim().split(" ");
                         displayData();
                     }
                 });
@@ -234,10 +228,17 @@ public class Dashboard extends JFrame {
     private void displayData() {
         String[][] current = new String[0][0];
         try{
-            FileManager manager = new FileManager(current,getDisplaySettings(),getDisplayAll());
-            labels.setText(manager.getRowLabels());
-            Display.setText(manager.getFileDisplay());
-            totals.setText(String.valueOf(manager.getTotals()));
+            completeUrl = completeUrl.trim();
+            Grabber githandler = new Grabber(completeUrl,searchCriteria);
+            current = githandler.getCompleteFile();
+            if(current.equals(null)){
+                Display.setText("No files matching the search criteria were found");
+            }else {
+                FileManager manager = new FileManager(current, getDisplaySettings(), getDisplayAll());
+                labels.setText(manager.getRowLabels());
+                Display.setText(manager.getFileDisplay());
+                totals.setText(String.valueOf(manager.getTotals()));
+            }
         }catch(Exception e){
             Display.setText(" An error has occurred. \n Make sure that you entered a valid github URL and/or search criteria ");
         }
