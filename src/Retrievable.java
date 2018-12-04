@@ -26,8 +26,9 @@ class Grabber implements Retrievable {
 
     @Override
     public int getCharacterCount() {
-        Characters charCount = new Characters();
-        return charCount();
+        Characters charsObj = new Characters();
+        int charCount = charsObj.characterCount(path);
+        return charCount;
     }
 
     @Override
