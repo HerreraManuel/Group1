@@ -70,6 +70,42 @@ public class Result
       this.commentCount = commentCount;
   }
 
+  /* Gets the file name */
+  public String getFileName()
+  {
+    return fileName;
+  }
+
+  /* Gets the character count */
+  public Integer getCharacterCount()
+  {
+    return characterCount;
+  }
+
+  /* Gets the word count */
+  public Integer getWordCount()
+  {
+    return wordCount;
+  }
+
+  /* Gets the line count */
+  public Integer getLineCount()
+  {
+    return lineCount;
+  }
+
+  /* Gets the source count */
+  public Integer getSourceCount()
+  {
+    return sourceCount;
+  }
+
+  /* Gets the comment count */
+  public Integer getCommentCount()
+  {
+    return commentCount;
+  }
+
   /* To-String method for debugging */
   public String toString()
   {
