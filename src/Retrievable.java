@@ -5,6 +5,12 @@ import java.util.*;
 
 class Grabber implements Retrievable {
 
+    private String path;
+
+    public Grabber(String path){
+        this.path = path;
+    }
+
     public boolean isSuffix(String suffix) {
         if (suffix.contains(".java") || suffix.contains(".c") || suffix.contains(".h") || suffix.contains(".cpp") || suffix.contains(".hpp") || suffix.contains(".txt")) {
             return true;
