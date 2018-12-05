@@ -9,6 +9,7 @@ public class Dashboard extends JFrame {
     private JFrame window;
     private JPanel leftside, urlPanel, additionalPanel, totbuttons, enterPanel, outputDisplay, spacingPanel;
     private JPanel rightside;
+    DataModel githandler;
 
     private JTextArea labels, Display, totals;
 
@@ -229,7 +230,7 @@ public class Dashboard extends JFrame {
         String[][] current = new String[0][0];
         try{
             completeUrl = completeUrl.trim();
-            DataModel githandler = new DataModel(completeUrl,searchCriteria);
+            githandler = new DataModel(completeUrl,searchCriteria);
             current = githandler.getCompleteFile();
             if(current.equals(null)){
                 Display.setText("No files matching the search criteria were found");
