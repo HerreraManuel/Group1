@@ -238,7 +238,6 @@ public class Dashboard extends JFrame {
             }else {
 
                 FileManager manager = new FileManager(current, getDisplaySettings(), getDisplayAll());
-                System.out.println("final");
                 labels.setText(manager.getRowLabels());
                 Display.setText(manager.getFileDisplay());
                 totals.setText(String.valueOf(manager.getTotals()));
