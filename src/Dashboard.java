@@ -230,12 +230,17 @@ public class Dashboard extends JFrame {
         String[][] current = new String[0][0];
         try{
             completeUrl = completeUrl.trim();
+            System.out.println("here");
             githandler = new DataModel(completeUrl,searchCriteria);
+            System.out.println("here2");
             current = githandler.getCompleteFile();
+            System.out.println("here 3");
             if(current.equals(null)){
                 Display.setText("No files matching the search criteria were found");
             }else {
+
                 FileManager manager = new FileManager(current, getDisplaySettings(), getDisplayAll());
+                System.out.println("final");
                 labels.setText(manager.getRowLabels());
                 Display.setText(manager.getFileDisplay());
                 totals.setText(String.valueOf(manager.getTotals()));
