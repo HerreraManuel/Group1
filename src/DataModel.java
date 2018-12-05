@@ -34,11 +34,7 @@ class DataModel implements Retrievable
                 queue.remove();
             }
         }
-        catch (GitAPIException e)
-        {
-            System.out.println(e.getMessage());
-        }
-        catch (IOException e)
+        catch (Exception e)
         {
             System.out.println(e.getMessage());
         }
