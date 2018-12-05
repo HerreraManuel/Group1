@@ -127,18 +127,13 @@ class DataModel implements Retrievable
     }
 
     public String [] [] getCompleteFile(){
-
-        System.out.println("1");
         String [][] completeFile = new String [6][results.size()];
-        System.out.println("2");
         String [] fileNames = getFileNames();
         int[] characters = getCharacterCount();
         int[] words = getWordCount();
         int[] lines = getLineCount();
         int[] sourceLines = getSourceCount();
         int[] commentLines = getCommentCount();
-        System.out.println("got here");
-
         for (int i = 0; i < getNumFiles();i++){
             completeFile[0][i] = fileNames[i];
             completeFile[1][i] = String.valueOf(characters[i]);
@@ -155,7 +150,6 @@ class DataModel implements Retrievable
                 completeFile[5][i] = "N/A";
             }
         }
-        System.out.println("finished out the 2d array");
         return completeFile;
     }
 }
