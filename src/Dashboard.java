@@ -236,13 +236,14 @@ public class Dashboard extends JFrame {
             if(current.equals(null)){
                 Display.setText("No files matching the search criteria were found");
             }else {
-
                 FileManager manager = new FileManager(current, getDisplaySettings(), getDisplayAll());
+                System.out.println("3");
                 labels.setText(manager.getRowLabels());
                 Display.setText(manager.getFileDisplay());
                 totals.setText(String.valueOf(manager.getTotals()));
             }
         }catch(Exception e){
+            e.printStackTrace();
             Display.setText(" An error has occurred. \n Make sure that you entered a valid github URL and/or search criteria ");
         }
     }

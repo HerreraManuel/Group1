@@ -32,7 +32,8 @@ class DataModel implements Retrievable
         }
         catch (Exception e)
         {
-            System.out.println("Caught exception int datmodel : " + e.getMessage());
+            System.out.println("Caught exception int datmodel : " );
+            e.printStackTrace();
             throw new IOException();
         }
     }
@@ -75,7 +76,7 @@ class DataModel implements Retrievable
     @Override
     public int[] getLineCount() {
         int[] lineCounts = getFromResults(metric_mode.LINES);
-        return null;
+        return lineCounts;
     }
 
     @Override
@@ -101,7 +102,7 @@ class DataModel implements Retrievable
         {
             fileNames[i] = results.get(i).getFileName();
         }
-        return new String[0];
+        return fileNames;
     }
 
     public int[] getFromResults(metric_mode requestedMetric)
@@ -110,31 +111,37 @@ class DataModel implements Retrievable
 
         for(int i = 0; i < metrics.length; i++)
         {
-            if(requestedMetric == metric_mode.WORDS)
+            if(requestedMetric == metric_mode.WORDS) {
                 metrics[i] = results.get(i).getWordCount();
-            else if(requestedMetric == metric_mode.CHARACTERS)
+            }
+            else if(requestedMetric == metric_mode.CHARACTERS) {
                 metrics[i] = results.get(i).getCharacterCount();
-            else if(requestedMetric == metric_mode.LINES)
+            }
+            else if(requestedMetric == metric_mode.LINES) {
                 metrics[i] = results.get(i).getLineCount();
-            else if(requestedMetric == metric_mode.SOURCES)
+            }
+            else if(requestedMetric == metric_mode.SOURCES) {
                 metrics[i] = results.get(i).getSourceCount();
-            else if(requestedMetric == metric_mode.COMMENTS)
+            }
+            else if(requestedMetric == metric_mode.COMMENTS) {
                 metrics[i] = results.get(i).getCommentCount();
-            else
+            }
+            else {
                 metrics[i] = -1;
+            }
         }
         return metrics;
     }
 
     public String [] [] getCompleteFile(){
-        String [][] completeFile = new String [6][results.size()];
+        String [][] completeFile = new String [6][30];
         String [] fileNames = getFileNames();
         int[] characters = getCharacterCount();
         int[] words = getWordCount();
         int[] lines = getLineCount();
         int[] sourceLines = getSourceCount();
         int[] commentLines = getCommentCount();
-        for (int i = 0; i < getNumFiles();i++){
+        for (int i = 0; i < getNumFiles()-1;i++){
             completeFile[0][i] = fileNames[i];
             completeFile[1][i] = String.valueOf(characters[i]);
             completeFile[2][i] = String.valueOf(words[i]);
