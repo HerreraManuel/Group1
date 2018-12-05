@@ -182,6 +182,7 @@ public class Dashboard extends JFrame {
         enter.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
+                        completeUrl = urlinput.getText();
                         searchCriteria = additionalText.getText().trim().split(" ");
                         displayData();
                     }
@@ -229,9 +230,8 @@ public class Dashboard extends JFrame {
     private void displayData() {
         String[][] current = new String[0][0];
         try{
-            completeUrl = completeUrl.trim();
-            System.out.println("here");
-            githandler = new DataModel(completeUrl,searchCriteria);
+            String Url = completeUrl.trim();
+            githandler = new DataModel(Url,searchCriteria);
             System.out.println("here2");
             current = githandler.getCompleteFile();
             System.out.println("here 3");

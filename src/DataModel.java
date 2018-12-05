@@ -18,8 +18,11 @@ class DataModel implements Retrievable
         try
         {
             GitParser parser = new GitParser();
+            System.out.println("start");
             File repository = parser.getGitRepo(inputURl);
+            System.out.println("repo");
             Repository r = new Repository(repository);
+            System.out.println("repo2");
             Queue<File> queue = new LinkedList<>();
             queue = r.getAllFiles();
             results = new ArrayList<Result>();
