@@ -229,7 +229,7 @@ public class Dashboard extends JFrame {
         String[][] current = new String[0][0];
         try{
             completeUrl = completeUrl.trim();
-            Grabber githandler = new Grabber(completeUrl,searchCriteria);
+            DataModel githandler = new DataModel(completeUrl,searchCriteria);
             current = githandler.getCompleteFile();
             if(current.equals(null)){
                 Display.setText("No files matching the search criteria were found");

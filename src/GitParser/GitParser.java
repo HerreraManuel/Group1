@@ -23,18 +23,11 @@ public class GitParser
     //TODO: might need to rework Clone constructor to not include output file, we can "hardcode" a location to store the file as user does not need to specify where to save file
     public File getGitRepo(String link) throws IOException, GitAPIException
     {
-        boolean validURL = isGitURL(link);
-
-        if(validURL)
-        {
-            File out = new File("/home/filipinoy/Desktop/TestRepo"); //TODO: <--- Modify this constructor with a string that includes the filepath and folder name that you wish to clone the repository to.
-            //File out = new File("X:\\Java\\TestRepo"); // Manny's Test Folder
-            GitCloner cloner = new GitCloner();
-            cloner.cloneRepository(link, out);
-            return out;
-        }
-        else
-            throw new IOException("GitParser - Invalid Git Repository link!");
+        File out = new File("/home/filipinoy/Desktop/TestRepo"); //TODO: <--- Modify this constructor with a string that includes the filepath and folder name that you wish to clone the repository to.
+        //File out = new File("X:\\Java\\TestRepo"); // Manny's Test Folder
+        GitCloner cloner = new GitCloner();
+        cloner.cloneRepository(link, out);
+        return out;
     }
 
     /* Notes:
@@ -44,7 +37,7 @@ public class GitParser
      */
 
     //Verify that given link leads to a git file
-    private boolean isGitURL(String link)
+    private boolean isGitURL(String link) //TODO: MARKED FOR DELETION
     {
         String extension = link.substring(link.lastIndexOf("."));
         String websiteAddress = "https://github.com/";

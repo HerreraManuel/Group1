@@ -7,13 +7,13 @@ import org.eclipse.jgit.api.errors.GitAPIException;
 import java.io.*;
 import java.util.*;
 
-class Grabber implements Retrievable
+class DataModel implements Retrievable
 {
     private ArrayList<Result> results;
 
     enum metric_mode{ WORDS, CHARACTERS, LINES, SOURCES, COMMENTS }
 
-    public Grabber (String inputURl, String[] searchCriteria)
+    public DataModel(String inputURl, String[] searchCriteria)
     {
         try
         {
@@ -22,6 +22,7 @@ class Grabber implements Retrievable
             Repository r = new Repository(repository);
             Queue<File> queue = new LinkedList<>();
             queue = r.getAllFiles();
+            results = new ArrayList<Result>();
 
             while(!queue.isEmpty())
             {
@@ -49,8 +50,18 @@ class Grabber implements Retrievable
     }
 
     @Override
-    public boolean isURL(String path) {
-        return false;
+    public boolean isURL(String link)
+    {
+        String extension = link.substring(link.lastIndexOf("."));
+        String websiteAddress = "https://github.com/";
+
+        if(link.contains("https://github.com/") && extension.equals(".git")) //TODO: Perhaps a better validation can be used here...
+        {
+            System.out.println("Valid Git URL");
+            return true;
+        }
+        else
+            return false;
     }
 
     @Override
