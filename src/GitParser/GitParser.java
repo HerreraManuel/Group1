@@ -23,7 +23,7 @@ public class GitParser
     //TODO: might need to rework Clone constructor to not include output file, we can "hardcode" a location to store the file as user does not need to specify where to save file
     public File getGitRepo(String link) throws IOException, GitAPIException
     {
-        File out = new File("/home/filipinoy/Desktop/Test4"); //TODO: <--- Modify this constructor with a string that includes the filepath and folder name that you wish to clone the repository to.
+        File out = new File("/home/filipinoy/Desktop/Test8"); //TODO: <--- Modify this constructor with a string that includes the filepath and folder name that you wish to clone the repository to.
         //File out = new File("X:\\Java\\TestRepo"); // Manny's Test Folder
         GitCloner cloner = new GitCloner();
         cloner.cloneRepository(link, out);

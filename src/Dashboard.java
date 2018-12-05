@@ -232,9 +232,7 @@ public class Dashboard extends JFrame {
         try{
             String Url = completeUrl.trim();
             githandler = new DataModel(Url,searchCriteria);
-            System.out.println("here2");
             current = githandler.getCompleteFile();
-            System.out.println("here 3");
             if(current.equals(null)){
                 Display.setText("No files matching the search criteria were found");
             }else {

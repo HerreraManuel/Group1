@@ -127,30 +127,35 @@ class DataModel implements Retrievable
     }
 
     public String [] [] getCompleteFile(){
-        String [][] completeFile = new String [6][getNumFiles()];
+
+        System.out.println("1");
+        String [][] completeFile = new String [6][results.size()];
+        System.out.println("2");
         String [] fileNames = getFileNames();
         int[] characters = getCharacterCount();
         int[] words = getWordCount();
         int[] lines = getLineCount();
         int[] sourceLines = getSourceCount();
         int[] commentLines = getCommentCount();
+        System.out.println("got here");
 
         for (int i = 0; i < getNumFiles();i++){
             completeFile[0][i] = fileNames[i];
-            completeFile[1][i] = characters.toString();
-            completeFile[2][i] = words.toString();
-            completeFile[3][i] = lines.toString();
+            completeFile[1][i] = String.valueOf(characters[i]);
+            completeFile[2][i] = String.valueOf(words[i]);
+            completeFile[3][i] = String.valueOf(lines[i]);
             if(sourceLines[i] >= 0 ) {
-                completeFile[4][i] = sourceLines.toString();
+                completeFile[4][i] = String.valueOf(sourceLines[i]);
             }else{
                 completeFile[4][i] = "N/A";
             }
             if(commentLines[i] >= 0) {
-                completeFile[5][i] = commentLines.toString();
+                completeFile[5][i] = String.valueOf(commentLines[i]);
             }else{
                 completeFile[5][i] = "N/A";
             }
         }
+        System.out.println("finished out the 2d array");
         return completeFile;
     }
 }
