@@ -13,30 +13,27 @@ class DataModel implements Retrievable
 
     enum metric_mode{ WORDS, CHARACTERS, LINES, SOURCES, COMMENTS }
 
-    public DataModel(String inputURl, String[] searchCriteria)
+    public DataModel(String inputURl, String[] searchCriteria) throws IOException
     {
         try
         {
             GitParser parser = new GitParser();
-            System.out.println("start");
             File repository = parser.getGitRepo(inputURl);
-            System.out.println("repo");
             Repository r = new Repository(repository);
-            System.out.println("repo2");
             Queue<File> queue = new LinkedList<>();
             queue = r.getAllFiles();
             results = new ArrayList<Result>();
 
             while(!queue.isEmpty())
             {
-                Analyzer analyzer = new Analyzer(queue.element());
+                Analyzer analyzer = new Analyzer(queue.remove());
                 results.add(analyzer.getResult());
-                queue.remove();
             }
         }
         catch (Exception e)
         {
-            System.out.println(e.getMessage());
+            System.out.println("Caught exception int datmodel : " + e.getMessage());
+            throw new IOException();
         }
     }
 
