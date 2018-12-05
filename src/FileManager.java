@@ -83,14 +83,14 @@ public class FileManager {
             int numFiles = 0;
             for (int j = 0; j < displaySettings.length; j++) {
                 if (i > 0 && displaySettings[i - 1] == true) {
-                    String output = String.format("%" + columnWidth[j] + "s   ", input[i][j]);
+                    String output = String.format("%-30s   ", input[i][j]);
                     fileBuilder.append(output + " ");//append to the output string
-                    if (currentInformation[i + 1][j].equals("N/A")) {
+                    if (currentInformation[i][j].equals("N/A")) {
                     } else {
                         currentNum += Integer.parseInt(currentInformation[i + 1][j]);
                     }
                 } else if (i == 0) {
-                    String output = String.format("%" + columnWidth[j] + "s   ", input[i][j]);
+                    String output = String.format("%-30s   ", input[i][j]);
                     fileBuilder.append(output + " ");//append to the output string
                 }
 
@@ -122,8 +122,9 @@ public class FileManager {
     private int[] getColumnWidth(String [][] input){
             int[] columnWidth = new int[input[0].length];
             for (int i = 0; i < input.length; i++) {
-                for (int j = 0; j < input[0].length; j++) {
-                    if (input[i][j].length() > columnWidth[j]) {
+                for (int j = 0; j < columnWidth.length; j++) {
+
+                    if ((input [i][j] != null) && (input[i][j].length() > columnWidth[j])) {
                         columnWidth[j] = input[i][j].length();
                     }
                 }
