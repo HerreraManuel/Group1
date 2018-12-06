@@ -61,7 +61,9 @@
     limited to C/C++, Java, and text files. They may only enter one URL at a time.
     Only git repositories will be assessed for the given choice of metrics.
     CommentLine class will only be able to identify C/C++ and Java indications
-    of comments. 
+    of comments. Valid suffixes include .java, .c, .h, .cpp, .hpp, .txt. If an
+    improper URL link or suffix was inputted the user will be prompted an error
+    message.
 <a name="def"></a>    
 ##### 1.3 Definitions
     Characters: Counts the number of characters in a given file.
