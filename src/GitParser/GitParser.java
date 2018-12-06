@@ -38,12 +38,12 @@ public class GitParser
      */
 
     //Verify that given link leads to a git file
-    private boolean isGitURL(String link) //TODO: MARKED FOR DELETION
+    private boolean isGitURL(String link) //TODO: MARKED FOR DELETION - method to be migrated to a back-to-front end class
     {
         String extension = link.substring(link.lastIndexOf("."));
         String websiteAddress = "https://github.com/";
 
-        if(link.contains("https://github.com/") && extension.equals(".git")) //TODO: Perhaps a better validation can be used here...
+        if(link.contains("https://github.com/") && extension.equals(".git"))
         {
             System.out.println("Valid Git URL");
             return true;

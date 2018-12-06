@@ -9,7 +9,7 @@
 package RepositoryAnalyzer;
 
 
-//TODO: Is this really it for a custom exception class?
+//TODO: MARKED FOR DELETION - In interest of time, not necessary for implementation
 public class RepositoryAnalyzerException extends Exception
 {
     public RepositoryAnalyzerException(String s)
