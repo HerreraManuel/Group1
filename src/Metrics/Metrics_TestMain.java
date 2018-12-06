@@ -1,7 +1,5 @@
 package Metrics;
 
-import com.sun.javafx.font.Metrics;
-
 public class Metrics_TestMain
 {
     public static void main(String[] args)
