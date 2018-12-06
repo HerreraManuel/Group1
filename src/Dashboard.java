@@ -1,3 +1,5 @@
+import RepositoryAnalyzer.RepositoryAnalyzer_TestMain;
+
 import javax.swing.*;
 import java.awt.*;
 import java.lang.*;
