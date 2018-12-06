@@ -10,6 +10,7 @@
 
 package RepositoryAnalyzer;
 
+import FileHelper.FileExtensions;
 import Metrics.Characters;
 import Metrics.Words;
 import Metrics.Lines;
@@ -64,8 +65,8 @@ public class Analyzer
 
         if(sourceMetricFlag == false)
         {
-          sourceCount = 0;
-          commentCount = 0;
+          sourceCount = -1;
+          commentCount = -1;
         }
         else
         {

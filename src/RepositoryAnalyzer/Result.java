@@ -29,37 +29,37 @@ public class Result
   }
 
   /* Sets the file name */
-  public void setFileName(String fileName)
+  private void setFileName(String fileName)
   {
       this.fileName = fileName;
   }
 
   /* Sets the character count */
-  public void setCharacterCount(int characterCount)
+  private void setCharacterCount(int characterCount)
   {
       this.characterCount = characterCount;
   }
 
   /* Sets the word count */
-  public void setWordCount(int wordCount)
+  private void setWordCount(int wordCount)
   {
     this.wordCount = wordCount;
   }
 
   /* Sets the line count */
-  public void setLineCount(int lineCount)
+  private void setLineCount(int lineCount)
   {
     this.lineCount = lineCount;
   }
 
   /* Sets the source count if possible for file type */
-  public void setSourceCount(int sourceCount)
+  private void setSourceCount(int sourceCount)
   {
       this.sourceCount = sourceCount;
   }
 
   /* Sets the comment count, if possible for file type */
-  public void setCommentCount(int commentCount)
+  private void setCommentCount(int commentCount)
   {
       this.commentCount = commentCount;
   }

@@ -61,7 +61,6 @@ public class Repository {
     return requested_files;
   }
 
-  //TODO: Working as expected, but now wondering if this and getRequestedFiles can be refactored back to one method...
   /* Obtains all files regardless of type */
   public Queue<File> getAllFiles() throws EmptyStackException
   {

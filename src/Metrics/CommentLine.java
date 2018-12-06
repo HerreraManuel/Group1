@@ -24,7 +24,9 @@ public class CommentLine{
                 while (!singleLine.contains("*/")) {
                     commentLine++;
                     if (singleLine.contains("*/")) commentLine++;
-                    singleLine = lineKeeper[i++];
+                    if(i +1 < lineKeeper.length) {
+                        singleLine = lineKeeper[i++];
+                    }
                 }
             } else {
                 // finding single lines

@@ -7,7 +7,7 @@
 
  ****************************************************************************************************/
 
-package RepositoryAnalyzer;
+package FileHelper;
 
 import java.util.ArrayList;
 

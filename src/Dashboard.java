@@ -9,6 +9,7 @@ public class Dashboard extends JFrame {
     private JFrame window;
     private JPanel leftside, urlPanel, additionalPanel, totbuttons, enterPanel, outputDisplay, spacingPanel;
     private JPanel rightside;
+    DataModel githandler;
 
     private JTextArea labels, Display, totals;
 
@@ -181,6 +182,7 @@ public class Dashboard extends JFrame {
         enter.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
+                        completeUrl = urlinput.getText();
                         searchCriteria = additionalText.getText().trim().split(" ");
                         displayData();
                     }
@@ -228,18 +230,20 @@ public class Dashboard extends JFrame {
     private void displayData() {
         String[][] current = new String[0][0];
         try{
-            completeUrl = completeUrl.trim();
-            Grabber githandler = new Grabber(completeUrl,searchCriteria);
+            String Url = completeUrl.trim();
+            githandler = new DataModel(Url,searchCriteria);
             current = githandler.getCompleteFile();
             if(current.equals(null)){
                 Display.setText("No files matching the search criteria were found");
             }else {
                 FileManager manager = new FileManager(current, getDisplaySettings(), getDisplayAll());
+                System.out.println("3");
                 labels.setText(manager.getRowLabels());
                 Display.setText(manager.getFileDisplay());
                 totals.setText(String.valueOf(manager.getTotals()));
             }
         }catch(Exception e){
+            e.printStackTrace();
             Display.setText(" An error has occurred. \n Make sure that you entered a valid github URL and/or search criteria ");
         }
     }

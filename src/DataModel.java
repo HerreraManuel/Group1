@@ -7,13 +7,13 @@ import org.eclipse.jgit.api.errors.GitAPIException;
 import java.io.*;
 import java.util.*;
 
-class Grabber implements Retrievable
+class DataModel implements Retrievable
 {
     private ArrayList<Result> results;
 
     enum metric_mode{ WORDS, CHARACTERS, LINES, SOURCES, COMMENTS }
 
-    public Grabber (String inputURl, String[] searchCriteria)
+    public DataModel(String inputURl, String[] searchCriteria) throws IOException
     {
         try
         {
@@ -22,21 +22,19 @@ class Grabber implements Retrievable
             Repository r = new Repository(repository);
             Queue<File> queue = new LinkedList<>();
             queue = r.getAllFiles();
+            results = new ArrayList<Result>();
 
             while(!queue.isEmpty())
             {
-                Analyzer analyzer = new Analyzer(queue.element());
+                Analyzer analyzer = new Analyzer(queue.remove());
                 results.add(analyzer.getResult());
-                queue.remove();
             }
         }
-        catch (GitAPIException e)
+        catch (Exception e)
         {
-            System.out.println(e.getMessage());
-        }
-        catch (IOException e)
-        {
-            System.out.println(e.getMessage());
+            System.out.println("Caught exception int datmodel : " );
+            e.printStackTrace();
+            throw new IOException();
         }
     }
 
@@ -49,8 +47,18 @@ class Grabber implements Retrievable
     }
 
     @Override
-    public boolean isURL(String path) {
-        return false;
+    public boolean isURL(String link)
+    {
+        String extension = link.substring(link.lastIndexOf("."));
+        String websiteAddress = "https://github.com/";
+
+        if(link.contains("https://github.com/") && extension.equals(".git")) //TODO: Perhaps a better validation can be used here...
+        {
+            System.out.println("Valid Git URL");
+            return true;
+        }
+        else
+            return false;
     }
 
     @Override
@@ -68,7 +76,7 @@ class Grabber implements Retrievable
     @Override
     public int[] getLineCount() {
         int[] lineCounts = getFromResults(metric_mode.LINES);
-        return null;
+        return lineCounts;
     }
 
     @Override
@@ -94,7 +102,7 @@ class Grabber implements Retrievable
         {
             fileNames[i] = results.get(i).getFileName();
         }
-        return new String[0];
+        return fileNames;
     }
 
     public int[] getFromResults(metric_mode requestedMetric)
@@ -103,43 +111,48 @@ class Grabber implements Retrievable
 
         for(int i = 0; i < metrics.length; i++)
         {
-            if(requestedMetric == metric_mode.WORDS)
+            if(requestedMetric == metric_mode.WORDS) {
                 metrics[i] = results.get(i).getWordCount();
-            else if(requestedMetric == metric_mode.CHARACTERS)
+            }
+            else if(requestedMetric == metric_mode.CHARACTERS) {
                 metrics[i] = results.get(i).getCharacterCount();
-            else if(requestedMetric == metric_mode.LINES)
+            }
+            else if(requestedMetric == metric_mode.LINES) {
                 metrics[i] = results.get(i).getLineCount();
-            else if(requestedMetric == metric_mode.SOURCES)
+            }
+            else if(requestedMetric == metric_mode.SOURCES) {
                 metrics[i] = results.get(i).getSourceCount();
-            else if(requestedMetric == metric_mode.COMMENTS)
+            }
+            else if(requestedMetric == metric_mode.COMMENTS) {
                 metrics[i] = results.get(i).getCommentCount();
-            else
+            }
+            else {
                 metrics[i] = -1;
+            }
         }
         return metrics;
     }
 
     public String [] [] getCompleteFile(){
-        String [][] completeFile = new String [6][getNumFiles()];
+        String [][] completeFile = new String [6][30];
         String [] fileNames = getFileNames();
         int[] characters = getCharacterCount();
         int[] words = getWordCount();
         int[] lines = getLineCount();
         int[] sourceLines = getSourceCount();
         int[] commentLines = getCommentCount();
-
-        for (int i = 0; i < getNumFiles();i++){
+        for (int i = 0; i < getNumFiles()-1;i++){
             completeFile[0][i] = fileNames[i];
-            completeFile[1][i] = characters.toString();
-            completeFile[2][i] = words.toString();
-            completeFile[3][i] = lines.toString();
+            completeFile[1][i] = String.valueOf(characters[i]);
+            completeFile[2][i] = String.valueOf(words[i]);
+            completeFile[3][i] = String.valueOf(lines[i]);
             if(sourceLines[i] >= 0 ) {
-                completeFile[4][i] = sourceLines.toString();
+                completeFile[4][i] = String.valueOf(sourceLines[i]);
             }else{
                 completeFile[4][i] = "N/A";
             }
             if(commentLines[i] >= 0) {
-                completeFile[5][i] = commentLines.toString();
+                completeFile[5][i] = String.valueOf(commentLines[i]);
             }else{
                 completeFile[5][i] = "N/A";
             }
