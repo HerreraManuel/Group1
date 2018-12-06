@@ -52,7 +52,7 @@
     This Windows Desktop Application will allow the programmer to
     check the character count, word count, line count, comment
     count, and source line of code count by providing the
-    Git URL along with the file type. The user is able to select
+    Github URL along with the file type. The user is able to select
     which count they would like to view by clicking the appropriate 
     check boxes listed.
 <a name="scope"></a>
@@ -66,6 +66,8 @@
     message.
 <a name="def"></a>    
 ##### 1.3 Definitions
+    URL: Takes Github URL(s).
+    Suffix: The file extension that is meant to be read.
     Characters: Counts the number of characters in a given file.
     Words: Counts the words in a given file.
     Lines: Counts the number of lines in a given file.
