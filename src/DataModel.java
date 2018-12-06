@@ -9,7 +9,7 @@ import java.util.*;
 
 class DataModel implements Retrievable
 {
-    private ArrayList<Result> results;
+    static private ArrayList<Result> results;
 
     enum metric_mode{ WORDS, CHARACTERS, LINES, SOURCES, COMMENTS }
 
@@ -18,16 +18,26 @@ class DataModel implements Retrievable
         try
         {
             GitParser parser = new GitParser();
-            File repository = parser.getGitRepo(inputURl);
-            Repository r = new Repository(repository);
+            File file = parser.getGitRepo(inputURl);
+            Repository repository = new Repository(file);
             Queue<File> queue = new LinkedList<>();
-            queue = r.getAllFiles();
+            queue = repository.getAllFiles();
             results = new ArrayList<Result>();
 
             while(!queue.isEmpty())
             {
                 Analyzer analyzer = new Analyzer(queue.remove());
                 results.add(analyzer.getResult());
+                queue.remove();
+            }
+
+            if(deleteRepository(file) == true)
+            {
+                repository = null;
+            }
+            else
+            {
+                System.out.println("Unable to delete " + file.getName());
             }
         }
         catch (Exception e)
@@ -158,5 +168,24 @@ class DataModel implements Retrievable
             }
         }
         return completeFile;
+    }
+
+    /* Deletes a directory with subdirectories */
+    public static boolean deleteRepository(File dir)
+    {
+        if (dir.isDirectory())
+        {
+            File[] children = dir.listFiles();
+            for (int i = 0; i < children.length; i++)
+            {
+                boolean success = deleteRepository(children[i]);
+                if (!success)
+                {
+                    return false;
+                }
+            }
+        }
+        // either file or an empty directory
+        return dir.delete();
     }
 }
