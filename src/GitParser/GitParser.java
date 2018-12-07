@@ -25,7 +25,7 @@ public class GitParser
     {
         //File out = new File("/hokffgsdfg"); //TODO: <--- Modify this constructor with a string that includes the filepath and folder name that you wish to clone the repository to.
         //File out = new File("X:\\Java\\TestRepo"); // Manny's Test Folder
-        File out = new File("odifgdkjlg");
+        File out = new File("odifgdkjlgojsopdifgpjosd;");
         GitCloner cloner = new GitCloner();
         cloner.cloneRepository(link, out);
         return out;
