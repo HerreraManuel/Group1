@@ -71,26 +71,24 @@ public class FileManager {
     method that sets the fileDisplay and totals variable
      */
     private void setFileDisplay(){
-        String[][] currentInformation = new String[5][5];
-        int[] columnWidth = getColumnWidth(currentInformation);
+        int[] columnWidth = getColumnWidth(currentString);
         StringBuilder fileBuilder = new StringBuilder();
         StringBuilder totalBuilder = new StringBuilder("Totals\n\n");
         boolean complete = false;
         int count = 0;
         for (int i = 0; i < 6; i++) {
             int currentNum = 0;
-            Array[][] input = new Array[10][10];
-            int numFiles = 0;
-            for (int j = 0; j < displaySettings.length; j++) {
+            for (int j = 0; j < currentString[0].length; j++) {
                 if (i > 0 && displaySettings[i - 1] == true) {
-                    String output = String.format("%-30s   ", input[i][j]);
+                    String output = String.format("%-100s", currentString[i][j]);
                     fileBuilder.append(output + " ");//append to the output string
-                    if (currentInformation[i][j].equals("N/A")) {
-                    } else {
-                        currentNum += Integer.parseInt(currentInformation[i + 1][j]);
-                    }
+//                    if (!currentString.equals(null) && currentString[i][j].equals("N/A") ) {
+//                    } else {
+//                    if( currentString[i][j].length() >0 &&!currentString[i][j].equals("N/A")  )
+//                        currentNum += Integer.parseInt(currentString[i][j]);
+//                    }
                 } else if (i == 0) {
-                    String output = String.format("%-30s   ", input[i][j]);
+                    String output = String.format("%-100s", currentString[i][j]);
                     fileBuilder.append(output + " ");//append to the output string
                 }
 
@@ -104,6 +102,11 @@ public class FileManager {
                     totalBuilder.append("\n");
                 }
                 count++;
+            }
+            if (i == 5) {
+                fileBuilder.append("\n");
+            } else {
+                fileBuilder.append("\n\n");
             }
         }
         for (; count < 4; count++) {

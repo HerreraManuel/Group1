@@ -171,7 +171,7 @@ public class Dashboard extends JFrame {
         totals.setSize(50,200);
         JScrollPane scroll = new JScrollPane(Display);
         scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
-        scroll.setPreferredSize(new Dimension(600,195));
+        scroll.setPreferredSize(new Dimension(600,205));
         rightside.add(labels);
         rightside.add(scroll);
         rightside.add(totals);
