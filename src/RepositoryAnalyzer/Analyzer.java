@@ -10,7 +10,7 @@
 
 package RepositoryAnalyzer;
 
-import FileHelper.FileExtensions;
+import Helper.FileExtensions;
 import Metrics.Characters;
 import Metrics.Words;
 import Metrics.Lines;

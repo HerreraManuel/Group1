@@ -1,5 +1,3 @@
-import RepositoryAnalyzer.RepositoryAnalyzer_TestMain;
-
 import javax.swing.*;
 import java.awt.*;
 import java.lang.*;
@@ -11,7 +9,7 @@ public class Dashboard extends JFrame {
     private JFrame window;
     private JPanel leftside, urlPanel, additionalPanel, totbuttons, enterPanel, outputDisplay, spacingPanel;
     private JPanel rightside;
-    DataModel githandler;
+    DataProcessor githandler;
 
     private JTextArea labels, Display, totals;
 
@@ -233,7 +231,7 @@ public class Dashboard extends JFrame {
         String[][] current = new String[0][0];
         try{
             String Url = completeUrl.trim();
-            githandler = new DataModel(Url,searchCriteria);
+            githandler = new DataProcessor(Url,searchCriteria);
             current = githandler.getCompleteFile();
             if(current.equals(null)){
                 Display.setText("No files matching the search criteria were found");

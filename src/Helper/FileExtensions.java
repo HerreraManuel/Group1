@@ -7,7 +7,7 @@
 
  ****************************************************************************************************/
 
-package FileHelper;
+package Helper;
 
 import java.util.ArrayList;
 

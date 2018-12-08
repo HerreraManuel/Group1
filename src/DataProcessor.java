@@ -7,13 +7,13 @@ import org.eclipse.jgit.api.errors.GitAPIException;
 import java.io.*;
 import java.util.*;
 
-class DataModel implements Retrievable
+class DataProcessor implements Retrievable
 {
     static private ArrayList<Result> results;
 
     enum metric_mode{ WORDS, CHARACTERS, LINES, SOURCES, COMMENTS }
 
-    public DataModel(String inputURl, String[] searchCriteria) throws IOException
+    public DataProcessor(String inputURl, String[] searchCriteria) throws IOException
     {
         try
         {
@@ -55,6 +55,7 @@ class DataModel implements Retrievable
         }
     }
 
+    //TODO: Should we use the FileExtensions class in the Helper package for consistency?
     public boolean isSuffix(String suffix) {
         if (suffix.contains(".java") || suffix.contains(".c") || suffix.contains(".h") || suffix.contains(".cpp") || suffix.contains(".hpp") || suffix.contains(".txt")) {
             return true;
@@ -152,8 +153,6 @@ class DataModel implements Retrievable
 
     public String [] [] getCompleteFile()
     {
-
-
         String [][] completeFile = new String [6][getNumFiles()];
         String [] fileNames = getFileNames();
 
