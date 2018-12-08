@@ -151,7 +151,7 @@ class DataModel implements Retrievable
     }
 
     public String [] [] getCompleteFile(){
-        String [][] completeFile = new String [6][30];
+        String [][] completeFile = new String [6][getNumFiles()];
         String [] fileNames = getFileNames();
         int[] characters = getCharacterCount();
         int[] words = getWordCount();
