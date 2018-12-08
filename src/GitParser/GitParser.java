@@ -24,10 +24,6 @@ public class GitParser
 
     public File getGitRepo(String link) throws IOException, GitAPIException, GitParserException
     {
-        //File out = new File("/hokffgsdfg"); //TODO: <--- Modify this constructor with a string that includes the filepath and folder name that you wish to clone the repository to.
-        //File out = new File("X:\\Java\\TestRepo"); // Manny's Test Folder
-        //File out = new File("/home/filipinoy/Desktop/GitRepo");
-
         File repositoryFolder = new File(createFolderPath());
 
         GitCloner cloner = new GitCloner();
@@ -40,18 +36,22 @@ public class GitParser
         SystemIdentifier os_identifier = new SystemIdentifier();
         String os = os_identifier.identify();
 
-        if(os.equalsIgnoreCase("WINDOWS"))
+        if(os.equalsIgnoreCase("WINDOWS")) //TODO: TO BE TESTED
         {
-            return "C:\\Users\\Documents";
+            String path = System.getProperty("user.home") + File.separator + "Documents";
+            path += File.separator + "Temp_GitRepository";
+            return path;
         }
         else if(os.equalsIgnoreCase("MAC")) //TODO: TO BE TESTED
         {
             //return "~/.local/Temp_GitRepository";
-            return "~/Temp_GitRepository";
+            return "/Temp_Repository";
         }
-        else if(os.equalsIgnoreCase("LINUX/UNIX"))
+        else if(os.equalsIgnoreCase("LINUX/UNIX")) //VERIFIED
         {
-            return "~/.local/Temp_GitRepository";
+            String path = System.getProperty("user.home") + File.separator + ".local";
+            path += File.separator + "Temp_GitRepository";
+            return path;
         }
         else
         {

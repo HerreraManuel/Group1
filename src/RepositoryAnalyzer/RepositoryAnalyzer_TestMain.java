@@ -1,12 +1,12 @@
 package RepositoryAnalyzer;
 
 import GitParser.GitParser;
+import GitParser.GitParserException;
 import GitParser.Repository;
 import org.eclipse.jgit.api.errors.GitAPIException;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -67,6 +67,10 @@ public class RepositoryAnalyzer_TestMain
       (GitAPIException e)
       {
         e.printStackTrace();
+      }
+      catch (GitParserException e)
+      {
+          e.printStackTrace();
       }
       catch(IOException e)
       {

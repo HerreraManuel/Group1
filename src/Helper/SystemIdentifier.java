@@ -22,29 +22,29 @@ public class SystemIdentifier
 
     public String identify()
     {
-        String currentOS = System.getProperty("os.name").toUpperCase();
+        String currentOS = System.getProperty("os.name").toLowerCase();
 
         if(isWindows(currentOS))
         {
             System.out.println("WINDOWS");
             return "WINDOWS";
         }
-        else if(isMac(currentOS))
+
+        if(isMac(currentOS))
         {
             System.out.println("MAC");
             return "MAC";
 
         }
-        else if(isLinux(currentOS))
+
+        if(isLinux(currentOS))
         {
             System.out.println("LINUX/UNIX");
             return "LINUX/UNIX";
         }
-        else
-        {
-            System.out.println("UNKNOWN_SYSTEM");
-            return "UNKNOWN_SYSTEM";
-        }
+
+        System.out.println("UNKNOWN_SYSTEM");
+        return "UNKNOWN_SYSTEM";
     }
 
     private boolean isWindows(String currentOS)

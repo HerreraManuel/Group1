@@ -81,9 +81,14 @@ public class GitParser_TestMain {
                 deleteDirectory(f);
                 System.out.println("File deleted.");
             }
-        } catch (GitAPIException e) {
+        }
+        catch (GitAPIException e) {
             e.printStackTrace();
-        } catch (IOException e) {
+        }
+        catch (GitParserException e) {
+            e.printStackTrace();
+        }
+        catch (IOException e) {
             e.printStackTrace();
         }
         /**** GitParser Test Code Ends Here ****/

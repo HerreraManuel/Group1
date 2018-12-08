@@ -36,7 +36,6 @@ class DataProcessor implements Retrievable
                 System.out.println(results.get(i));
             }
 
-
             if(deleteRepository(file) == true)
             {
                 repository = null;
