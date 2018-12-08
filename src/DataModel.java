@@ -36,7 +36,7 @@ class DataModel implements Retrievable
                 System.out.println(results.get(i));
             }
 
-            /*
+
             if(deleteRepository(file) == true)
             {
                 repository = null;
@@ -45,7 +45,7 @@ class DataModel implements Retrievable
             {
                 System.out.println("Unable to delete " + file.getName());
             }
-            */
+
         }
         catch (Exception e)
         {
@@ -150,15 +150,26 @@ class DataModel implements Retrievable
         return metrics;
     }
 
-    public String [] [] getCompleteFile(){
+    public String [] [] getCompleteFile()
+    {
+
+
         String [][] completeFile = new String [6][getNumFiles()];
         String [] fileNames = getFileNames();
+
+        int longestFileNameSize = 0;
+        for(int i = 0; i < getNumFiles(); i++)
+        {
+            if(fileNames[i].length() > longestFileNameSize)
+                longestFileNameSize = fileNames[i].length();
+        }
+
         int[] characters = getCharacterCount();
         int[] words = getWordCount();
         int[] lines = getLineCount();
         int[] sourceLines = getSourceCount();
         int[] commentLines = getCommentCount();
-        for (int i = 0; i < getNumFiles()-1;i++){
+        for (int i = 0; i < getNumFiles();i++){
             completeFile[0][i] = fileNames[i];
             completeFile[1][i] = String.valueOf(characters[i]);
             completeFile[2][i] = String.valueOf(words[i]);
