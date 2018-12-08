@@ -49,6 +49,7 @@ public class GitParser_TestMain {
         //Valid URLs
         String validURL = "https://github.com/CSC131Fall2018/Group1.git";
         String validURL2 = "https://github.com/lemire/javaewah.git";
+        String validURL3 = "https://github.com/jenzelarevalo/SampleRepo.git";
 
         //Invalid URLs
         String invalidURL = "https://pdfs.semanticscholar.org/efb2/58d7812128aa19709520b1a567da98227cc5.pdf";
@@ -57,7 +58,7 @@ public class GitParser_TestMain {
             //GitParser test = new GitParser(invalidURL); //Should throw IOException labeled 'GitParser - Invalid link!'
             GitParser test = new GitParser(); //Should be able to download gitFile, downloads a file, but does not seem to look like a git repository
 
-            File f = test.getGitRepo(validURL2); //TODO: <---- ENTER URL variable here
+            File f = test.getGitRepo(validURL3); //TODO: <---- ENTER URL variable here
 
             Repository repo = new Repository(f);
 
@@ -65,10 +66,10 @@ public class GitParser_TestMain {
 
             System.out.println("\n\n");
 
-            Queue<File> requestedFiles = repo.getRequestedFiles(".java"); //Should return all .txt files in the repository
+            Queue<File> requestedFiles = repo.getAllFiles();
             while(!requestedFiles.isEmpty())
             {
-                System.out.println(requestedFiles.remove());
+                System.out.println("Removing from queue: " + requestedFiles.remove());
             }
 
 

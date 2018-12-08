@@ -33,34 +33,6 @@ public class Repository {
             .forEach(System.out::println);
   }
 
-  /* Obtains all files of a particular type in the repository */
-  public Queue<File> getRequestedFiles(String query) throws EmptyStackException  //TODO: MARKED FOR DELETION
-  {
-    Queue<File> requested_files = new LinkedList<File>();
-    ArrayList<String> queries = processQueries(query);
-    try
-    {
-      boolean recursive = true;
-      Collection files = FileUtils.listFiles(repository, null, recursive);
-
-      for (Iterator iterator = files.iterator(); iterator.hasNext(); )
-      {
-        File file = (File) iterator.next();
-        for (int i = 0; i < queries.size(); i++)
-        {
-          if (file.getName().contains(".") && file.getName().substring(file.getName().lastIndexOf(".")).equals(queries.get(i))) //TODO: Works, but this might need to be refactored later...
-          {
-            //System.out.println("Inserting: " + file.getAbsolutePath());
-            requested_files.add(file);
-          }
-        }
-      }
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-    return requested_files;
-  }
-
   /* Obtains all files regardless of type */
   public Queue<File> getAllFiles() throws EmptyStackException
   {
@@ -82,27 +54,4 @@ public class Repository {
     }
     return allFiles;
   }
-
-  /* Processes a string of queries and returns them in an arraylist */
-  private ArrayList<String> processQueries(String queries) //TODO: MARKED FOR DELETION
-  {
-    if(queries == "")
-    {
-      return null;
-    }
-    else
-    {
-      ArrayList<String> queriesList = new ArrayList<>();
-      String result = queries.replace(",", " ");
-      StringTokenizer st = new StringTokenizer(result);
-      while (st.hasMoreTokens())
-      {
-        queriesList.add(st.nextToken());
-      }
-      return queriesList;
-    }
-  }
-
-
-
 }

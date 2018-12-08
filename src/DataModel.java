@@ -26,11 +26,17 @@ class DataModel implements Retrievable
 
             while(!queue.isEmpty())
             {
-                Analyzer analyzer = new Analyzer(queue.remove());
+                Analyzer analyzer = new Analyzer(queue.element());
                 results.add(analyzer.getResult());
                 queue.remove();
             }
 
+            for(int i = 0; i < results.size(); i++)
+            {
+                System.out.println(results.get(i));
+            }
+
+            /*
             if(deleteRepository(file) == true)
             {
                 repository = null;
@@ -39,6 +45,7 @@ class DataModel implements Retrievable
             {
                 System.out.println("Unable to delete " + file.getName());
             }
+            */
         }
         catch (Exception e)
         {

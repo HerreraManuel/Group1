@@ -37,19 +37,9 @@ public class RepositoryAnalyzer_TestMain
           File repository = parser.getGitRepo(validURL2);
           Repository r = new Repository(repository);
           Queue<File> queue = new LinkedList<>();
-          String query = "";
 
           //r.ls();
-
-          if(query.equals(""))
-          {
-            queue = r.getAllFiles();
-          }
-          else
-          {
-            queue = r.getRequestedFiles(query);
-          }
-
+          queue = r.getAllFiles();
 
           while(!queue.isEmpty())
           {
