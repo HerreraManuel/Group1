@@ -17,7 +17,6 @@ public class Result
   private int sourceCount;
   private int commentCount;
 
-  //TODO: Is it really a good idea to pass in all the parameters to this constructor?
   public Result(String fileName, int characterCount, int wordCount, int lineCount, int sourceCount, int commentCount)
   {
       setFileName(fileName);

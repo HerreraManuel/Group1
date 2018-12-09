@@ -5,8 +5,6 @@
  SystemIdentifier helps identify what system the program is running on. SystemIdentifier can
  currently identify if program is running on Windows, Linux, and Mac OSX.
 
- External Contributions:
-
 
  NOTE: Mac OSX in theory should be identified; however, due to the current systems our group
  has we CANNOT officially determine if Mac OSX can be identified.

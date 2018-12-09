@@ -8,7 +8,7 @@
 
 package GitParser;
 
-//TODO: MARKED FOR DELETION - In interest of time, not necessary for implementation
+
 public class GitParserException extends Exception
 {
   public GitParserException(String s)

@@ -2,7 +2,8 @@
  Programmer(s): Jenzel Arevalo
 
  Class Description:
-
+ GitParser utilizes the GitCloner class to clone a GitHub repo from the internet and
+ create a folder for the repository
 
  External Contributions:
  + Code Affine - How to Clone a Git Repository w. JGit
