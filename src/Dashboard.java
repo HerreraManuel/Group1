@@ -104,7 +104,7 @@ public class Dashboard extends JFrame {
     */
         githubUrlInput = new JLabel("Enter valid Github URL");
         urlPanel.add(githubUrlInput);
-        urlinput = new JTextField(30);
+        urlinput = new JTextField(10);
         urlinput.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
@@ -124,7 +124,7 @@ public class Dashboard extends JFrame {
     additional input panel is just meant to take in file types to be displayed delimited by a space
     */
         additionalInput = new JLabel("Enter file suffix to search (EX: .java .txt .c) separated by spaces");
-        additionalText = new JTextField(30);
+        additionalText = new JTextField(10);
         additionalPanel.add(additionalInput);
         additionalPanel.add(additionalText);
         leftside.add(additionalPanel);
