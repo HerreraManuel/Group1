@@ -13,7 +13,12 @@ package GitParser;
 
 import org.eclipse.jgit.api.errors.GitAPIException;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import Helper.SystemIdentifier;
 
@@ -38,8 +43,24 @@ public class GitParser
 
         if(os.equalsIgnoreCase("WINDOWS")) //TODO: TO BE TESTED
         {
-            String path = System.getProperty("user.home") + File.separator + "Documents";
+            String path = System.getProperty("user.home") + File.separator + "Desktop";
             path += File.separator + "Temp_GitRepository";
+            Path root = Paths.get(path);
+            if(Files.exists(root))
+            {
+                int i = 1;
+                Path p;
+                do
+                {
+                  String potential_path = root + File.separator + "Repository_" + i++;
+                  p = Paths.get(potential_path);
+                }while(Files.exists(p));
+                path = p.toString();
+            }
+            else
+            {
+                path += File.separator + "Repository_" + 1;
+            }
             return path;
         }
         else if(os.equalsIgnoreCase("MAC")) //TODO: TO BE TESTED
@@ -49,7 +70,7 @@ public class GitParser
         }
         else if(os.equalsIgnoreCase("LINUX/UNIX")) //VERIFIED
         {
-            String path = System.getProperty("user.home") + File.separator + ".local";
+            String path = System.getProperty("user.home") + File.separator + "Desktop";
             path += File.separator + "Temp_GitRepository";
             return path;
         }

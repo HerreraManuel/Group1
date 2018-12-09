@@ -36,6 +36,7 @@ class DataProcessor implements Retrievable
                 System.out.println(results.get(i));
             }
 
+            /*
             if(deleteRepository(file) == true)
             {
                 repository = null;
@@ -44,6 +45,7 @@ class DataProcessor implements Retrievable
             {
                 System.out.println("Unable to delete " + file.getName());
             }
+            */
 
         }
         catch (Exception e)
