@@ -29,14 +29,15 @@ public class GitParser
 
     public File getGitRepo(String link) throws IOException, GitAPIException, GitParserException
     {
-        File repositoryFolder = new File(createFolderPath());
+        String repositoryName = link.substring(link.lastIndexOf("/"));
+        File repositoryFolder = new File(createFolderPath(repositoryName));
 
         GitCloner cloner = new GitCloner();
         cloner.cloneRepository(link, repositoryFolder);
         return repositoryFolder;
     }
 
-    private String createFolderPath() throws GitParserException
+    private String createFolderPath(String repositoryName) throws GitParserException
     {
         SystemIdentifier os_identifier = new SystemIdentifier();
         String os = os_identifier.identify();
@@ -44,22 +45,25 @@ public class GitParser
         if(os.equalsIgnoreCase("WINDOWS")) //TODO: TO BE TESTED
         {
             String path = System.getProperty("user.home") + File.separator + "Desktop";
-            path += File.separator + "Temp_GitRepository";
+            path += File.separator + "GitRepositories";
             Path root = Paths.get(path);
             if(Files.exists(root))
             {
-                int i = 1;
-                Path p;
-                do
+                String repositoryPath = root + File.separator + repositoryName;
+                Path rp = Paths.get(repositoryPath);
+                if(Files.exists(rp))
                 {
-                  String potential_path = root + File.separator + "Repository_" + i++;
-                  p = Paths.get(potential_path);
-                }while(Files.exists(p));
-                path = p.toString();
+                    int i = 1;
+                    do {
+                        String duplicateName = root + File.separator + repositoryName + "(" + (i++) + ")";
+                        rp = Paths.get(duplicateName);
+                    } while (Files.exists(rp));
+                    path = rp.toString();
+                }
             }
             else
             {
-                path += File.separator + "Repository_" + 1;
+                path = root + repositoryName;
             }
             return path;
         }
