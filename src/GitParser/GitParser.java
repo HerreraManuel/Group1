@@ -50,10 +50,9 @@ public class GitParser
         } else if (os.equalsIgnoreCase("LINUX/UNIX")) //VERIFIED
         {
             path = System.getProperty("user.home") + File.separator + "Desktop";
-        } else if (os.equalsIgnoreCase("LINUX/UNIX")) //VERIFIED
+        }
+        else
         {
-            path = System.getProperty("user.home") + File.separator + "Desktop";
-        } else {
             throw new GitParserException("GitParserException: Unknown operating system, cannot create repository folder");
         }
 
