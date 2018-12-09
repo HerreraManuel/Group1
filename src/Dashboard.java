@@ -102,7 +102,7 @@ public class Dashboard extends JFrame {
     puts together all of the buttons and check boxes
     establishes what each button should do and what the label is
     */
-        githubUrlInput = new JLabel("Enter Github URLs separated by commas");
+        githubUrlInput = new JLabel("Enter valid Github URL");
         urlPanel.add(githubUrlInput);
         urlinput = new JTextField(30);
         urlinput.addActionListener(
@@ -123,7 +123,7 @@ public class Dashboard extends JFrame {
     /*
     additional input panel is just meant to take in file types to be displayed delimited by a space
     */
-        additionalInput = new JLabel("Enter file suffix to search (EX: .java .txt .c)");
+        additionalInput = new JLabel("Enter file suffix to search (EX: .java .txt .c) separated by spaces");
         additionalText = new JTextField(30);
         additionalPanel.add(additionalInput);
         additionalPanel.add(additionalText);
