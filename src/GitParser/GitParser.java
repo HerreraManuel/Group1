@@ -13,7 +13,6 @@ package GitParser;
 
 import org.eclipse.jgit.api.errors.GitAPIException;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 
 import java.nio.file.Files;
@@ -37,54 +36,45 @@ public class GitParser
         return repositoryFolder;
     }
 
-    private String createFolderPath(String repositoryName) throws GitParserException
-    {
+    private String createFolderPath(String repositoryName) throws GitParserException {
         SystemIdentifier os_identifier = new SystemIdentifier();
         String os = os_identifier.identify();
-
-        if(os.equalsIgnoreCase("WINDOWS")) //TODO: TO BE TESTED
+        String path;
+        if (os.equalsIgnoreCase("WINDOWS")) //VERIFIED
         {
-            String path = System.getProperty("user.home") + File.separator + "Desktop";
-            path += File.separator + "GitRepositories";
-            Path root = Paths.get(path);
-            if(Files.exists(root))
-            {
-                String repositoryPath = root + File.separator + repositoryName;
-                Path rp = Paths.get(repositoryPath);
-                if(Files.exists(rp))
-                {
-                    int i = 1;
-                    do {
-                        String duplicateName = root + File.separator + repositoryName + "(" + (i++) + ")";
-                        rp = Paths.get(duplicateName);
-                    } while (Files.exists(rp));
-                    path = rp.toString();
-                }
-                else
-                {
-                    path = root + repositoryName;
-                }
-            }
-            else
-            {
-                path = root + repositoryName;
-            }
-            return path;
-        }
-        else if(os.equalsIgnoreCase("MAC")) //TODO: TO BE TESTED
+            path = System.getProperty("user.home") + File.separator + "Desktop";
+        } else if (os.equalsIgnoreCase("MAC")) //TODO: TO BE TESTED
         {
             //return "~/.local/Temp_GitRepository";
-            return "/Temp_Repository";
-        }
-        else if(os.equalsIgnoreCase("LINUX/UNIX")) //VERIFIED
+            path = "/Temp_Repository";
+        } else if (os.equalsIgnoreCase("LINUX/UNIX")) //VERIFIED
         {
-            String path = System.getProperty("user.home") + File.separator + "Desktop";
-            path += File.separator + "Temp_GitRepository";
-            return path;
-        }
-        else
+            path = System.getProperty("user.home") + File.separator + "Desktop";
+        } else if (os.equalsIgnoreCase("LINUX/UNIX")) //VERIFIED
         {
+            path = System.getProperty("user.home") + File.separator + "Desktop";
+        } else {
             throw new GitParserException("GitParserException: Unknown operating system, cannot create repository folder");
         }
+
+        path += File.separator + "GitRepositories";
+        Path root = Paths.get(path);
+        if (Files.exists(root)) {
+            String repositoryPath = root + File.separator + repositoryName;
+            Path rp = Paths.get(repositoryPath);
+            if (Files.exists(rp)) {
+                int i = 1;
+                do {
+                    String duplicateName = root + File.separator + repositoryName + "(" + (i++) + ")";
+                    rp = Paths.get(duplicateName);
+                } while (Files.exists(rp));
+                path = rp.toString();
+            } else {
+                path = root + repositoryName;
+            }
+        } else {
+            path = root + repositoryName;
+        }
+        return path;
     }
 }
