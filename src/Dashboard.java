@@ -237,7 +237,6 @@ public class Dashboard extends JFrame {
                 Display.setText("No files matching the search criteria were found");
             }else {
                 FileManager manager = new FileManager(current, getDisplaySettings(), getDisplayAll());
-                System.out.println("3");
                 labels.setText(manager.getRowLabels());
                 Display.setText(manager.getFileDisplay());
                 totals.setText(String.valueOf(manager.getTotals()));
