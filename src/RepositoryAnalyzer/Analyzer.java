@@ -121,4 +121,7 @@ public class Analyzer
     {
         return result;
     }
+
+    /* Getter for the name of a file */
+    public String getFileName() { return fileName; }
 }

@@ -30,6 +30,7 @@ public class FileExtensions
       sourceExtensions.add(".c");
       sourceExtensions.add(".cpp");
       sourceExtensions.add(".h");
+      sourceExtensions.add(".hpp");
   }
 
   /* Automatically adds extensions to sourceExtensions arraylist */
@@ -37,7 +38,7 @@ public class FileExtensions
   {
       textExtensions = new ArrayList<String>();
       textExtensions.add(".txt");
-      textExtensions.add(".md");
+      //textExtensions.add(".md");
   }
 
   /* Returns a text extension at a given index */
