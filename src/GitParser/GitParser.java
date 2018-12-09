@@ -60,6 +60,10 @@ public class GitParser
                     } while (Files.exists(rp));
                     path = rp.toString();
                 }
+                else
+                {
+                    path = root + repositoryName;
+                }
             }
             else
             {
