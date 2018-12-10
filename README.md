@@ -109,7 +109,8 @@
         during the git parsing process. 
         
     
-    Helper.java will.....
+    Helper package holds some class's files whose purposes are used throughout the back end of the program. 
+    
     
     Repository Analyzer will....
     
