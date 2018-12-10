@@ -124,6 +124,8 @@
     RepositoryAnalyzer package holds class files that utilize the Metrics package to perform metrics on the files 
     within a git repository. This package includes the following files:
     
+        Analyzer - Processes the appropriate metrics for a file by invoking the metric objects in the Metrics package
+    
     Metrics is a package enclosed with a Characters class, CommentLine class, Lines class, 
     Words class, SourceLine class and a MetricsException class. 
 
