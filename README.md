@@ -96,7 +96,11 @@
     repository for our group to utilize. This package includes the following files:
     
         Git Cloner - Class that clones a repository with a given URL.
-        Repository - 
+        
+        Repository - Class that holds a repository in a File object. This class 
+        has some useful methods such as ls() for printing all the contents of the repository 
+        and getAllFiles() for getting all files in the repository and saving them in a Queue 
+        data structure.
     
     Helper.java will.....
     
