@@ -123,6 +123,10 @@
     Metrics is a package enclosed with a Characters class, CommentLine class, Lines class, Words class, SourceLine 
     class and a MetricsException class. All methods are passed the file content as a String and the correct metric
     is returned to the method after calculation. 
+    
+    Back End to Front End
+    There is only one class that is responsible for transferring data from the back-end to the front-end and 
+    vice-versa. The two classes that help with the transfer are:
 
 &nbsp;
 ***    
@@ -200,7 +204,7 @@
     3.1.4 Communication Interfaces
 <a name="funcreq"></a>            
 ##### 3.2 Functional Requirements
-        3.2.1 Mode 1  *** change these later to incorporate Use Cases 
+        3.2.1 Mode 1 
         
         3.2.1.1 Functional Requirement 1.1 
              The system will take in a GitHub URL
