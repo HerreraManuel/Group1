@@ -79,13 +79,13 @@
     repository from Git. This will allow us to pull all files from the given
     Git url and save it to a destination. 
     
-    **** add Jgit url HERE 
 <a name="overview"></a>    
 ##### 1.5 Overview
 
     Dashboard.java is the GUI that will be the used to access the GitParser and display the output. It will take a 
     Github url and  have check boxes to set what information will be displayed on the other side of the window.In 
-    order to ensure the largest possible output, the window will be set to the size of the screen.
+    order to ensure the user can look at other windows while running this program, the window will be set to a 
+    smaller size. 
     
     GitParser package holds all the java files necessary for cloning and creating a repository for our group to 
     utilize. This package includes the following files:
