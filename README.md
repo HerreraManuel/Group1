@@ -219,19 +219,19 @@
         3.2.1.4 Functional Requirement 1.4 
               Display Filename and Chosen Metrics
               
-              
         Use Case # 1 Cloning a Repository from GitHub
         
             Actor: User
             Participating Actor: Program
             Main Success Scenario:
-            1.) User enters valid GitHub URL into appropriate field
-            2.) User enters a file suffix to be searched for if desired
-            3.) Appropriate Metrics are chosen by cheecking the given checkboxes
-            4.) User Hits Enter key to submit URL and metric choices
+                1.) User enters valid GitHub URL into appropriate field
+                2.) User enters a file suffix to be searched for if desired
+                3.) Appropriate Metrics are chosen by cheecking the given checkboxes
+                4.) User Hits Enter key to submit URL and metric choices
             
             Main Failure Scenario:
-            1.) User enters invalid GitHub URL and 
+                1.) User enters invalid GitHub URL
+                2.) Error is thrown preventing them from moving forward
             
             
             
