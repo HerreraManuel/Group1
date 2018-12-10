@@ -121,9 +121,8 @@
         is currently running on. Class was created to ensure cross-platform compatibility and to be able to have 
         control of where the Git Repositories save on the machine.
     
-    
-    
-    Repository Analyzer will....
+    RepositoryAnalyzer package holds class files that utilize the Metrics package to perform metrics on the files 
+    within a git repository. This package includes the following files:
     
     Metrics is a package enclosed with a Characters class, CommentLine class, Lines class, 
     Words class, SourceLine class and a MetricsException class. 
