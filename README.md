@@ -112,6 +112,10 @@
     The classes within this package help make the construction of the program easier. This package includes 
     the following files:
     
+        FileExtensions - Class that holds two arraylist data structures. One which holds a list of source
+        file extensions (.cpp, .hpp, .java, .c, etc.) and another list for generic text file extensions(.txt).
+    
+    
     Repository Analyzer will....
     
     Metrics is a package enclosed with a Characters class, CommentLine class, Lines class, 
