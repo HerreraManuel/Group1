@@ -80,16 +80,18 @@ public class FileManager {
             int currentNum = 0;
             for (int j = 0; j < currentString[0].length; j++) {
                 if (i > 0 && displaySettings[i - 1] == true) {
-                    String output = String.format("%-100s", currentString[i][j]);
-                    fileBuilder.append(output + " ");//append to the output string
+                    int pad = 50 - currentString[i][j].trim().length();
+                    String output = rightPadding(currentString[i][j].trim(),pad);
+                    fileBuilder.append(output);//append to the output string
                     if (!currentString.equals(null) && currentString[i][j].equals("N/A") ) {
                     } else {
                     if( currentString[i][j].length() >0 &&!currentString[i][j].equals("N/A")  )
                         currentNum += Integer.parseInt(currentString[i][j]);
                     }
                 } else if (i == 0) {
-                    String output = String.format("%-100s", currentString[i][j]);
-                    fileBuilder.append(output + " ");//append to the output string
+                    int pad = 50 - currentString[i][j].trim().length();
+                    String output = rightPadding(currentString[i][j].trim(),pad);
+                    fileBuilder.append(output);//append to the output string
                 }
 
             }
@@ -148,7 +150,13 @@ public class FileManager {
     }
 
     //returns string for the totals
-    public String getTotals(){
+    public String getTotals()
+    {
         return totals;
     }
+    public static String rightPadding(String str, int num) {
+        return String.format("%1$-" + num + "s", str);
+    }
+
 }
+
