@@ -120,8 +120,8 @@
         Analyzer - Processes the appropriate metrics for a file by invoking the metric objects in the Metrics package
         Result - Stores the metrics for the file as well as the filename.
     
-    Metrics is a package enclosed with a Characters class, CommentLine class, Lines class, 
-    Words class, SourceLine class and a MetricsException class. 
+    Metrics is a package enclosed with a Characters class, CommentLine class, Lines class, Words class, SourceLine 
+    class and a MetricsException class. 
 
 &nbsp;
 ***    
