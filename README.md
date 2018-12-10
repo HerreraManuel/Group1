@@ -101,6 +101,10 @@
         has some useful methods such as ls() for printing all the contents of the repository 
         and getAllFiles() for getting all files in the repository and saving them in a Queue 
         data structure.
+        
+        GitParser - Main driver for this package. This class utilizes both GitCloner and 
+        Repository class to clone a repo with a given URL and store that repo in a Repository object.
+        
     
     Helper.java will.....
     
