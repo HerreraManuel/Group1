@@ -105,6 +105,9 @@
         GitParser - Main driver for this package. This class utilizes both GitCloner and 
         Repository class to clone a repo with a given URL and store that repo in a Repository object.
         
+        GitParserException - Custom exception class to indicate if there is an error that had occurred 
+        during the git parsing process. 
+        
     
     Helper.java will.....
     
