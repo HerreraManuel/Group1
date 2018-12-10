@@ -127,6 +127,10 @@
     Back End to Front End
     There is only one class that is responsible for transferring data from the back-end to the front-end and 
     vice-versa. The two classes that help with the transfer are:
+    
+        Retrievable – interface class that allows the front end to invoke methods to obtain data stored in the back-end.
+        
+    
 
 &nbsp;
 ***    
