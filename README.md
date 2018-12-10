@@ -189,7 +189,7 @@
 ### 3. Detailed  Requirements         
 <a name="extinterfacereq"></a>
 ##### 3.1 External Interface Requirements
-    3.1.1 User Interfaces -> TO BE WORKED ON
+    3.1.1 User Interfaces
             Every user will see where they can insert a valid GitHub repository
             URL. Underneath the URL input box, the user can set which metrics to run on
             the files.
@@ -219,7 +219,24 @@
         3.2.1.4 Functional Requirement 1.4 
               Display Filename and Chosen Metrics
               
-
+              
+        Use Case # 1 Cloning a Repository from GitHub
+        
+            Actor: User
+            Participating Actor: Program
+            Main Success Scenario:
+            1.) User enters valid GitHub URL into appropriate field
+            2.) User enters a file suffix to be searched for if desired
+            3.) Appropriate Metrics are chosen by cheecking the given checkboxes
+            4.) User Hits Enter key to submit URL and metric choices
+            
+            Main Failure Scenario:
+            1.) User enters invalid GitHub URL and 
+            
+            
+            
+            
+        
 <a name="perfreq"></a>       
 ##### 3.3 Performance Requirements
          3.3.1 Prominent URL Search 
