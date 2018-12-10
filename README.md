@@ -121,7 +121,8 @@
         Result - Stores the metrics for the file as well as the filename.
     
     Metrics is a package enclosed with a Characters class, CommentLine class, Lines class, Words class, SourceLine 
-    class and a MetricsException class. 
+    class and a MetricsException class. All methods are passed the file content as a String and the correct metric
+    is returned to the method after calculation. 
 
 &nbsp;
 ***    
@@ -179,7 +180,6 @@
     
     When a block comment is encountered in a given file, the commentLine class considers
     it as multiple lines of comments and not a sinlge comment line.
-    There may exist scenarios where the application does not run or work as it should.
     
 
 &nbsp;
