@@ -131,6 +131,7 @@
         Retrievable – interface class that allows the front end to invoke methods to obtain data stored in the back-end.
         DataProcessor – invoked by the front end to clone and analyze a git repository given a valid URL.
     
+    
 
 &nbsp;
 ***    
@@ -241,7 +242,12 @@
                 1.) User enters invalid GitHub URL
                 2.) Error is thrown preventing them from moving forward
             
-            
+        Use Case # 2 : Displaying chosen Metrics 
+        
+            Actor: Program
+            Pre-Condition: Valid GitHub URL and desired Metrics were chosen and accepted by program.
+            Main Success Scenario:
+                1.) 
             
             
         
