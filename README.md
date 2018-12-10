@@ -118,7 +118,8 @@
         class that holds all the extensions.
     
         SystemIdentifier - Class that utilizes the System calls to identify what operating system the program 
-        is currently running on. 
+        is currently running on. Class was created to ensure cross-platform compatibility and to be able to have 
+        control of where the Git Repositories save on the machine.
     
     
     
