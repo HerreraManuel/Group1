@@ -237,10 +237,11 @@
                 2.) User enters a file suffix to be searched for if desired
                 3.) Appropriate Metrics are chosen by cheecking the given checkboxes
                 4.) User Hits Enter key to submit URL and metric choices
-            
+                
             Main Failure Scenario:
                 1.) User enters invalid GitHub URL
                 2.) Error is thrown preventing them from moving forward
+            
             
         Use Case # 2 : Displaying chosen Metrics 
         
@@ -249,8 +250,6 @@
             Main Success Scenario:
                 1.) 
             
-            
-        
 <a name="perfreq"></a>       
 ##### 3.3 Performance Requirements
          3.3.1 Prominent URL Search 
