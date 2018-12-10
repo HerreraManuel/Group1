@@ -92,7 +92,9 @@
     the other side of the window.In order to ensure the largest
     possible output, the window will be set to the size of the screen.
     
-    GitParser will.....
+    GitParser package holds all the java files necessary for cloning and creating a 
+    repository for our group to utilize. This package includes the following files:
+    
     
     Helper.java will.....
     
