@@ -83,17 +83,12 @@
 <a name="overview"></a>    
 ##### 1.5 Overview
 
-    The following are enclosed files: Dashboard.java, GitParser.java, Helper.java, 
-    Metrics.java, RespositoryAnalyzer.java
-
-    Dashboard.java is the GUI that will be the used to access the
-    GitParser and display the output. It will take a Github url and
-    have check boxes to set what information will be displayed on
-    the other side of the window.In order to ensure the largest
-    possible output, the window will be set to the size of the screen.
+    Dashboard.java is the GUI that will be the used to access the GitParser and display the output. It will 
+    take a Github url and  have check boxes to set what information will be displayed on the other side of 
+    the window.In order to ensure the largest possible output, the window will be set to the size of the screen.
     
-    GitParser package holds all the java files necessary for cloning and creating a 
-    repository for our group to utilize. This package includes the following files:
+    GitParser package holds all the java files necessary for cloning and creating a repository for our group to 
+    utilize. This package includes the following files:
     
         Git Cloner - Class that clones a repository with a given URL.
         
