@@ -118,7 +118,7 @@ public class Dashboard extends JFrame {
         check2 = new JCheckBox("Words");
         check3 = new JCheckBox("Lines");
         check4 = new JCheckBox("Source Lines");
-        check5 = new JCheckBox("CommentLines");
+        check5 = new JCheckBox("Comment Lines");
 
     /*
     additional input panel is just meant to take in file types to be displayed delimited by a space
