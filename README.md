@@ -219,7 +219,7 @@
         3.2.1.4 Functional Requirement 1.4 
               Display Filename and Chosen Metrics
               
-        Use Case # 1 Cloning a Repository from GitHub
+        Use Case # 1: Cloning a Repository from GitHub
         
             Actor: User
             Participating Actor: Program
