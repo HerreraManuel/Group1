@@ -62,7 +62,7 @@ public class FileManager {
             rowLabels.append("\n\n");
         }
         if(complete){
-            rowLabels.append("\n");
+            rowLabels.append("\n\n");
         }
         rowLabel = String.valueOf(rowLabels);
     }
@@ -82,11 +82,11 @@ public class FileManager {
                 if (i > 0 && displaySettings[i - 1] == true) {
                     String output = String.format("%-100s", currentString[i][j]);
                     fileBuilder.append(output + " ");//append to the output string
-//                    if (!currentString.equals(null) && currentString[i][j].equals("N/A") ) {
-//                    } else {
-//                    if( currentString[i][j].length() >0 &&!currentString[i][j].equals("N/A")  )
-//                        currentNum += Integer.parseInt(currentString[i][j]);
-//                    }
+                    if (!currentString.equals(null) && currentString[i][j].equals("N/A") ) {
+                    } else {
+                    if( currentString[i][j].length() >0 &&!currentString[i][j].equals("N/A")  )
+                        currentNum += Integer.parseInt(currentString[i][j]);
+                    }
                 } else if (i == 0) {
                     String output = String.format("%-100s", currentString[i][j]);
                     fileBuilder.append(output + " ");//append to the output string
@@ -106,15 +106,17 @@ public class FileManager {
             if (i == 5) {
                 fileBuilder.append("\n");
             } else {
-                fileBuilder.append("\n\n");
+                if(i == count) {
+                    fileBuilder.append("\n\n");
+                }
             }
         }
-        for (; count < 4; count++) {
+        for (; count < 5; count++) {
             totalBuilder.append("\n\n");
         }
-        if (count < 5) {
-            totalBuilder.append("\n");
-        }
+//        if (count < 5) {
+//            totalBuilder.append("\n");
+//        }
         fileDisplay = String.valueOf(fileBuilder);
         totals = String.valueOf(totalBuilder);
     }
