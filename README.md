@@ -95,6 +95,8 @@
     GitParser package holds all the java files necessary for cloning and creating a 
     repository for our group to utilize. This package includes the following files:
     
+        Git Cloner - Class that clones a repository with a given URL.
+        Repository - 
     
     Helper.java will.....
     
