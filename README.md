@@ -110,9 +110,9 @@
         of this class was to help make the implementation of new file metrics easier with a dedicated class that holds
         all the extensions.
     
-        SystemIdentifier - Class that utilizes the System calls to identify what operating system the program 
-        is currently running on. Class was created to ensure cross-platform compatibility and to be able to have 
-        control of where the Git Repositories save on the machine.
+        SystemIdentifier - Class that utilizes the System calls to identify what operating system the program is 
+        currently running on. Class was created to ensure cross-platform compatibility and to be able to have control 
+        of where the Git Repositories save on the machine.
     
     RepositoryAnalyzer package holds class files that utilize the Metrics package to perform metrics on the files 
     within a git repository. This package includes the following files:
