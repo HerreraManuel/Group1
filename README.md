@@ -114,6 +114,8 @@
     
         FileExtensions - Class that holds two arraylist data structures. One which holds a list of source
         file extensions (.cpp, .hpp, .java, .c, etc.) and another list for generic text file extensions(.txt).
+        Intention of this class was to help make the implementation of new file metrics easier with a dedicated 
+        class that holds all the extensions.
     
     
     Repository Analyzer will....
