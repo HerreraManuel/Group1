@@ -129,7 +129,7 @@
     vice-versa. The two classes that help with the transfer are:
     
         Retrievable – interface class that allows the front end to invoke methods to obtain data stored in the back-end.
-        
+        DataProcessor – invoked by the front end to clone and analyze a git repository given a valid URL.
     
 
 &nbsp;
