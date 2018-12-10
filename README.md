@@ -106,12 +106,11 @@
         Repository class to clone a repo with a given URL and store that repo in a Repository object.
         
         GitParserException - Custom exception class to indicate if there is an error that had occurred 
-        during the git parsing process. The classes within this package help make the construction of 
-        the program easier. This package includes the following files:
+        during the git parsing process. 
         
-    
     Helper package holds some class's files whose purpose is used throughout the back end of the program. 
-    
+    The classes within this package help make the construction of the program easier. This package includes 
+    the following files:
     
     Repository Analyzer will....
     
