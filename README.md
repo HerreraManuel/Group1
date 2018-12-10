@@ -83,9 +83,9 @@
 <a name="overview"></a>    
 ##### 1.5 Overview
 
-    Dashboard.java is the GUI that will be the used to access the GitParser and display the output. It will 
-    take a Github url and  have check boxes to set what information will be displayed on the other side of 
-    the window.In order to ensure the largest possible output, the window will be set to the size of the screen.
+    Dashboard.java is the GUI that will be the used to access the GitParser and display the output. It will take a 
+    Github url and  have check boxes to set what information will be displayed on the other side of the window.In 
+    order to ensure the largest possible output, the window will be set to the size of the screen.
     
     GitParser package holds all the java files necessary for cloning and creating a repository for our group to 
     utilize. This package includes the following files:
@@ -102,14 +102,13 @@
         GitParserException - Custom exception class to indicate if there is an error that had occurred during the 
         git parsing process. 
         
-    Helper package holds some class's files whose purpose is used throughout the back end of the program. 
-    The classes within this package help make the construction of the program easier. This package includes 
-    the following files:
+    Helper package holds some class's files whose purpose is used throughout the back end of the program. The classes 
+    within this package help make the construction of the program easier. This package includes the following files:
     
-        FileExtensions - Class that holds two arraylist data structures. One which holds a list of source
-        file extensions (.cpp, .hpp, .java, .c, etc.) and another list for generic text file extensions(.txt).
-        Intention of this class was to help make the implementation of new file metrics easier with a dedicated 
-        class that holds all the extensions.
+        FileExtensions - Class that holds two arraylist data structures. One which holds a list of source file 
+        extensions (.cpp, .hpp, .java, .c, etc.) and another list for generic text file extensions(.txt). Intention 
+        of this class was to help make the implementation of new file metrics easier with a dedicated class that holds
+        all the extensions.
     
         SystemIdentifier - Class that utilizes the System calls to identify what operating system the program 
         is currently running on. Class was created to ensure cross-platform compatibility and to be able to have 
