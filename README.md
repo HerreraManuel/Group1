@@ -117,6 +117,10 @@
         Intention of this class was to help make the implementation of new file metrics easier with a dedicated 
         class that holds all the extensions.
     
+        SystemIdentifier - Class that utilizes the System calls to identify what operating system the program 
+        is currently running on. 
+    
+    
     
     Repository Analyzer will....
     
