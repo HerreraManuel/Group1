@@ -179,21 +179,16 @@ class DataProcessor implements Retrievable
         return completeFile;
     }
 
-    //TODO: search criteria should be valid when coming in to back end, duplicate extensions lead to invalid duplicate results
-    //TODO: search criteria needs to be fixed; will not handle string such as .c,.cpp - will count .c only in this case
-    //TODO: relating to issue above, search criteria can handle strings such as .c .cpp - searchCriteria length depends on extensions separated by spaces only - this needs to be revised
-    //TODO: search criteria with no criteria does not print anything due to search criteria not being set to null. A fix for backend is possible and easy if only search criteria is revised to reflect case
     /* Processes search criteria and adds results of files pertaining to criteria */
     private void processSearchCriteria(Queue<File> queue, String[] searchCriteria)
     {
-        System.out.println("searchCriteria size " + searchCriteria.length);
         while (!queue.isEmpty()) {
             Analyzer analyzer = new Analyzer(queue.element());
             String fileName = analyzer.getFileName();
             if (fileName.contains(".")) {
                 String fileExtension = fileName.substring(fileName.lastIndexOf("."));
                 for (int i = 0; i < searchCriteria.length; i++) {
-                    if (isSuffix(fileExtension) && fileExtension.equalsIgnoreCase(searchCriteria[i]))
+                    if ((isSuffix(fileExtension) && fileExtension.equalsIgnoreCase(searchCriteria[i])) || (isSuffix(fileExtension) && searchCriteria[0].equalsIgnoreCase("")))
                     {
                       results.add(analyzer.getResult());
                     }

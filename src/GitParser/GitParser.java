@@ -47,7 +47,7 @@ public class GitParser
         } else if (os.equalsIgnoreCase("MAC")) //TODO: TO BE TESTED
         {
             //return "~/.local/Temp_GitRepository";
-            path = "/Temp_Repository";
+            path = System.getProperty("user.home") + File.separator + "Desktop";
         } else if (os.equalsIgnoreCase("LINUX/UNIX")) //VERIFIED
         {
             path = System.getProperty("user.home") + File.separator + "Desktop";
