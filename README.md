@@ -123,12 +123,7 @@
     
         Retrievable – interface class that allows the front end to invoke methods to obtain data stored in the back-end.
         DataProcessor – invoked by the front end to clone and analyze a git repository given a valid URL.
-    
-    
-
-&nbsp;
-***    
-&nbsp;
+ ***    
 <a name="overalldesc"></a>
 ### 2. Overall Description
 <a name="procper"></a>
@@ -182,11 +177,6 @@
     
     When a block comment is encountered in a given file, the commentLine class considers
     it as multiple lines of comments and not a single comment line.
-    
-
-&nbsp;
-****
-&nbsp;
 <a name="detailreq"></a>
 ### 3. Detailed  Requirements         
 <a name="extinterfacereq"></a>
