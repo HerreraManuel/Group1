@@ -42,12 +42,11 @@
 ### 1.Introduction:
 <a name="purpose"></a>
 ##### 1.1 Purpose
-    This Windows Desktop Application will allow the programmer to
-    check the character count, word count, line count, comment
-    count, and source line of code count by providing the
-    Github URL along with the file type. The user is able to select
-    which count they would like to view by clicking the appropriate 
-    check boxes listed.
+    This This Cross-Platform (Windows, Mac OS, Linux) Application will allow the 
+    programmer to check the character count, word count, line count, comment
+    count, and source line of code count by providing the Github URL along with the 
+    file type. The user is able to select which count they would like to view by 
+    clicking the appropriate check boxes listed.
 <a name="scope"></a>
 ##### 1.2 Scope
     The user can only ask for the metrics listed above. They are
@@ -76,7 +75,7 @@
      methods.
      
         JGit Link:
-         https://www.eclipse.org/jgit/
+        https://www.eclipse.org/jgit/
          
         Apache Commons IO 2.6:
         https://commons.apache.org/proper/commons-io/javadocs/api-release/index.html
