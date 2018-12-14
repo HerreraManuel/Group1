@@ -74,6 +74,12 @@
     
     In addition to JGit, Apache Commons IO 2.6 was utilized for it's file traversal
      methods.
+     
+        JGit Link:
+         https://www.eclipse.org/jgit/
+         
+        Apache Commons IO 2.6:
+        https://commons.apache.org/proper/commons-io/javadocs/api-release/index.html
     
 <a name="overview"></a>    
 ##### 1.5 Overview
