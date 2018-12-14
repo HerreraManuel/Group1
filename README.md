@@ -242,13 +242,16 @@
         Use Case # 2 : Displaying chosen Metrics 
         
             Actor: Program
+            Participating Actor: Program
             Pre-Condition: Valid GitHub URL and desired Metrics were chosen and accepted by program.
             Main Success Scenario:
                 1.) User clicks checkbox with metric name
                 2.) The Enter button is clicked
                 3.) The chosen Metrics are displayed
                 
-            
+            Main Failure Scenario:
+                1.) User clicks unwanted Metric checkbox
+                2.) Clear button allows user to clear choices and start over
             
 <a name="perfreq"></a>       
 ##### 3.3 Performance Requirements
