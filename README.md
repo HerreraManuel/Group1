@@ -72,6 +72,9 @@
     repository from Git. This will allow us to pull all files from the given
     Git url and save it to a destination. 
     
+    In addition to JGit, Apache Commons IO 2.6 was utilized for it's file traversal
+     methods.
+    
 <a name="overview"></a>    
 ##### 1.5 Overview
 
