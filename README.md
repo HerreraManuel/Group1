@@ -199,7 +199,10 @@
             There is no direct hardware interface because the application has no
             designated hardware. The database server is managed by GitHub.
     3.1.3 Software Interfaces
+            The system will run on the following operating systems: Windows, Mac, and Linux
     3.1.4 Communication Interfaces
+            The interconnectivity of the system is important but the methods are dealt within the
+            underyling operating system of both the application and Github.
 <a name="funcreq"></a>            
 ##### 3.2 Functional Requirements
         3.2.1 Mode 1 
@@ -260,7 +263,6 @@
 ##### 3.4 Design Constraints
     3.4.1 Software Language
             The language used will be in Java
-    3.4.2 Standard Development Tools
-    3.4.3 External Libraries
+    3.4.2 External Libraries
             System was built using external libraries that conforms
             to the developers standards.          
