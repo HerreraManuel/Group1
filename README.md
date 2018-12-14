@@ -156,7 +156,7 @@
     totals for each metrics.  
 <a name="userchar"></a>
 ##### 2.3 User Characteristics
-    There is _____ users. A GUI application user.
+    There is one user. A GUI application user.
     
     The GUI application user can only use the application to request metrics. Therefore,
     the user will need to insert a valid GitHub URL and check which metrics they want 
@@ -181,7 +181,7 @@
     enough memory, the user will be requested to make room before the application runs.
     
     When a block comment is encountered in a given file, the commentLine class considers
-    it as multiple lines of comments and not a sinlge comment line.
+    it as multiple lines of comments and not a single comment line.
     
 
 &nbsp;
