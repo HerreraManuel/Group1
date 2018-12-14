@@ -34,7 +34,7 @@
     3.1 [External Interface Requirements](#extinterfacereq)\
     3.2 [Functional Requirements](#funcreq)\
     3.3 [Performance Requirements](#perfreq)\
-    3.4 [Design Constraints](#descon)\
+    3.4 [Design Constraints](#descon)
 ***
 &nbsp;
     
@@ -177,6 +177,8 @@
     
     When a block comment is encountered in a given file, the commentLine class considers
     it as multiple lines of comments and not a single comment line.
+
+***
 <a name="detailreq"></a>
 ### 3. Detailed  Requirements         
 <a name="extinterfacereq"></a>
