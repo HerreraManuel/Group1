@@ -244,7 +244,11 @@
             Actor: Program
             Pre-Condition: Valid GitHub URL and desired Metrics were chosen and accepted by program.
             Main Success Scenario:
-                1.) 
+                1.) User clicks checkbox with metric name
+                2.) The Enter button is clicked
+                3.) The chosen Metrics are displayed
+                
+            
             
 <a name="perfreq"></a>       
 ##### 3.3 Performance Requirements
